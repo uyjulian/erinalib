@@ -1,0 +1,300 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#endif\r\n"
+    "#include ""res\\miocompress.rc2""  // Microsoft Visual C++ 以外のツールで編集されたリソース\r\n"
+    "#include ""l.jpn\\afxres.rc""          // 標準のコンポーネント\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\miocompress.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ﾊﾞｰｼﾞｮﾝ情報 miocompress"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "miocompress Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001 Leshade Entis.",IDC_STATIC,40,25,119,
+                    8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_PROGRESS_DLG DIALOG DISCARDABLE  0, 0, 223, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "圧縮中・・・"
+FONT 10, "ＭＳ Ｐ明朝"
+BEGIN
+    PUSHBUTTON      "キャンセル",IDCANCEL,90,65,50,15
+    LTEXT           "Source File : \nDestination File :",IDC_STATIC_MSG,15,
+                    10,195,30
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,
+                    15,45,195,10
+END
+
+IDD_MIOCOMPRESS_DIALOG DIALOGEX 0, 0, 319, 241
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MIO圧縮"
+FONT 10, "ＭＳ Ｐ明朝"
+BEGIN
+    COMBOBOX        IDC_COMBO_OPTION,204,45,85,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_LOW_WEIGHT,245,65,50,15,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MIDDLE_WEIGHT,245,85,50,15,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POWER_SCALE,245,145,50,15,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DEGREE,245,170,50,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_FILES,20,30,155,170,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "追加",IDC_BUTTON_ADD,45,205,40,15
+    PUSHBUTTON      "削除",IDC_BUTTON_DELETE,90,205,40,15
+    PUSHBUTTON      "全削除",IDC_BUTTON_DELETE_ALL,135,205,40,15
+    DEFPUSHBUTTON   "圧縮開始",IDOK,200,215,50,15
+    PUSHBUTTON      "終了",IDCANCEL,255,215,50,15
+    GROUPBOX        "圧縮パラメータ",IDC_STATIC,190,10,115,195
+    LTEXT           "簡易指定",IDC_STATIC,200,30,60,10
+    LTEXT           "量子化係数",IDC_STATIC,200,150,45,10
+    GROUPBOX        "圧縮ファイルリスト",IDC_STATIC,10,15,175,215
+    LTEXT           "低周波の重み",IDC_STATIC,200,70,45,10
+    LTEXT           "中周波の重み",IDC_STATIC,200,90,45,10
+    LTEXT           "行列サイズ",IDC_STATIC,200,170,40,10
+    LTEXT           "Ｂ歪対策係数",IDC_STATIC,200,110,45,10
+    EDITTEXT        IDC_EDIT_ODD_WEIGHT,245,105,50,15,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "ミドルサイドステレオを使う",IDC_CHECK_MSS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,200,190,95,10
+    LTEXT           "PE閾値係数",IDC_STATIC,200,130,45,10
+    EDITTEXT        IDC_EDIT_PE_THRESHOLD,245,125,50,15,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "miocompress MFC ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "miocompress\0"
+            VALUE "LegalCopyright", "Copyright (C) 1907\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "miocompress.EXE\0"
+            VALUE "ProductName", "miocompress ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROGRESS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_MIOCOMPRESS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MIOCOMPRESS_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_OPTION, 0x403, 9, 0
+0xc289, 0x748b, 0xb388, 0x6b8f, "\000" 
+    IDC_COMBO_OPTION, 0x403, 18, 0
+0xb492, 0xb989, 0xbf8e, 0x648f, 0x8b8e, 0x6981, 0x2f31, 0x8136, 0x006a, 
+
+    IDC_COMBO_OPTION, 0x403, 16, 0
+0xb989, 0xbf8e, 0x648f, 0x8b8e, 0x6981, 0x2f31, 0x8138, 0x006a, 
+    IDC_COMBO_OPTION, 0x403, 18, 0
+0x828d, 0x6995, 0xca88, 0xb388, 0x6b8f, 0x6981, 0x2f31, 0x8139, 0x006a, 
+
+    IDC_COMBO_OPTION, 0x403, 19, 0
+0x8692, 0x6995, 0xca88, 0xb388, 0x6b8f, 0x6981, 0x2f31, 0x3031, 0x6a81, 
+"\000" 
+    IDC_COMBO_OPTION, 0x403, 19, 0
+0xe192, 0x6995, 0xca88, 0xb388, 0x6b8f, 0x6981, 0x2f31, 0x3131, 0x6a81, 
+"\000" 
+    IDC_COMBO_OPTION, 0x403, 13, 0
+0xe192, 0xb989, 0xbf8e, 0x3128, 0x312f, 0x2932, "\000" 
+    IDC_COMBO_OPTION, 0x403, 17, 0
+0xb989, 0xbf8e, 0xb396, 0x8b8e, 0x6981, 0x2f31, 0x3531, 0x6a81, "\000" 
+    IDC_COMBO_OPTION, 0x403, 19, 0
+0xb492, 0xb989, 0xbf8e, 0xb396, 0x8b8e, 0x6981, 0x2f31, 0x3831, 0x6a81, 
+"\000" 
+    IDC_COMBO_OPTION, 0x403, 23, 0
+0xb989, 0xbf8e, 0xb396, 0x8b8e, 0xb582, 0xb782, 0xac82, 0x6981, 0x2f31, 
+0x3032, 0x6a81, "\000" 
+    IDC_COMBO_DEGREE, 0x403, 8, 0
+0x3135, 0x7832, 0x3135, 0x0032, 
+    IDC_COMBO_DEGREE, 0x403, 10, 0
+0x3031, 0x3432, 0x3178, 0x3230, 0x0034, 
+    IDC_COMBO_DEGREE, 0x403, 10, 0
+0x3032, 0x3834, 0x3278, 0x3430, 0x0038, 
+    IDC_COMBO_DEGREE, 0x403, 10, 0
+0x3034, 0x3639, 0x3478, 0x3930, 0x0036, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "ﾊﾞｰｼﾞｮﾝ情報(miocompress) (&A)..."
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE 17, 1
+#pragma code_page(932)
+#endif
+#include "res\miocompress.rc2"  // Microsoft Visual C++ 以外のツールで編集されたリソース
+#include "l.jpn\afxres.rc"          // 標準のコンポーネント
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
