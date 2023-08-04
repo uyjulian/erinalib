@@ -64,6 +64,8 @@ void eriInitializeFPU( void )
 static DWORD ChopMulDiv( DWORD x, DWORD y, DWORD z )
 {
 	DWORD	dwResult ;
+	dwResult = (DWORD)(((unsigned long long)x * (unsigned long long)y) / (unsigned long long)z);
+#if 0
 	__asm
 	{
 		mov		eax, x
@@ -71,12 +73,16 @@ static DWORD ChopMulDiv( DWORD x, DWORD y, DWORD z )
 		div		z
 		mov		dwResult, eax
 	}
+#endif
 	return	dwResult ;
 }
 
 static DWORD RaiseMulDiv( DWORD x, DWORD y, DWORD z )
 {
 	DWORD	dwResult ;
+	dwResult = (DWORD)(((unsigned long long)x * (unsigned long long)y) / (unsigned long long)z);
+	dwResult += (DWORD)((((unsigned long long)x * (unsigned long long)y) % (unsigned long long)z) != 0) ? 1 : 0;
+#if 0
 	__asm
 	{
 		mov		eax, x
@@ -86,6 +92,7 @@ static DWORD RaiseMulDiv( DWORD x, DWORD y, DWORD z )
 		adc		eax, 0
 		mov		dwResult, eax
 	}
+#endif
 	return	dwResult ;
 }
 

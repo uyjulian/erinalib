@@ -66,7 +66,7 @@ bool EWriteFile::Open( const char * pszFile )
 {
 	Close( ) ;
 	//
-	m_hFile = ::CreateFile
+	m_hFile = ::CreateFileA
 		(
 			pszFile,
 			GENERIC_WRITE,

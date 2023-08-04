@@ -13,6 +13,8 @@
 #define	STRICT	1
 #include <windows.h>
 #include <memory.h>
+#include <algorithm>
+#define min(x, y) std::min((unsigned int)(x), (unsigned int)(y))
 
 #include <eritypes.h>
 #include <erinalib.h>

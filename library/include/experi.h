@@ -15,8 +15,10 @@
                        ライブラリ初期化・終了関数
  *****************************************************************************/
 
+#if 0
 #if	defined(_M_IX86) && !defined(ERI_INTEL_X86)
 #define	ERI_INTEL_X86
+#endif
 #endif
 
 extern	"C"
