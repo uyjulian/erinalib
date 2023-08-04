@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2001/11/04
+                                                      æœ€çµ‚æ›´æ–° 2001/11/04
  ----------------------------------------------------------------------------
           Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -21,44 +21,44 @@
 
 
 /*****************************************************************************
-                       ƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»EI—¹ŠÖ”
+                       ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–ãƒ»çµ‚äº†é–¢æ•°
  *****************************************************************************/
 
 DWORD	ERI_EnabledProcessorType = 0 ;
 
 //
-// MMX ‚ğ—LŒø‚É‚·‚é
+// MMX ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 #if	defined(ERI_INTEL_X86)
 void eriEnableMMX( int fForceEnable )
 {
-	// ƒ_ƒ~[
+	// ãƒ€ãƒŸãƒ¼
 }
 #endif
 
 //
-// MMX ‚ğ–³Œø‚É‚·‚é
+// MMX ã‚’ç„¡åŠ¹ã«ã™ã‚‹
 ///////////////////////////////////////////////////////////////////////////
 #if	defined(ERI_INTEL_X86)
 void eriDisableMMX( int fForceDisable )
 {
-	// ƒ_ƒ~[
+	// ãƒ€ãƒŸãƒ¼
 }
 #endif
 
 //
-// •‚“®¬”“_‰‰Zƒ†ƒjƒbƒg‚ğ‰Šú‰»‚·‚é
+// æµ®å‹•å°æ•°ç‚¹æ¼”ç®—ãƒ¦ãƒ‹ãƒƒãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
 ///////////////////////////////////////////////////////////////////////////
 #if	defined(ERI_INTEL_X86)
 void eriInitializeFPU( void )
 {
-	// ƒ_ƒ~[
+	// ãƒ€ãƒŸãƒ¼
 }
 #endif
 
 
 /*****************************************************************************
-                                ‰‰ZŠÖ”
+                                æ¼”ç®—é–¢æ•°
  *****************************************************************************/
 
 static DWORD ChopMulDiv( DWORD x, DWORD y, DWORD z )
@@ -91,11 +91,11 @@ static DWORD RaiseMulDiv( DWORD x, DWORD y, DWORD z )
 
 
 /*****************************************************************************
-                         ƒAƒjƒ[ƒVƒ‡ƒ“—pŠÖ”
+                         ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç”¨é–¢æ•°
  *****************************************************************************/
 
 //
-// ‰æ‘œî•ñ‚ğ”äŠr
+// ç”»åƒæƒ…å ±ã‚’æ¯”è¼ƒ
 //////////////////////////////////////////////////////////////////////////////
 inline int CompareImageInformation
 	( const RASTER_IMAGE_INFO & rii1, const RASTER_IMAGE_INFO & rii2 )
@@ -122,7 +122,7 @@ inline int CompareImageInformation
 }
 
 //
-// ƒtƒŒ[ƒ€ŠÔ‰ÁZ
+// ãƒ•ãƒ¬ãƒ¼ãƒ é–“åŠ ç®—
 //////////////////////////////////////////////////////////////////////////////
 int eriAdditionOfFrame
 	( const RASTER_IMAGE_INFO & riiDst, const RASTER_IMAGE_INFO & riiSrc )
@@ -148,7 +148,7 @@ int eriAdditionOfFrame
 }
 
 //
-// ƒtƒŒ[ƒ€ŠÔ·•ª
+// ãƒ•ãƒ¬ãƒ¼ãƒ é–“å·®åˆ†
 //////////////////////////////////////////////////////////////////////////////
 int eriSubtractionOfFrame
 	( const RASTER_IMAGE_INFO & riiDst, const RASTER_IMAGE_INFO & riiSrc )
@@ -174,7 +174,7 @@ int eriSubtractionOfFrame
 }
 
 //
-// ‰æ‘œ•¡»
+// ç”»åƒè¤‡è£½
 //////////////////////////////////////////////////////////////////////////////
 int eriCopyImage
 	( const RASTER_IMAGE_INFO & riiDst, const RASTER_IMAGE_INFO & riiSrc )
@@ -200,13 +200,13 @@ int eriCopyImage
 }
 
 //
-// Šg‘å•`‰æ
+// æ‹¡å¤§æç”»
 //////////////////////////////////////////////////////////////////////////////
 int eriEnlargeImageDouble
 	( const RASTER_IMAGE_INFO & riiDst, const RASTER_IMAGE_INFO & riiSrc )
 {
 	//
-	// ‰æ‘œƒtƒH[ƒ}ƒbƒg‚Ìƒ`ƒFƒbƒN
+	// ç”»åƒãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ãƒã‚§ãƒƒã‚¯
 	//
 	if ( (riiDst.nImageWidth != riiSrc.nImageWidth * 2)
 			|| (riiDst.nImageHeight != riiSrc.nImageHeight * 2) )
@@ -226,7 +226,7 @@ int eriEnlargeImageDouble
 		return	1 ;
 	}
 	//
-	// ‰æ‘œƒf[ƒ^‚ÌŠg‘å•¡»
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿ã®æ‹¡å¤§è¤‡è£½
 	//
 	DWORD *	pdwSrcLine = (DWORD*) riiSrc.ptrImageArray ;
 	DWORD *	pdwDstLine1 = (DWORD*) riiDst.ptrImageArray ;
@@ -251,11 +251,11 @@ int eriEnlargeImageDouble
 
 
 /*****************************************************************************
-                         ƒnƒtƒ}ƒ“EƒcƒŠ[E\‘¢‘Ì
+                         ãƒãƒ•ãƒãƒ³ãƒ»ãƒ„ãƒªãƒ¼ãƒ»æ§‹é€ ä½“
  *****************************************************************************/
 
 //
-// ”­¶•p“x‚ğƒCƒ“ƒNƒŠƒƒ“ƒg
+// ç™ºç”Ÿé »åº¦ã‚’ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 void ERINA_HUFFMAN_TREE::IncreaseOccuedCount( int iEntry )
 {
@@ -269,14 +269,14 @@ void ERINA_HUFFMAN_TREE::IncreaseOccuedCount( int iEntry )
 }
 
 //
-// ƒcƒŠ[‚Ì³‹K‰»
+// ãƒ„ãƒªãƒ¼ã®æ­£è¦åŒ–
 //////////////////////////////////////////////////////////////////////////////
 void ERINA_HUFFMAN_TREE::Normalize( int iEntry )
 {
 	while ( iEntry < ERINA_HUFFMAN_ROOT )
 	{
 		//
-		// “ü‚ê‘Ö‚¦‚éƒGƒ“ƒgƒŠ‚ğŒŸõ
+		// å…¥ã‚Œæ›¿ãˆã‚‹ã‚¨ãƒ³ãƒˆãƒªã‚’æ¤œç´¢
 		int		iSwap = iEntry + 1 ;
 		WORD	weight = m_hnTree[iEntry].m_weight ;
 		while ( iSwap < ERINA_HUFFMAN_ROOT )
@@ -292,7 +292,7 @@ void ERINA_HUFFMAN_TREE::Normalize( int iEntry )
 			continue ;
 		}
 		//
-		// “ü‚ê‘Ö‚¦
+		// å…¥ã‚Œæ›¿ãˆ
 		int		iChild, nCode ;
 		if ( !(m_hnTree[iEntry].m_child_code & ERINA_CODE_FLAG) )
 		{
@@ -331,7 +331,7 @@ void ERINA_HUFFMAN_TREE::Normalize( int iEntry )
 		m_hnTree[iSwap].m_parent = iSwapParent ;
 		m_hnTree[iEntry].m_parent = iEntryParent ;
 		//
-		// e‚Ìd‚İ‚ğÄŒvZ‚·‚é
+		// è¦ªã®é‡ã¿ã‚’å†è¨ˆç®—ã™ã‚‹
 		RecountOccuredCount( iSwapParent ) ;
 		iEntry = iSwapParent ;
 	}
@@ -339,15 +339,15 @@ void ERINA_HUFFMAN_TREE::Normalize( int iEntry )
 
 
 /*****************************************************************************
-                   ƒ‰ƒ“ƒŒƒ“ƒOƒXEƒKƒ“ƒ}EƒRƒ“ƒeƒLƒXƒg
+                   ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ãƒ»ã‚¬ãƒ³ãƒãƒ»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 //
-// ƒoƒbƒtƒ@‚ª‹ó‚ÌAŸ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+// ãƒãƒƒãƒ•ã‚¡ãŒç©ºã®æ™‚ã€æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 //////////////////////////////////////////////////////////////////////////////
-// •Ô‚è’lG
-//		0‚ÌA³íI—¹
-//		1‚ÌAˆÙíI—¹
+// è¿”ã‚Šå€¤ï¼›
+//		0ã®æ™‚ã€æ­£å¸¸çµ‚äº†
+//		1ã®æ™‚ã€ç•°å¸¸çµ‚äº†
 //////////////////////////////////////////////////////////////////////////////
 int RLHDecodeContext::PrefetchBuffer( void )
 {
@@ -382,11 +382,11 @@ int RLHDecodeContext::PrefetchBuffer( void )
 }
 
 //
-// 1ƒrƒbƒg‚ğæ“¾‚·‚é
+// 1ãƒ“ãƒƒãƒˆã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
-// •Ô‚è’lG
-//		0 –”‚Í|1‚ğ•Ô‚·B
-//		ƒGƒ‰[‚ª”­¶‚µ‚½ê‡‚Í1‚ğ•Ô‚·B
+// è¿”ã‚Šå€¤ï¼›
+//		0 åˆã¯âˆ’1ã‚’è¿”ã™ã€‚
+//		ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã¯1ã‚’è¿”ã™ã€‚
 //////////////////////////////////////////////////////////////////////////////
 INT RLHDecodeContext::GetABit( void )
 {
@@ -400,7 +400,7 @@ INT RLHDecodeContext::GetABit( void )
 }
 
 //
-// nƒrƒbƒgæ“¾‚·‚é
+// nãƒ“ãƒƒãƒˆå–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 UINT RLHDecodeContext::GetNBits( int n )
 {
@@ -423,11 +423,11 @@ UINT RLHDecodeContext::GetNBits( int n )
 }
 
 //
-// ƒKƒ“ƒ}ƒR[ƒh‚ğæ“¾‚·‚é
+// ã‚¬ãƒ³ãƒã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
-// •Ô‚è’lG
-//		æ“¾‚³‚ê‚½ƒKƒ“ƒ}ƒR[ƒh‚ğ•Ô‚·B
-//		ƒGƒ‰[‚ª”­¶‚µ‚½ê‡‚Í|1‚ğ•Ô‚·B
+// è¿”ã‚Šå€¤ï¼›
+//		å–å¾—ã•ã‚ŒãŸã‚¬ãƒ³ãƒã‚³ãƒ¼ãƒ‰ã‚’è¿”ã™ã€‚
+//		ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã¯âˆ’1ã‚’è¿”ã™ã€‚
 //////////////////////////////////////////////////////////////////////////////
 INT RLHDecodeContext::GetACode( void )
 {
@@ -436,16 +436,16 @@ INT RLHDecodeContext::GetACode( void )
 	for ( ; ; )
 	{
 		//
-		// ƒoƒbƒtƒ@‚Ö‚Ìƒf[ƒ^‚Ì“Ç‚İ‚İ
+		// ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 		if ( PrefetchBuffer( ) )
 			return	(LONG) -1 ;
 		//
-		// 1ƒrƒbƒgæ‚èo‚µ
+		// 1ãƒ“ãƒƒãƒˆå–ã‚Šå‡ºã—
 		m_nIntBufCount -- ;
 		if ( !(m_dwIntBuffer & 0x80000000) )
 		{
 			//
-			// ƒR[ƒhI—¹
+			// ã‚³ãƒ¼ãƒ‰çµ‚äº†
 			nCode += nBase ;
 			m_dwIntBuffer <<= 1 ;
 			return	nCode ;
@@ -453,15 +453,15 @@ INT RLHDecodeContext::GetACode( void )
 		else
 		{
 			//
-			// ƒR[ƒhŒp‘±
+			// ã‚³ãƒ¼ãƒ‰ç¶™ç¶š
 			nBase <<= 1 ;
 			m_dwIntBuffer <<= 1 ;
 			//
-			// ƒoƒbƒtƒ@‚Ö‚Ìƒf[ƒ^‚Ì“Ç‚İ‚İ
+			// ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 			if ( PrefetchBuffer( ) )
 				return	(LONG) -1 ;
 			//
-			// 1ƒrƒbƒgæ‚èo‚µ
+			// 1ãƒ“ãƒƒãƒˆå–ã‚Šå‡ºã—
 			nCode = (nCode << 1) | (m_dwIntBuffer >> 31) ;
 			m_nIntBufCount -- ;
 			m_dwIntBuffer <<= 1 ;
@@ -470,7 +470,7 @@ INT RLHDecodeContext::GetACode( void )
 }
 
 //
-// “WŠJ‚µ‚½ƒf[ƒ^‚ğæ“¾‚·‚éiƒKƒ“ƒ}•„†j
+// å±•é–‹ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹ï¼ˆã‚¬ãƒ³ãƒç¬¦å·ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 {
@@ -488,7 +488,7 @@ ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 	for ( ; ; )
 	{
 		//
-		// o—ÍƒVƒ“ƒ{ƒ‹”‚ğZo
+		// å‡ºåŠ›ã‚·ãƒ³ãƒœãƒ«æ•°ã‚’ç®—å‡º
 		nRepeat = m_nLength ;
 		if ( nRepeat > nCount )
 		{
@@ -497,7 +497,7 @@ ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 		m_nLength -= nRepeat ;
 		nCount -= nRepeat ;
 		//
-		// ƒVƒ“ƒ{ƒ‹‚ğo—Í
+		// ã‚·ãƒ³ãƒœãƒ«ã‚’å‡ºåŠ›
 		if ( !m_flgZero )
 		{
 			nDecoded += nRepeat ;
@@ -517,7 +517,7 @@ ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 			}
 		}
 		//
-		// I—¹‚©H
+		// çµ‚äº†ã‹ï¼Ÿ
 		if ( nCount == 0 )
 		{
 			if ( m_nLength == 0 )
@@ -525,7 +525,7 @@ ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 			return	nDecoded ;
 		}
 		//
-		// ƒŒƒ“ƒOƒXƒR[ƒh‚ğæ“¾
+		// ãƒ¬ãƒ³ã‚°ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 		m_flgZero = ~m_flgZero ;
 		nCode = GetACode( ) ;
 		if ( nCode == -1 )
@@ -535,7 +535,7 @@ ULONG RLHDecodeContext::DecodeGammaCodes( PINT ptrDst, ULONG nCount )
 }
 
 //
-// “WŠJ‚µ‚½ƒf[ƒ^‚ğæ“¾‚·‚éiZp•„†j
+// å±•é–‹ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹ï¼ˆç®—è¡“ç¬¦å·ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 {
@@ -553,7 +553,7 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 		if ( dwAcc >= 0x10000 )
 			break ;
 		//
-		// ƒVƒ“ƒ{ƒ‹‚Ìw•W‚ğŒŸõ
+		// ã‚·ãƒ³ãƒœãƒ«ã®æŒ‡æ¨™ã‚’æ¤œç´¢
 		int	nSymbolIndex = 0 ;
 		WORD	wAcc = (WORD) dwAcc ;
 		WORD	wFs = 0 ;
@@ -571,7 +571,7 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 				return	nDecoded ;
 		}
 		//
-		// ƒR[ƒhƒŒƒWƒXƒ^‚ÆƒI[ƒWƒFƒ“ƒhƒŒƒWƒXƒ^‚ğXV
+		// ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿ã¨ã‚ªãƒ¼ã‚¸ã‚§ãƒ³ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿ã‚’æ›´æ–°
 		m_dwCodeRegister -= ::RaiseMulDiv
 			(
 				m_dwAugendRegister,
@@ -585,11 +585,11 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 				m_pLastStatisticalModel->dwTotalSymbolCount
 			) ;
 		//
-		// ƒI[ƒWƒFƒ“ƒgƒŒƒWƒXƒ^‚ğ³‹K‰»‚µAƒR[ƒhƒŒƒWƒXƒ^‚É•„†‚ğ“Ç‚İ‚Ş
+		// ã‚ªãƒ¼ã‚¸ã‚§ãƒ³ãƒˆãƒ¬ã‚¸ã‚¹ã‚¿ã‚’æ­£è¦åŒ–ã—ã€ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿ã«ç¬¦å·ã‚’èª­ã¿è¾¼ã‚€
 		while ( !(m_dwAugendRegister & 0x80000000) )
 		{
 			//
-			// ƒR[ƒhƒŒƒWƒXƒ^‚ÉƒVƒtƒgƒCƒ“
+			// ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿ã«ã‚·ãƒ•ãƒˆã‚¤ãƒ³
 			m_dwCodeRegister =
 				(m_dwCodeRegister << 1) | (m_dwCodeBuffer >> 31) ;
 			INT	nNextBit = GetABit( ) ;
@@ -602,7 +602,7 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 			m_dwCodeBuffer =
 				(m_dwCodeBuffer << 1) | (nNextBit & 0x01) ;
 			//
-			// ƒrƒbƒgƒXƒ^ƒbƒtƒBƒ“ƒO
+			// ãƒ“ãƒƒãƒˆã‚¹ã‚¿ãƒƒãƒ•ã‚£ãƒ³ã‚°
 			if ( m_dwCodeBuffer == 0xFFFFFFFF )
 			{
 				m_dwCodeBuffer -= (GetABit() >> 1) ;
@@ -613,7 +613,7 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 			m_dwAugendRegister <<= 1 ;
 		}
 		//
-		// Œ»İ‚Ì“Œvƒ‚ƒfƒ‹‚ğXV
+		// ç¾åœ¨ã®çµ±è¨ˆãƒ¢ãƒ‡ãƒ«ã‚’æ›´æ–°
 		ARITHCODE_SYMBOL	acsCurrent =
 			m_pLastStatisticalModel->SymbolTable[nSymbolIndex] ;
 		acsCurrent.wOccured ++ ;
@@ -628,10 +628,10 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 		}
 		m_pLastStatisticalModel->SymbolTable[nSymbolIndex] = acsCurrent ;
 		//
-		// ƒf[ƒ^‚ğo—Í
+		// ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›
 		*(ptrDst ++) = acsCurrent.wSymbol ;
 		//
-		// ‘‡Œv¶‹NƒVƒ“ƒ{ƒ‹”XV
+		// ç·åˆè¨ˆç”Ÿèµ·ã‚·ãƒ³ãƒœãƒ«æ•°æ›´æ–°
 		int	nSourceCode = (acsCurrent.wSymbol & m_maskSymbolBit) ;
 		if ( (++ m_pLastStatisticalModel->dwTotalSymbolCount) >= 0x10000 )
 		{
@@ -648,7 +648,7 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 			m_pLastStatisticalModel->dwTotalSymbolCount = dwSymbolCount ;
 		}
 		//
-		// Ÿ‚ÌƒVƒ“ƒ{ƒ‹‚Ì•œ†‚Ö
+		// æ¬¡ã®ã‚·ãƒ³ãƒœãƒ«ã®å¾©å·ã¸
 		m_pLastStatisticalModel = m_pStatisticalTable[nSourceCode] ;
 		nDecoded ++ ;
 	}
@@ -656,36 +656,36 @@ ULONG RLHDecodeContext::DecodeArithmeticCodes( PINT ptrDst, ULONG nCount )
 }
 
 //
-// 1ƒ‰ƒCƒ““WŠJ‚µ‚½ƒf[ƒ^‚ğæ“¾‚·‚éiRL-MTF-G •„†j
+// 1ãƒ©ã‚¤ãƒ³å±•é–‹ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹ï¼ˆRL-MTF-G ç¬¦å·ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeRLMTFGCodes( PBYTE ptrDst, ULONG nCount )
 {
 	ULONG	nDecoded = 0 ;
 	//
-	// ƒJƒŒƒ“ƒgMTFƒe[ƒuƒ‹‚ğİ’è
+	// ã‚«ãƒ¬ãƒ³ãƒˆMTFãƒ†ãƒ¼ãƒ–ãƒ«ã‚’è¨­å®š
 	int	iLastPlt = -1 ;
 	MTF_TABLE *	pCurTable = m_pMTFTable[0x100] ;
 	//
-	// ƒ‰ƒCƒ“‚ğ‘S‚ÄƒfƒR[ƒh‚·‚é‚Ü‚ÅŒJ‚è•Ô‚µ
+	// ãƒ©ã‚¤ãƒ³ã‚’å…¨ã¦ãƒ‡ã‚³ãƒ¼ãƒ‰ã™ã‚‹ã¾ã§ç¹°ã‚Šè¿”ã—
 	while ( nDecoded < nCount )
 	{
 		//
-		// ƒKƒ“ƒ}•„†‚ğ•œ†
+		// ã‚¬ãƒ³ãƒç¬¦å·ã‚’å¾©å·
 		INT		iCode = GetACode( ) - 1 ;
 		if ( iCode & ~0xFF )
 			break ;
 		//
-		// ƒJƒŒƒ“ƒgMTFƒe[ƒuƒ‹‚ğQÆ‚·‚é
+		// ã‚«ãƒ¬ãƒ³ãƒˆMTFãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å‚ç…§ã™ã‚‹
 		BYTE	iCurPlt = pCurTable->MoveToFront( iCode ) ;
 		//
-		// •œ†‚³‚ê‚½ƒpƒŒƒbƒg”Ô†‚ğo—Í
+		// å¾©å·ã•ã‚ŒãŸãƒ‘ãƒ¬ãƒƒãƒˆç•ªå·ã‚’å‡ºåŠ›
 		ptrDst[nDecoded ++] = iCurPlt ;
 		//
-		// ’¼‘O‚ÌƒpƒŒƒbƒg”Ô†‚Æˆê’v‚µ‚È‚¢‚©”äŠr
+		// ç›´å‰ã®ãƒ‘ãƒ¬ãƒƒãƒˆç•ªå·ã¨ä¸€è‡´ã—ãªã„ã‹æ¯”è¼ƒ
 		if ( iLastPlt == (int) iCurPlt )
 		{
 			//
-			// ƒ‰ƒ“ƒŒƒ“ƒOƒX‚Ì“K—p
+			// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã®é©ç”¨
 			iCode = GetACode( ) - 1 ;
 			if ( iCode < 0 )
 				break ;
@@ -700,18 +700,18 @@ ULONG RLHDecodeContext::DecodeRLMTFGCodes( PBYTE ptrDst, ULONG nCount )
 		else
 		{
 			//
-			// ƒJƒŒƒ“ƒgMTFƒe[ƒuƒ‹‚ÌXV
+			// ã‚«ãƒ¬ãƒ³ãƒˆMTFãƒ†ãƒ¼ãƒ–ãƒ«ã®æ›´æ–°
 			iLastPlt = iCurPlt ;
 			pCurTable = m_pMTFTable[iCurPlt] ;
 		}
 	}
 	//
-	// I—¹
+	// çµ‚äº†
 	return	nDecoded ;
 }
 
 //
-// ƒnƒtƒ}ƒ“•„†‚ğæ“¾‚·‚é
+// ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHDecodeContext::GetAHuffmanCode( ERINA_HUFFMAN_TREE * tree )
 {
@@ -721,13 +721,13 @@ int RLHDecodeContext::GetAHuffmanCode( ERINA_HUFFMAN_TREE * tree )
 		int		iEntry = ERINA_HUFFMAN_ROOT ;
 		int		iChild = tree->m_hnTree[ERINA_HUFFMAN_ROOT].m_child_code ;
 		//
-		// •„†‚ğ•œ†
+		// ç¬¦å·ã‚’å¾©å·
 		do
 		{
 			if ( PrefetchBuffer() )
 				return	ERINA_HUFFMAN_ESCAPE ;
 			//
-			// 1ƒrƒbƒgæ‚èo‚·
+			// 1ãƒ“ãƒƒãƒˆå–ã‚Šå‡ºã™
 			iEntry = iChild + (m_dwIntBuffer >> 31) ;
 			-- m_nIntBufCount ;
 			iChild = tree->m_hnTree[iEntry].m_child_code ;
@@ -735,23 +735,23 @@ int RLHDecodeContext::GetAHuffmanCode( ERINA_HUFFMAN_TREE * tree )
 		}
 		while ( !(iChild & ERINA_CODE_FLAG) ) ;
 		//
-		// •„†‚ÌoŒ»•p“x‚ğ‰ÁZ
+		// ç¬¦å·ã®å‡ºç¾é »åº¦ã‚’åŠ ç®—
 		tree->IncreaseOccuedCount( iEntry ) ;
 		//
-		// ƒGƒXƒP[ƒvƒR[ƒh‚©”»•Ê
+		// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‹åˆ¤åˆ¥
 		nCode = iChild & ~ERINA_CODE_FLAG ;
 		if ( nCode != ERINA_HUFFMAN_ESCAPE )
 			return	nCode ;
 	}
 	//
-	// ƒGƒXƒP[ƒvƒR[ƒh‚Ì‚Æ‚«‚Í8ƒrƒbƒgŒÅ’è’·
+	// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã®ã¨ãã¯8ãƒ“ãƒƒãƒˆå›ºå®šé•·
 	nCode = GetNBits( 8 ) ;
 	tree->AddNewEntry( nCode ) ;
 	return	nCode ;
 }
 
 //
-// ’·‚³‚Ìƒnƒtƒ}ƒ“•„†‚ğæ“¾‚·‚é
+// é•·ã•ã®ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHDecodeContext::GetLengthHuffman( ERINA_HUFFMAN_TREE * tree )
 {
@@ -761,13 +761,13 @@ int RLHDecodeContext::GetLengthHuffman( ERINA_HUFFMAN_TREE * tree )
 		int		iEntry = ERINA_HUFFMAN_ROOT ;
 		int		iChild = tree->m_hnTree[ERINA_HUFFMAN_ROOT].m_child_code ;
 		//
-		// •„†‚ğ•œ†
+		// ç¬¦å·ã‚’å¾©å·
 		do
 		{
 			if ( PrefetchBuffer() )
 				return	ERINA_HUFFMAN_ESCAPE ;
 			//
-			// 1ƒrƒbƒgæ‚èo‚·
+			// 1ãƒ“ãƒƒãƒˆå–ã‚Šå‡ºã™
 			iEntry = iChild + (m_dwIntBuffer >> 31) ;
 			-- m_nIntBufCount ;
 			iChild = tree->m_hnTree[iEntry].m_child_code ;
@@ -775,16 +775,16 @@ int RLHDecodeContext::GetLengthHuffman( ERINA_HUFFMAN_TREE * tree )
 		}
 		while ( !(iChild & ERINA_CODE_FLAG) ) ;
 		//
-		// •„†‚ÌoŒ»•p“x‚ğ‰ÁZ
+		// ç¬¦å·ã®å‡ºç¾é »åº¦ã‚’åŠ ç®—
 		tree->IncreaseOccuedCount( iEntry ) ;
 		//
-		// ƒGƒXƒP[ƒvƒR[ƒh‚©”»•Ê
+		// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‹åˆ¤åˆ¥
 		nCode = iChild & ~ERINA_CODE_FLAG ;
 		if ( nCode != ERINA_HUFFMAN_ESCAPE )
 			return	nCode ;
 	}
 	//
-	// ƒGƒXƒP[ƒvƒR[ƒh‚Ì‚Æ‚«‚ÍƒKƒ“ƒ}•„†
+	// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã®ã¨ãã¯ã‚¬ãƒ³ãƒç¬¦å·
 	nCode = GetACode( ) ;
 	if ( nCode == -1 )
 		return	ERINA_HUFFMAN_ESCAPE ;
@@ -793,7 +793,7 @@ int RLHDecodeContext::GetLengthHuffman( ERINA_HUFFMAN_TREE * tree )
 }
 
 //
-// ERINA •„†‚ğ•œ†‚·‚é
+// ERINA ç¬¦å·ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeERINACodes( PINT ptrDst, ULONG nCount )
 {
@@ -852,7 +852,7 @@ ULONG RLHDecodeContext::DecodeERINACodes( PINT ptrDst, ULONG nCount )
 }
 
 //
-// ERINA •„†‚ğ•œ†‚·‚éi8ƒrƒbƒgƒo[ƒWƒ‡ƒ“j
+// ERINA ç¬¦å·ã‚’å¾©å·ã™ã‚‹ï¼ˆ8ãƒ“ãƒƒãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeERINACodesSBZL( SBYTE * ptrDst, ULONG nCount )
 {
@@ -911,7 +911,7 @@ ULONG RLHDecodeContext::DecodeERINACodesSBZL( SBYTE * ptrDst, ULONG nCount )
 }
 
 //
-// ERINA •„†i256F—pj‚ğ•œ†‚·‚é
+// ERINA ç¬¦å·ï¼ˆ256è‰²ç”¨ï¼‰ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ULONG RLHDecodeContext::DecodeERINACodes256( PBYTE ptrDst, ULONG nCount )
 {
@@ -945,17 +945,17 @@ ULONG RLHDecodeContext::DecodeERINACodes256( PBYTE ptrDst, ULONG nCount )
 
 
 /*****************************************************************************
-                               “WŠJƒIƒuƒWƒFƒNƒg
+                               å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// ƒIƒyƒŒ[ƒVƒ‡ƒ“Às
+// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³å®Ÿè¡Œ
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::PerformOperation
 	( DWORD dwOpCode, LONG nAllBlockLines, PINT * ptrNextLineBuf )
 {
 	//
-	// Ä”z—ñÀs
+	// å†é…åˆ—å®Ÿè¡Œ
 	INT		i, j, k ;
 	UINT	nArrangeCode, nColorOperation, nDiffOperation ;
 	nColorOperation = dwOpCode & 0x0F ;
@@ -978,10 +978,10 @@ void ERIDecoder::PerformOperation
 		}
 	}
 	//
-	// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğÀs
+	// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œ
 	(this->*m_pfnColorOperation[nColorOperation])( ) ;
 	//
-	// ·•ªˆ—‚ğÀsi…•½•ûŒüj
+	// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆæ°´å¹³æ–¹å‘ï¼‰
 	PINT	ptrNextBuf, ptrNextColBuf, ptrLineBuf ;
 	if ( nDiffOperation & 0x01 )
 	{
@@ -1009,7 +1009,7 @@ void ERIDecoder::PerformOperation
 		}
 	}
 	//
-	// ·•ªˆ—‚ğÀsi‚’¼•ûŒüj
+	// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆå‚ç›´æ–¹å‘ï¼‰
 	ptrLineBuf = *ptrNextLineBuf ;
 	ptrNextBuf = m_ptrBuffer ;
 	for ( k = 0; k < (INT) m_nChannelCount; k ++ )
@@ -1033,7 +1033,7 @@ void ERIDecoder::PerformOperation
 }
 
 //
-// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“ŠÖ”ŒQ
+// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢æ•°ç¾¤
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::ColorOperation0000( void )
 {
@@ -1178,7 +1178,7 @@ void ERIDecoder::ColorOperation1111( void )
 }
 
 //
-// RGB‰æ‘œ‚ÌƒXƒgƒA
+// RGBç”»åƒã®ã‚¹ãƒˆã‚¢
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::RestoreRGB24II
 	( PBYTE ptrDst, LONG nLineBytes,
@@ -1208,7 +1208,7 @@ void ERIDecoder::RestoreRGB24II
 }
 
 //
-// RGBA‰æ‘œ‚ÌƒXƒgƒA
+// RGBAç”»åƒã®ã‚¹ãƒˆã‚¢
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::RestoreRGBA32II
 	( PBYTE ptrDst, LONG nLineBytes,
@@ -1238,7 +1238,7 @@ void ERIDecoder::RestoreRGBA32II
 }
 
 //
-// YUV -> RGB •ÏŠ·ŠÖ”
+// YUV -> RGB å¤‰æ›é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::ConvertYUVtoRGB( void )
 {
@@ -1275,12 +1275,12 @@ void ERIDecoder::ConvertYUVtoRGB( void )
 }
 
 //
-// 4:4:4 ƒXƒP[ƒŠƒ“ƒO
+// 4:4:4 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::BlockScaling444( void )
 {
 	//
-	// ‘Sƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// å…¨ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	for ( int i = 0; i < (int) m_nChannelCount; i ++ )
 	{
 		for ( int j = 0; j < 4; j ++ )
@@ -1297,7 +1297,7 @@ void ERIDecoder::BlockScaling444( void )
 }
 
 //
-// 4:2:2 ƒXƒP[ƒŠƒ“ƒO
+// 4:2:2 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::BlockScaling422( void )
 {
@@ -1305,7 +1305,7 @@ void ERIDecoder::BlockScaling422( void )
 	REAL32 *	ptrSrc ;
 	REAL32 *	ptrDst ;
 	//
-	// ‹P“x¬•ª‚ğƒRƒs[
+	// è¼åº¦æˆåˆ†ã‚’ã‚³ãƒ”ãƒ¼
 	for ( i = 0; i < 4; i ++ )
 	{
 		ptrSrc = m_ptrBuffer4[i] ;
@@ -1317,7 +1317,7 @@ void ERIDecoder::BlockScaling422( void )
 		}
 	}
 	//
-	// F·M†‚ğ‚’¼•ûŒü‚ÉL’£
+	// è‰²å·®ä¿¡å·ã‚’å‚ç›´æ–¹å‘ã«ä¼¸å¼µ
 	for ( i = 0; i < 2; i ++ )
 	{
 		for ( j = 0; j < 2; j ++ )
@@ -1343,7 +1343,7 @@ void ERIDecoder::BlockScaling422( void )
 		}
 	}
 	//
-	// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	if ( m_nChannelCount == 4 )
 	{
 		for ( i = 0; i < 4; i ++ )
@@ -1360,7 +1360,7 @@ void ERIDecoder::BlockScaling422( void )
 }
 
 //
-// 4:1:1 ƒXƒP[ƒŠƒ“ƒO
+// 4:1:1 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIDecoder::BlockScaling411( void )
 {
@@ -1368,7 +1368,7 @@ void ERIDecoder::BlockScaling411( void )
 	REAL32 *	ptrSrc ;
 	REAL32 *	ptrDst ;
 	//
-	// ‹P“x¬•ª‚ğƒRƒs[
+	// è¼åº¦æˆåˆ†ã‚’ã‚³ãƒ”ãƒ¼
 	for ( i = 0; i < 4; i ++ )
 	{
 		ptrSrc = m_ptrBuffer4[i] ;
@@ -1380,7 +1380,7 @@ void ERIDecoder::BlockScaling411( void )
 		}
 	}
 	//
-	// F·M†‚ğ‚’¼…•½•ûŒü‚ÉL’£
+	// è‰²å·®ä¿¡å·ã‚’å‚ç›´æ°´å¹³æ–¹å‘ã«ä¼¸å¼µ
 	DWORD	dwOffset[4] =
 	{
 		0,
@@ -1410,7 +1410,7 @@ void ERIDecoder::BlockScaling411( void )
 		}
 	}
 	//
-	// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	if ( m_nChannelCount == 4 )
 	{
 		for ( i = 0; i < 4; i ++ )

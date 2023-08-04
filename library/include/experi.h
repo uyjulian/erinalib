@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2002/05/26
+                                                      æœ€çµ‚æ›´æ–° 2002/05/26
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 /*****************************************************************************
-                       ƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»EI—¹ŠÖ”
+                       ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–ãƒ»çµ‚äº†é–¢æ•°
  *****************************************************************************/
 
 #if	defined(_M_IX86) && !defined(ERI_INTEL_X86)
@@ -41,7 +41,7 @@ extern	"C"	DWORD	ERI_EnabledProcessorType ;
 
 
 /*****************************************************************************
-                         ƒƒ‚ƒŠƒAƒƒP[ƒVƒ‡ƒ“
+                         ãƒ¡ãƒ¢ãƒªã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³
  *****************************************************************************/
 
 extern	PVOID eriAllocateMemory( DWORD dwBytes ) ;
@@ -49,7 +49,7 @@ extern	void eriFreeMemory( PVOID ptrMem ) ;
 
 
 /*****************************************************************************
-                                ‰æ‘œî•ñ
+                                ç”»åƒæƒ…å ±
  *****************************************************************************/
 
 struct	ERI_FILE_HEADER
@@ -139,7 +139,7 @@ union	ENTIS_PALETTE
 
 
 /*****************************************************************************
-                                ‰¹ºî•ñ
+                                éŸ³å£°æƒ…å ±
  *****************************************************************************/
 
 struct	MIO_INFO_HEADER
@@ -169,7 +169,7 @@ struct	MIO_DATA_HEADER
 
 
 /*****************************************************************************
-                            ƒAƒjƒ[ƒVƒ‡ƒ“—pŠÖ”
+                            ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç”¨é–¢æ•°
  *****************************************************************************/
 
 extern	"C"
@@ -188,7 +188,7 @@ extern	"C"
 
 
 /*****************************************************************************
-                                 •`‰æŠÖ”
+                                 æç”»é–¢æ•°
  *****************************************************************************/
 
 extern	"C"
@@ -204,23 +204,23 @@ extern	"C"
 
 
 /*****************************************************************************
-                             ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+                             ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 class	EFileObject
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	EFileObject( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	virtual ~EFileObject( void ) ;
-	// ƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	virtual DWORD Read( void * ptrBuf, DWORD dwByte ) = 0 ;
-	// ƒtƒ@ƒCƒ‹‚Ì’·‚³‚ğæ“¾‚·‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã®é•·ã•ã‚’å–å¾—ã™ã‚‹
 	virtual DWORD GetLength( void ) = 0 ;
-	// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 	virtual DWORD GetPointer( void ) = 0 ;
-	// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğˆÚ“®‚·‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã‚’ç§»å‹•ã™ã‚‹
 	virtual void Seek( DWORD dwPointer ) = 0 ;
 
 } ;
@@ -266,7 +266,7 @@ public:
 
 
 /*****************************************************************************
-                        ERI ƒtƒ@ƒCƒ‹ƒCƒ“ƒ^[ƒtƒF[ƒX
+                        ERI ãƒ•ã‚¡ã‚¤ãƒ«ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
  *****************************************************************************/
 
 class	ERIFile	: public	EFileObject
@@ -289,53 +289,53 @@ protected:
 
 public:
 	//
-	// •¶š—ñƒIƒuƒWƒFƒNƒg
+	// æ–‡å­—åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EStringObj
 	{
 	protected:
 		char *	m_ptrString ;
 		int		m_nLength ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EStringObj( void ) ;
 		EStringObj( const char * pszString, int nLength = -1 ) ;
 		EStringObj( const wchar_t * pwszString, int nLength = -1 ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EStringObj( void ) ;
-		// •¶š—ñQÆ
+		// æ–‡å­—åˆ—å‚ç…§
 		operator const char * ( void ) const
 			{	return	m_ptrString ;	}
 		const char * CharPtr( void ) const
 			{	return	m_ptrString ;	}
 		int GetLength( void ) const
 			{	return	m_nLength ;		}
-		// •¶š—ñ‰„’·
+		// æ–‡å­—åˆ—å»¶é•·
 		void AddString( const EStringObj & string ) ;
-		// ‘ã“ü
+		// ä»£å…¥
 		const EStringObj & operator = ( const EStringObj & string ) ;
 	} ;
 	//
-	// ƒ^ƒOî•ñƒCƒ“ƒfƒbƒNƒX
+	// ã‚¿ã‚°æƒ…å ±ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 	enum	TagIndex
 	{
-		tagTitle,				// ‹È–¼
-		tagVocalPlayer,			// ‰ÌèE‰‰‘tÒ
-		tagComposer,			// ì‹ÈÒ
-		tagArranger,			// •Ò‹ÈÒ
-		tagSource,				// o“WEƒAƒ‹ƒoƒ€
-		tagTrack,				// ƒgƒ‰ƒbƒN
-		tagReleaseDate,			// ƒŠƒŠ[ƒX”NŒ“ú
-		tagGenre,				// ƒWƒƒƒ“ƒ‹
-		tagRewindPoint,			// ƒ‹[ƒvƒ|ƒCƒ“ƒg
-		tagComment,				// ƒRƒƒ“ƒg
-		tagWords,				// ‰ÌŒ
+		tagTitle,				// æ›²å
+		tagVocalPlayer,			// æ­Œæ‰‹ãƒ»æ¼”å¥è€…
+		tagComposer,			// ä½œæ›²è€…
+		tagArranger,			// ç·¨æ›²è€…
+		tagSource,				// å‡ºå±•ãƒ»ã‚¢ãƒ«ãƒãƒ 
+		tagTrack,				// ãƒˆãƒ©ãƒƒã‚¯
+		tagReleaseDate,			// ãƒªãƒªãƒ¼ã‚¹å¹´æœˆæ—¥
+		tagGenre,				// ã‚¸ãƒ£ãƒ³ãƒ«
+		tagRewindPoint,			// ãƒ«ãƒ¼ãƒ—ãƒã‚¤ãƒ³ãƒˆ
+		tagComment,				// ã‚³ãƒ¡ãƒ³ãƒˆ
+		tagWords,				// æ­Œè©
 		tagMax
 	} ;
 	//
-	// ƒ^ƒOî•ñ•¶š—ñ
+	// ã‚¿ã‚°æƒ…å ±æ–‡å­—åˆ—
 	static const char *	m_pszTagName[tagMax] ;
 	//
-	// ƒ^ƒOî•ñƒIƒuƒWƒFƒNƒg
+	// ã‚¿ã‚°æƒ…å ±ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	ETagObject
 	{
 	public:
@@ -343,40 +343,40 @@ public:
 		EStringObj		m_tag ;
 		EStringObj		m_contents ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		ETagObject( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~ETagObject( void ) ;
 	} ;
 	//
-	// ƒ^ƒOî•ñ‰ğÍƒIƒuƒWƒFƒNƒg
+	// ã‚¿ã‚°æƒ…å ±è§£æã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	ETagInfo
 	{
 	public:
 		ETagObject *	m_pTags ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		ETagInfo( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~ETagInfo( void ) ;
-		// ƒ^ƒOî•ñ‰ğÍ
+		// ã‚¿ã‚°æƒ…å ±è§£æ
 		void CreateTagInfo( const char * pszDesc ) ;
-		// ƒ^ƒOî•ñ‚ÌƒNƒŠƒA
+		// ã‚¿ã‚°æƒ…å ±ã®ã‚¯ãƒªã‚¢
 		void DeleteContents( void ) ;
-		// ƒ^ƒOî•ñæ“¾
+		// ã‚¿ã‚°æƒ…å ±å–å¾—
 		const char * GetTagContents( const char * pszTag ) ;
-		// ƒgƒ‰ƒbƒN”Ô†‚ğæ“¾
+		// ãƒˆãƒ©ãƒƒã‚¯ç•ªå·ã‚’å–å¾—
 		int GetTrackNumber( void ) ;
-		// ƒ‹[ƒvƒ|ƒCƒ“ƒg‚ğæ“¾
+		// ãƒ«ãƒ¼ãƒ—ãƒã‚¤ãƒ³ãƒˆã‚’å–å¾—
 		int GetRewindPoint( void ) ;
-		// ƒŠƒŠ[ƒX”NŒ“ú‚ğæ“¾
+		// ãƒªãƒªãƒ¼ã‚¹å¹´æœˆæ—¥ã‚’å–å¾—
 		bool GetReleaseDate( int & year, int & month, int & day ) ;
 	private:
-		// •¶š—ñ‚ğ”’l‚É•ÏŠ·
+		// æ–‡å­—åˆ—ã‚’æ•°å€¤ã«å¤‰æ›
 		int StringToInt( const char *& pszValue ) ;
 	} ;
 
-	// “Ç‚İ‚İƒ}ƒXƒN
+	// èª­ã¿è¾¼ã¿ãƒã‚¹ã‚¯
 	enum	ReadMask
 	{
 		rmFileHeader	= 0x00000001,
@@ -388,45 +388,45 @@ public:
 		rmPaletteTable	= 0x00000040
 	} ;
 	DWORD			m_fdwReadMask ;
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€
 	ERI_FILE_HEADER	m_FileHeader ;
-	// ƒvƒŒƒrƒ…[‰æ‘œî•ñƒwƒbƒ_
+	// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 	ERI_INFO_HEADER	m_PreviewInfo ;
-	// ‰æ‘œî•ñƒwƒbƒ_
+	// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 	ERI_INFO_HEADER	m_InfoHeader ;
-	// ‰¹ºî•ñƒwƒbƒ_
+	// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€
 	MIO_INFO_HEADER	m_MIOInfHdr ;
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«
 	ENTIS_PALETTE	m_PaletteTable[0x100] ;
-	// ’˜ìŒ î•ñ
+	// è‘—ä½œæ¨©æƒ…å ±
 	EStringObj		m_strCopyright ;
-	// ƒRƒƒ“ƒg
+	// ã‚³ãƒ¡ãƒ³ãƒˆ
 	EStringObj		m_strDescription ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	ERIFile( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	virtual ~ERIFile( void ) ;
 
-	// ƒtƒ@ƒCƒ‹‚ÌƒI[ƒvƒ“•û–@
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚ªãƒ¼ãƒ—ãƒ³æ–¹æ³•
 	enum	OpenType
 	{
-		otOpenRoot,			// ƒ‹[ƒgƒŒƒR[ƒh‚ğŠJ‚­‚¾‚¯
-		otReadHeader,		// î•ñƒwƒbƒ_ƒŒƒR[ƒh‚ğ“Ç‚İ‚ñ‚Å’l‚ğŒŸØ
-		otOpenStream,		// ƒwƒbƒ_‚ğ“Ç‚İ‚İƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚ğŠJ‚­
-		otOpenImageData		// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh‚ğŠJ‚­
+		otOpenRoot,			// ãƒ«ãƒ¼ãƒˆãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ãã ã‘
+		otReadHeader,		// æƒ…å ±ãƒ˜ãƒƒãƒ€ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚“ã§å€¤ã‚’æ¤œè¨¼
+		otOpenStream,		// ãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã¿ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
+		otOpenImageData		// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 	} ;
-	// Œb—‚¿‚á‚ñƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// æµç†ã¡ã‚ƒã‚“ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	bool Open( EFileObject * pFile, OpenType type = otOpenImageData ) ;
-	// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
 
-	// ƒŒƒR[ƒh‚ğŠJ‚­
+	// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 	bool DescendRecord( const UINT64 * pRecID = NULL ) ;
-	// ƒŒƒR[ƒh‚ğ•Â‚¶‚é
+	// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‰ã˜ã‚‹
 	void AscendRecord( void ) ;
-	// ƒŒƒR[ƒhID‚ğæ“¾‚·‚é
+	// ãƒ¬ã‚³ãƒ¼ãƒ‰IDã‚’å–å¾—ã™ã‚‹
 	UINT64 GetRecordID( void ) const ;
 
 	virtual DWORD Read( void * ptrBuf, DWORD dwByte ) ;
@@ -438,7 +438,7 @@ public:
 
 
 /*****************************************************************************
-                         ƒnƒtƒ}ƒ“EƒcƒŠ[E\‘¢‘Ì
+                         ãƒãƒ•ãƒãƒ³ãƒ»ãƒ„ãƒªãƒ¼ãƒ»æ§‹é€ ä½“
  *****************************************************************************/
 
 #define	ERINA_CODE_FLAG			0x80000000U
@@ -461,59 +461,59 @@ struct	ERINA_HUFFMAN_TREE
 	int					m_iEscape ;
 	int					m_iTreePointer ;
 
-	// ƒcƒŠ[‚Ì‰Šú‰»
+	// ãƒ„ãƒªãƒ¼ã®åˆæœŸåŒ–
 	void Initialize( void ) ;
-	// ”­¶•p“x‚ğƒCƒ“ƒNƒŠƒƒ“ƒg
+	// ç™ºç”Ÿé »åº¦ã‚’ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
 	void IncreaseOccuedCount( int iEntry ) ;
-	// e‚Ìd‚İ‚ğÄŒvZ‚·‚é
+	// è¦ªã®é‡ã¿ã‚’å†è¨ˆç®—ã™ã‚‹
 	void RecountOccuredCount( int iParent ) ;
-	// ƒcƒŠ[‚Ì³‹K‰»
+	// ãƒ„ãƒªãƒ¼ã®æ­£è¦åŒ–
 	void Normalize( int iEntry ) ;
-	// V‚µ‚¢ƒtƒŠ[ƒGƒ“ƒgƒŠ‚ğì¬‚µ‚Ä’Ç‰Á
+	// æ–°ã—ã„ãƒ•ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’ä½œæˆã—ã¦è¿½åŠ 
 	void AddNewEntry( int nNewCode ) ;
-	// ŠeoŒ»”‚ğ2•ª‚Ì1‚É‚µ‚Ä–Ø‚ğÄ\¬
+	// å„å‡ºç¾æ•°ã‚’2åˆ†ã®1ã«ã—ã¦æœ¨ã‚’å†æ§‹æˆ
 	void HalfAndRebuild( void ) ;
 
 } ;
 
 
 /*****************************************************************************
-                     ƒ‰ƒ“ƒŒƒ“ƒOƒXEƒKƒ“ƒ}EƒRƒ“ƒeƒLƒXƒg
+                     ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ãƒ»ã‚¬ãƒ³ãƒãƒ»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 class	RLHDecodeContext
 {
 protected:
-	int		m_flgZero ;			// ƒ[ƒƒtƒ‰ƒO
-	ULONG	m_nLength ;			// ƒ‰ƒ“ƒŒƒ“ƒOƒX
-	int		m_nIntBufCount ;	// ’†ŠÔ“ü—Íƒoƒbƒtƒ@‚É’~Ï‚³‚ê‚Ä‚¢‚éƒrƒbƒg”
-	DWORD	m_dwIntBuffer ;		// ’†ŠÔ“ü—Íƒoƒbƒtƒ@
-	ULONG	m_nBufferingSize ;	// ƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚éƒoƒCƒg”
-	ULONG	m_nBufCount ;		// ƒoƒbƒtƒ@‚Ìc‚èƒoƒCƒg”
-	PBYTE	m_ptrBuffer ;		// “ü—Íƒoƒbƒtƒ@‚Ìæ“ª‚Ö‚Ìƒ|ƒCƒ“ƒ^
-	PBYTE	m_ptrNextBuf ;		// Ÿ‚É“Ç‚İ‚Ş‚×‚«“ü—Íƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
+	int		m_flgZero ;			// ã‚¼ãƒ­ãƒ•ãƒ©ã‚°
+	ULONG	m_nLength ;			// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹
+	int		m_nIntBufCount ;	// ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã«è“„ç©ã•ã‚Œã¦ã„ã‚‹ãƒ“ãƒƒãƒˆæ•°
+	DWORD	m_dwIntBuffer ;		// ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+	ULONG	m_nBufferingSize ;	// ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã™ã‚‹ãƒã‚¤ãƒˆæ•°
+	ULONG	m_nBufCount ;		// ãƒãƒƒãƒ•ã‚¡ã®æ®‹ã‚Šãƒã‚¤ãƒˆæ•°
+	PBYTE	m_ptrBuffer ;		// å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã®å…ˆé ­ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+	PBYTE	m_ptrNextBuf ;		// æ¬¡ã«èª­ã¿è¾¼ã‚€ã¹ãå…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
 
 	struct	ARITHCODE_SYMBOL
 	{
-		WORD	wOccured ;					// ƒVƒ“ƒ{ƒ‹‚ÌoŒ»‰ñ”
-		SWORD	wSymbol ;					// ƒVƒ“ƒ{ƒ‹
+		WORD	wOccured ;					// ã‚·ãƒ³ãƒœãƒ«ã®å‡ºç¾å›æ•°
+		SWORD	wSymbol ;					// ã‚·ãƒ³ãƒœãƒ«
 	} ;
 	struct	STATISTICAL_MODEL
 	{
-		DWORD				dwTotalSymbolCount ;	// ‘SƒVƒ“ƒ{ƒ‹” < 10000H
-		ARITHCODE_SYMBOL	SymbolTable[1] ;		// “Œvƒ‚ƒfƒ‹
+		DWORD				dwTotalSymbolCount ;	// å…¨ã‚·ãƒ³ãƒœãƒ«æ•° < 10000H
+		ARITHCODE_SYMBOL	SymbolTable[1] ;		// çµ±è¨ˆãƒ¢ãƒ‡ãƒ«
 	} ;
-	DWORD	m_dwCodeRegister ;		// ƒR[ƒhƒŒƒWƒXƒ^
-	DWORD	m_dwAugendRegister ;	// ƒI[ƒWƒFƒ“ƒhƒŒƒWƒXƒ^
-	DWORD	m_dwCodeBuffer ;		// ƒrƒbƒgƒoƒbƒtƒ@
-	int		m_nVirtualPostBuf ;		// ‰¼‘zƒoƒbƒtƒ@ƒJƒEƒ“ƒ^
-	int		m_nSymbolBitCount ;		// •„†‚Ìƒrƒbƒg”
-	int		m_nSymbolSortCount ;	// •„†‚Ì‘”
-	int		m_maskSymbolBit ;		// •„†‚Ìƒrƒbƒgƒ}ƒXƒN
-	STATISTICAL_MODEL *	m_pLastStatisticalModel ;		// ÅŒã‚Ì“Œvƒ‚ƒfƒ‹
-	STATISTICAL_MODEL *	m_pStatisticalTable[0x100] ;	// “Œvƒ‚ƒfƒ‹
+	DWORD	m_dwCodeRegister ;		// ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿
+	DWORD	m_dwAugendRegister ;	// ã‚ªãƒ¼ã‚¸ã‚§ãƒ³ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿
+	DWORD	m_dwCodeBuffer ;		// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ•ã‚¡
+	int		m_nVirtualPostBuf ;		// ä»®æƒ³ãƒãƒƒãƒ•ã‚¡ã‚«ã‚¦ãƒ³ã‚¿
+	int		m_nSymbolBitCount ;		// ç¬¦å·ã®ãƒ“ãƒƒãƒˆæ•°
+	int		m_nSymbolSortCount ;	// ç¬¦å·ã®ç·æ•°
+	int		m_maskSymbolBit ;		// ç¬¦å·ã®ãƒ“ãƒƒãƒˆãƒã‚¹ã‚¯
+	STATISTICAL_MODEL *	m_pLastStatisticalModel ;		// æœ€å¾Œã®çµ±è¨ˆãƒ¢ãƒ‡ãƒ«
+	STATISTICAL_MODEL *	m_pStatisticalTable[0x100] ;	// çµ±è¨ˆãƒ¢ãƒ‡ãƒ«
 
-	// MTF ƒe[ƒuƒ‹
+	// MTF ãƒ†ãƒ¼ãƒ–ãƒ«
 	struct	MTF_TABLE
 	{
 		BYTE	iplt[0x100] ;
@@ -523,65 +523,65 @@ protected:
 	} ;
 	MTF_TABLE *	m_pMTFTable[0x101] ;
 
-	// •œ†ŠÖ”
+	// å¾©å·é–¢æ•°
 	typedef	ULONG (RLHDecodeContext::*PFUNC_DECODE_SYMBOLS)
 									( PINT ptrDst, ULONG nCount ) ;
 	PFUNC_DECODE_SYMBOLS	m_pfnDecodeSymbols ;
 
-	// ƒnƒtƒ}ƒ“–Ø
+	// ãƒãƒ•ãƒãƒ³æœ¨
 	ERINA_HUFFMAN_TREE *	m_pLastHuffmanTree ;
 	ERINA_HUFFMAN_TREE *	m_pHuffmanTree[0x101] ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	RLHDecodeContext( ULONG nBufferingSize ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	virtual ~RLHDecodeContext( void ) ;
 
-	// Ÿ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	virtual ULONG ReadNextData( PBYTE ptrBuffer, ULONG nBytes ) = 0 ;
 
-	// ƒ[ƒƒtƒ‰ƒO‚ğ“Ç‚İ‚ñ‚ÅAƒRƒ“ƒeƒLƒXƒg‚ğ‰Šú‰»‚·‚é
+	// ã‚¼ãƒ­ãƒ•ãƒ©ã‚°ã‚’èª­ã¿è¾¼ã‚“ã§ã€ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
 	void Initialize( void ) ;
-	// ƒoƒbƒtƒ@‚ª‹ó‚ÌAŸ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// ãƒãƒƒãƒ•ã‚¡ãŒç©ºã®æ™‚ã€æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	int PrefetchBuffer( void ) ;
-	// 1ƒrƒbƒgæ“¾‚·‚éi 0 –”‚Í|1‚ğ•Ô‚· j
+	// 1ãƒ“ãƒƒãƒˆå–å¾—ã™ã‚‹ï¼ˆ 0 åˆã¯âˆ’1ã‚’è¿”ã™ ï¼‰
 	INT GetABit( void ) ;
-	// nƒrƒbƒgæ“¾‚·‚é
+	// nãƒ“ãƒƒãƒˆå–å¾—ã™ã‚‹
 	UINT GetNBits( int n ) ;
-	// ƒKƒ“ƒ}ƒR[ƒh‚ğæ“¾‚·‚é
+	// ã‚¬ãƒ³ãƒã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	INT GetACode( void ) ;
 
-	// ƒoƒbƒtƒ@‚ğƒtƒ‰ƒbƒVƒ…‚·‚é
+	// ãƒãƒƒãƒ•ã‚¡ã‚’ãƒ•ãƒ©ãƒƒã‚·ãƒ¥ã™ã‚‹
 	void FlushBuffer( void ) ;
-	// Zp•„†‚Ì•œ†‚Ì€”õ‚·‚é
+	// ç®—è¡“ç¬¦å·ã®å¾©å·ã®æº–å‚™ã™ã‚‹
 	void PrepareToDecodeArithmeticCode( int nBitCount ) ;
-	// RL-MTF-G •„†‚Ì•œ†‚Ì€”õ‚ğ‚·‚é
+	// RL-MTF-G ç¬¦å·ã®å¾©å·ã®æº–å‚™ã‚’ã™ã‚‹
 	void PrepareToDecodeRLMTFGCode( void ) ;
 
-	// “WŠJ‚µ‚½ƒf[ƒ^‚ğæ“¾‚·‚é
+	// å±•é–‹ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	inline ULONG DecodeSymbols( PINT ptrDst, ULONG nCount ) ;
 	ULONG DecodeGammaCodes( PINT ptrDst, ULONG nCount ) ;
 	ULONG DecodeArithmeticCodes( PINT ptrDst, ULONG nCount ) ;
 	ULONG DecodeRLMTFGCodes( PBYTE ptrDst, ULONG nCount ) ;
 
-	// ERINA •„†‚Ì•œ†‚Ì€”õ‚ğ‚·‚é
+	// ERINA ç¬¦å·ã®å¾©å·ã®æº–å‚™ã‚’ã™ã‚‹
 	void PrepareToDecodeERINACode( void ) ;
-	// ƒnƒtƒ}ƒ“•„†‚ğæ“¾‚·‚é
+	// ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å–å¾—ã™ã‚‹
 	int GetAHuffmanCode( ERINA_HUFFMAN_TREE * tree ) ;
-	// ’·‚³‚Ìƒnƒtƒ}ƒ“•„†‚ğæ“¾‚·‚é
+	// é•·ã•ã®ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å–å¾—ã™ã‚‹
 	int GetLengthHuffman( ERINA_HUFFMAN_TREE * tree ) ;
-	// ERINA •„†‚ğ•œ†‚·‚é
+	// ERINA ç¬¦å·ã‚’å¾©å·ã™ã‚‹
 	ULONG DecodeERINACodes( PINT ptrDst, ULONG nCount ) ;
-	// ERINA •„†‚ğ•œ†‚·‚é
+	// ERINA ç¬¦å·ã‚’å¾©å·ã™ã‚‹
 	ULONG DecodeERINACodesSBZL( SBYTE * ptrDst, ULONG nCount ) ;
-	// ERINA •„†i256F—pj‚ğ•œ†‚·‚é
+	// ERINA ç¬¦å·ï¼ˆ256è‰²ç”¨ï¼‰ã‚’å¾©å·ã™ã‚‹
 	ULONG DecodeERINACodes256( PBYTE ptrDst, ULONG nCount ) ;
 
 } ;
 
 //
-// MTF_TABLE ‚ğ‰Šú‰»‚·‚é
+// MTF_TABLE ã‚’åˆæœŸåŒ–ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 inline void RLHDecodeContext::MTF_TABLE::Initialize( void )
 {
@@ -590,7 +590,7 @@ inline void RLHDecodeContext::MTF_TABLE::Initialize( void )
 }
 
 //
-// Move To Front ‚ğÀs
+// Move To Front ã‚’å®Ÿè¡Œ
 //////////////////////////////////////////////////////////////////////////////
 inline BYTE RLHDecodeContext::MTF_TABLE::MoveToFront( int index )
 {
@@ -604,7 +604,7 @@ inline BYTE RLHDecodeContext::MTF_TABLE::MoveToFront( int index )
 }
 
 //
-// “WŠJ‚µ‚½ƒf[ƒ^‚ğæ“¾‚·‚é
+// å±•é–‹ã—ãŸãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 inline ULONG RLHDecodeContext::DecodeSymbols( PINT ptrDst, ULONG nCount )
 {
@@ -613,33 +613,33 @@ inline ULONG RLHDecodeContext::DecodeSymbols( PINT ptrDst, ULONG nCount )
 
 
 /*****************************************************************************
-                               “WŠJƒIƒuƒWƒFƒNƒg
+                               å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 class	ERIDecoder
 {
 protected:
-	ERI_INFO_HEADER		m_EriInfHdr ;			// ‰æ‘œî•ñƒwƒbƒ_
+	ERI_INFO_HEADER		m_EriInfHdr ;			// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 
-	UINT				m_nBlockSize ;			// ƒuƒƒbƒLƒ“ƒOƒTƒCƒY
-	ULONG				m_nBlockArea ;			// ƒuƒƒbƒN–ÊÏ
-	ULONG				m_nBlockSamples ;		// ƒuƒƒbƒN‚ÌƒTƒ“ƒvƒ‹”
-	UINT				m_nChannelCount ;		// ƒ`ƒƒƒlƒ‹”
-	ULONG				m_nWidthBlocks ;		// ‰æ‘œ‚Ì•iƒuƒƒbƒN”j
-	ULONG				m_nHeightBlocks ;		// ‰æ‘œ‚Ì‚‚³iƒuƒƒbƒN”j
+	UINT				m_nBlockSize ;			// ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã‚µã‚¤ã‚º
+	ULONG				m_nBlockArea ;			// ãƒ–ãƒ­ãƒƒã‚¯é¢ç©
+	ULONG				m_nBlockSamples ;		// ãƒ–ãƒ­ãƒƒã‚¯ã®ã‚µãƒ³ãƒ—ãƒ«æ•°
+	UINT				m_nChannelCount ;		// ãƒãƒ£ãƒãƒ«æ•°
+	ULONG				m_nWidthBlocks ;		// ç”»åƒã®å¹…ï¼ˆãƒ–ãƒ­ãƒƒã‚¯æ•°ï¼‰
+	ULONG				m_nHeightBlocks ;		// ç”»åƒã®é«˜ã•ï¼ˆãƒ–ãƒ­ãƒƒã‚¯æ•°ï¼‰
 
-	UINT				m_nDstBytesPerPixel ;	// 1ƒsƒNƒZƒ‹‚ÌƒoƒCƒg”
+	UINT				m_nDstBytesPerPixel ;	// 1ãƒ”ã‚¯ã‚»ãƒ«ã®ãƒã‚¤ãƒˆæ•°
 
-	PBYTE				m_ptrOperations ;		// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒe[ƒuƒ‹
-	PINT				m_ptrColumnBuf ;		// —ñƒoƒbƒtƒ@
-	PINT				m_ptrLineBuf ;			// sƒoƒbƒtƒ@
-	PINT				m_ptrBuffer ;			// “à•”ƒoƒbƒtƒ@
-	PINT				m_ptrSubBuf ;			// “à•”ƒoƒbƒtƒ@
+	PBYTE				m_ptrOperations ;		// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ãƒ¼ãƒ–ãƒ«
+	PINT				m_ptrColumnBuf ;		// åˆ—ãƒãƒƒãƒ•ã‚¡
+	PINT				m_ptrLineBuf ;			// è¡Œãƒãƒƒãƒ•ã‚¡
+	PINT				m_ptrBuffer ;			// å†…éƒ¨ãƒãƒƒãƒ•ã‚¡
+	PINT				m_ptrSubBuf ;			// å†…éƒ¨ãƒãƒƒãƒ•ã‚¡
 
-	INT					m_fEnhancedMode ;		// Šg’£ƒ‚[ƒh
-	PINT				m_pArrangeTable[4] ;	// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹
+	INT					m_fEnhancedMode ;		// æ‹¡å¼µãƒ¢ãƒ¼ãƒ‰
+	PINT				m_pArrangeTable[4] ;	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«
 
-	ERINA_HUFFMAN_TREE *	m_pHuffmanTree ;	// ƒnƒtƒ}ƒ“–Ø
+	ERINA_HUFFMAN_TREE *	m_pHuffmanTree ;	// ãƒãƒ•ãƒãƒ³æœ¨
 
 public:
 	typedef	void (ERIDecoder::*PFUNC_COLOR_OPRATION)( void ) ;
@@ -656,20 +656,20 @@ public:
 	typedef	void (ERIDecoder::*PFUNC_BLOCK_SCALING)( void ) ;
 
 protected:
-	UINT				m_nBlocksetCount ;		// 1ƒuƒƒbƒNƒZƒbƒg‚ÌƒuƒƒbƒN”
-	PFUNC_BLOCK_SCALING	m_pfnBlockScaling ;		// ƒuƒƒbƒNƒXƒP[ƒŠƒ“ƒOŠÖ”
+	UINT				m_nBlocksetCount ;		// 1ãƒ–ãƒ­ãƒƒã‚¯ã‚»ãƒƒãƒˆã®ãƒ–ãƒ­ãƒƒã‚¯æ•°
+	PFUNC_BLOCK_SCALING	m_pfnBlockScaling ;		// ãƒ–ãƒ­ãƒƒã‚¯ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°é–¢æ•°
 
-	REAL32 *			m_ptrBuffer2[4][4] ;	// “à•”ƒoƒbƒtƒ@
+	REAL32 *			m_ptrBuffer2[4][4] ;	// å†…éƒ¨ãƒãƒƒãƒ•ã‚¡
 	REAL32 *			m_ptrBuffer3[16] ;
 	REAL32 *			m_ptrBuffer4[16] ;
-	REAL32 *			m_ptrWorkDCT1 ;			// DCT •ÏŠ·—pì‹Æ—Ìˆæ
+	REAL32 *			m_ptrWorkDCT1 ;			// DCT å¤‰æ›ç”¨ä½œæ¥­é ˜åŸŸ
 	REAL32 *			m_ptrWorkDCT2 ;
-	INT					m_nDCDiffBuffer[16] ;	// DC ¬•ª·•ª—pƒoƒbƒtƒ@
+	INT					m_nDCDiffBuffer[16] ;	// DC æˆåˆ†å·®åˆ†ç”¨ãƒãƒƒãƒ•ã‚¡
 
-	PINT				m_ptrTableDC ;			// ’¼—¬¬•ª
+	PINT				m_ptrTableDC ;			// ç›´æµæˆåˆ†
 
-	REAL32				m_rMatrixScale ;		// DCT s—ñŒW”
-	REAL32				m_rYScaleDC ;			// ’¼—¬¬•ª‚Ì‹t—Êq‰»ŒW”
+	REAL32				m_rMatrixScale ;		// DCT è¡Œåˆ—ä¿‚æ•°
+	REAL32				m_rYScaleDC ;			// ç›´æµæˆåˆ†ã®é€†é‡å­åŒ–ä¿‚æ•°
 	REAL32				m_rCScaleDC ;
 
 protected:
@@ -677,43 +677,43 @@ protected:
 	static const OPERATION_CODE_II	m_opcCodeTable[0x40] ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	ERIDecoder( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	virtual ~ERIDecoder( void ) ;
 
-	// ‰Šú‰»iƒpƒ‰ƒ[ƒ^‚Ìİ’èj
+	// åˆæœŸåŒ–ï¼ˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®šï¼‰
 	virtual int Initialize( const ERI_INFO_HEADER & infhdr ) ;
-	// I—¹iƒƒ‚ƒŠ‚Ì‰ğ•ú‚È‚Çj
+	// çµ‚äº†ï¼ˆãƒ¡ãƒ¢ãƒªã®è§£æ”¾ãªã©ï¼‰
 	virtual void Delete( void ) ;
-	// ‰æ‘œ‚ğ“WŠJ
+	// ç”»åƒã‚’å±•é–‹
 	virtual int DecodeImage
 		( const RASTER_IMAGE_INFO & dstimginf,
 			RLHDecodeContext & context, bool fTopDown ) ;
 
 protected:
-	// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì‰Šú‰»
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 	void InitializeArrangeTable( void ) ;
 	void InitializeArrangeTableII( void ) ;
-	// ƒtƒ‹ƒJƒ‰[‰æ‘œ‚Ì“WŠJ
+	// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒã®å±•é–‹
 	int DecodeTrueColorImage
 		( const RASTER_IMAGE_INFO & dstimginf, RLHDecodeContext & context ) ;
-	// ƒtƒ‹ƒJƒ‰[‰æ‘œŠg’£ƒtƒH[ƒ}ƒbƒg‚Ì“WŠJ
+	// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒæ‹¡å¼µãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®å±•é–‹
 	int DecodeTrueColorImageII
 		( const RASTER_IMAGE_INFO & dstimginf, RLHDecodeContext & context ) ;
-	// ƒpƒŒƒbƒg‰æ‘œ‚Ì“WŠJ
+	// ãƒ‘ãƒ¬ãƒƒãƒˆç”»åƒã®å±•é–‹
 	int DecodePaletteImage
 		( const RASTER_IMAGE_INFO & dstimginf, RLHDecodeContext & context ) ;
 
-	// ƒIƒyƒŒ[ƒVƒ‡ƒ“Às
+	// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³å®Ÿè¡Œ
 	void PerformOperation
 		( DWORD dwOpCode, LONG nAllBlockLines, PINT * ptrNextLineBuf ) ;
 
-	// “WŠJ‰æ‘œ‚ğƒXƒgƒA‚·‚éŠÖ”‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+	// å±•é–‹ç”»åƒã‚’ã‚¹ãƒˆã‚¢ã™ã‚‹é–¢æ•°ã¸ã®ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 	virtual PFUNC_RESTORE GetRestoreFunc
 		( DWORD fdwFormatType, DWORD dwBitsPerPixel ) ;
 
-	// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“ŠÖ”ŒQ
+	// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢æ•°ç¾¤
 	void ColorOperation0000( void ) ;
 	void ColorOperation0101( void ) ;
 	void ColorOperation0110( void ) ;
@@ -725,59 +725,59 @@ protected:
 	void ColorOperation1110( void ) ;
 	void ColorOperation1111( void ) ;
 
-	// ƒOƒŒƒC‰æ‘œ‚Ì“WŠJ
+	// ã‚°ãƒ¬ã‚¤ç”»åƒã®å±•é–‹
 	void RestoreGray8
 		( PBYTE ptrDst, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGB‰æ‘œ(15ƒrƒbƒg)‚Ì“WŠJ
+	// RGBç”»åƒ(15ãƒ“ãƒƒãƒˆ)ã®å±•é–‹
 	void RestoreRGB16
 		( PBYTE ptrDst, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGB‰æ‘œ‚Ì“WŠJ
+	// RGBç”»åƒã®å±•é–‹
 	void RestoreRGB24
 		( PBYTE ptrDst, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGBA‰æ‘œ‚Ì“WŠJ
+	// RGBAç”»åƒã®å±•é–‹
 	void RestoreRGBA32
 		( PBYTE ptrDst, LONG nLineBytes, int nWidth, int nHeight ) ;
 
 protected:
-	// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì‰Šú‰»
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 	void InitializeZigZagTable( void ) ;
-	// ƒtƒ‹ƒJƒ‰[‰æ‘œ‚Ìˆ³k
+	// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒã®åœ§ç¸®
 	int DecodeTrueColorImageDCT
 		( const RASTER_IMAGE_INFO & imginf, RLHDecodeContext & context ) ;
 
-	// “WŠJ‰æ‘œ‚ğƒXƒgƒA‚·‚éŠÖ”‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+	// å±•é–‹ç”»åƒã‚’ã‚¹ãƒˆã‚¢ã™ã‚‹é–¢æ•°ã¸ã®ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 	virtual PFUNC_RESTOREII GetRestoreFuncII
 		( DWORD fdwFormatType, DWORD dwBitsPerPixel ) ;
 
-	// À”‚ğ®”‚ÉŠÛ‚ß‚ÄBYTEŒ^‚É–O˜a
+	// å®Ÿæ•°ã‚’æ•´æ•°ã«ä¸¸ã‚ã¦BYTEå‹ã«é£½å’Œ
 	BYTE RoundR32ToByte( REAL32 r ) ;
-	// RGB‰æ‘œ‚Ì“WŠJ
+	// RGBç”»åƒã®å±•é–‹
 	void RestoreRGB24II
 		( PBYTE ptrDst, LONG nLineBytes,
 			REAL32 * ptrSrc[], int nWidth, int nHeight ) ;
-	// RGBA‰æ‘œ‚Ì“WŠJ
+	// RGBAç”»åƒã®å±•é–‹
 	void RestoreRGBA32II
 		( PBYTE ptrDst, LONG nLineBytes,
 			REAL32 * ptrSrc[], int nWidth, int nHeight ) ;
 
-	// YUV -> RGB •ÏŠ·ŠÖ”
+	// YUV -> RGB å¤‰æ›é–¢æ•°
 	void ConvertYUVtoRGB( void ) ;
 
-	// 4:4:4 ƒXƒP[ƒŠƒ“ƒO
+	// 4:4:4 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 	void BlockScaling444( void ) ;
-	// 4:2:2 ƒXƒP[ƒŠƒ“ƒO
+	// 4:2:2 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 	void BlockScaling422( void ) ;
-	// 4:1:1 ƒXƒP[ƒŠƒ“ƒO
+	// 4:1:1 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 	void BlockScaling411( void ) ;
 
-	// IDCT •ÏŠ·‚ğ{‚·
+	// IDCT å¤‰æ›ã‚’æ–½ã™
 	void PerformIDCT( void ) ;
 
-	// ‹t—Êq‰»‚ğ{‚·
+	// é€†é‡å­åŒ–ã‚’æ–½ã™
 	void ArrangeAndIQuantumize( BYTE bytCoefficient[] ) ;
 
 protected:
-	// “WŠJisó‹µ’Ê’mŠÖ”
+	// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 	virtual int OnDecodedBlock( LONG line, LONG column ) ;
 	virtual int OnDecodedLine( LONG line ) ;
 
@@ -785,24 +785,24 @@ protected:
 
 
 /*****************************************************************************
-                     ƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ€ƒRƒ“ƒeƒLƒXƒg
+                     ãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 class	EFileDecodeContext	: public	RLHDecodeContext
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	EFileDecodeContext( EFileObject * pFileObj, ULONG nBufferingSize ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	virtual ~EFileDecodeContext( void ) ;
 
 protected:
 	EFileObject *	m_pFileObj ;
 
 public:
-	// Ÿ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	virtual ULONG ReadNextData( PBYTE ptrBuffer, ULONG nBytes ) ;
-	// ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg‚ğİ’è‚·‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¨­å®šã™ã‚‹
 	void AttachFileObject( EFileObject * pFileObj ) ;
 
 } ;

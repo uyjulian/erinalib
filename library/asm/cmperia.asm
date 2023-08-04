@@ -1,7 +1,7 @@
 
 ; ****************************************************************************
 ;                        E R I N A - L i b r a r y
-;                                                      ÅIXV 2001/11/04
+;                                                      æœ€çµ‚æ›´æ–° 2001/11/04
 ; ----------------------------------------------------------------------------
 ;         Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
 ; ****************************************************************************
@@ -18,7 +18,7 @@
 
 
 ; ----------------------------------------------------------------------------
-;                        ƒRƒ“ƒXƒ^ƒ“ƒgƒZƒOƒƒ“ƒg
+;                        ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆã‚»ã‚°ãƒ¡ãƒ³ãƒˆ
 ; ----------------------------------------------------------------------------
 
 ConstSeg	Segment	Para ReadOnly Flat 'CONST'
@@ -50,22 +50,22 @@ ConstSeg	EndS
 
 
 ; ----------------------------------------------------------------------------
-;                             ƒR[ƒhƒZƒOƒƒ“ƒg
+;                             ã‚³ãƒ¼ãƒ‰ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ
 ; ----------------------------------------------------------------------------
 
 CodeSeg	Segment	Para ReadOnly Flat 'CODE'
 
 ;
-;	‚ƒrƒbƒgo—Í‚·‚éƒ}ƒNƒ
+;	ï½ãƒ“ãƒƒãƒˆå‡ºåŠ›ã™ã‚‹ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ; @OutNBits <esc_label>
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EAX register	: o—Í‚·‚éƒrƒbƒgƒpƒ^[ƒ“
-;	EBX register	: RLHEncodeContext\‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	ECX register	: o—Í‚·‚éƒrƒbƒg”
-; ƒŒƒWƒXƒ^G
-;	EBX, EBP, ESP ƒŒƒWƒXƒ^‚Í•Û‘¶‚³‚ê‚éB	
+; å¼•æ•°ï¼›
+;	EAX register	: å‡ºåŠ›ã™ã‚‹ãƒ“ãƒƒãƒˆãƒ‘ã‚¿ãƒ¼ãƒ³
+;	EBX register	: RLHEncodeContextæ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	ECX register	: å‡ºåŠ›ã™ã‚‹ãƒ“ãƒƒãƒˆæ•°
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿å­˜ã•ã‚Œã‚‹ã€‚	
 ; ----------------------------------------------------------------------------
 
 @OutNBits	Macro	esc_label:Req
@@ -76,14 +76,14 @@ CodeSeg	Segment	Para ReadOnly Flat 'CODE'
 		Lea	edi, [edx + ecx]
 		.If	edi < 32
 			;;
-			;; ’†ŠÔƒoƒbƒtƒ@‚É‚Í—]—T‚ª‚ ‚é
+			;; ä¸­é–“ãƒãƒƒãƒ•ã‚¡ã«ã¯ä½™è£•ãŒã‚ã‚‹
 			ShlD	esi, eax, cl
 			Mov	[ebx].m_nIntBufCount, edi
 			Mov	[ebx].m_dwIntBuffer, esi
 			.Break
 		.Else
 			;;
-			;; ’†ŠÔƒoƒbƒtƒ@‚ª‚¢‚Á‚Ï‚¢‚É‚È‚é
+			;; ä¸­é–“ãƒãƒƒãƒ•ã‚¡ãŒã„ã£ã±ã„ã«ãªã‚‹
 			.If	edx == 0
 				Mov	esi, eax
 				Xor	eax, eax
@@ -100,7 +100,7 @@ CodeSeg	Segment	Para ReadOnly Flat 'CODE'
 				Mov	ecx, edi
 			.EndIf
 			;;
-			;; ƒoƒbƒtƒ@‚Éo—Í
+			;; ãƒãƒƒãƒ•ã‚¡ã«å‡ºåŠ›
 			Mov	edi, [ebx].m_ptrBuffer
 			Mov	edx, [ebx].m_nBufCount
 			BSwap	esi
@@ -141,7 +141,7 @@ CodeSeg	Segment	Para ReadOnly Flat 'CODE'
 
 
 ;
-;	‚ƒrƒbƒgo—Í‚·‚é
+;	ï½ãƒ“ãƒƒãƒˆå‡ºåŠ›ã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -183,16 +183,16 @@ RLHEncodeContext@@OutNBits	EndP
 
 
 ;
-;	ƒKƒ“ƒ}•„†‚Ìƒrƒbƒg’·‚ğŒvZ
+;	ã‚¬ãƒ³ãƒç¬¦å·ã®ãƒ“ãƒƒãƒˆé•·ã‚’è¨ˆç®—
 ; ----------------------------------------------------------------------------
 ; @TryOutACode
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EDX register	: ƒrƒbƒg’·‚ğŒvZ‚·‚é’l
-; •Ô‚è’lG
-;	EAX ƒŒƒWƒXƒ^‚É•„†’·‚ª‰ÁZ‚³‚ê‚é
-; ƒŒƒWƒXƒ^G
-;	EBX, ESI, EDI, EBP, ESP ƒŒƒWƒXƒ^‚Í•Û‘¶‚³‚ê‚é
+; å¼•æ•°ï¼›
+;	EDX register	: ãƒ“ãƒƒãƒˆé•·ã‚’è¨ˆç®—ã™ã‚‹å€¤
+; è¿”ã‚Šå€¤ï¼›
+;	EAX ãƒ¬ã‚¸ã‚¹ã‚¿ã«ç¬¦å·é•·ãŒåŠ ç®—ã•ã‚Œã‚‹
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, ESI, EDI, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿å­˜ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @TryOutACode	Macro
@@ -215,7 +215,7 @@ RLHEncodeContext@@OutNBits	EndP
 
 
 ;
-;	ƒKƒ“ƒ}•„†‚Ì•„†’·‚ğŒvZ‚·‚é
+;	ã‚¬ãƒ³ãƒç¬¦å·ã®ç¬¦å·é•·ã‚’è¨ˆç®—ã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 RLHEncodeContext@@TryEncodeGammaCodes	Proc	Near32 SysCall Uses ebx esi edi,
@@ -230,7 +230,7 @@ RLHEncodeContext@@TryEncodeGammaCodes	Proc	Near32 SysCall Uses ebx esi edi,
 		Xor	edx, edx
 		.If	edi == 0
 			;;
-			;; ƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			;; ã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			.Repeat
 				Inc	edx
 				Dec	ecx
@@ -239,13 +239,13 @@ RLHEncodeContext@@TryEncodeGammaCodes	Proc	Near32 SysCall Uses ebx esi edi,
 				Add	esi, (SizeOf DWord)
 			.Until	edi != 0
 			;;
-			;; •„†‚Ì’·‚³‚ğ‰ÁZ
+			;; ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			Push	ecx
 			@TryOutACode
 			Pop	ecx
 		.Else
 			;;
-			;; ”ñƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			;; éã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			Push	esi
 			.Repeat
 				Add	esi, (SizeOf DWord)
@@ -256,12 +256,12 @@ RLHEncodeContext@@TryEncodeGammaCodes	Proc	Near32 SysCall Uses ebx esi edi,
 			.Until	edi != 0
 			Pop	esi
 			;;
-			;; •„†‚Ì’·‚³‚ğ‰ÁZ
+			;; ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			Mov	edi, edx
 			Push	ecx
 			@TryOutACode
 			;;
-			;; Še•„†‚Ì’·‚³‚ğ‰ÁZ
+			;; å„ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			.Repeat
 				Inc	eax
 				Mov	ebx, SDWord Ptr [esi]
@@ -283,33 +283,33 @@ RLHEncodeContext@@TryEncodeGammaCodes	EndP
 
 
 ;
-;	ƒnƒtƒ}ƒ“•„†‚ğo—Í‚·‚éƒ}ƒNƒ
+;	ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å‡ºåŠ›ã™ã‚‹ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ; @OutAHuffmanCode <esc_label>
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EAX register	: •„†‰»‚·‚é”’li00H`0FFHj num
-;	EBX register	: RLHEncodeContext \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDI register	: ERINA_HUFFMAN_TREE \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-; •s•Ï•Ï”G
+; å¼•æ•°ï¼›
+;	EAX register	: ç¬¦å·åŒ–ã™ã‚‹æ•°å€¤ï¼ˆ00Hã€œ0FFHï¼‰ï¼ num
+;	EBX register	: RLHEncodeContext æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDI register	: ERINA_HUFFMAN_TREE æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+; ä¸å¤‰å¤‰æ•°ï¼›
 ;	_this		: Ptr RLHEncodeContext
 ;	tree		: Ptr ERINA_HUFFMAN_TREE
 ;	num		: DWord
-; ˆê•Ï”G
+; ä¸€æ™‚å¤‰æ•°ï¼›
 ;	iEntry		: SDWord
-; ƒŒƒWƒXƒ^G
-;	EBP, ESP ƒŒƒWƒXƒ^‚Í•Û‘¶‚³‚ê‚é
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿å­˜ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @OutAHuffmanCode	Macro	esc_label:Req
 
 	PushContext	Assumes
 	;;
-	;; w’è‚ÌƒcƒŠ[ƒGƒ“ƒgƒŠ‚ğæ“¾
+	;; æŒ‡å®šã®ãƒ„ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’å–å¾—
 	Mov	edx, [edi].m_iSymLookup[eax * 4]
 	.If	edx == ERINA_HUFFMAN_NULL
 		;;
-		;; ƒGƒXƒP[ƒvƒR[ƒh‚ğo—Í
+		;; ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 		Mov	edx, [edi].m_iEscape
 		.If	edx != ERINA_HUFFMAN_NULL
 			Xor	ecx, ecx
@@ -348,7 +348,7 @@ RLHEncodeContext@@TryEncodeGammaCodes	EndP
 		EndIf
 	.Else
 		;;
-		;; •’Ê‚ÌƒR[ƒh‚ğo—Í
+		;; æ™®é€šã®ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 		Mov	iEntry, edx
 		Xor	ecx, ecx
 		.Repeat
@@ -372,7 +372,7 @@ RLHEncodeContext@@TryEncodeGammaCodes	EndP
 
 
 ;
-;	ƒnƒtƒ}ƒ“•„†‚ğo—Í‚·‚é
+;	ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å‡ºåŠ›ã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -426,22 +426,22 @@ RLHEncodeContext@@OutAHuffmanCode	EndP
 
 
 ;
-;	’·‚³‚ğƒnƒtƒ}ƒ“•„†‚É‚µ‚Äo—Í‚·‚éƒ}ƒNƒ
+;	é•·ã•ã‚’ãƒãƒ•ãƒãƒ³ç¬¦å·ã«ã—ã¦å‡ºåŠ›ã™ã‚‹ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ; @OutLengthHuffman <esc_label>
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EAX register	: •„†‰»‚·‚é”’l  _length
-;	EBX register	: RLHEncodeContext \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDI register	: ERINA_HUFFMAN_TREE \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-; •s•Ï•Ï”G
+; å¼•æ•°ï¼›
+;	EAX register	: ç¬¦å·åŒ–ã™ã‚‹æ•°å€¤ ï¼ _length
+;	EBX register	: RLHEncodeContext æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDI register	: ERINA_HUFFMAN_TREE æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+; ä¸å¤‰å¤‰æ•°ï¼›
 ;	_this		: Ptr RLHEncodeContext
 ;	tree		: Ptr ERINA_HUFFMAN_TREE
 ;	_length		: DWord
-; ˆê•Ï”G
+; ä¸€æ™‚å¤‰æ•°ï¼›
 ;	iEntry		: SDWord
-; ƒŒƒWƒXƒ^G
-;	EBP, ESP ƒŒƒWƒXƒ^‚Í•Û‘¶‚³‚ê‚é
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿å­˜ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @OutLengthHuffman	Macro	esc_label:Req
@@ -449,7 +449,7 @@ RLHEncodeContext@@OutAHuffmanCode	EndP
 
 	PushContext	Assumes
 	;;
-	;; w’è‚ÌƒcƒŠ[ƒGƒ“ƒgƒŠ‚ğæ“¾
+	;; æŒ‡å®šã®ãƒ„ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’å–å¾—
 	And	eax, 0FFH
 	Mov	edx, [edi].m_iSymLookup[eax * 4]
 	Cmp	edx, ERINA_HUFFMAN_NULL
@@ -459,7 +459,7 @@ RLHEncodeContext@@OutAHuffmanCode	EndP
 	Cmp	eax, _length
 	Jz	Label2
 Label1:	;;
-	;; ƒcƒŠ[ƒGƒ“ƒgƒŠ‚ğŒŸõ
+	;; ãƒ„ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’æ¤œç´¢
 	Mov	eax, _length
 	Mov	ecx, [edi].m_iTreePointer
 	Mov	edx, ERINA_HUFFMAN_ROOT - 1
@@ -471,7 +471,7 @@ Label1:	;;
 		Dec	edx
 	.EndW
 	;;
-	;; ƒGƒXƒP[ƒvƒR[ƒh‚ğo—Í
+	;; ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 	Mov	edx, [edi].m_iEscape
 	.If	edx != ERINA_HUFFMAN_NULL
 		Xor	ecx, ecx
@@ -513,7 +513,7 @@ Label1:	;;
 
 Label2:
 	;;
-	;; ’Êí‚Ìƒnƒtƒ}ƒ“•„†‚ğo—Í
+	;; é€šå¸¸ã®ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å‡ºåŠ›
 	Mov	iEntry, edx
 	Xor	ecx, ecx
 	.Repeat
@@ -538,7 +538,7 @@ Label3:
 
 
 ;
-;	’·‚³‚ğƒnƒtƒ}ƒ“•„†‚É‚µ‚Äo—Í
+;	é•·ã•ã‚’ãƒãƒ•ãƒãƒ³ç¬¦å·ã«ã—ã¦å‡ºåŠ›
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -590,7 +590,7 @@ RLHEncodeContext@@OutLengthHuffman	EndP
 
 
 ;
-;	ERINA •„†‚É•„†‰»‚µ‚Äo—Í‚·‚é
+;	ERINA ç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -627,7 +627,7 @@ EndIf
 	;;
 	.While	ecx != 0
 		;;
-		;; Ÿ‚Ì•„†‚ğ•„†‰»
+		;; æ¬¡ã®ç¬¦å·ã‚’ç¬¦å·åŒ–
 		Mov	esi, ptrSrc
 		Mov	edx, nEncoded
 		Dec	ecx
@@ -643,12 +643,12 @@ EndIf
 		@OutAHuffmanCode	esc_label
 		Assume	edi:Nothing
 		;;
-		;; ƒ[ƒƒ‰ƒ“ƒŒƒ“ƒOƒX
+		;; ã‚¼ãƒ­ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹
 		Mov	eax, num
 		Mov	ebx, _this
 		.If	eax == 0
 			;;
-			;; ’·‚³‚ğæ“¾
+			;; é•·ã•ã‚’å–å¾—
 			Mov	eax, 1
 			Mov	ecx, nCount
 			Mov	esi, ptrSrc
@@ -668,7 +668,7 @@ EndIf
 			Mov	ptrSrc, esi
 			Mov	nEncoded, edx
 			;;
-			;; ’·‚³‚ğ•„†‰»
+			;; é•·ã•ã‚’ç¬¦å·åŒ–
 			Mov	edi, [ebx].m_pHuffmanTree[100H * 4]
 			Mov	tree, edi
 			Assume	edi:PERINA_HUFFMAN_TREE
@@ -700,7 +700,7 @@ RLHEncodeContext@@EncodeERINACodes	EndP
 
 
 ;
-;	ERINA •„†‚É•„†‰»‚µ‚Äo—Í‚·‚éi8ƒrƒbƒgƒo[ƒWƒ‡ƒ“j
+;	ERINA ç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹ï¼ˆ8ãƒ“ãƒƒãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼‰
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -737,7 +737,7 @@ EndIf
 	;;
 	.While	ecx != 0
 		;;
-		;; Ÿ‚Ì•„†‚ğ•„†‰»
+		;; æ¬¡ã®ç¬¦å·ã‚’ç¬¦å·åŒ–
 		Mov	esi, ptrSrc
 		Mov	edx, nEncoded
 		Dec	ecx
@@ -753,12 +753,12 @@ EndIf
 		@OutAHuffmanCode	esc_label
 		Assume	edi:Nothing
 		;;
-		;; ƒ[ƒƒ‰ƒ“ƒŒƒ“ƒOƒX
+		;; ã‚¼ãƒ­ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹
 		Mov	eax, num
 		Mov	ebx, _this
 		.If	eax == 0
 			;;
-			;; ’·‚³‚ğæ“¾
+			;; é•·ã•ã‚’å–å¾—
 			Mov	eax, 1
 			Mov	ecx, nCount
 			Mov	esi, ptrSrc
@@ -778,7 +778,7 @@ EndIf
 			Mov	ptrSrc, esi
 			Mov	nEncoded, edx
 			;;
-			;; ’·‚³‚ğ•„†‰»
+			;; é•·ã•ã‚’ç¬¦å·åŒ–
 			Mov	edi, [ebx].m_pHuffmanTree[100H * 4]
 			Mov	tree, edi
 			Assume	edi:PERINA_HUFFMAN_TREE
@@ -810,7 +810,7 @@ RLHEncodeContext@@EncodeERINACodesSBZL	EndP
 
 
 ;
-;	ERINA •„†i256F—pj‚É•„†‰»‚µ‚Äo—Í‚·‚é
+;	ERINA ç¬¦å·ï¼ˆ256è‰²ç”¨ï¼‰ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -849,7 +849,7 @@ EndIf
 	;;
 	.While	ecx != 0
 		;;
-		;; Ÿ‚Ì•„†‚ğ•„†‰»
+		;; æ¬¡ã®ç¬¦å·ã‚’ç¬¦å·åŒ–
 		Mov	esi, ptrSrc
 		Mov	edx, nEncoded
 		Dec	ecx
@@ -865,12 +865,12 @@ EndIf
 		@OutAHuffmanCode	esc_label
 		Assume	edi:Nothing
 		;;
-		;; ƒ[ƒƒ‰ƒ“ƒŒƒ“ƒOƒX
+		;; ã‚¼ãƒ­ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹
 		Mov	eax, num
 		Mov	ebx, _this
 		.If	eax == nLastSymbol
 			;;
-			;; ’·‚³‚ğæ“¾
+			;; é•·ã•ã‚’å–å¾—
 			Mov	dh, al
 			Mov	eax, 1
 			Mov	ecx, nCount
@@ -891,7 +891,7 @@ EndIf
 			Mov	ptrSrc, esi
 			Mov	nEncoded, edx
 			;;
-			;; ’·‚³‚ğ•„†‰»
+			;; é•·ã•ã‚’ç¬¦å·åŒ–
 			Mov	edi, [ebx].m_pHuffmanTree[100H * 4]
 			Mov	tree, edi
 			Assume	edi:PERINA_HUFFMAN_TREE
@@ -924,7 +924,7 @@ RLHEncodeContext@@EncodeERINACodes256	EndP
 
 
 ;
-;	‹óŠÔ·•ªˆ—
+;	ç©ºé–“å·®åˆ†å‡¦ç†
 ; ----------------------------------------------------------------------------
 
 @VerticalDifferentialOperation	Macro
@@ -1076,7 +1076,7 @@ EndIf
 	Assume	ebx:PERIEncoder
 
 	;
-	; ‚’¼•ûŒü·•ªˆ—
+	; å‚ç›´æ–¹å‘å·®åˆ†å‡¦ç†
 	;
 	@VerticalDifferentialOperation
 	.If	ERI_EnabledProcessorType & ERI_USE_MMX_PENTIUM
@@ -1084,7 +1084,7 @@ EndIf
 	.EndIf
 
 	;
-	; …•½•ûŒü·•ªˆ—
+	; æ°´å¹³æ–¹å‘å·®åˆ†å‡¦ç†
 	;
 	@HorizontalDifferentialOperation
 
@@ -1099,7 +1099,7 @@ ERIEncoder@@DifferentialOperation	EndP
 
 
 ;
-;	ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğŒˆ’è‚·‚é
+;	ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’æ±ºå®šã™ã‚‹
 ; ----------------------------------------------------------------------------
 Align	10H
 IfNDef	_BORLAND_CPP
@@ -1128,7 +1128,7 @@ EndIf
 
 	.If	nCompressMode == 3
 		;
-		; ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚Íg—p‚µ‚È‚¢
+		; ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã¯ä½¿ç”¨ã—ãªã„
 		;
 		IfNDef	_BORLAND_CPP
 			Mov	ecx, ebx
@@ -1153,11 +1153,11 @@ EndIf
 	.EndIf
 
 	;
-	;	Å“K‚È·•ªˆ—ƒR[ƒh‚ğ‘I‘ğ
+	;	æœ€é©ãªå·®åˆ†å‡¦ç†ã‚³ãƒ¼ãƒ‰ã‚’é¸æŠ
 	; --------------------------------------------------------------------
 	.If	nCompressMode >= 2
 		;
-		; ·•ªˆ—‚Ì‘I‘ğ‚Í‚µ‚È‚¢
+		; å·®åˆ†å‡¦ç†ã®é¸æŠã¯ã—ãªã„
 		;
 		Mov	iBestDifOp, 03H
 		;
@@ -1182,7 +1182,7 @@ EndIf
 
 	.Else ;	nCompressMode <= 1
 		;
-		; ·•ªˆ—‚ğÀsi‚’¼•ûŒüj
+		; å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆå‚ç›´æ–¹å‘ï¼‰
 		;
 		@VerticalDifferentialOperation
 		;
@@ -1193,7 +1193,7 @@ EndIf
 		Add	esp, 4 * 2
 		Mov	nBestSize, eax
 		;
-		; ’†ŠÔó‘Ô‚ğ•Û‘¶
+		; ä¸­é–“çŠ¶æ…‹ã‚’ä¿å­˜
 		;
 		Mov	ecx, [ebx].m_nBlockSamples
 		Mov	edi, [ebx].m_ptrBuffer2
@@ -1226,7 +1226,7 @@ EndIf
 			.Until	Zero?
 		.EndIf
 		;
-		; ·•ªˆ—‚ğÀsi…•½•ûŒüj
+		; å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆæ°´å¹³æ–¹å‘ï¼‰
 		;
 		@HorizontalDifferentialOperation
 		;
@@ -1273,7 +1273,7 @@ EndIf
 	.EndIf
 
 	;
-	;	ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[‚·‚é
+	;	ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 	; --------------------------------------------------------------------
 	.If	[ebx].m_nChannelCount >= 4
 		Mov	eax, [ebx].m_nBlockArea
@@ -1309,7 +1309,7 @@ EndIf
 	.EndIf
 
 	;
-	;	Å“K‚ÈƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğ‘I‘ğ
+	;	æœ€é©ãªã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é¸æŠ
 	; --------------------------------------------------------------------
 	Xor	ecx, ecx
 	.If	nCompressMode >= 1
@@ -1348,7 +1348,7 @@ EndIf
 		Inc	ecx
 	.Until	ecx >= iLoopMax
 	;
-	; ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğÀs
+	; ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œ
 	;
 	Mov	eax, iBestClrOp
 	IfNDef	_BORLAND_CPP
@@ -1360,7 +1360,7 @@ EndIf
 		Add	esp, (SizeOf DWord)
 	EndIf
 	;
-	; •s—v‚Èƒrƒbƒg‚ğí‚é
+	; ä¸è¦ãªãƒ“ãƒƒãƒˆã‚’å‰Šã‚‹
 	;
 	.If	[ebx].m_nChannelDepth == 8
 		Mov	ecx, [ebx].m_nBlockSamples
@@ -1393,17 +1393,17 @@ EndIf
 	.EndIf
 
 	;
-	;	Å“K‚ÈƒAƒŒƒ“ƒWƒR[ƒh‚ğ‘I‚Ô
+	;	æœ€é©ãªã‚¢ãƒ¬ãƒ³ã‚¸ã‚³ãƒ¼ãƒ‰ã‚’é¸ã¶
 	; --------------------------------------------------------------------
 	Mov	iBestArrange, 0
 	.If	nCompressMode == 2
 		;
-		; ƒAƒŒƒ“ƒWƒR[ƒh‚Íg‚í‚È‚¢
+		; ã‚¢ãƒ¬ãƒ³ã‚¸ã‚³ãƒ¼ãƒ‰ã¯ä½¿ã‚ãªã„
 		;
 
 	.ElseIf	nCompressMode == 1
 		;
-		; ƒCƒ“ƒ^[ƒŠ[ƒu‚Ì—LŒø«‚ğŒŸØ
+		; ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–ã®æœ‰åŠ¹æ€§ã‚’æ¤œè¨¼
 		;
 		Mov	ecx, [ebx].m_nBlockSamples
 		Mov	esi, [ebx].m_ptrBuffer2
@@ -1431,7 +1431,7 @@ EndIf
 			Or	iBestArrange, 02H
 		.EndIf
 		;
-		; ‚’¼‘–¸‚Ì—LŒø«‚ğŒŸØ
+		; å‚ç›´èµ°æŸ»ã®æœ‰åŠ¹æ€§ã‚’æ¤œè¨¼
 		;
 		Mov	eax, iBestArrange
 		Or	eax, 01H
@@ -1463,7 +1463,7 @@ EndIf
 
 	.Else
 		;
-		; ƒAƒŒƒ“ƒWƒR[ƒh‘“–‚½‚è
+		; ã‚¢ãƒ¬ãƒ³ã‚¸ã‚³ãƒ¼ãƒ‰ç·å½“ãŸã‚Š
 		;
 		Mov	edx, 1
 		.Repeat
@@ -1517,7 +1517,7 @@ EndIf
 	.Until	Zero?
 
 	;
-	;	ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğ•Ô‚·
+	;	ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’è¿”ã™
 	; --------------------------------------------------------------------
 	.If	ERI_EnabledProcessorType & ERI_USE_MMX_PENTIUM
 		emms
@@ -1542,12 +1542,12 @@ ERIEncoder@@DecideOperationCode	EndP
 
 ;
 ;
-;	ƒ`ƒƒƒlƒ‹ŠÔ·•ªˆ—ƒ}ƒNƒ
+;	ãƒãƒ£ãƒãƒ«é–“å·®åˆ†å‡¦ç†ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ;  Parameters ;
-;	EBX register : ERIEncoder ƒIƒuƒWƒFƒNƒg‚Ö‚Ìƒ|ƒCƒ“ƒ^
+;	EBX register : ERIEncoder ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¸ã®ãƒã‚¤ãƒ³ã‚¿
 ;  Registers ;
-;	EBP, ESP ƒŒƒWƒXƒ^‚Í•ÛØ‚³‚ê‚é
+;	EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿è¨¼ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @ERImage_DifferenceBetweenChannel	Macro	op_code:Req

@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                  WAV ƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ~ƒ“ƒOƒIƒuƒWƒFƒNƒg
+                  WAV ãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 
@@ -11,26 +11,26 @@
 class	EWaveFileStream
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	EWaveFileStream( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~EWaveFileStream( void ) ;
 
 protected:
-	CFile *			m_pfile ;			// ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
-	WAVEFORMATEX *	m_pwfx ;			// Œ`Ž®ƒf[ƒ^
-	DWORD			m_dwDataBytes ;		// ƒf[ƒ^•”•ª‚ÌƒoƒCƒg”
+	CFile *			m_pfile ;			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	WAVEFORMATEX *	m_pwfx ;			// å½¢å¼ãƒ‡ãƒ¼ã‚¿
+	DWORD			m_dwDataBytes ;		// ãƒ‡ãƒ¼ã‚¿éƒ¨åˆ†ã®ãƒã‚¤ãƒˆæ•°
 
 public:
-	// ƒtƒ@ƒCƒ‹‚ðŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	bool Open( const char * pszFileName ) ;
-	// ƒtƒ@ƒCƒ‹‚ð•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
-	// ƒf[ƒ^Œ`Ž®‚ðŽæ“¾
+	// ãƒ‡ãƒ¼ã‚¿å½¢å¼ã‚’å–å¾—
 	WAVEFORMATEX * GetWaveFormat( void ) ;
-	// ƒf[ƒ^‚Ì‘ƒoƒCƒg”‚ðŽæ“¾
+	// ãƒ‡ãƒ¼ã‚¿ã®ç·ãƒã‚¤ãƒˆæ•°ã‚’å–å¾—
 	DWORD GetDataLength( void ) ;
-	// ƒtƒ@ƒCƒ‹‚ð“Ç‚Ýž‚Þ
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	UINT Read( void * lpBuf, UINT nBytes ) ;
 
 } ;

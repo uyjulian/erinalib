@@ -1,4 +1,4 @@
-// mioplayerDlg.h : ƒwƒbƒ_[ ƒtƒ@ƒCƒ‹
+// mioplayerDlg.h : ãƒ˜ãƒƒãƒ€ãƒ¼ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #if !defined(AFX_MIOPLAYERDLG_H__2E68952C_98B6_42D1_8658_B26512F8549D__INCLUDED_)
@@ -9,15 +9,15 @@
 #endif // _MSC_VER > 1000
 
 /////////////////////////////////////////////////////////////////////////////
-// CMioplayerDlg ƒ_ƒCƒAƒƒO
+// CMioplayerDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 class CMioplayerDlg : public CDialog
 {
-// \’z
+// æ§‹ç¯‰
 public:
-	CMioplayerDlg(CWnd* pParent = NULL);	// •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	CMioplayerDlg(CWnd* pParent = NULL);	// æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-// ƒ_ƒCƒAƒƒO ƒf[ƒ^
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒ‡ãƒ¼ã‚¿
 	//{{AFX_DATA(CMioplayerDlg)
 	enum { IDD = IDD_MIOPLAYER_DIALOG };
 	CSliderCtrl	m_sliderPos;
@@ -25,10 +25,10 @@ public:
 	CBitmapButton	m_buttonPlay;
 	//}}AFX_DATA
 
-	// ClassWizard ‚Í‰¼‘zŠÖ”‚ÌƒI[ƒo[ƒ‰ƒCƒh‚ğ¶¬‚µ‚Ü‚·B
+	// ClassWizard ã¯ä»®æƒ³é–¢æ•°ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
 	//{{AFX_VIRTUAL(CMioplayerDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV ‚ÌƒTƒ|[ƒg
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV ã®ã‚µãƒãƒ¼ãƒˆ
 	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
 	//}}AFX_VIRTUAL
 
@@ -39,16 +39,16 @@ protected:
 	DWORD			m_dwLastTime ;
 
 protected:
-	// ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	void LoadMIOFile( const char * pszFileName ) ;
-	// •\¦‚ğXV
+	// è¡¨ç¤ºã‚’æ›´æ–°
 	void UpdateDisplay( void ) ;
 
-// ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“
+// ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³
 protected:
 	HICON m_hIcon;
 
-	// ¶¬‚³‚ê‚½ƒƒbƒZ[ƒW ƒ}ƒbƒvŠÖ”
+	// ç”Ÿæˆã•ã‚ŒãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒƒãƒ—é–¢æ•°
 	//{{AFX_MSG(CMioplayerDlg)
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
@@ -67,6 +67,6 @@ protected:
 };
 
 //{{AFX_INSERT_LOCATION}}
-// Microsoft Visual C++ ‚Í‘Os‚Ì’¼‘O‚É’Ç‰Á‚ÌéŒ¾‚ğ‘}“ü‚µ‚Ü‚·B
+// Microsoft Visual C++ ã¯å‰è¡Œã®ç›´å‰ã«è¿½åŠ ã®å®£è¨€ã‚’æŒ¿å…¥ã—ã¾ã™ã€‚
 
 #endif // !defined(AFX_MIOPLAYERDLG_H__2E68952C_98B6_42D1_8658_B26512F8549D__INCLUDED_)

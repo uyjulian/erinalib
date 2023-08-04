@@ -1,14 +1,14 @@
 
 ; ****************************************************************************
 ;                        E R I N A - L i b r a r y
-;                                                      ÅIXV 2001/11/04
+;                                                      æœ€çµ‚æ›´æ–° 2001/11/04
 ; ----------------------------------------------------------------------------
 ;         Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
 ; ****************************************************************************
 
 
 ;
-;	‰æ‘œî•ñ\‘¢‘Ì
+;	ç”»åƒæƒ…å ±æ§‹é€ ä½“
 ; ----------------------------------------------------------------------------
 
 PVOID	TypeDef	Ptr
@@ -47,7 +47,7 @@ PRASTER_IMAGE_INFO	TypeDef	Ptr RASTER_IMAGE_INFO
 
 
 ;
-;	—áŠOˆ—\‘¢‘Ì
+;	ä¾‹å¤–å‡¦ç†æ§‹é€ ä½“
 ; ----------------------------------------------------------------------------
 
 TIB_pSEHList		Equ	00H
@@ -133,7 +133,7 @@ PEXCEPTION_RECORD	TypeDef	Ptr EXCEPTION_RECORD
 
 
 ;
-;	ƒnƒtƒ}ƒ“EƒcƒŠ[E\‘¢‘Ì
+;	ãƒãƒ•ãƒžãƒ³ãƒ»ãƒ„ãƒªãƒ¼ãƒ»æ§‹é€ ä½“
 ; ----------------------------------------------------------------------------
 
 ERINA_CODE_FLAG		Equ	80000000H
@@ -166,16 +166,16 @@ PERINA_HUFFMAN_TREE	TypeDef	Ptr ERINA_HUFFMAN_TREE
 
 
 ;
-;	ƒ‰ƒ“ƒŒƒ“ƒOƒXEƒKƒ“ƒ}EƒRƒ“ƒeƒLƒXƒg
+;	ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ãƒ»ã‚¬ãƒ³ãƒžãƒ»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 ; ----------------------------------------------------------------------------
 
 ARITHCODE_SYMBOL	Struct
-wOccured		Word	?	; ƒVƒ“ƒ{ƒ‹‚ÌoŒ»‰ñ”
-wSymbol			SWord	?	; ƒVƒ“ƒ{ƒ‹
+wOccured		Word	?	; ã‚·ãƒ³ãƒœãƒ«ã®å‡ºç¾å›žæ•°
+wSymbol			SWord	?	; ã‚·ãƒ³ãƒœãƒ«
 ARITHCODE_SYMBOL	EndS
 
 STATISTICAL_MODEL	Struct
-dwTotalSymbolCount	DWord	?	; ‘SƒVƒ“ƒ{ƒ‹” < 10000H
+dwTotalSymbolCount	DWord	?	; å…¨ã‚·ãƒ³ãƒœãƒ«æ•° < 10000H
 SymbolTable		ARITHCODE_SYMBOL	1 Dup( { } )
 STATISTICAL_MODEL	EndS
 
@@ -190,24 +190,24 @@ PMTF_TABLE	TypeDef	Ptr MTF_TABLE
 
 RLHDecodeContext	Struct
 
-pvfnTable		PVOID	?	; ‰¼‘zŠÖ”ƒe[ƒuƒ‹
+pvfnTable		PVOID	?	; ä»®æƒ³é–¢æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 
-m_flgZero		SDWord	?	; ƒ[ƒƒtƒ‰ƒO
-m_nLength		DWord	?	; ƒ‰ƒ“ƒŒƒ“ƒOƒX
-m_nIntBufCount		DWord	?	; ’†ŠÔ“ü—Íƒoƒbƒtƒ@‚É’~Ï‚³‚ê‚Ä‚¢‚éƒrƒbƒg”
-m_dwIntBuffer		DWord	?	; ’†ŠÔ“ü—Íƒoƒbƒtƒ@
-m_nBufferingSize	DWord	?	; ƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚éƒoƒCƒg”
-m_nBufCount		DWord	?	; ƒoƒbƒtƒ@‚ÌŽc‚èƒoƒCƒg”
-m_ptrBuffer		PBYTE	?	; “ü—Íƒoƒbƒtƒ@‚Ìæ“ª‚Ö‚Ìƒ|ƒCƒ“ƒ^
-m_ptrNextBuf		PBYTE	?	; ŽŸ‚É“Ç‚Ýž‚Þ‚×‚«“ü—Íƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
+m_flgZero		SDWord	?	; ã‚¼ãƒ­ãƒ•ãƒ©ã‚°
+m_nLength		DWord	?	; ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹
+m_nIntBufCount		DWord	?	; ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã«è“„ç©ã•ã‚Œã¦ã„ã‚‹ãƒ“ãƒƒãƒˆæ•°
+m_dwIntBuffer		DWord	?	; ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+m_nBufferingSize	DWord	?	; ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã™ã‚‹ãƒã‚¤ãƒˆæ•°
+m_nBufCount		DWord	?	; ãƒãƒƒãƒ•ã‚¡ã®æ®‹ã‚Šãƒã‚¤ãƒˆæ•°
+m_ptrBuffer		PBYTE	?	; å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã®å…ˆé ­ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+m_ptrNextBuf		PBYTE	?	; æ¬¡ã«èª­ã¿è¾¼ã‚€ã¹ãå…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
 
-m_dwCodeRegister	DWord	?	; ƒR[ƒhƒŒƒWƒXƒ^
-m_dwAugendRegister	DWord	?	; ƒI[ƒWƒFƒ“ƒhƒŒƒWƒXƒ^
-m_dwCodeBuffer		DWord	?	; ƒrƒbƒgƒoƒbƒtƒ@
-m_nVirtualPostBuf	SDWord	?	; ‰¼‘zƒoƒbƒtƒ@ƒJƒEƒ“ƒ^
-m_nSymbolBitCount	SDWord	?	; •„†‚Ìƒrƒbƒg”
-m_nSymbolSortCount	SDWord	?	; •„†‚Ì‘”
-m_maskSymbolBit		SDWord	?	; •„†‚Ìƒrƒbƒgƒ}ƒXƒN
+m_dwCodeRegister	DWord	?	; ã‚³ãƒ¼ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿
+m_dwAugendRegister	DWord	?	; ã‚ªãƒ¼ã‚¸ã‚§ãƒ³ãƒ‰ãƒ¬ã‚¸ã‚¹ã‚¿
+m_dwCodeBuffer		DWord	?	; ãƒ“ãƒƒãƒˆãƒãƒƒãƒ•ã‚¡
+m_nVirtualPostBuf	SDWord	?	; ä»®æƒ³ãƒãƒƒãƒ•ã‚¡ã‚«ã‚¦ãƒ³ã‚¿
+m_nSymbolBitCount	SDWord	?	; ç¬¦å·ã®ãƒ“ãƒƒãƒˆæ•°
+m_nSymbolSortCount	SDWord	?	; ç¬¦å·ã®ç·æ•°
+m_maskSymbolBit		SDWord	?	; ç¬¦å·ã®ãƒ“ãƒƒãƒˆãƒžã‚¹ã‚¯
 m_pLastStatisticalModel		PSTATISTICAL_MODEL	?
 m_pStatisticalTable		PSTATISTICAL_MODEL	100H Dup( ? )
 
@@ -224,7 +224,7 @@ PRLHDecodeContext	TypeDef	Ptr RLHDecodeContext
 
 
 ;
-;	‰¼‘zŠÖ”ƒCƒ“ƒfƒbƒNƒX
+;	ä»®æƒ³é–¢æ•°ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
 ; ----------------------------------------------------------------------------
 
 VFI_Destructer		Equ	0
@@ -232,12 +232,12 @@ VFI_ReadNextData	Equ	4
 
 
 ;
-;	“WŠJƒIƒuƒWƒFƒNƒg
+;	å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 ; ----------------------------------------------------------------------------
 
 ERIDecoder	Struct
 
-pvfnTable		PVOID	?	; ‰¼‘zŠÖ”ƒe[ƒuƒ‹
+pvfnTable		PVOID	?	; ä»®æƒ³é–¢æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 
 m_EriInfHdr		ERI_INFO_HEADER	{ }
 m_nBlockSize		DWord		?
@@ -282,7 +282,7 @@ PERIDecoder	TypeDef	Ptr ERIDecoder
 
 
 ;
-;	ƒOƒ[ƒoƒ‹•Ï”
+;	ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
 ; ----------------------------------------------------------------------------
 
 ERI_USE_MMX_PENTIUM	Equ	0002H
@@ -292,7 +292,7 @@ ExternDef	C ERI_EnabledProcessorType:DWord
 
 
 ;
-;	ŠÖ”ƒvƒƒgƒ^ƒCƒv
+;	é–¢æ•°ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—
 ; ----------------------------------------------------------------------------
 
 IfNDef	_BORLAND_CPP
@@ -600,16 +600,16 @@ EndIf
 
 
 ;
-;	@TREE@@IncreaseOccuredCount ƒ}ƒNƒ
+;	@TREE@@IncreaseOccuredCount ãƒžã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ; @TREE@@IncreaseOccuredCount <decode_flag>
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EBX register	: ERINA_HUFFMAN_TREE \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EAX register	: ”­¶•p“x‚ð‘‰Á‚³‚¹‚éŽw•W
-;	decode_flag	: •œ†ê—pƒR[ƒhŽw’èƒtƒ‰ƒO
-; ƒŒƒWƒXƒ^G
-;	EBX, EBP, ESP ƒŒƒWƒXƒ^‚Í•ÛØ‚³‚ê‚é
+; å¼•æ•°ï¼›
+;	EBX register	: ERINA_HUFFMAN_TREE æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EAX register	: ç™ºç”Ÿé »åº¦ã‚’å¢—åŠ ã•ã›ã‚‹æŒ‡æ¨™
+;	decode_flag	: å¾©å·å°‚ç”¨ã‚³ãƒ¼ãƒ‰æŒ‡å®šãƒ•ãƒ©ã‚°
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿è¨¼ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @TREE@@IncreaseOccuredCount	Macro	decode_flag:=<0>
@@ -636,15 +636,15 @@ EndIf
 
 
 ;
-;	@TREE@@Normalize ƒ}ƒNƒ
+;	@TREE@@Normalize ãƒžã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 ; @TREE@@Normalize
 ; ----------------------------------------------------------------------------
-; ˆø”G
-;	EAX register	: ”­¶•p“x‚ð‘‰Á‚³‚¹‚éŽw•W
-;	EBX register	: ERINA_HUFFMAN_TREE \‘¢‘Ì‚Ö‚Ìƒ|ƒCƒ“ƒ^
-; ƒŒƒWƒXƒ^G
-;	EBX, EBP, ESP ƒŒƒWƒXƒ^‚Í•ÛØ‚³‚ê‚é
+; å¼•æ•°ï¼›
+;	EAX register	: ç™ºç”Ÿé »åº¦ã‚’å¢—åŠ ã•ã›ã‚‹æŒ‡æ¨™
+;	EBX register	: ERINA_HUFFMAN_TREE æ§‹é€ ä½“ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã¯ä¿è¨¼ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @TREE@@Normalize	Macro	decode_flag:=<0>
@@ -657,10 +657,10 @@ EndIf
 	Align	10H
 	.Repeat
 		;;
-		;; “ü‚ê‘Ö‚¦‚éƒGƒ“ƒgƒŠ‚ðŒŸõ
+		;; å…¥ã‚Œæ›¿ãˆã‚‹ã‚¨ãƒ³ãƒˆãƒªã‚’æ¤œç´¢
 Loop_Begin:	.If	[ebx].m_hnTree[eax * 8 + 8].m_weight >= dx
 			;;
-			;; e‚ÌoŒ»•p“x‚ð‘‰Á‚³‚¹‚é
+			;; è¦ªã®å‡ºç¾é »åº¦ã‚’å¢—åŠ ã•ã›ã‚‹
 			MovZx	edx, [ebx].m_hnTree[ecx * 8].m_weight
 			Inc	edx
 			Mov	eax, ecx
@@ -675,7 +675,7 @@ Loop_Begin:	.If	[ebx].m_hnTree[eax * 8 + 8].m_weight >= dx
 			Inc	ecx
 		.Until	[ebx].m_hnTree[ecx * 8 + 8].m_weight >= dx
 		;;
-		;; “ü‚ê‘Ö‚¦
+		;; å…¥ã‚Œæ›¿ãˆ
 		Mov	edx, [ebx].m_hnTree[eax * 8].m_child_code
 		.If	!(edx & ERINA_CODE_FLAG)
 			Mov	[ebx].m_hnTree[edx * 8].m_parent, cx
@@ -716,7 +716,7 @@ Loop_Begin:	.If	[ebx].m_hnTree[eax * 8 + 8].m_weight >= dx
 		MovZx	ecx, [ebx].m_hnTree[ecx * 8].m_parent
 		Mov	[ebx].m_hnTree[eax * 8].m_weight, si
 		;;
-		;; e‚Ìd‚Ý‚ðÄŒvŽZ‚·‚é
+		;; è¦ªã®é‡ã¿ã‚’å†è¨ˆç®—ã™ã‚‹
 		MovZx	edx, [ebx].m_hnTree[ecx * 8].m_weight
 		Mov	eax, ecx
 		Inc	edx

@@ -1,7 +1,7 @@
 
 ; ****************************************************************************
 ;                        E R I N A - L i b r a r y
-;                                                      ÅIXV 2001/11/04
+;                                                      æœ€çµ‚æ›´æ–° 2001/11/04
 ; ----------------------------------------------------------------------------
 ;         Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
 ; ****************************************************************************
@@ -9,7 +9,7 @@
 
 
 ;
-;	DCTs—ñ‰‰Z—p’è”
+;	DCTè¡Œåˆ—æ¼”ç®—ç”¨å®šæ•°
 ; ----------------------------------------------------------------------------
 
 MIN_DCT_DEGREE	Equ	2
@@ -17,7 +17,7 @@ MAX_DCT_DEGREE	Equ	12
 
 
 ;
-;	À”ŠÛ‚ßŠÖ”
+;	å®Ÿæ•°ä¸¸ã‚é–¢æ•°
 ; ----------------------------------------------------------------------------
 
 eriRoundR32ToInt	Proto	Near32 C , r:Real4
@@ -27,7 +27,7 @@ eriRoundR32ToWordArray	Proto	Near32 C ,
 
 
 ;
-;	‰ñ“]s—ñ\‘¢‘Ì
+;	å›è»¢è¡Œåˆ—æ§‹é€ ä½“
 ; ----------------------------------------------------------------------------
 
 SIN_COS	Struct
@@ -39,7 +39,7 @@ SIN_COS	EndS
 
 
 ;
-;	DCT s—ñ‰‰ZŠÖ”
+;	DCT è¡Œåˆ—æ¼”ç®—é–¢æ•°
 ; ----------------------------------------------------------------------------
 
 eriInitializeMatrixDCT	Proto	Near32 C
@@ -110,17 +110,17 @@ eriSquareIDCT		Proto	Near32 C ,
 
 
 ;
-;	‚‘¬ DCT •ÏŠ·ƒ}ƒNƒ
+;	é«˜é€Ÿ DCT å¤‰æ›ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
-; ƒpƒ‰ƒ[ƒ^G
-;	ESI register	: “ü—Íƒf[ƒ^‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDI register	: o—Íƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EBX register	: ’†ŠÔƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDX register	: o—Íæ‚ÌƒXƒeƒbƒv”iƒoƒCƒg’PˆÊj
-;	degree		: DCT Ÿ”i‘¦’lj
-;	xmm_flag	: 0 ‚ÌAXMM ƒŒƒWƒXƒ^‚ğg—p‚µ‚È‚¢i‘¦’lj
-; ƒŒƒWƒXƒ^G
-;	EBX, EDX, ESI, EDI, EBP, ESP ƒŒƒWƒXƒ^‚Ì“à—e‚Í•ÛØ‚³‚ê‚é
+; ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ï¼›
+;	ESI register	: å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDI register	: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EBX register	: ä¸­é–“ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDX register	: å‡ºåŠ›å…ˆã®ã‚¹ãƒ†ãƒƒãƒ—æ•°ï¼ˆãƒã‚¤ãƒˆå˜ä½ï¼‰
+;	degree		: DCT æ¬¡æ•°ï¼ˆå³å€¤ï¼‰
+;	xmm_flag	: 0 ã®æ™‚ã€XMM ãƒ¬ã‚¸ã‚¹ã‚¿ã‚’ä½¿ç”¨ã—ãªã„ï¼ˆå³å€¤ï¼‰
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, EDX, ESI, EDI, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã®å†…å®¹ã¯ä¿è¨¼ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @FastDCT	Macro	degree:Req, xmm_flag:Req
@@ -132,11 +132,11 @@ eriSquareIDCT		Proto	Near32 C ,
 	;
 	If	degree Eq MIN_DCT_DEGREE
 		;
-		;	4Ÿ DCT ‚Í“ÁêğŒ
+		;	4æ¬¡ DCT ã¯ç‰¹æ®Šæ¡ä»¶
 		; ------------------------------------------------------------
 		If	xmm_flag
 			;
-			;	XMM ê—pƒR[ƒh
+			;	XMM å°‚ç”¨ã‚³ãƒ¼ãƒ‰
 			; ----------------------------------------------------
 			Lea	ecx, [edx + edx * 2]
 			;
@@ -171,18 +171,18 @@ eriSquareIDCT		Proto	Near32 C ,
 
 		Else
 			;
-			;	FPU ŒİŠ·ƒR[ƒh
+			;	FPU äº’æ›ã‚³ãƒ¼ãƒ‰
 			; ----------------------------------------------------
 			Lea	ecx, [edx + edx * 2]
 			;
-			; Œğ·‰ÁŒ¸Zi‘O”¼j
+			; äº¤å·®åŠ æ¸›ç®—ï¼ˆå‰åŠï¼‰
 			;
 			fld	Real4 Ptr [esi]
 			fadd	Real4 Ptr [esi + 12]
 			fld	Real4 Ptr [esi + 4]
 			fadd	Real4 Ptr [esi + 8]
 			;
-			; ‘O”¼ F A2 * DCT2
+			; å‰åŠ ï¼š A2 * DCT2
 			;
 			fld	st(1)
 			fadd	st, st(1)
@@ -192,14 +192,14 @@ eriSquareIDCT		Proto	Near32 C ,
 			fmul	ERI_rCosPI4
 			fstp	Real4 Ptr [edi + edx * 2]
 			;
-			; Œğ·‰ÁŒ¸ZiŒã”¼j
+			; äº¤å·®åŠ æ¸›ç®—ï¼ˆå¾ŒåŠï¼‰
 			;
 			fld	Real4 Ptr [esi + 4]
 			fsub	Real4 Ptr [esi + 8]
 			fld	Real4 Ptr [esi]
 			fsub	Real4 Ptr [esi + 12]
 			;
-			; Œã”¼ F R2 * 2 * A2 * DCT2 * K2
+			; å¾ŒåŠ ï¼š R2 * 2 * A2 * DCT2 * K2
 			;
 			fld	ERI_DCTofK2[0]
 			fld	ERI_DCTofK2[4]
@@ -221,10 +221,10 @@ eriSquareIDCT		Proto	Near32 C ,
 
 	Else
 		;
-		;	”Ä—p DCT •ÏŠ·
+		;	æ±ç”¨ DCT å¤‰æ›
 		; ------------------------------------------------------------
 		;              | I   J |
-		; Œğ·‰ÁŒ¸Z = |       |
+		; äº¤å·®åŠ æ¸›ç®— = |       |
 		;              | I  -J |
 		degree_num = 1 Shl degree
 		half_degree = degree_num / 2
@@ -244,7 +244,7 @@ eriSquareIDCT		Proto	Near32 C ,
 			Inc	ecx
 		.Until	ecx >= half_degree
 		;
-		; ‘O”¼@DCT F A * DCT
+		; å‰åŠã€€DCT ï¼š A * DCT
 		;
 		Push	ebx
 		Push	esi
@@ -255,7 +255,7 @@ eriSquareIDCT		Proto	Near32 C ,
 		Mov	ebx, esi
 		Shr	edx, 1
 		;
-		; Œã”¼ DCT-IV F R * 2 * A * DCT * K
+		; å¾ŒåŠ DCT-IV ï¼š R * 2 * A * DCT * K
 		;
 		Mov	eax, ERI_pMatrixDCTofK[(degree - 1) * 4]
 		Add	esi, (half_degree) * (SizeOf Real4)
@@ -334,17 +334,17 @@ eriSquareIDCT		Proto	Near32 C ,
 
 
 ;
-;	‚‘¬ IDCT •ÏŠ·ƒ}ƒNƒ
+;	é«˜é€Ÿ IDCT å¤‰æ›ãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
-; ƒpƒ‰ƒ[ƒ^G
-;	ESI register	: “ü—Íƒf[ƒ^‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDI register	: o—Íƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EBX register	: ’†ŠÔƒoƒbƒtƒ@‚Ö‚Ìƒ|ƒCƒ“ƒ^
-;	EDX register	: ƒ\[ƒX‚ÌƒXƒeƒbƒv”iƒoƒCƒg’PˆÊj
-;	degree		: DCT Ÿ”i‘¦’lj
-;	xmm_flag	: 0 ‚ÌAXMM ƒŒƒWƒXƒ^‚ğg—p‚µ‚È‚¢i‘¦’lj
-; ƒŒƒWƒXƒ^G
-;	EBX, EDX, ESI, EDI, EBP, ESP ƒŒƒWƒXƒ^‚Ì“à—e‚Í•ÛØ‚³‚ê‚é
+; ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ï¼›
+;	ESI register	: å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDI register	: å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EBX register	: ä¸­é–“ãƒãƒƒãƒ•ã‚¡ã¸ã®ãƒã‚¤ãƒ³ã‚¿
+;	EDX register	: ã‚½ãƒ¼ã‚¹ã®ã‚¹ãƒ†ãƒƒãƒ—æ•°ï¼ˆãƒã‚¤ãƒˆå˜ä½ï¼‰
+;	degree		: DCT æ¬¡æ•°ï¼ˆå³å€¤ï¼‰
+;	xmm_flag	: 0 ã®æ™‚ã€XMM ãƒ¬ã‚¸ã‚¹ã‚¿ã‚’ä½¿ç”¨ã—ãªã„ï¼ˆå³å€¤ï¼‰
+; ãƒ¬ã‚¸ã‚¹ã‚¿ï¼›
+;	EBX, EDX, ESI, EDI, EBP, ESP ãƒ¬ã‚¸ã‚¹ã‚¿ã®å†…å®¹ã¯ä¿è¨¼ã•ã‚Œã‚‹
 ; ----------------------------------------------------------------------------
 
 @FastIDCT	Macro	degree:Req, xmm_flag:Req
@@ -356,11 +356,11 @@ eriSquareIDCT		Proto	Near32 C ,
 	;
 	If	degree Eq MIN_DCT_DEGREE
 		;
-		;	4Ÿ DCT ‚Í“ÁêğŒ
+		;	4æ¬¡ DCT ã¯ç‰¹æ®Šæ¡ä»¶
 		; ------------------------------------------------------------
 		If	xmm_flag
 			;
-			;	XMM ê—pƒR[ƒh
+			;	XMM å°‚ç”¨ã‚³ãƒ¼ãƒ‰
 			; ----------------------------------------------------
 			Lea	ecx, [edx + edx * 2]
 			;
@@ -387,11 +387,11 @@ eriSquareIDCT		Proto	Near32 C ,
 
 		Else
 			;
-			;	FPU ŒİŠ·ƒR[ƒh
+			;	FPU äº’æ›ã‚³ãƒ¼ãƒ‰
 			; ----------------------------------------------------
 			Lea	ecx, [edx + edx * 2]
 			;
-			; ‹ô”s F IDCT2
+			; å¶æ•°è¡Œ ï¼š IDCT2
 			;
 			fld	Real4 Ptr [esi + edx * 2]
 			fmul	ERI_rCosPI4
@@ -402,7 +402,7 @@ eriSquareIDCT		Proto	Near32 C ,
 			fxch	st(2)
 			fsubp	st(1), st
 			;
-			; Šï”s F R * 2 * A * DCT * K
+			; å¥‡æ•°è¡Œ ï¼š R * 2 * A * DCT * K
 			;
 			fld	Real4 Ptr [esi + ecx]
 			fmul	ERI_DCTofK2[4]
@@ -417,7 +417,7 @@ eriSquareIDCT		Proto	Near32 C ,
 			;
 			fsub	st, st(1)
 			;
-			; Œğ·‰ÁŒ¸Z
+			; äº¤å·®åŠ æ¸›ç®—
 			;
 			fld	st(0)
 			fadd	st, st(3)
@@ -435,10 +435,10 @@ eriSquareIDCT		Proto	Near32 C ,
 
 	Else
 		;
-		;	”Ä—p IDCT •ÏŠ·
+		;	æ±ç”¨ IDCT å¤‰æ›
 		; ------------------------------------------------------------
 		;
-		; ‹ô”s F IDCT
+		; å¶æ•°è¡Œ ï¼š IDCT
 		;
 		degree_num = 1 Shl degree
 		half_degree = degree_num / 2
@@ -447,7 +447,7 @@ eriSquareIDCT		Proto	Near32 C ,
 		Shl	edx, 1
 		@FastIDCT	%(degree - 1), xmm_flag
 		;
-		; Šï”s F R * 2 * A * DCT * K
+		; å¥‡æ•°è¡Œ ï¼š R * 2 * A * DCT * K
 		;
 		Push	esi
 		Push	edi
@@ -493,7 +493,7 @@ eriSquareIDCT		Proto	Near32 C ,
 		;
 		fstp	st(0)
 		;              | I   I |
-		; Œğ·‰ÁŒ¸Z = |       |
+		; äº¤å·®åŠ æ¸›ç®— = |       |
 		;              | J  -J |
 		Sub	edi, half_degree * (SizeOf Real4)
 		Xor	eax, eax

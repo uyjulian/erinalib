@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2001/11/04
+                                                      æœ€çµ‚æ›´æ–° 2001/11/04
  ----------------------------------------------------------------------------
           Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -21,11 +21,11 @@
 
 
 /*****************************************************************************
-                   ƒ‰ƒ“ƒŒƒ“ƒOƒXEƒKƒ“ƒ}EƒRƒ“ƒeƒLƒXƒg
+                   ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ãƒ»ã‚¬ãƒ³ãƒãƒ»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 //
-// ‚ƒrƒbƒgo—Í‚·‚é
+// ï½ãƒ“ãƒƒãƒˆå‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::OutNBits( DWORD dwData, int n )
 {
@@ -34,7 +34,7 @@ int RLHEncodeContext::OutNBits( DWORD dwData, int n )
 		if ( m_nIntBufCount + n >= 32 )
 		{
 			//
-			// ’†ŠÔƒoƒbƒtƒ@‚ª‚¢‚Á‚Ï‚¢‚É‚È‚é
+			// ä¸­é–“ãƒãƒƒãƒ•ã‚¡ãŒã„ã£ã±ã„ã«ãªã‚‹
 			int	sc = 32 - m_nIntBufCount ;
 			if ( m_nIntBufCount == 0 )
 			{
@@ -49,7 +49,7 @@ int RLHEncodeContext::OutNBits( DWORD dwData, int n )
 			m_nIntBufCount = 0 ;
 			n -= sc ;
 			//
-			// ƒoƒbƒtƒ@‚Éo—Í
+			// ãƒãƒƒãƒ•ã‚¡ã«å‡ºåŠ›
 			m_ptrBuffer[m_nBufCount] = (BYTE) (m_dwIntBuffer >> 24) ;
 			m_ptrBuffer[m_nBufCount + 1] = (BYTE) (m_dwIntBuffer >> 16) ;
 			m_ptrBuffer[m_nBufCount + 2] = (BYTE) (m_dwIntBuffer >> 8) ;
@@ -65,7 +65,7 @@ int RLHEncodeContext::OutNBits( DWORD dwData, int n )
 		else
 		{
 			//
-			// ’†ŠÔƒoƒbƒtƒ@‚É‚Í—]—T‚ª‚ ‚é
+			// ä¸­é–“ãƒãƒƒãƒ•ã‚¡ã«ã¯ä½™è£•ãŒã‚ã‚‹
 			m_dwIntBuffer = (m_dwIntBuffer << n) | (dwData >> (32 - n)) ;
 			m_nIntBufCount += n ;
 			break ;
@@ -75,7 +75,7 @@ int RLHEncodeContext::OutNBits( DWORD dwData, int n )
 }
 
 //
-// ƒ‰ƒ“ƒŒƒ“ƒOƒXƒKƒ“ƒ}•„†‚É•„†‰»‚µ‚½Û‚ÌƒTƒCƒYiƒrƒbƒg”j‚ğŒvZ
+// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã‚¬ãƒ³ãƒç¬¦å·ã«ç¬¦å·åŒ–ã—ãŸéš›ã®ã‚µã‚¤ã‚ºï¼ˆãƒ“ãƒƒãƒˆæ•°ï¼‰ã‚’è¨ˆç®—
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::TryEncodeGammaCodes( const INT * ptrSrc, int nCount )
 {
@@ -86,7 +86,7 @@ int RLHEncodeContext::TryEncodeGammaCodes( const INT * ptrSrc, int nCount )
 		if ( ptrSrc[i] == 0 )
 		{
 			//
-			// ƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			// ã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			c = i ;
 			while ( ptrSrc[i] == 0 )
 			{
@@ -94,13 +94,13 @@ int RLHEncodeContext::TryEncodeGammaCodes( const INT * ptrSrc, int nCount )
 					break ;
 			}
 			//
-			// •„†‚Ì’·‚³‚ğ‰ÁZ
+			// ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			l += TryOutACode( i - c ) ;
 		}
 		else
 		{
 			//
-			// ”ñƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			// éã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			c = i ;
 			while ( ptrSrc[c] != 0 )
 			{
@@ -108,10 +108,10 @@ int RLHEncodeContext::TryEncodeGammaCodes( const INT * ptrSrc, int nCount )
 					break ;
 			}
 			//
-			// •„†‚Ì’·‚³‚ğ‰ÁZ
+			// ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			l += TryOutACode( c - i ) ;
 			//
-			// Še•„†‚Ì’·‚³‚ğ‰ÁZ
+			// å„ç¬¦å·ã®é•·ã•ã‚’åŠ ç®—
 			while ( i < c )
 			{
 				int	num = ptrSrc[i ++] ;
@@ -126,17 +126,17 @@ int RLHEncodeContext::TryEncodeGammaCodes( const INT * ptrSrc, int nCount )
 }
 
 //
-// ƒnƒtƒ}ƒ“•„†‚Åo—Í‚·‚é
+// ãƒãƒ•ãƒãƒ³ç¬¦å·ã§å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::OutAHuffmanCode( ERINA_HUFFMAN_TREE * tree, int num )
 {
 	//
-	// w’è‚ÌƒcƒŠ[ƒGƒ“ƒgƒŠ‚ğæ“¾
+	// æŒ‡å®šã®ãƒ„ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’å–å¾—
 	int		iEntry = tree->m_iSymLookup[num & 0xFF] ;
 	if ( iEntry == ERINA_HUFFMAN_NULL )
 	{
 		//
-		// ƒGƒXƒP[ƒvƒR[ƒh‚ğo—Í
+		// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 		if ( tree->m_iEscape != ERINA_HUFFMAN_NULL )
 		{
 			DWORD	dwCode = 0 ;
@@ -168,7 +168,7 @@ int RLHEncodeContext::OutAHuffmanCode( ERINA_HUFFMAN_TREE * tree, int num )
 	else
 	{
 		//
-		// •’Ê‚ÌƒR[ƒh‚ğo—Í
+		// æ™®é€šã®ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 		DWORD	dwCode = 0 ;
 		int		nCodeLength = 0 ;
 		int		iChild = iEntry ;
@@ -194,7 +194,7 @@ int RLHEncodeContext::OutAHuffmanCode( ERINA_HUFFMAN_TREE * tree, int num )
 }
 
 //
-// ’·‚³‚ğƒnƒtƒ}ƒ“•„†‚Åo—Í‚·‚é
+// é•·ã•ã‚’ãƒãƒ•ãƒãƒ³ç¬¦å·ã§å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::OutLengthHuffman
 	( ERINA_HUFFMAN_TREE * tree, int length )
@@ -203,7 +203,7 @@ int RLHEncodeContext::OutLengthHuffman
 	int		iChild, iParent, nCodeLength ;
 	DWORD	dwCode ;
 	//
-	// w’è‚ÌƒcƒŠ[ƒGƒ“ƒgƒŠ‚ğæ“¾
+	// æŒ‡å®šã®ãƒ„ãƒªãƒ¼ã‚¨ãƒ³ãƒˆãƒªã‚’å–å¾—
 	int		iEntry = tree->m_iSymLookup[length & 0xFF] ;
 	//
 	if ( (iEntry == ERINA_HUFFMAN_NULL) ||
@@ -224,7 +224,7 @@ int RLHEncodeContext::OutLengthHuffman
 		if ( iEntry < iTreePointer )
 		{
 			//
-			// ƒGƒXƒP[ƒvƒR[ƒh‚ğo—Í
+			// ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 			if ( tree->m_iEscape != ERINA_HUFFMAN_NULL )
 			{
 				iChild = tree->m_iEscape ;
@@ -256,7 +256,7 @@ int RLHEncodeContext::OutLengthHuffman
 		}
 	}
 	//
-	// ’Êí‚Ìƒnƒtƒ}ƒ“•„†‚ğo—Í
+	// é€šå¸¸ã®ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å‡ºåŠ›
 	iChild = iEntry ;
 	dwCode = 0 ;
 	nCodeLength = 0 ;
@@ -281,7 +281,7 @@ int RLHEncodeContext::OutLengthHuffman
 }
 
 //
-// ERINA •„†‚É•„†‰»‚µ‚Äo—Í‚·‚é
+// ERINA ç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::EncodeERINACodes( const INT * ptrSrc, int nCount )
 {
@@ -313,7 +313,7 @@ int RLHEncodeContext::EncodeERINACodes( const INT * ptrSrc, int nCount )
 }
 
 //
-// ERINA •„†‚É•„†‰»‚µ‚Äo—Í‚·‚éi8ƒrƒbƒgƒo[ƒWƒ‡ƒ“j
+// ERINA ç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹ï¼ˆ8ãƒ“ãƒƒãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::EncodeERINACodesSBZL( const SBYTE * ptrSrc, int nCount )
 {
@@ -345,7 +345,7 @@ int RLHEncodeContext::EncodeERINACodesSBZL( const SBYTE * ptrSrc, int nCount )
 }
 
 //
-// ERINA •„†i256F—pj‚É•„†‰»‚µ‚Äo—Í‚·‚é
+// ERINA ç¬¦å·ï¼ˆ256è‰²ç”¨ï¼‰ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::EncodeERINACodes256( const BYTE * ptrSrc, int nCount )
 {
@@ -379,11 +379,11 @@ int RLHEncodeContext::EncodeERINACodes256( const BYTE * ptrSrc, int nCount )
 
 
 /*****************************************************************************
-                               ˆ³kƒIƒuƒWƒFƒNƒg
+                               åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// ·•ªˆ—
+// å·®åˆ†å‡¦ç†
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::DifferentialOperation
 	( LONG nAllBlockLines, PINT * ptrNextLineBuf )
@@ -391,7 +391,7 @@ void ERIEncoder::DifferentialOperation
 	INT		i, j, k ;
 	PINT	ptrLineBuf, ptrNextBuf, ptrNextColBuf ;
 	//
-	// ·•ªˆ—‚ğÀsi‚’¼•ûŒüj
+	// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆå‚ç›´æ–¹å‘ï¼‰
 	ptrLineBuf = *ptrNextLineBuf ;
 	ptrNextBuf = m_ptrBuffer1 ;
 	for ( k = 0; k < (INT) m_nChannelCount; k ++ )
@@ -409,7 +409,7 @@ void ERIEncoder::DifferentialOperation
 	}
 	*ptrNextLineBuf = ptrLineBuf ;
 	//
-	// ·•ªˆ—‚ğÀsi…•½•ûŒüj
+	// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆæ°´å¹³æ–¹å‘ï¼‰
 	ptrNextBuf = m_ptrBuffer1 ;
 	ptrNextColBuf = m_ptrColumnBuf ;
 	for ( i = 0; i < nAllBlockLines; i ++ )
@@ -427,7 +427,7 @@ void ERIEncoder::DifferentialOperation
 }
 
 //
-// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğæ“¾
+// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD ERIEncoder::DecideOperationCode
 	( int nCompressMode, LONG nAllBlockLines, PINT * ptrNextLineBuf )
@@ -435,12 +435,12 @@ DWORD ERIEncoder::DecideOperationCode
 	unsigned int	i, j, k ;
 	int		nBestSize, nTrySize ;
 	//
-	// Å“K‚È·•ªˆ—ƒR[ƒh‚ğ‘I‘ğ
+	// æœ€é©ãªå·®åˆ†å‡¦ç†ã‚³ãƒ¼ãƒ‰ã‚’é¸æŠ
 	int		iBestDifOp ;
 	if ( nCompressMode >= 2 )
 	{
 		//
-		// ·•ªˆ—‚Ì‘I‘ğ‚Í‚µ‚È‚¢
+		// å·®åˆ†å‡¦ç†ã®é¸æŠã¯ã—ãªã„
 		iBestDifOp = 0x03 ;
 		DifferentialOperation( nAllBlockLines, ptrNextLineBuf ) ;
 		nBestSize = RLHEncodeContext::TryEncodeGammaCodes
@@ -449,7 +449,7 @@ DWORD ERIEncoder::DecideOperationCode
 	else // if ( nCompressMode <= 1 )
 	{
 		//
-		// ·•ªˆ—‚ğÀsi‚’¼•ûŒüj
+		// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆå‚ç›´æ–¹å‘ï¼‰
 		PINT	ptrLineBuf, ptrNextBuf, ptrNextColBuf ;
 		ptrLineBuf = *ptrNextLineBuf ;
 		ptrNextBuf = m_ptrBuffer1 ;
@@ -472,11 +472,11 @@ DWORD ERIEncoder::DecideOperationCode
 		nBestSize = RLHEncodeContext::TryEncodeGammaCodes
 							( m_ptrBuffer1, m_nBlockSamples ) ;
 		//
-		// ’†ŠÔó‘Ô‚ğ•Û‘¶
+		// ä¸­é–“çŠ¶æ…‹ã‚’ä¿å­˜
 		for ( i = 0; i < m_nBlockSamples; i ++ )
 			m_ptrBuffer2[i] = m_ptrBuffer1[i] ;
 		//
-		// ·•ªˆ—‚ğÀsi…•½•ûŒüj
+		// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œï¼ˆæ°´å¹³æ–¹å‘ï¼‰
 		ptrNextBuf = m_ptrBuffer1 ;
 		ptrNextColBuf = m_ptrColumnBuf ;
 		for ( i = 0; i < (ULONG) nAllBlockLines; i ++ )
@@ -508,11 +508,11 @@ DWORD ERIEncoder::DecideOperationCode
 	//
 	if ( nCompressMode == 3 )
 	{
-		// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚Íg—p‚µ‚È‚¢
+		// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã¯ä½¿ç”¨ã—ãªã„
 		return	(DWORD) (iBestDifOp << 6) ;
 	}
 	//
-	// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[‚·‚é
+	// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 	if ( m_nChannelCount >= 4 )
 	{
 		PINT	ptrSrc = m_ptrBuffer1 + m_nBlockArea * 3 ;
@@ -523,7 +523,7 @@ DWORD ERIEncoder::DecideOperationCode
 		}
 	}
 	//
-	// Å“K‚ÈƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğ‘I‘ğ
+	// æœ€é©ãªã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é¸æŠ
 	static const int	iClrOpFull[9] =
 	{
 		5, 6, 7, 9, 10, 11, 13, 14, 15
@@ -560,26 +560,26 @@ DWORD ERIEncoder::DecideOperationCode
 		}
 	}
 	// 
-	// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğÀs
+	// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œ
 	(this->*m_pfnColorOperation[iBestClrOp])( ) ;
 	//
-	// •s—v‚Èƒrƒbƒg‚ğíœ
+	// ä¸è¦ãªãƒ“ãƒƒãƒˆã‚’å‰Šé™¤
 	NormalizeWithDepth
 		( m_ptrBuffer2, m_ptrBuffer2, m_nBlockSamples ) ;
 	//
-	// Å“K‚ÈƒAƒŒƒ“ƒWƒR[ƒh‚ğ‘I‚Ô
+	// æœ€é©ãªã‚¢ãƒ¬ãƒ³ã‚¸ã‚³ãƒ¼ãƒ‰ã‚’é¸ã¶
 	//
 	int		iBestArrange = 0 ;
 	PINT	pArrange ;
 	if ( nCompressMode == 2 )
 	{
 		//
-		// ƒAƒŒƒ“ƒWƒR[ƒh‚Íg‚í‚È‚¢
+		// ã‚¢ãƒ¬ãƒ³ã‚¸ã‚³ãƒ¼ãƒ‰ã¯ä½¿ã‚ãªã„
 	}
 	else if ( nCompressMode == 1 )
 	{
 		//
-		// ƒCƒ“ƒ^[ƒŠ[ƒu‚Ì—LŒø«‚ğŒŸØ
+		// ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–ã®æœ‰åŠ¹æ€§ã‚’æ¤œè¨¼
 		pArrange = m_pArrangeTable[2] ;
 		for ( j = 0; j < (INT) m_nBlockSamples; j ++ )
 		{
@@ -594,7 +594,7 @@ DWORD ERIEncoder::DecideOperationCode
 			iBestArrange |= 0x02 ;
 		}
 		//
-		// ‚’¼‘–¸‚Ì—LŒø«‚ğŒŸØ
+		// å‚ç›´èµ°æŸ»ã®æœ‰åŠ¹æ€§ã‚’æ¤œè¨¼
 		pArrange = m_pArrangeTable[iBestArrange | 0x01] ;
 		for ( j = 0; j < (INT) m_nBlockSamples; j ++ )
 		{
@@ -612,7 +612,7 @@ DWORD ERIEncoder::DecideOperationCode
 	else // if ( nCompressMode == 0 )
 	{
 		//
-		// ‘“–‚½‚è
+		// ç·å½“ãŸã‚Š
 		for ( i = 1; i < 4; i ++ )
 		{
 			pArrange = m_pArrangeTable[i] ;
@@ -637,12 +637,12 @@ DWORD ERIEncoder::DecideOperationCode
 		m_ptrBuffer1[pArrange[i]] = m_ptrBuffer2[i] ;
 	}
 	//
-	// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğ•Ô‚·
+	// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’è¿”ã™
 	return	(DWORD) (iBestDifOp << 6) | (iBestArrange << 4) | iBestClrOp ;
 }
 
 //
-// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“ŠÖ”ŒQ
+// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢æ•°ç¾¤
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::ColorOperation0000( void )
 {

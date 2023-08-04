@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// “ú–{Œê resources
+// æ—¥æœ¬èª resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
 #ifdef _WIN32
@@ -50,8 +50,8 @@ BEGIN
     "LANGUAGE 17, 1\r\n"
     "#pragma code_page(932)\r\n"
     "#endif\r\n"
-    "#include ""res\\mioplayer.rc2""  // Microsoft Visual C++ ˆÈŠO‚Ìƒc[ƒ‹‚Å•ÒW‚³‚ê‚½ƒŠƒ\[ƒX\r\n"
-    "#include ""l.jpn\\afxres.rc""          // •W€‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg\r\n"
+    "#include ""res\\mioplayer.rc2""  // Microsoft Visual C++ ä»¥å¤–ã®ãƒ„ãƒ¼ãƒ«ã§ç·¨é›†ã•ã‚ŒãŸãƒªã‚½ãƒ¼ã‚¹\r\n"
+    "#include ""l.jpn\\afxres.rc""          // æ¨™æº–ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ\r\n"
     "#endif\0"
 END
 
@@ -74,8 +74,8 @@ IDR_MAINFRAME           ICON    DISCARDABLE     "res\\mioplayer.ico"
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "ÊŞ°¼Ş®İî•ñ mioplayer"
-FONT 9, "‚l‚r ‚oƒSƒVƒbƒN"
+CAPTION "ï¾Šï¾ï½°ï½¼ï¾ï½®ï¾æƒ…å ± mioplayer"
+FONT 9, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
     LTEXT           "mioplayer Version 1.0",IDC_STATIC,40,10,119,8,
@@ -89,7 +89,7 @@ IDD_MIOPLAYER_DIALOG DIALOGEX 0, 0, 199, 106
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "mioplayer"
-FONT 10, "‚l‚r ‚o–¾’©", 0, 0, 0x1
+FONT 10, "ï¼­ï¼³ ï¼°æ˜æœ", 0, 0, 0x1
 BEGIN
     CONTROL         "",IDC_BUTTON_PLAY,"Button",BS_OWNERDRAW | BS_BITMAP | 
                     WS_TABSTOP,15,15,15,15
@@ -99,7 +99,7 @@ BEGIN
     CONTROL         "Slider1",IDC_SLIDER,"msctls_trackbar32",TBS_BOTH | 
                     TBS_NOTICKS | WS_TABSTOP,15,45,170,15
     LTEXT           "",IDC_STATIC_FILE,20,75,110,20
-    PUSHBUTTON      "ŠJ‚­",IDC_BUTTON_BROWSE,145,75,40,15
+    PUSHBUTTON      "é–‹ã",IDC_BUTTON_BROWSE,145,75,40,15
 END
 
 
@@ -127,13 +127,13 @@ BEGIN
         BLOCK "041104B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "mioplayer MFC ±ÌßØ¹°¼®İ\0"
+            VALUE "FileDescription", "mioplayer MFC ï½±ï¾Œï¾Ÿï¾˜ï½¹ï½°ï½¼ï½®ï¾\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "mioplayer\0"
             VALUE "LegalCopyright", "Copyright (C) 1907\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "mioplayer.EXE\0"
-            VALUE "ProductName", "mioplayer ±ÌßØ¹°¼®İ\0"
+            VALUE "ProductName", "mioplayer ï½±ï¾Œï¾Ÿï¾˜ï½¹ï½°ï½¼ï½®ï¾\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END
@@ -198,10 +198,10 @@ IDB_PAUSE0              BITMAP  DISCARDABLE     "res\\pause0.bmp"
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "ÊŞ°¼Ş®İî•ñ(mioplayer) (&A)..."
+    IDS_ABOUTBOX            "ï¾Šï¾ï½°ï½¼ï¾ï½®ï¾æƒ…å ±(mioplayer) (&A)..."
 END
 
-#endif    // “ú–{Œê resources
+#endif    // æ—¥æœ¬èª resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -221,8 +221,8 @@ END
 LANGUAGE 17, 1
 #pragma code_page(932)
 #endif
-#include "res\mioplayer.rc2"  // Microsoft Visual C++ ˆÈŠO‚Ìƒc[ƒ‹‚Å•ÒW‚³‚ê‚½ƒŠƒ\[ƒX
-#include "l.jpn\afxres.rc"          // •W€‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg
+#include "res\mioplayer.rc2"  // Microsoft Visual C++ ä»¥å¤–ã®ãƒ„ãƒ¼ãƒ«ã§ç·¨é›†ã•ã‚ŒãŸãƒªã‚½ãƒ¼ã‚¹
+#include "l.jpn\afxres.rc"          // æ¨™æº–ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 #endif
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED

@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2002/05/26
+                                                      æœ€çµ‚æ›´æ–° 2002/05/26
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -16,20 +16,20 @@
 
 
 /*****************************************************************************
-                    MIOƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ€Ä¶ƒIƒuƒWƒFƒNƒg
+                    MIOãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒ å†ç”Ÿã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 class	MIODynamicPlayer
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MIODynamicPlayer( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MIODynamicPlayer( void ) ;
 
 protected:
 	//
-	// ƒŒƒR[ƒhæ“Ç‚İƒIƒuƒWƒFƒNƒg
+	// ãƒ¬ã‚³ãƒ¼ãƒ‰å…ˆèª­ã¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EPreloadBuffer	: public	EMemFile
 	{
 	public:
@@ -37,20 +37,20 @@ protected:
 		ULONG			m_nKeySample ;
 		MIO_DATA_HEADER	m_miodh ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EPreloadBuffer( DWORD dwLength ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		virtual ~EPreloadBuffer( void ) ;
 	} ;
 	//
-	// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg\‘¢‘Ì
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆæ§‹é€ ä½“
 	struct	KEY_POINT
 	{
 		ULONG	nKeySample ;
 		DWORD	dwRecOffset ;
 	} ;
 	//
-	// EPreloadBuffer ”z—ñƒIƒuƒWƒFƒNƒg
+	// EPreloadBuffer é…åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EPreloadQueue
 	{
 	public:
@@ -58,17 +58,17 @@ protected:
 		unsigned int		m_length ;
 		unsigned int		m_limit ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EPreloadQueue( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EPreloadQueue( void ) ;
-		// ”z—ñ‚ÌÅ‘å‚Ì’·‚³‚ğİ’è
+		// é…åˆ—ã®æœ€å¤§ã®é•·ã•ã‚’è¨­å®š
 		void SetLimit( unsigned int nLimit ) ;
-		// ”z—ñ‚ğÁ‹
+		// é…åˆ—ã‚’æ¶ˆå»
 		void RemoveAll( void ) ;
 	} ;
 	//
-	// KEY_POINT ”z—ñƒIƒuƒWƒFƒNƒg
+	// KEY_POINT é…åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EKeyPointList
 	{
 	public:
@@ -76,92 +76,92 @@ protected:
 		unsigned int	m_count ;
 		unsigned int	m_limit ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EKeyPointList( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EKeyPointList( void ) ;
-		// ”z—ñ‚ÌÅÜ‚Ì’·‚³‚ğİ’è
+		// é…åˆ—ã®æœ€å‰¤ã®é•·ã•ã‚’è¨­å®š
 		void SetLimit( unsigned int nLimit ) ;
-		// ”z—ñ‚ğÁ‹
+		// é…åˆ—ã‚’æ¶ˆå»
 		void RemoveAll( void ) ;
 	} ;
 	//
-	// ƒXƒŒƒbƒh—pƒƒbƒZ[ƒW
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ç”¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	enum	ThreadMessage
 	{
 		tmSeekSound	= WM_USER,
 		tmQuit
 	} ;
 
-	// ERIƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹
+	// ERIã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
 	ERIFile					m_erif ;
-	// “WŠJƒIƒuƒWƒFƒNƒg
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	EFileDecodeContext *	m_pmioc ;
 	MIODecoder *			m_pmiod ;
-	// æ“Ç‚İƒXƒŒƒbƒh
+	// å…ˆèª­ã¿ã‚¹ãƒ¬ãƒƒãƒ‰
 	HANDLE					m_hThread ;
 	DWORD					m_idThread ;
-	// æ“Ç‚İƒLƒ…[
+	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼
 	EPreloadQueue			m_queueSound ;
-	HANDLE					m_hQueueFull ;		// æ“Ç‚İƒLƒ…[‚ªˆê”t
-	HANDLE					m_hQueueNotEmpty ;	// æ“Ç‚İƒLƒ…[‚ª‹ó‚Å‚È‚¢
-	HANDLE					m_hQueueSpace ;		// æ“Ç‚İƒLƒ…[‚É“Ç‚İ‚İ‰Â”\
-	// ‰¹ºƒV[ƒN—pƒL[ƒ|ƒCƒ“ƒg”z—ñ
+	HANDLE					m_hQueueFull ;		// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ãŒä¸€æ¯
+	HANDLE					m_hQueueNotEmpty ;	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ãŒç©ºã§ãªã„
+	HANDLE					m_hQueueSpace ;		// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã«èª­ã¿è¾¼ã¿å¯èƒ½
+	// éŸ³å£°ã‚·ãƒ¼ã‚¯ç”¨ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆé…åˆ—
 	EKeyPointList			m_listKeySample ;
-	// ”r‘¼“Iˆ—
+	// æ’ä»–çš„å‡¦ç†
 	CRITICAL_SECTION		m_cs ;
 
 public:
-	// MIO ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	bool Open( EFileObject * pFile, unsigned int nPreloadSize = 0 ) ;
-	// MIO ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
 
-	// w’èƒTƒ“ƒvƒ‹‚ÖˆÚ“®‚µA‰‚ß‚ÌƒuƒƒbƒN‚Ìƒf[ƒ^‚ğæ“¾‚·‚é
+	// æŒ‡å®šã‚µãƒ³ãƒ—ãƒ«ã¸ç§»å‹•ã—ã€åˆã‚ã®ãƒ–ãƒ­ãƒƒã‚¯ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	virtual void * GetWaveBufferFrom
 		( ULONG nSample, DWORD & dwBytes, DWORD & dwOffsetBytes ) ;
-	// Ÿ‚Ì‰¹ºƒf[ƒ^‚ªƒXƒgƒŠ[ƒ€‚Ìæ“ª‚Å‚ ‚é‚©H
+	// æ¬¡ã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ãŒã‚¹ãƒˆãƒªãƒ¼ãƒ ã®å…ˆé ­ã§ã‚ã‚‹ã‹ï¼Ÿ
 	virtual bool IsNextDataRewound( void ) ;
-	// Ÿ‚Ì‰¹ºƒf[ƒ^‚ğæ“¾
+	// æ¬¡ã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 	virtual void * GetNextWaveBuffer( DWORD & dwBytes ) ;
-	// ‰¹ºƒoƒbƒtƒ@Šm•Û
+	// éŸ³å£°ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	virtual void * AllocateWaveBuffer( DWORD dwBytes ) ;
-	// ‰¹ºƒf[ƒ^”jŠü‹–‰Â
+	// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ç ´æ£„è¨±å¯
 	virtual void DeleteWaveBuffer( void * ptrWaveBuf ) ;
-	// ‰¹º“WŠJƒIƒuƒWƒFƒNƒg‚ğ¶¬
+	// éŸ³å£°å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
 	virtual MIODecoder * CreateMIODecoder( void ) ;
 
 public:
-	// ERIFile ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+	// ERIFile ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 	const ERIFile & GetERIFile( void ) const ;
-	// ƒ`ƒƒƒlƒ‹”‚ğæ“¾‚·‚é
+	// ãƒãƒ£ãƒãƒ«æ•°ã‚’å–å¾—ã™ã‚‹
 	DWORD GetChannelCount( void ) const ;
-	// ƒTƒ“ƒvƒŠƒ“ƒOü”g”‚ğæ“¾‚·‚é
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°ã‚’å–å¾—ã™ã‚‹
 	DWORD GetFrequency( void ) const ;
-	// ƒTƒ“ƒvƒŠƒ“ƒOƒrƒbƒg•ª‰ğ”\‚ğæ“¾‚·‚é
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ“ãƒƒãƒˆåˆ†è§£èƒ½ã‚’å–å¾—ã™ã‚‹
 	DWORD GetBitsPerSample( void ) const ;
-	// ‘S‘Ì‚Ì’·‚³iƒTƒ“ƒvƒ‹”j‚ğæ“¾‚·‚é
+	// å…¨ä½“ã®é•·ã•ï¼ˆã‚µãƒ³ãƒ—ãƒ«æ•°ï¼‰ã‚’å–å¾—ã™ã‚‹
 	DWORD GetTotalSampleCount( void ) const ;
 
 protected:
-	// æ“Ç‚İƒoƒbƒtƒ@‚ğæ“¾‚·‚é
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—ã™ã‚‹
 	EPreloadBuffer * GetPreloadBuffer( void ) ;
-	// æ“Ç‚İƒoƒbƒtƒ@‚É’Ç‰Á‚·‚é
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ ã™ã‚‹
 	void AddPreloadBuffer( EPreloadBuffer * pBuffer ) ;
 
 protected:
-	// ƒXƒŒƒbƒhŠÖ”
+	// ã‚¹ãƒ¬ãƒƒãƒ‰é–¢æ•°
 	static DWORD WINAPI ThreadProc( LPVOID parameter ) ;
 	DWORD LoadingThreadProc( void ) ;
-	// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg‚ğ’Ç‰Á‚·‚é
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆã‚’è¿½åŠ ã™ã‚‹
 	void AddKeySample( KEY_POINT key ) ;
-	// w’è‚ÌƒL[ƒtƒŒ[ƒ€‚ğŒŸõ‚·‚é
+	// æŒ‡å®šã®ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ¤œç´¢ã™ã‚‹
 	KEY_POINT * SearchKeySample( unsigned int nKeySample ) ;
-	// w’è‚ÌƒTƒ“ƒvƒ‹‚ğŠÜ‚ŞƒuƒƒbƒN‚ğ“Ç‚İ‚Ş
+	// æŒ‡å®šã®ã‚µãƒ³ãƒ—ãƒ«ã‚’å«ã‚€ãƒ–ãƒ­ãƒƒã‚¯ã‚’èª­ã¿è¾¼ã‚€
 	void SeekKeySample( ULONG nSample, unsigned int & nCurrentSample ) ;
 
 public:
-	// ”r‘¼ˆ—iƒNƒŠƒeƒBƒJƒ‹ƒZƒNƒVƒ‡ƒ“j
+	// æ’ä»–å‡¦ç†ï¼ˆã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«ã‚»ã‚¯ã‚·ãƒ§ãƒ³ï¼‰
 	void Lock( void ) ;
 	void Unlock( void ) ;
 
@@ -169,20 +169,20 @@ public:
 
 
 /*****************************************************************************
-                    ERIƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+                    ERIã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 class	ERIAnimation
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	ERIAnimation( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~ERIAnimation( void ) ;
 
 protected:
 	//
-	// ƒŒƒR[ƒhæ“Ç‚İƒIƒuƒWƒFƒNƒg
+	// ãƒ¬ã‚³ãƒ¼ãƒ‰å…ˆèª­ã¿ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EPreloadBuffer	: public	EMemFile
 	{
 	public:
@@ -190,20 +190,20 @@ protected:
 		ULONG	m_iFrameIndex ;
 		UINT64	m_ui64RecType ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EPreloadBuffer( DWORD dwLength ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		virtual ~EPreloadBuffer( void ) ;
 	} ;
 	//
-	// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg\‘¢‘Ì
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆæ§‹é€ ä½“
 	struct	KEY_POINT
 	{
 		ULONG	iKeyFrame ;
 		DWORD	dwRecOffset ;
 	} ;
 	//
-	// EPreloadBuffer ”z—ñƒIƒuƒWƒFƒNƒg
+	// EPreloadBuffer é…åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EPreloadQueue
 	{
 	public:
@@ -211,17 +211,17 @@ protected:
 		unsigned int		m_length ;
 		unsigned int		m_limit ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EPreloadQueue( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EPreloadQueue( void ) ;
-		// ”z—ñ‚ÌÅ‘å‚Ì’·‚³‚ğİ’è
+		// é…åˆ—ã®æœ€å¤§ã®é•·ã•ã‚’è¨­å®š
 		void SetLimit( unsigned int nLimit ) ;
-		// ”z—ñ‚ğÁ‹
+		// é…åˆ—ã‚’æ¶ˆå»
 		void RemoveAll( void ) ;
 	} ;
 	//
-	// KEY_POINT ”z—ñƒIƒuƒWƒFƒNƒg
+	// KEY_POINT é…åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EKeyPointList
 	{
 	public:
@@ -229,17 +229,17 @@ protected:
 		unsigned int	m_count ;
 		unsigned int	m_limit ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EKeyPointList( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EKeyPointList( void ) ;
-		// ”z—ñ‚ÌÅÜ‚Ì’·‚³‚ğİ’è
+		// é…åˆ—ã®æœ€å‰¤ã®é•·ã•ã‚’è¨­å®š
 		void SetLimit( unsigned int nLimit ) ;
-		// ”z—ñ‚ğÁ‹
+		// é…åˆ—ã‚’æ¶ˆå»
 		void RemoveAll( void ) ;
 	} ;
 	//
-	// ƒXƒŒƒbƒh—pƒƒbƒZ[ƒW
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ç”¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	enum	ThreadMessage
 	{
 		tmSeekFrame	= WM_USER,
@@ -247,126 +247,126 @@ protected:
 		tmQuit
 	} ;
 
-	// ERIƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹
+	// ERIã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
 	bool					m_fTopDown ;
 	bool					m_fWaveOutput ;
 	bool					m_fWaveStreaming ;
 	ERIFile					m_erif ;
-	// “WŠJƒIƒuƒWƒFƒNƒg
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	EFileDecodeContext *	m_peric ;
 	ERIDecoder *			m_perid ;
 	EFileDecodeContext *	m_pmioc ;
 	MIODecoder *			m_pmiod ;
-	// ‰æ‘œƒoƒbƒtƒ@
+	// ç”»åƒãƒãƒƒãƒ•ã‚¡
 	unsigned int			m_iCurrentFrame ;
 	RASTER_IMAGE_INFO *		m_pDstImage ;
 	ENTIS_PALETTE *			m_pPaletteTable ;
 	RASTER_IMAGE_INFO *		m_pWorkImage ;
-	// æ“Ç‚İƒXƒŒƒbƒh
+	// å…ˆèª­ã¿ã‚¹ãƒ¬ãƒƒãƒ‰
 	HANDLE					m_hThread ;
 	DWORD					m_idThread ;
-	// ‰æ‘œæ“Ç‚İƒLƒ…[
+	// ç”»åƒå…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼
 	EPreloadQueue			m_queueImage ;
-	HANDLE					m_hQueueNotEmpty ;	// æ“Ç‚İƒLƒ…[‚ª‹ó‚Å‚È‚¢
-	HANDLE					m_hQueueSpace ;		// æ“Ç‚İƒLƒ…[‚É“Ç‚İ‚İ‰Â”\
-	// ƒtƒŒ[ƒ€ƒV[ƒN—pƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg”z—ñ
+	HANDLE					m_hQueueNotEmpty ;	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ãŒç©ºã§ãªã„
+	HANDLE					m_hQueueSpace ;		// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã«èª­ã¿è¾¼ã¿å¯èƒ½
+	// ãƒ•ãƒ¬ãƒ¼ãƒ ã‚·ãƒ¼ã‚¯ç”¨ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆé…åˆ—
 	EKeyPointList			m_listKeyFrame ;
 	EKeyPointList			m_listKeyWave ;
-	// ”r‘¼“Iˆ—
+	// æ’ä»–çš„å‡¦ç†
 	CRITICAL_SECTION		m_cs ;
 
 protected:
-	// ‰æ‘œ“WŠJo—Íƒoƒbƒtƒ@—v‹
+	// ç”»åƒå±•é–‹å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡è¦æ±‚
 	virtual RASTER_IMAGE_INFO * CreateImageBuffer
 		( DWORD format, SDWORD width, SDWORD height,
 					DWORD bpp, ENTIS_PALETTE ** ppaltbl ) ;
-	// ‰æ‘œ“WŠJo—Íƒoƒbƒtƒ@Á‹
+	// ç”»åƒå±•é–‹å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡æ¶ˆå»
 	virtual void DeleteImageBuffer
 		( RASTER_IMAGE_INFO * prii, ENTIS_PALETTE * paltbl ) ;
-	// ‰æ‘œ“WŠJƒIƒuƒWƒFƒNƒg¶¬
+	// ç”»åƒå±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç”Ÿæˆ
 	virtual ERIDecoder * CreateERIDecoder( void ) ;
-	// ‰¹º“WŠJƒIƒuƒWƒFƒNƒg¶¬
+	// éŸ³å£°å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç”Ÿæˆ
 	virtual MIODecoder * CreateMIODecoder( void ) ;
-	// ‰¹ºo—Í—v‹
+	// éŸ³å£°å‡ºåŠ›è¦æ±‚
 	virtual bool RequestWaveOut
 		( DWORD channels, DWORD frequency, DWORD bps ) ;
-	// ‰¹ºo—ÍI—¹
+	// éŸ³å£°å‡ºåŠ›çµ‚äº†
 	virtual void CloseWaveOut( void ) ;
-	// ‰¹ºƒf[ƒ^o—Í
+	// éŸ³å£°ãƒ‡ãƒ¼ã‚¿å‡ºåŠ›
 	virtual void PushWaveBuffer( void * ptrWaveBuf, DWORD dwBytes ) ;
 public:
-	// ‰¹ºƒoƒbƒtƒ@Šm•Û
+	// éŸ³å£°ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	virtual void * AllocateWaveBuffer( DWORD dwBytes ) ;
-	// ‰¹ºƒf[ƒ^”jŠü‹–‰Â
+	// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ç ´æ£„è¨±å¯
 	virtual void DeleteWaveBuffer( void * ptrWaveBuf ) ;
-	// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOŠJn
+	// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°é–‹å§‹
 	virtual void BeginWaveStreaming( void ) ;
-	// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOI—¹
+	// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°çµ‚äº†
 	virtual void EndWaveStreaming( void ) ;
 
 public:
-	// ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	bool Open( EFileObject * pFile,
 			unsigned int nPreloadSize = 0, bool fTopDown = false ) ;
-	// ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
 
-	// æ“ªƒtƒŒ[ƒ€‚ÖˆÚ“®
+	// å…ˆé ­ãƒ•ãƒ¬ãƒ¼ãƒ ã¸ç§»å‹•
 	bool SeekToBegin( void ) ;
-	// Ÿ‚ÌƒtƒŒ[ƒ€‚ÖˆÚ“®
+	// æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¸ç§»å‹•
 	bool SeekToNextFrame( int nSkipFrame = 0 ) ;
-	// w’è‚ÌƒtƒŒ[ƒ€‚ÉˆÚ“®
+	// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã«ç§»å‹•
 	bool SeekToFrame( unsigned int iFrameIndex ) ;
-	// w’è‚ÌƒtƒŒ[ƒ€‚ÍƒL[ƒtƒŒ[ƒ€‚©H
+	// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¯ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‹ï¼Ÿ
 	bool IsKeyFrame( unsigned int iFrameIndex ) ;
 
 protected:
-	// Ÿ‚ÌƒtƒŒ[ƒ€‚ğ“WŠJ‚·‚é
+	// æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹ã™ã‚‹
 	bool DecodeNextFrame( void ) ;
-	// æ“Ç‚İƒoƒbƒtƒ@‚ğæ“¾‚·‚é
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—ã™ã‚‹
 	EPreloadBuffer * GetPreloadBuffer( void ) ;
-	// æ“Ç‚İƒoƒbƒtƒ@‚É’Ç‰Á‚·‚é
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ ã™ã‚‹
 	void AddPreloadBuffer( EPreloadBuffer * pBuffer ) ;
 
 public:
-	// ERIFile ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+	// ERIFile ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 	const ERIFile & GetERIFile( void ) const ;
-	// ƒJƒŒƒ“ƒgƒtƒŒ[ƒ€‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ“¾‚·‚é
+	// ã‚«ãƒ¬ãƒ³ãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—ã™ã‚‹
 	unsigned int CurrentIndex( void ) const ;
-	// ƒJƒŒƒ“ƒgƒtƒŒ[ƒ€‚Ì‰æ‘œ‚ğæ“¾
+	// ã‚«ãƒ¬ãƒ³ãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ã®ç”»åƒã‚’å–å¾—
 	const RASTER_IMAGE_INFO * GetImageInfo( void ) const ;
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹æ“¾
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«å–å¾—
 	const ENTIS_PALETTE * GetPaletteEntries( void ) const ;
-	// ƒL[ƒtƒŒ[ƒ€‚ğæ“¾
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—
 	unsigned int GetKeyFrameCount( void ) const ;
-	// ‘SƒtƒŒ[ƒ€”‚ğæ“¾
+	// å…¨ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’å–å¾—
 	unsigned int GetAllFrameCount( void ) const ;
-	// ‘SƒAƒjƒ[ƒVƒ‡ƒ“ŠÔ‚ğæ“¾
+	// å…¨ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã‚’å–å¾—
 	unsigned int GetTotalTime( void ) const ;
-	// ƒtƒŒ[ƒ€”Ô†‚©‚çŠÔ‚Ö•ÏŠ·
+	// ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·ã‹ã‚‰æ™‚é–“ã¸å¤‰æ›
 	unsigned int FrameIndexToTime( unsigned int iFrameIndex ) const ;
-	// ŠÔ‚©‚çƒtƒŒ[ƒ€”Ô†‚Ö•ÏŠ·
+	// æ™‚é–“ã‹ã‚‰ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·ã¸å¤‰æ›
 	unsigned int TimeToFrameIndex( unsigned int nMilliSec ) const ;
 
 protected:
-	// ƒXƒŒƒbƒhŠÖ”
+	// ã‚¹ãƒ¬ãƒƒãƒ‰é–¢æ•°
 	static DWORD WINAPI ThreadProc( LPVOID parameter ) ;
 	DWORD LoadingThreadProc( void ) ;
-	// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg‚ğ’Ç‰Á‚·‚é
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆã‚’è¿½åŠ ã™ã‚‹
 	void AddKeyPoint( EKeyPointList & list, KEY_POINT key ) ;
-	// w’è‚ÌƒL[ƒtƒŒ[ƒ€‚ğŒŸõ‚·‚é
+	// æŒ‡å®šã®ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ¤œç´¢ã™ã‚‹
 	KEY_POINT * SearchKeyPoint
 		( EKeyPointList & list, unsigned int iKeyFrame ) ;
-	// w’è‚ÌƒtƒŒ[ƒ€‚ÉƒV[ƒN‚·‚é
+	// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã«ã‚·ãƒ¼ã‚¯ã™ã‚‹
 	void SeekKeyPoint
 		( EKeyPointList & list,
 			unsigned int iFrame, unsigned int & iCurtrentFrame ) ;
-	// w’è‚Ì‰¹ºƒf[ƒ^‚Ü‚ÅƒV[ƒN‚µ‚ÄƒXƒgƒŠ[ƒ~ƒ“ƒOo—Í‚·‚é
+	// æŒ‡å®šã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã¾ã§ã‚·ãƒ¼ã‚¯ã—ã¦ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°å‡ºåŠ›ã™ã‚‹
 	void SeekKeyWave
 		( EKeyPointList & list, unsigned int iFrame ) ;
 
 public:
-	// ”r‘¼ˆ—iƒNƒŠƒeƒBƒJƒ‹ƒZƒNƒVƒ‡ƒ“j
+	// æ’ä»–å‡¦ç†ï¼ˆã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«ã‚»ã‚¯ã‚·ãƒ§ãƒ³ï¼‰
 	void Lock( void ) ;
 	void Unlock( void ) ;
 
@@ -374,20 +374,20 @@ public:
 
 
 /*****************************************************************************
-                  ERIƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹o—ÍƒIƒuƒWƒFƒNƒg
+                  ERIã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 class	ERIAnimationWriter
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	ERIAnimationWriter( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~ERIAnimationWriter( void ) ;
 
 protected:
 	//
-	// o—Íƒoƒbƒtƒ@ƒIƒuƒWƒFƒNƒg
+	// å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	class	EOutputBuffer
 	{
 	public:
@@ -395,13 +395,13 @@ protected:
 		DWORD			m_dwBytes ;
 		PVOID			m_ptrBuffer ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EOutputBuffer( const BYTE * ptrBuffer, ULONG nBytes ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		~EOutputBuffer( void ) ;
 	} ;
 	//
-	// ˆ³kƒRƒ“ƒeƒLƒXƒg
+	// åœ§ç¸®ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 	class	EEncodeContext	: public	RLHEncodeContext
 	{
 	public:
@@ -409,24 +409,24 @@ protected:
 		EOutputBuffer *	m_pLastBuf ;
 		DWORD			m_dwTotalBytes ;
 	public:
-		// \’zŠÖ”
+		// æ§‹ç¯‰é–¢æ•°
 		EEncodeContext( void ) ;
-		// Á–ÅŠÖ”
+		// æ¶ˆæ»…é–¢æ•°
 		virtual ~EEncodeContext( void ) ;
-		// ƒf[ƒ^Á‹
+		// ãƒ‡ãƒ¼ã‚¿æ¶ˆå»
 		void Delete( void ) ;
-		// Ÿ‚Ìƒf[ƒ^‚ğ‘‚«o‚·
+		// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãå‡ºã™
 		virtual ULONG WriteNextData( const BYTE * ptrBuffer, ULONG nBytes ) ;
 	} ;
 	//
-	// ƒXƒŒƒbƒhƒƒbƒZ[ƒW
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	enum	ThreadMessage
 	{
 		tmEncodeImage	= WM_USER,
 		tmQuit
 	} ;
 
-	// ‘‚«o‚µƒXƒe[ƒ^ƒX
+	// æ›¸ãå‡ºã—ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
 	enum	WriterStatus
 	{
 		wsNotOpened,
@@ -434,107 +434,107 @@ protected:
 		wsWritingHeader,
 		wsWritingStream
 	} ;
-	WriterStatus			m_wsStatus ;		// ƒXƒe[ƒ^ƒX
-	// ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
-	ERIWriteFile			m_eriwf ;			// ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
-	// ƒwƒbƒ_î•ñ
-	DWORD					m_dwHeaderBytes ;	// ƒwƒbƒ_ƒŒƒR[ƒh‚ÌƒoƒCƒg”
-	ERI_FILE_HEADER			m_efh ;				// ƒtƒ@ƒCƒ‹ƒwƒbƒ_
-	ERI_INFO_HEADER			m_prvwih ;			// ƒvƒŒƒrƒ…[‰æ‘œî•ñƒwƒbƒ_
-	ERI_INFO_HEADER			m_eih ;				// ‰æ‘œî•ñƒwƒbƒ_
-	MIO_INFO_HEADER			m_mih ;				// ‰¹ºî•ñƒwƒbƒ_
-	// ƒtƒŒ[ƒ€”Ô†
-	DWORD					m_dwKeyFrame ;		// ƒL[ƒtƒŒ[ƒ€
-	DWORD					m_dwKeyWave ;		// ƒL[ƒEƒF[ƒu
-	DWORD					m_dwFrameCount ;	// o—ÍÏ‚İƒtƒŒ[ƒ€‘”
-	DWORD					m_dwWaveCount ;		// o—ÍÏ‚İƒEƒF[ƒu‘”
-	// ‰¹ºo—Íî•ñ
-	DWORD					m_dwMioHeaderPos ;		// ‰¹ºî•ñƒwƒbƒ_‚ÌˆÊ’u
-	DWORD					m_dwOutputWaveSamples ;	// o—ÍÏ‚İƒTƒ“ƒvƒ‹”
-	// ˆ³kƒIƒuƒWƒFƒNƒg
+	WriterStatus			m_wsStatus ;		// ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	ERIWriteFile			m_eriwf ;			// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	// ãƒ˜ãƒƒãƒ€æƒ…å ±
+	DWORD					m_dwHeaderBytes ;	// ãƒ˜ãƒƒãƒ€ãƒ¬ã‚³ãƒ¼ãƒ‰ã®ãƒã‚¤ãƒˆæ•°
+	ERI_FILE_HEADER			m_efh ;				// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€
+	ERI_INFO_HEADER			m_prvwih ;			// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
+	ERI_INFO_HEADER			m_eih ;				// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
+	MIO_INFO_HEADER			m_mih ;				// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€
+	// ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·
+	DWORD					m_dwKeyFrame ;		// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ 
+	DWORD					m_dwKeyWave ;		// ã‚­ãƒ¼ã‚¦ã‚§ãƒ¼ãƒ–
+	DWORD					m_dwFrameCount ;	// å‡ºåŠ›æ¸ˆã¿ãƒ•ãƒ¬ãƒ¼ãƒ ç·æ•°
+	DWORD					m_dwWaveCount ;		// å‡ºåŠ›æ¸ˆã¿ã‚¦ã‚§ãƒ¼ãƒ–ç·æ•°
+	// éŸ³å£°å‡ºåŠ›æƒ…å ±
+	DWORD					m_dwMioHeaderPos ;		// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€ã®ä½ç½®
+	DWORD					m_dwOutputWaveSamples ;	// å‡ºåŠ›æ¸ˆã¿ã‚µãƒ³ãƒ—ãƒ«æ•°
+	// åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	EEncodeContext			m_eric1 ;
 	EEncodeContext			m_eric2 ;
 	ERIEncoder *			m_perie1 ;
 	ERIEncoder *			m_perie2 ;
 	EFileEncodeContext *	m_pmioc ;
 	MIOEncoder *			m_pmioe ;
-	// ·•ªˆ——pƒoƒbƒtƒ@
+	// å·®åˆ†å‡¦ç†ç”¨ãƒãƒƒãƒ•ã‚¡
 	RASTER_IMAGE_INFO *		m_priiLast ;
 	RASTER_IMAGE_INFO *		m_priiBuf ;
-	// ‰æ‘œˆ³kƒXƒŒƒbƒh
+	// ç”»åƒåœ§ç¸®ã‚¹ãƒ¬ãƒƒãƒ‰
 	bool					m_fDualEncoding ;
 	bool					m_fCompressSuccessed ;
 	HANDLE					m_hCompressed ;
 	HANDLE					m_hThread ;
 	DWORD					m_idThread ;
-	// ‰æ‘œ‚Ìˆ³kƒpƒ‰ƒ[ƒ^
+	// ç”»åƒã®åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 	ERIEncoder::PARAMETER	m_eriep ;
-	// ‰¹º‚Ìˆ³kƒpƒ‰ƒ[ƒ^
+	// éŸ³å£°ã®åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 	MIOEncoder::PARAMETER	m_mioep ;
 
 public:
-	// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	bool Open( EWriteFileObj * pFile, ERIWriteFile::FileID fidType ) ;
-	// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
 
 public:
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’é–‹ã
 	bool BeginFileHeader( DWORD dwKeyFrame, DWORD dwKeyWave ) ;
-	// ƒvƒŒƒrƒ…[‰æ‘œî•ñƒwƒbƒ_‚ğ‘‚«o‚·
+	// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	bool WritePreviewInfo( const ERI_INFO_HEADER & eih ) ;
-	// ‰æ‘œî•ñƒwƒbƒ_‚ğ‘‚«o‚·
+	// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	bool WriteEriInfoHeader( const ERI_INFO_HEADER & eih ) ;
-	// ‰¹ºî•ñƒwƒbƒ_‚ğ‘‚«o‚·
+	// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	bool WriteMioInfoHeader( const MIO_INFO_HEADER & mih ) ;
-	// ’˜ìŒ î•ñ‚ğ‘‚«o‚·
+	// è‘—ä½œæ¨©æƒ…å ±ã‚’æ›¸ãå‡ºã™
 	bool WriteCopyright( const void * ptrCopyright, DWORD dwBytes ) ;
-	// ƒRƒƒ“ƒg‚ğ‘‚«o‚·
+	// ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ›¸ãå‡ºã™
 	bool WriteDescription( const void * ptrDescription, DWORD dwBytes ) ;
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’é–‰ã˜ã‚‹
 	void EndFileHeader( void ) ;
 
 public:
-	// ‰æ‘œ‚Ìˆ³kƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+	// ç”»åƒã®åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 	void SetImageCompressionParameter
 			( const ERIEncoder::PARAMETER & eriep ) ;
-	// ‰¹º‚Ìˆ³kƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+	// éŸ³å£°ã®åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 	void SetSoundCompressionParameter
 			( const MIOEncoder::PARAMETER & mioep ) ;
 
 public:
-	// ƒXƒgƒŠ[ƒ€‚ğŠJn‚·‚é
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’é–‹å§‹ã™ã‚‹
 	bool BeginStream( void ) ;
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚ğ‘‚«o‚·
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æ›¸ãå‡ºã™
 	bool WritePaletteTable
 		( const ENTIS_PALETTE * paltbl, unsigned int nLength ) ;
-	// ƒvƒŒƒrƒ…[‰æ‘œ‚ğo—Í‚·‚é
+	// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒã‚’å‡ºåŠ›ã™ã‚‹
 	bool WritePreviewData( const RASTER_IMAGE_INFO & rii, DWORD fdwFlags ) ;
-	// ‰¹ºƒf[ƒ^‚ğo—Í‚·‚é
+	// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›ã™ã‚‹
 	bool WriteWaveData( const void * ptrWaveBuf, DWORD dwSampleCount ) ;
-	// ‰æ‘œƒf[ƒ^‚ğo—Í‚·‚é
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›ã™ã‚‹
 	bool WriteImageData( const RASTER_IMAGE_INFO & rii, DWORD fdwFlags ) ;
-	// ƒXƒgƒŠ[ƒ€‚ğ•Â‚¶‚é
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’é–‰ã˜ã‚‹
 	bool EndStream( DWORD dwTotalTime ) ;
 
 protected:
-	// ‰æ‘œƒoƒbƒtƒ@‚ğ¶¬
+	// ç”»åƒãƒãƒƒãƒ•ã‚¡ã‚’ç”Ÿæˆ
 	RASTER_IMAGE_INFO * CreateImageBuffer( const ERI_INFO_HEADER & eih ) ;
-	// ‰æ‘œƒoƒbƒtƒ@‚ğÁ‹
+	// ç”»åƒãƒãƒƒãƒ•ã‚¡ã‚’æ¶ˆå»
 	void DeleteImageBuffer( RASTER_IMAGE_INFO * prii ) ;
-	// ‰æ‘œˆ³kƒIƒuƒWƒFƒNƒg‚ğ¶¬
+	// ç”»åƒåœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
 	virtual ERIEncoder * CreateERIEncoder( void ) ;
-	// ‰¹ºˆ³kƒIƒuƒWƒFƒNƒg‚ğ¶¬
+	// éŸ³å£°åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
 	virtual MIOEncoder * CreateMIOEncoder( void ) ;
 
 public:
-	// o—Í‚³‚ê‚½‰æ‘œ‚Ì–‡”‚ğæ“¾‚·‚é
+	// å‡ºåŠ›ã•ã‚ŒãŸç”»åƒã®æšæ•°ã‚’å–å¾—ã™ã‚‹
 	DWORD GetWrittenFrameCount( void ) const ;
-	// ƒ}ƒ‹ƒ`ƒXƒŒƒbƒhˆ³k‚ğ—LŒø‰»
+	// ãƒãƒ«ãƒã‚¹ãƒ¬ãƒƒãƒ‰åœ§ç¸®ã‚’æœ‰åŠ¹åŒ–
 	void EnableDualEncoding( bool fDualEncoding ) ;
 
 protected:
-	// ƒXƒŒƒbƒhŠÖ”
+	// ã‚¹ãƒ¬ãƒƒãƒ‰é–¢æ•°
 	static DWORD WINAPI ThreadProc( LPVOID parameter ) ;
 	DWORD EncodingThreadProc( void ) ;
 

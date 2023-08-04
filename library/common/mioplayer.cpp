@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2002/05/26
+                                                      æœ€çµ‚æ›´æ–° 2002/05/26
  ----------------------------------------------------------------------------
           Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -20,11 +20,11 @@
 
 
 /*****************************************************************************
-                    MIOƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ€Ä¶ƒIƒuƒWƒFƒNƒg
+                    MIOãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒ å†ç”Ÿã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EPreloadBuffer::EPreloadBuffer( DWORD dwLength )
 	: EMemFile( NULL, dwLength )
@@ -35,7 +35,7 @@ MIODynamicPlayer::EPreloadBuffer::EPreloadBuffer( DWORD dwLength )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EPreloadBuffer::~EPreloadBuffer( void )
 {
@@ -43,7 +43,7 @@ MIODynamicPlayer::EPreloadBuffer::~EPreloadBuffer( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EPreloadQueue::EPreloadQueue( void )
 {
@@ -53,7 +53,7 @@ MIODynamicPlayer::EPreloadQueue::EPreloadQueue( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EPreloadQueue::~EPreloadQueue( void )
 {
@@ -61,7 +61,7 @@ MIODynamicPlayer::EPreloadQueue::~EPreloadQueue( void )
 }
 
 //
-// ”z—ñ‚ÌÅ‘å‚Ì’·‚³‚ğİ’è
+// é…åˆ—ã®æœ€å¤§ã®é•·ã•ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::EPreloadQueue::SetLimit( unsigned int nLimit )
 {
@@ -71,7 +71,7 @@ void MIODynamicPlayer::EPreloadQueue::SetLimit( unsigned int nLimit )
 }
 
 //
-// ”z—ñ‚ğÁ‹
+// é…åˆ—ã‚’æ¶ˆå»
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::EPreloadQueue::RemoveAll( void )
 {
@@ -89,7 +89,7 @@ void MIODynamicPlayer::EPreloadQueue::RemoveAll( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EKeyPointList::EKeyPointList( void )
 {
@@ -99,7 +99,7 @@ MIODynamicPlayer::EKeyPointList::EKeyPointList( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EKeyPointList::~EKeyPointList( void )
 {
@@ -107,7 +107,7 @@ MIODynamicPlayer::EKeyPointList::~EKeyPointList( void )
 }
 
 //
-// ”z—ñ‚ÌÅÜ‚Ì’·‚³‚ğİ’è
+// é…åˆ—ã®æœ€å‰¤ã®é•·ã•ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::EKeyPointList::SetLimit( unsigned int nLimit )
 {
@@ -129,7 +129,7 @@ void MIODynamicPlayer::EKeyPointList::SetLimit( unsigned int nLimit )
 }
 
 //
-// ”z—ñ‚ğÁ‹
+// é…åˆ—ã‚’æ¶ˆå»
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::EKeyPointList::RemoveAll( void )
 {
@@ -143,7 +143,7 @@ void MIODynamicPlayer::EKeyPointList::RemoveAll( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::MIODynamicPlayer( void )
 {
@@ -157,7 +157,7 @@ MIODynamicPlayer::MIODynamicPlayer( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::~MIODynamicPlayer( void )
 {
@@ -166,21 +166,21 @@ MIODynamicPlayer::~MIODynamicPlayer( void )
 }
 
 //
-// MIO ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool MIODynamicPlayer::Open
 	( EFileObject * pFile, unsigned int nPreloadSize )
 {
 	Close( ) ;
 	//
-	// ERIƒtƒ@ƒCƒ‹‚ğŠJ‚­iƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚Ü‚ÅŠJ‚­j
+	// ERIãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãï¼ˆã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã¾ã§é–‹ãï¼‰
 	//////////////////////////////////////////////////////////////////////////
 	if ( !m_erif.Open( pFile, m_erif.otOpenStream ) )
 	{
 		return	false ;
 	}
 	//
-	// “WŠJƒIƒuƒWƒFƒNƒg‚ğ‰Šú‰»‚·‚é
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( !(m_erif.m_fdwReadMask & ERIFile::rmSoundInfo) )
 	{
@@ -193,7 +193,7 @@ bool MIODynamicPlayer::Open
 	}
 	m_pmioc = new EFileDecodeContext( NULL, 0x10000 ) ;
 	//
-	// æ“Ç‚İƒoƒbƒtƒ@”z—ñ‚ğŠm•Û
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡é…åˆ—ã‚’ç¢ºä¿
 	//////////////////////////////////////////////////////////////////////////
 	if ( nPreloadSize == 0 )
 	{
@@ -201,7 +201,7 @@ bool MIODynamicPlayer::Open
 	}
 	m_queueSound.SetLimit( nPreloadSize ) ;
 	//
-	// ƒXƒŒƒbƒh‚ğ¶¬
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ç”Ÿæˆ
 	//////////////////////////////////////////////////////////////////////////
 	m_hQueueFull = ::CreateEvent( NULL, TRUE, FALSE, NULL ) ;
 	m_hQueueNotEmpty = ::CreateEvent( NULL, TRUE, FALSE, NULL ) ;
@@ -227,12 +227,12 @@ bool MIODynamicPlayer::Open
 }
 
 //
-// MIO ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::Close( void )
 {
 	//
-	// ƒXƒŒƒbƒh‚ğI—¹‚³‚¹‚é
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’çµ‚äº†ã•ã›ã‚‹
 	if ( m_hThread != NULL )
 	{
 		::PostThreadMessage( m_idThread, tmQuit, 0, 0 ) ;
@@ -241,7 +241,7 @@ void MIODynamicPlayer::Close( void )
 		m_hThread = NULL ;
 	}
 	//
-	// æ“Ç‚İƒLƒ…[‚ğƒNƒŠƒA‚·‚é
+	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 	if ( m_hQueueFull != NULL )
 	{
 		::CloseHandle( m_hQueueFull ) ;
@@ -259,10 +259,10 @@ void MIODynamicPlayer::Close( void )
 	}
 	m_queueSound.RemoveAll( ) ;
 	//
-	// ƒL[ƒ|ƒCƒ“ƒg”z—ñ‚ğƒNƒŠƒA‚·‚é
+	// ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆé…åˆ—ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 	m_listKeySample.RemoveAll( ) ;
 	//
-	// “WŠJƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚é
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹
 	if ( m_pmiod != NULL )
 	{
 		m_pmiod->Delete( ) ;
@@ -275,18 +275,18 @@ void MIODynamicPlayer::Close( void )
 		m_pmioc = NULL ;
 	}
 	//
-	// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	m_erif.Close( ) ;
 }
 
 //
-// w’èƒTƒ“ƒvƒ‹‚ÖˆÚ“®‚µA‰‚ß‚ÌƒuƒƒbƒN‚Ìƒf[ƒ^‚ğæ“¾‚·‚é
+// æŒ‡å®šã‚µãƒ³ãƒ—ãƒ«ã¸ç§»å‹•ã—ã€åˆã‚ã®ãƒ–ãƒ­ãƒƒã‚¯ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void * MIODynamicPlayer::GetWaveBufferFrom
 	( ULONG nSample, DWORD & dwBytes, DWORD & dwOffsetBytes )
 {
 	//
-	// ƒV[ƒNƒƒbƒZ[ƒW‚ğ‘—M‚µAƒV[ƒN‚ªŠ®—¹‚·‚é‚Ü‚Å‘Ò‚Â
+	// ã‚·ãƒ¼ã‚¯ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã—ã€ã‚·ãƒ¼ã‚¯ãŒå®Œäº†ã™ã‚‹ã¾ã§å¾…ã¤
 	//////////////////////////////////////////////////////////////////////////
 	if ( m_hThread == NULL )
 	{
@@ -305,7 +305,7 @@ void * MIODynamicPlayer::GetWaveBufferFrom
 		return	NULL ;
 	}
 	//
-	// æ“ª‚Ìƒf[ƒ^‚ğæ“¾‚µ‚Ä“WŠJ‚·‚é
+	// å…ˆé ­ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã—ã¦å±•é–‹ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	EPreloadBuffer *	pBuffer = GetPreloadBuffer( ) ;
 	if ( pBuffer == NULL )
@@ -332,7 +332,7 @@ void * MIODynamicPlayer::GetWaveBufferFrom
 }
 
 //
-// Ÿ‚Ì‰¹ºƒf[ƒ^‚ªƒXƒgƒŠ[ƒ€‚Ìæ“ª‚Å‚ ‚é‚©H
+// æ¬¡ã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ãŒã‚¹ãƒˆãƒªãƒ¼ãƒ ã®å…ˆé ­ã§ã‚ã‚‹ã‹ï¼Ÿ
 //////////////////////////////////////////////////////////////////////////////
 bool MIODynamicPlayer::IsNextDataRewound( void )
 {
@@ -366,7 +366,7 @@ bool MIODynamicPlayer::IsNextDataRewound( void )
 }
 
 //
-// Ÿ‚Ì‰¹ºƒf[ƒ^‚ğæ“¾
+// æ¬¡ã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 void * MIODynamicPlayer::GetNextWaveBuffer( DWORD & dwBytes )
 {
@@ -394,7 +394,7 @@ void * MIODynamicPlayer::GetNextWaveBuffer( DWORD & dwBytes )
 }
 
 //
-// ‰¹ºƒoƒbƒtƒ@Šm•Û
+// éŸ³å£°ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 //////////////////////////////////////////////////////////////////////////////
 void * MIODynamicPlayer::AllocateWaveBuffer( DWORD dwBytes )
 {
@@ -402,14 +402,14 @@ void * MIODynamicPlayer::AllocateWaveBuffer( DWORD dwBytes )
 }
 
 //
-// ‰¹ºƒf[ƒ^”jŠü‹–‰Â
+// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ç ´æ£„è¨±å¯
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::DeleteWaveBuffer( void * ptrWaveBuf )
 {
 	::eriFreeMemory( ptrWaveBuf ) ;
 }
 
-// ‰¹º“WŠJƒIƒuƒWƒFƒNƒg‚ğ¶¬
+// éŸ³å£°å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆ
 //////////////////////////////////////////////////////////////////////////////
 MIODecoder * MIODynamicPlayer::CreateMIODecoder( void )
 {
@@ -417,7 +417,7 @@ MIODecoder * MIODynamicPlayer::CreateMIODecoder( void )
 }
 
 //
-// ERIFile ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+// ERIFile ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 const ERIFile & MIODynamicPlayer::GetERIFile( void ) const
 {
@@ -425,7 +425,7 @@ const ERIFile & MIODynamicPlayer::GetERIFile( void ) const
 }
 
 //
-// ƒ`ƒƒƒlƒ‹”‚ğæ“¾‚·‚é
+// ãƒãƒ£ãƒãƒ«æ•°ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIODynamicPlayer::GetChannelCount( void ) const
 {
@@ -433,7 +433,7 @@ DWORD MIODynamicPlayer::GetChannelCount( void ) const
 }
 
 //
-// ƒTƒ“ƒvƒŠƒ“ƒOü”g”‚ğæ“¾‚·‚é
+// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIODynamicPlayer::GetFrequency( void ) const
 {
@@ -441,7 +441,7 @@ DWORD MIODynamicPlayer::GetFrequency( void ) const
 }
 
 //
-// ƒTƒ“ƒvƒŠƒ“ƒOƒrƒbƒg•ª‰ğ”\‚ğæ“¾‚·‚é
+// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ“ãƒƒãƒˆåˆ†è§£èƒ½ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIODynamicPlayer::GetBitsPerSample( void ) const
 {
@@ -449,7 +449,7 @@ DWORD MIODynamicPlayer::GetBitsPerSample( void ) const
 }
 
 //
-// ‘S‘Ì‚Ì’·‚³iƒTƒ“ƒvƒ‹”j‚ğæ“¾‚·‚é
+// å…¨ä½“ã®é•·ã•ï¼ˆã‚µãƒ³ãƒ—ãƒ«æ•°ï¼‰ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIODynamicPlayer::GetTotalSampleCount( void ) const
 {
@@ -457,7 +457,7 @@ DWORD MIODynamicPlayer::GetTotalSampleCount( void ) const
 }
 
 //
-// æ“Ç‚İƒoƒbƒtƒ@‚ğæ“¾‚·‚é
+// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::EPreloadBuffer *
 		MIODynamicPlayer::GetPreloadBuffer( void )
@@ -500,7 +500,7 @@ MIODynamicPlayer::EPreloadBuffer *
 }
 
 //
-// æ“Ç‚İƒoƒbƒtƒ@‚É’Ç‰Á‚·‚é
+// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::AddPreloadBuffer( EPreloadBuffer * pBuffer )
 {
@@ -522,7 +522,7 @@ void MIODynamicPlayer::AddPreloadBuffer( EPreloadBuffer * pBuffer )
 }
 
 //
-// ƒXƒŒƒbƒhŠÖ”
+// ã‚¹ãƒ¬ãƒƒãƒ‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 DWORD WINAPI MIODynamicPlayer::ThreadProc( LPVOID parameter )
 {
@@ -536,34 +536,34 @@ DWORD WINAPI MIODynamicPlayer::ThreadProc( LPVOID parameter )
 DWORD MIODynamicPlayer::LoadingThreadProc( void )
 {
 	//
-	// ƒƒbƒZ[ƒWƒLƒ…[‚ğì¬
+	// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚­ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	//////////////////////////////////////////////////////////////////////////
 	MSG		msg ;
 	::PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE ) ;
 	//
-	// •Ï”‰Šú‰»
+	// å¤‰æ•°åˆæœŸåŒ–
 	//////////////////////////////////////////////////////////////////////////
 	KEY_POINT	keypoint ;
 	unsigned int	nCurrentSample = 0 ;
 	//
-	// ŠeƒŒƒR[ƒh‚ğ“Ç‚İ‚Ş
+	// å„ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚€
 	//////////////////////////////////////////////////////////////////////////
 	for ( ; ; )
 	{
 		//
-		// ƒŒƒR[ƒh‚ğŠJ‚­
+		// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 		//////////////////////////////////////////////////////////////////////
 		DWORD	dwRecPosition = m_erif.GetPointer( ) ;
 		if ( !m_erif.DescendRecord( (const UINT64 *)"SoundStm" ) )
 		{
 			if ( nCurrentSample == 0 )
 			{
-				// 1‚Â‚à‰æ‘œƒŒƒR[ƒh‚ª–³‚¢ê‡‚ÍƒGƒ‰[
+				// 1ã¤ã‚‚ç”»åƒãƒ¬ã‚³ãƒ¼ãƒ‰ãŒç„¡ã„å ´åˆã¯ã‚¨ãƒ©ãƒ¼
 				break ;
 			}
 			//
-			// ƒŒƒR[ƒh‚ÌI’[‚É“’B‚µ‚½‚ç
-			// ©“®“I‚Éæ“ª‚ÉˆÚ“®
+			// ãƒ¬ã‚³ãƒ¼ãƒ‰ã®çµ‚ç«¯ã«åˆ°é”ã—ãŸã‚‰
+			// è‡ªå‹•çš„ã«å…ˆé ­ã«ç§»å‹•
 			KEY_POINT *	pKeyPoint = SearchKeySample( nCurrentSample ) ;
 			if ( pKeyPoint == NULL )
 			{
@@ -577,7 +577,7 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 			continue ;
 		}
 		//
-		// ‰¹ºƒf[ƒ^ƒŒƒR[ƒh‚ğ“Ç‚İ‚Ş
+		// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚€
 		DWORD	dwDataBytes = m_erif.GetLength( ) ;
 		EPreloadBuffer *	pBuffer =
 			new EPreloadBuffer( dwDataBytes - sizeof(MIO_DATA_HEADER) ) ;
@@ -589,7 +589,7 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 		//
 		m_erif.AscendRecord( ) ;
 		//
-		// ƒL[ƒ|ƒCƒ“ƒg‚Ìİ’è
+		// ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆã®è¨­å®š
 		if ( pBuffer->m_miodh.bytFlags & MIO_LEAD_BLOCK )
 		{
 			KEY_POINT *	pKeyPoint = SearchKeySample( nCurrentSample ) ;
@@ -601,13 +601,13 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 			}
 		}
 		//
-		// ƒƒbƒZ[ƒW‚ğóM•ƒEƒFƒCƒg
+		// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ä¿¡ï¼†ã‚¦ã‚§ã‚¤ãƒˆ
 		//////////////////////////////////////////////////////////////////////
 		bool	fQuit = false ;
 		do
 		{
 			//
-			// ƒLƒ…[‚ª‹ó‚­‚©ƒƒbƒZ[ƒW‚ğóM‚·‚é‚Ü‚Å‘Ò‚Â
+			// ã‚­ãƒ¥ãƒ¼ãŒç©ºãã‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ä¿¡ã™ã‚‹ã¾ã§å¾…ã¤
 			DWORD	dwWaitResult =
 				::MsgWaitForMultipleObjects
 					( 1, &m_hQueueSpace, FALSE, INFINITE, QS_ALLINPUT ) ;
@@ -623,7 +623,7 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 				if ( msg.message == tmSeekSound )
 				{
 					//
-					// ‰¹ºƒf[ƒ^‚ğƒV[ƒN
+					// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’ã‚·ãƒ¼ã‚¯
 					//
 					if ( pBuffer != NULL )
 					{
@@ -639,7 +639,7 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 				else if ( msg.message == tmQuit )
 				{
 					//
-					// I—¹
+					// çµ‚äº†
 					//
 					fQuit = true ;
 					break ;
@@ -659,7 +659,7 @@ DWORD MIODynamicPlayer::LoadingThreadProc( void )
 }
 
 //
-// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg‚ğ’Ç‰Á‚·‚é
+// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆã‚’è¿½åŠ ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::AddKeySample( MIODynamicPlayer::KEY_POINT key )
 {
@@ -683,7 +683,7 @@ void MIODynamicPlayer::AddKeySample( MIODynamicPlayer::KEY_POINT key )
 }
 
 //
-// w’è‚ÌƒL[ƒtƒŒ[ƒ€‚ğŒŸõ‚·‚é
+// æŒ‡å®šã®ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ¤œç´¢ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 MIODynamicPlayer::KEY_POINT *
 	MIODynamicPlayer::SearchKeySample( unsigned int nKeySample )
@@ -769,14 +769,14 @@ MIODynamicPlayer::KEY_POINT *
 }
 
 //
-// w’è‚ÌƒTƒ“ƒvƒ‹‚ğŠÜ‚ŞƒuƒƒbƒN‚ğ“Ç‚İ‚Ş
+// æŒ‡å®šã®ã‚µãƒ³ãƒ—ãƒ«ã‚’å«ã‚€ãƒ–ãƒ­ãƒƒã‚¯ã‚’èª­ã¿è¾¼ã‚€
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::SeekKeySample
 	( ULONG nSample, unsigned int & nCurrentSample )
 {
 	EPreloadBuffer *	pBuffer ;
 	//
-	// Šù‚Éæ“Ç‚İƒLƒ…[‚É“Ç‚İ‚Ü‚ê‚Ä‚¢‚È‚¢‚©”»’f
+	// æ—¢ã«å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ãªã„ã‹åˆ¤æ–­
 	//////////////////////////////////////////////////////////////////////////
 	Lock( ) ;
 	//
@@ -801,19 +801,19 @@ void MIODynamicPlayer::SeekKeySample
 		++ iLoaded ;
 	}
 	//
-	// Šù‚É“Ç‚İ‚Ü‚ê‚Ä‚¢‚éê‡‚É‚Í‚»‚±‚Ü‚ÅƒV[ƒN‚·‚é
+	// æ—¢ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹å ´åˆã«ã¯ãã“ã¾ã§ã‚·ãƒ¼ã‚¯ã™ã‚‹
 	//
 	if ( iLoaded < m_queueSound.m_length )
 	{
 		//
-		// Å‚à‹ß‚¢ƒŠ[ƒhƒuƒƒbƒN‚Ü‚Å”jŠü‚·‚é
+		// æœ€ã‚‚è¿‘ã„ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã¾ã§ç ´æ£„ã™ã‚‹
 		unsigned int	i ;
 		for ( i = 0; i < iLeadBlock; i ++ )
 		{
 			delete	GetPreloadBuffer( ) ;
 		}
 		//
-		// “Á’è‚ÌƒuƒƒbƒN‚Ü‚ÅƒV[ƒN‚·‚é
+		// ç‰¹å®šã®ãƒ–ãƒ­ãƒƒã‚¯ã¾ã§ã‚·ãƒ¼ã‚¯ã™ã‚‹
 		for ( i = iLeadBlock; i < iLoaded; i ++ )
 		{
 			pBuffer = GetPreloadBuffer( ) ;
@@ -838,7 +838,7 @@ void MIODynamicPlayer::SeekKeySample
 		return ;
 	}
 	//
-	// Šù‚É“Ç‚İ‚Ü‚ê‚Ä‚¢‚éƒuƒƒbƒN‚ğ”jŠü‚·‚é
+	// æ—¢ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹ãƒ–ãƒ­ãƒƒã‚¯ã‚’ç ´æ£„ã™ã‚‹
 	//
 	while ( m_queueSound.m_length != 0 )
 	{
@@ -847,8 +847,8 @@ void MIODynamicPlayer::SeekKeySample
 	//
 	Unlock( ) ;
 	//
-	// ƒŠƒXƒg‚Éw’è‚ÌƒTƒ“ƒvƒ‹‚ğŠÜ‚ŞƒL[‚ª“o˜^‚³‚ê‚Ä‚¢‚é‚©ŒŸõ‚µA
-	// “o˜^‚³‚ê‚Ä‚¢‚È‚¢ê‡‚É‚ÍAƒV[ƒN‚·‚é
+	// ãƒªã‚¹ãƒˆã«æŒ‡å®šã®ã‚µãƒ³ãƒ—ãƒ«ã‚’å«ã‚€ã‚­ãƒ¼ãŒç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹æ¤œç´¢ã—ã€
+	// ç™»éŒ²ã•ã‚Œã¦ã„ãªã„å ´åˆã«ã¯ã€ã‚·ãƒ¼ã‚¯ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	KEY_POINT *	pKeyPoint = SearchKeySample( nSample ) ;
 	if ( pKeyPoint == NULL )
@@ -862,7 +862,7 @@ void MIODynamicPlayer::SeekKeySample
 		}
 		Unlock( ) ;
 		//
-		// ŠeƒŒƒR[ƒh‚ğ‡Ÿ“Ç‚İ‚Ş
+		// å„ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é †æ¬¡èª­ã¿è¾¼ã‚€
 		for ( ; ; )
 		{
 			DWORD	dwRecPosition = m_erif.GetPointer( ) ;
@@ -875,7 +875,7 @@ void MIODynamicPlayer::SeekKeySample
 			m_erif.Read( &miodh, sizeof(miodh) ) ;
 			m_erif.AscendRecord( ) ;
 			//
-			// ƒL[ƒ|ƒCƒ“ƒg‚Ìİ’è
+			// ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆã®è¨­å®š
 			if ( miodh.bytFlags & MIO_LEAD_BLOCK )
 			{
 				pKeyPoint = SearchKeySample( nCurrentSample ) ;
@@ -891,7 +891,7 @@ void MIODynamicPlayer::SeekKeySample
 				}
 			}
 			//
-			// ˆÊ’u‚ÌXV
+			// ä½ç½®ã®æ›´æ–°
 			if ( (nCurrentSample <= nSample) &&
 					((nSample - nCurrentSample) < miodh.dwSampleCount) )
 			{
@@ -901,7 +901,7 @@ void MIODynamicPlayer::SeekKeySample
 		}
 	}
 	//
-	// w’è‚ÌƒL[ƒ|ƒCƒ“ƒg‚©‚çƒV[ƒN‚·‚é
+	// æŒ‡å®šã®ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆã‹ã‚‰ã‚·ãƒ¼ã‚¯ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( pKeyPoint == NULL )
 	{
@@ -917,7 +917,7 @@ void MIODynamicPlayer::SeekKeySample
 			return ;
 		}
 		//
-		// ‰¹ºƒf[ƒ^ƒŒƒR[ƒh‚ğ“Ç‚İ‚Ş
+		// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚€
 		DWORD	dwDataBytes = m_erif.GetLength( ) ;
 		EPreloadBuffer *	pBuffer =
 			new EPreloadBuffer( dwDataBytes - sizeof(MIO_DATA_HEADER) ) ;
@@ -929,7 +929,7 @@ void MIODynamicPlayer::SeekKeySample
 		//
 		m_erif.AscendRecord( ) ;
 		//
-		// ˆÊ’u‚ÌXV
+		// ä½ç½®ã®æ›´æ–°
 		if ( (nCurrentSample <= nSample) &&
 			((nSample - nCurrentSample) < pBuffer->m_miodh.dwSampleCount) )
 		{
@@ -939,7 +939,7 @@ void MIODynamicPlayer::SeekKeySample
 		}
 		nCurrentSample += pBuffer->m_miodh.dwSampleCount ;
 		//
-		// ƒf[ƒ^‚ğ“WŠJ‚µ‚Ä”jŠü‚·‚é
+		// ãƒ‡ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¦ç ´æ£„ã™ã‚‹
 		DWORD	dwSampleBytes = GetChannelCount() * GetBitsPerSample() / 8 ;
 		DWORD	dwBytes = pBuffer->m_miodh.dwSampleCount * dwSampleBytes ;
 		//
@@ -955,7 +955,7 @@ void MIODynamicPlayer::SeekKeySample
 }
 
 //
-// ”r‘¼ˆ—iƒNƒŠƒeƒBƒJƒ‹ƒZƒNƒVƒ‡ƒ“j
+// æ’ä»–å‡¦ç†ï¼ˆã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«ã‚»ã‚¯ã‚·ãƒ§ãƒ³ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 void MIODynamicPlayer::Lock( void )
 {

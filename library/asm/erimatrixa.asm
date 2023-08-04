@@ -1,7 +1,7 @@
 
 ; ****************************************************************************
 ;                        E R I N A - L i b r a r y
-;                                                      ÅIXV 2001/11/04
+;                                                      æœ€çµ‚æ›´æ–° 2001/11/04
 ; ----------------------------------------------------------------------------
 ;         Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
 ; ****************************************************************************
@@ -16,13 +16,13 @@
 
 
 ; ----------------------------------------------------------------------------
-;                            ƒf[ƒ^ƒZƒOƒƒ“ƒg
+;                            ãƒ‡ãƒ¼ã‚¿ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ
 ; ----------------------------------------------------------------------------
 
 DataSeg	Segment	Para Flat 'DATA'
 
 ;
-;	’è”ƒe[ƒuƒ‹
+;	å®šæ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 ; ----------------------------------------------------------------------------
 
 Align	10H
@@ -31,11 +31,11 @@ ERI_rQuarter	Real8	0.25
 ERI_rHalf	Real8	0.5
 ERI_r2		Real8	2.0
 ERI_r4		Real8	4.0
-ERI_rCosPI4	Real8	?				; = cos( ƒÎ/4 )
-ERI_r2CosPI4	Real8	?				; = 2 * cos( ƒÎ/4 )
+ERI_rCosPI4	Real8	?				; = cos( Ï€/4 )
+ERI_r2CosPI4	Real8	?				; = 2 * cos( Ï€/4 )
 
 ;
-; s—ñŒW””z—ñ : k(n,i) = cos( (2*i+1) / (4*n) )
+; è¡Œåˆ—ä¿‚æ•°é…åˆ— : k(n,i) = cos( (2*i+1) / (4*n) )
 ;
 Align	10H
 ERI_DCTofK2	Real4	2 Dup( ? )	; = cos( (2*i+1) / 8 )
@@ -52,7 +52,7 @@ ERI_DCTofK1024	Real4	1024 Dup( ? )	; = cos( (2*i+1) / 4096 )
 ERI_DCTofK2048	Real4	2048 Dup( ? )	; = cos( (2*i+1) / 8192 )
 
 ;
-; s—ñŒW””z—ñ‚Ö‚Ìƒe[ƒuƒ‹
+; è¡Œåˆ—ä¿‚æ•°é…åˆ—ã¸ã®ãƒ†ãƒ¼ãƒ–ãƒ«
 ;
 Align	10H
 ERI_pMatrixDCTofK	Label	DWord
@@ -70,7 +70,7 @@ ERI_pMatrixDCTofK	Label	DWord
 		DWord	Offset ERI_DCTofK2048
 
 ;
-; XMM —p DCT •ÏŠ·ŒW”ƒe[ƒuƒ‹
+; XMM ç”¨ DCT å¤‰æ›ä¿‚æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 ;
 Align	10H
 ERI_MatrixDCT4	Label	Real4
@@ -85,13 +85,13 @@ DataSeg	EndS
 
 
 ; ----------------------------------------------------------------------------
-;                             ƒR[ƒhƒZƒOƒƒ“ƒg
+;                             ã‚³ãƒ¼ãƒ‰ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ
 ; ----------------------------------------------------------------------------
 
 CodeSeg	Segment	Para ReadOnly Flat 'CODE'
 
 ;
-;	s—ñƒe[ƒuƒ‹‚Ì‰Šú‰»
+;	è¡Œåˆ—ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 ; ----------------------------------------------------------------------------
 Align	10H
 eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
@@ -101,7 +101,7 @@ eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
 	Local	k:Real8
 
 	;
-	; “ÁêğŒ‚Ì’è”‚ğ€”õ
+	; ç‰¹æ®Šæ¡ä»¶ã®å®šæ•°ã‚’æº–å‚™
 	;
 	fldpi
 	fmul	ERI_rQuarter
@@ -112,7 +112,7 @@ eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
 	fstp	ERI_r2CosPI4
 
 	;
-	; s—ñŒW””z—ñ‰Šú‰»
+	; è¡Œåˆ—ä¿‚æ•°é…åˆ—åˆæœŸåŒ–
 	;
 	Mov	ecx, 1
 	.While	ecx < MAX_DCT_DEGREE
@@ -146,7 +146,7 @@ eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
 		;
 	.EndW
 	;
-	; XMM —p DCT s—ñ‰Šú‰»
+	; XMM ç”¨ DCT è¡Œåˆ—åˆæœŸåŒ–
 	;
 	Lea	edi, ERI_MatrixDCT4
 	Xor	edx, edx
@@ -177,7 +177,7 @@ eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
 		Inc	edx
 	.Until	edx >= 4
 	;
-	; XMM —p IDCT s—ñ‰Šú‰»
+	; XMM ç”¨ IDCT è¡Œåˆ—åˆæœŸåŒ–
 	;
 	Lea	edi, ERI_MatrixIDCT4
 	Xor	edx, edx
@@ -210,7 +210,7 @@ eriInitializeMatrixDCT	Proc	Near32 C Uses ebx edi esi
 eriInitializeMatrixDCT	EndP
 
 ;
-;	À”ŠÛ‚ßŠÖ”
+;	å®Ÿæ•°ä¸¸ã‚é–¢æ•°
 ; ----------------------------------------------------------------------------
 Align	10H
 eriRoundR32ToInt	Proc	Near32 C , r:Real4
@@ -271,7 +271,7 @@ eriRoundR32ToWordArray	EndP
 
 
 ;
-;	ƒXƒJƒ‰æZ
+;	ã‚¹ã‚«ãƒ©ä¹—ç®—
 ; ----------------------------------------------------------------------------
 Align	10H
 eriScalarMultiply	Proc	Near32 C Uses ebx esi edi,
@@ -337,7 +337,7 @@ eriScalarMultiply	EndP
 
 
 ;
-;	DCT ‰‰ZŠÖ”¶¬ƒ}ƒNƒ
+;	DCT æ¼”ç®—é–¢æ•°ç”Ÿæˆãƒã‚¯ãƒ­
 ; ----------------------------------------------------------------------------
 
 @FastDCTProc	Macro	xmm_flag:Req
@@ -369,10 +369,10 @@ DCTProcName	Proc	Near32 C Uses ebx esi edi,
 	;
 	.If	eax > 5
 		;
-		;	”Ä—p DCT •ÏŠ·
+		;	æ±ç”¨ DCT å¤‰æ›
 		; ------------------------------------------------------------
 		;              | I   J |
-		; Œğ·‰ÁŒ¸Z = |       |
+		; äº¤å·®åŠ æ¸›ç®— = |       |
 		;              | I  -J |
 		Mov	ecx, eax
 		Mov	eax, 1
@@ -400,7 +400,7 @@ DCTProcName	Proc	Near32 C Uses ebx esi edi,
 			Inc	ecx
 		.Until	ecx >= nHalfDegree
 		;
-		; ‘O”¼@DCT F A * DCT
+		; å‰åŠã€€DCT ï¼š A * DCT
 		;
 		Mov	ecx, nDegreeDCT
 		Mov	edx, nDstInterval
@@ -409,7 +409,7 @@ DCTProcName	Proc	Near32 C Uses ebx esi edi,
 		Invoke	DCTProcName , edi, edx, ebx, esi, ecx
 		Mov	esi, ebx
 		;
-		; Œã”¼ DCT-IV F R * 2 * A * DCT * K
+		; å¾ŒåŠ DCT-IV ï¼š R * 2 * A * DCT * K
 		;
 		Mov	eax, nDegreeDCT
 		Mov	ecx, nHalfDegree
@@ -525,10 +525,10 @@ IDCTProcName	Proc	Near32 C Uses ebx esi edi,
 	;
 	.If	eax > 5
 		;
-		;	”Ä—p IDCT •ÏŠ·
+		;	æ±ç”¨ IDCT å¤‰æ›
 		; ------------------------------------------------------------
 		;
-		; ‹ô”s F IDCT
+		; å¶æ•°è¡Œ ï¼š IDCT
 		;
 		Mov	ecx, eax
 		Mov	eax, 1
@@ -541,7 +541,7 @@ IDCTProcName	Proc	Near32 C Uses ebx esi edi,
 		Shl	edx, 1
 		Invoke	IDCTProcName , edi, esi, edx, ebx, ecx
 		;
-		; Šï”s F R * 2 * A * DCT * K
+		; å¥‡æ•°è¡Œ ï¼š R * 2 * A * DCT * K
 		;
 		Mov	ecx, nDegreeDCT
 		Mov	edx, nSrcInterval
@@ -588,7 +588,7 @@ IDCTProcName	Proc	Near32 C Uses ebx esi edi,
 		;
 		fstp	st(0)
 		;              | I   I |
-		; Œğ·‰ÁŒ¸Z = |       |
+		; äº¤å·®åŠ æ¸›ç®— = |       |
 		;              | J  -J |
 		Mov	eax, nHalfDegree
 		Shl	eax, 2
@@ -660,16 +660,16 @@ IDCTProcName	EndP
 
 
 ;
-;	DCT •ÏŠ·ŠÖ”¶¬
+;	DCT å¤‰æ›é–¢æ•°ç”Ÿæˆ
 ; ----------------------------------------------------------------------------
 
-@FastDCTProc	0		; FPU ŒİŠ·ŠÖ”
+@FastDCTProc	0		; FPU äº’æ›é–¢æ•°
 
-@FastDCTProc	1		; XMM ê—pŠÖ”
+@FastDCTProc	1		; XMM å°‚ç”¨é–¢æ•°
 
 
 ;
-;	DCT •ÏŠ·ŠÖ”
+;	DCT å¤‰æ›é–¢æ•°
 ; ----------------------------------------------------------------------------
 Align	10H
 eriFastDCT		Proc	Near32 C ,
@@ -701,7 +701,7 @@ eriFastDCT		EndP
 
 
 ;
-;	IDCT •ÏŠ·ŠÖ”
+;	IDCT å¤‰æ›é–¢æ•°
 ; ----------------------------------------------------------------------------
 Align	10H
 eriFastIDCT		Proc	Near32 C ,
@@ -735,7 +735,7 @@ eriFastIDCT		EndP
 
 
 ;
-;	‚‘¬‚QŸŒ³ DCT •ÏŠ·
+;	é«˜é€Ÿï¼’æ¬¡å…ƒ DCT å¤‰æ›
 ; ----------------------------------------------------------------------------
 @eriSquareDCT	Macro	degree:Req, xmm_flag:Req
 
@@ -815,7 +815,7 @@ eriSquareDCT		EndP
 
 
 ;
-;	‚‘¬‚QŸŒ³ IDCT •ÏŠ·
+;	é«˜é€Ÿï¼’æ¬¡å…ƒ IDCT å¤‰æ›
 ; ----------------------------------------------------------------------------
 @eriSquareIDCT	Macro	degree:Req, xmm_flag:Req
 

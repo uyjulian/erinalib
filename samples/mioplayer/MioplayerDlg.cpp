@@ -1,4 +1,4 @@
-// mioplayerDlg.cpp : ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“ ƒtƒ@ƒCƒ‹
+// mioplayerDlg.cpp : ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -13,25 +13,25 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ìƒo[ƒWƒ‡ƒ“î•ñ‚Åg‚í‚ê‚Ä‚¢‚é CAboutDlg ƒ_ƒCƒAƒƒO
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã§ä½¿ã‚ã‚Œã¦ã„ã‚‹ CAboutDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 class CAboutDlg : public CDialog
 {
 public:
 	CAboutDlg();
 
-// ƒ_ƒCƒAƒƒO ƒf[ƒ^
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒ‡ãƒ¼ã‚¿
 	//{{AFX_DATA(CAboutDlg)
 	enum { IDD = IDD_ABOUTBOX };
 	//}}AFX_DATA
 
-	// ClassWizard ‚Í‰¼‘zŠÖ”‚ÌƒI[ƒo[ƒ‰ƒCƒh‚ğ¶¬‚µ‚Ü‚·
+	// ClassWizard ã¯ä»®æƒ³é–¢æ•°ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚’ç”Ÿæˆã—ã¾ã™
 	//{{AFX_VIRTUAL(CAboutDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ‚ÌƒTƒ|[ƒg
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ã®ã‚µãƒãƒ¼ãƒˆ
 	//}}AFX_VIRTUAL
 
-// ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“
+// ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³
 protected:
 	//{{AFX_MSG(CAboutDlg)
 	//}}AFX_MSG
@@ -53,20 +53,20 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 	//{{AFX_MSG_MAP(CAboutDlg)
-		// ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰‚ª‚ ‚è‚Ü‚¹‚ñB
+		// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãŒã‚ã‚Šã¾ã›ã‚“ã€‚
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CMioplayerDlg ƒ_ƒCƒAƒƒO
+// CMioplayerDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 CMioplayerDlg::CMioplayerDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CMioplayerDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMioplayerDlg)
-		// ƒƒ‚: ‚±‚ÌˆÊ’u‚É ClassWizard ‚É‚æ‚Á‚Äƒƒ“ƒo‚Ì‰Šú‰»‚ª’Ç‰Á‚³‚ê‚Ü‚·B
+		// ãƒ¡ãƒ¢: ã“ã®ä½ç½®ã« ClassWizard ã«ã‚ˆã£ã¦ãƒ¡ãƒ³ãƒã®åˆæœŸåŒ–ãŒè¿½åŠ ã•ã‚Œã¾ã™ã€‚
 	//}}AFX_DATA_INIT
-	// ƒƒ‚: LoadIcon ‚Í Win32 ‚Ì DestroyIcon ‚ÌƒTƒuƒV[ƒPƒ“ƒX‚ğ—v‹‚µ‚Ü‚¹‚ñB
+	// ãƒ¡ãƒ¢: LoadIcon ã¯ Win32 ã® DestroyIcon ã®ã‚µãƒ–ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’è¦æ±‚ã—ã¾ã›ã‚“ã€‚
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 
 	m_fLoaded = false ;
@@ -99,16 +99,16 @@ END_MESSAGE_MAP()
 
 
 //
-// ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::LoadMIOFile( const char * pszFileName )
 {
 	//
-	// MIO ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	const char *	pszErrMsg = m_mioPlayObj.Open( pszFileName ) ;
 	if ( pszErrMsg != NULL )
 	{
-		MessageBox( pszErrMsg, "ƒGƒ‰[", MB_OK | MB_ICONERROR ) ;
+		MessageBox( pszErrMsg, "ã‚¨ãƒ©ãƒ¼", MB_OK | MB_ICONERROR ) ;
 		//
 		m_buttonPlay.LoadBitmaps
 			( IDB_PLAY0, IDB_PLAY1, IDB_PLAY2, IDB_PLAY3 ) ;
@@ -122,7 +122,7 @@ void CMioplayerDlg::LoadMIOFile( const char * pszFileName )
 		return ;
 	}
 	//
-	// “Ç‚İ‚İ¬Œ÷
+	// èª­ã¿è¾¼ã¿æˆåŠŸ
 	SetDlgItemText( IDC_STATIC_FILE, pszFileName ) ;
 	m_fLoaded = true ;
 	m_fTracking = false ;
@@ -139,7 +139,7 @@ void CMioplayerDlg::LoadMIOFile( const char * pszFileName )
 }
 
 //
-// •\¦‚ğXV
+// è¡¨ç¤ºã‚’æ›´æ–°
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::UpdateDisplay( void )
 {
@@ -192,15 +192,15 @@ void CMioplayerDlg::UpdateDisplay( void )
 
 
 /////////////////////////////////////////////////////////////////////////////
-// CMioplayerDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰
+// CMioplayerDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©
 
 BOOL CMioplayerDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// "ƒo[ƒWƒ‡ƒ“î•ñ..." ƒƒjƒ…[€–Ú‚ğƒVƒXƒeƒ€ ƒƒjƒ…[‚Ö’Ç‰Á‚µ‚Ü‚·B
+	// "ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±..." ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’ã‚·ã‚¹ãƒ†ãƒ  ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã¸è¿½åŠ ã—ã¾ã™ã€‚
 
-	// IDM_ABOUTBOX ‚ÍƒRƒ}ƒ“ƒh ƒƒjƒ…[‚Ì”ÍˆÍ‚Å‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB
+	// IDM_ABOUTBOX ã¯ã‚³ãƒãƒ³ãƒ‰ ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç¯„å›²ã§ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -216,12 +216,12 @@ BOOL CMioplayerDlg::OnInitDialog()
 		}
 	}
 
-	// ‚±‚Ìƒ_ƒCƒAƒƒO—p‚ÌƒAƒCƒRƒ“‚ğİ’è‚µ‚Ü‚·BƒtƒŒ[ƒ€ƒ[ƒN‚ÍƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒƒCƒ“
-	// ƒEƒBƒ“ƒhƒE‚ªƒ_ƒCƒAƒƒO‚Å‚È‚¢‚Í©“®“I‚Éİ’è‚µ‚Ü‚¹‚ñB
-	SetIcon(m_hIcon, TRUE);			// ‘å‚«‚¢ƒAƒCƒRƒ“‚ğİ’è
-	SetIcon(m_hIcon, FALSE);		// ¬‚³‚¢ƒAƒCƒRƒ“‚ğİ’è
+	// ã“ã®ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ç”¨ã®ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®šã—ã¾ã™ã€‚ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã¯ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ¡ã‚¤ãƒ³
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã§ãªã„æ™‚ã¯è‡ªå‹•çš„ã«è¨­å®šã—ã¾ã›ã‚“ã€‚
+	SetIcon(m_hIcon, TRUE);			// å¤§ãã„ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®š
+	SetIcon(m_hIcon, FALSE);		// å°ã•ã„ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®š
 
-	// TODO: “Á•Ê‚È‰Šú‰»‚ğs‚¤‚Í‚±‚ÌêŠ‚É’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
+	// TODO: ç‰¹åˆ¥ãªåˆæœŸåŒ–ã‚’è¡Œã†æ™‚ã¯ã“ã®å ´æ‰€ã«è¿½åŠ ã—ã¦ãã ã•ã„ã€‚
 	m_mioPlayObj.SetWindowToNotifyDone( m_hWnd ) ;
 	//
 	m_buttonPlay.LoadBitmaps( IDB_PLAY0, IDB_PLAY1, IDB_PLAY2, IDB_PLAY3 ) ;
@@ -235,7 +235,7 @@ BOOL CMioplayerDlg::OnInitDialog()
 	//
 	SetTimer( 1, 200, NULL ) ;
 
-	return TRUE;  // TRUE ‚ğ•Ô‚·‚ÆƒRƒ“ƒgƒ[ƒ‹‚Éİ’è‚µ‚½ƒtƒH[ƒJƒX‚Í¸‚í‚ê‚Ü‚¹‚ñB
+	return TRUE;  // TRUE ã‚’è¿”ã™ã¨ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã«è¨­å®šã—ãŸãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã¯å¤±ã‚ã‚Œã¾ã›ã‚“ã€‚
 }
 
 void CMioplayerDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -251,19 +251,19 @@ void CMioplayerDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// ‚à‚µƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚ÉÅ¬‰»ƒ{ƒ^ƒ“‚ğ’Ç‰Á‚·‚é‚È‚ç‚ÎAƒAƒCƒRƒ“‚ğ•`‰æ‚·‚é
-// ƒR[ƒh‚ğˆÈ‰º‚É‹Lq‚·‚é•K—v‚ª‚ ‚è‚Ü‚·BMFC ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Í document/view
-// ƒ‚ƒfƒ‹‚ğg‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚Ìˆ—‚ÍƒtƒŒ[ƒ€ƒ[ƒN‚É‚æ‚è©“®“I‚Éˆ—‚³‚ê‚Ü‚·B
+// ã‚‚ã—ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã«æœ€å°åŒ–ãƒœã‚¿ãƒ³ã‚’è¿½åŠ ã™ã‚‹ãªã‚‰ã°ã€ã‚¢ã‚¤ã‚³ãƒ³ã‚’æç”»ã™ã‚‹
+// ã‚³ãƒ¼ãƒ‰ã‚’ä»¥ä¸‹ã«è¨˜è¿°ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚MFC ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯ document/view
+// ãƒ¢ãƒ‡ãƒ«ã‚’ä½¿ã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®å‡¦ç†ã¯ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«å‡¦ç†ã•ã‚Œã¾ã™ã€‚
 
 void CMioplayerDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // •`‰æ—p‚ÌƒfƒoƒCƒX ƒRƒ“ƒeƒLƒXƒg
+		CPaintDC dc(this); // æç”»ç”¨ã®ãƒ‡ãƒã‚¤ã‚¹ ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 
 		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// ƒNƒ‰ƒCƒAƒ“ƒg‚Ì‹éŒ`—Ìˆæ“à‚Ì’†‰›
+		// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®çŸ©å½¢é ˜åŸŸå†…ã®ä¸­å¤®
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -271,7 +271,7 @@ void CMioplayerDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ƒAƒCƒRƒ“‚ğ•`‰æ‚µ‚Ü‚·B
+		// ã‚¢ã‚¤ã‚³ãƒ³ã‚’æç”»ã—ã¾ã™ã€‚
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -280,15 +280,15 @@ void CMioplayerDlg::OnPaint()
 	}
 }
 
-// ƒVƒXƒeƒ€‚ÍAƒ†[ƒU[‚ªÅ¬‰»ƒEƒBƒ“ƒhƒE‚ğƒhƒ‰ƒbƒO‚µ‚Ä‚¢‚éŠÔA
-// ƒJ[ƒ\ƒ‹‚ğ•\¦‚·‚é‚½‚ß‚É‚±‚±‚ğŒÄ‚Ño‚µ‚Ü‚·B
+// ã‚·ã‚¹ãƒ†ãƒ ã¯ã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒæœ€å°åŒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦ã„ã‚‹é–“ã€
+// ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ã“ã“ã‚’å‘¼ã³å‡ºã—ã¾ã™ã€‚
 HCURSOR CMioplayerDlg::OnQueryDragIcon()
 {
 	return (HCURSOR) m_hIcon;
 }
 
 //
-// ƒ_ƒ~[
+// ãƒ€ãƒŸãƒ¼
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnOK() 
 {
@@ -296,7 +296,7 @@ void CMioplayerDlg::OnOK()
 }
 
 //
-// I—¹
+// çµ‚äº†
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnCancel() 
 {
@@ -304,7 +304,7 @@ void CMioplayerDlg::OnCancel()
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğƒhƒƒbƒv‚µ‚½
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ­ãƒƒãƒ—ã—ãŸ
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnDropFiles(HDROP hDropInfo) 
 {
@@ -318,7 +318,7 @@ void CMioplayerDlg::OnDropFiles(HDROP hDropInfo)
 }
 
 //
-// ƒXƒ‰ƒCƒ_ƒo[‚ğˆÚ“®‚µ‚½
+// ã‚¹ãƒ©ã‚¤ãƒ€ãƒãƒ¼ã‚’ç§»å‹•ã—ãŸ
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 
 {
@@ -327,7 +327,7 @@ void CMioplayerDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 		if ( nSBCode == TB_THUMBPOSITION )
 		{
 			//
-			// w’èƒ|ƒCƒ“ƒg‚ÖƒV[ƒN
+			// æŒ‡å®šãƒã‚¤ãƒ³ãƒˆã¸ã‚·ãƒ¼ã‚¯
 			if ( m_fLoaded && m_mioPlayObj.IsPlaying() )
 			{
 				if ( m_mioPlayObj.IsPaused() )
@@ -356,7 +356,7 @@ void CMioplayerDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 		else if ( nSBCode == TB_THUMBTRACK )
 		{
 			//
-			// ƒgƒ‰ƒbƒLƒ“ƒOŠJn
+			// ãƒˆãƒ©ãƒƒã‚­ãƒ³ã‚°é–‹å§‹
 			m_fTracking = true ;
 		}
 	}
@@ -365,7 +365,7 @@ void CMioplayerDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnButtonBrowse() 
 {
@@ -379,7 +379,7 @@ void CMioplayerDlg::OnButtonBrowse()
 }
 
 //
-// Ä¶ŠJn^ˆê’â~
+// å†ç”Ÿé–‹å§‹ï¼ä¸€æ™‚åœæ­¢
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnButtonPlay() 
 {
@@ -414,7 +414,7 @@ void CMioplayerDlg::OnButtonPlay()
 }
 
 //
-// ’â~
+// åœæ­¢
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnButtonStop() 
 {
@@ -439,7 +439,7 @@ void CMioplayerDlg::OnButtonStop()
 }
 
 //
-// ƒ^ƒCƒ}[
+// ã‚¿ã‚¤ãƒãƒ¼
 //////////////////////////////////////////////////////////////////////////////
 void CMioplayerDlg::OnTimer(UINT nIDEvent) 
 {
@@ -449,7 +449,7 @@ void CMioplayerDlg::OnTimer(UINT nIDEvent)
 }
 
 //
-// ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒ
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£
 //////////////////////////////////////////////////////////////////////////////
 LRESULT CMioplayerDlg::WindowProc(UINT message, WPARAM wParam, LPARAM lParam) 
 {

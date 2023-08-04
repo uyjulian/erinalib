@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2002/05/26
+                                                      æœ€çµ‚æ›´æ–° 2002/05/26
  ----------------------------------------------------------------------------
           Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -20,11 +20,11 @@
 
 
 /*****************************************************************************
-                    ERIƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+                    ERIã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EPreloadBuffer::EPreloadBuffer( DWORD dwLength )
 	: EMemFile( NULL, dwLength )
@@ -36,7 +36,7 @@ ERIAnimation::EPreloadBuffer::EPreloadBuffer( DWORD dwLength )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EPreloadBuffer::~EPreloadBuffer( void )
 {
@@ -44,7 +44,7 @@ ERIAnimation::EPreloadBuffer::~EPreloadBuffer( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EPreloadQueue::EPreloadQueue( void )
 {
@@ -54,7 +54,7 @@ ERIAnimation::EPreloadQueue::EPreloadQueue( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EPreloadQueue::~EPreloadQueue( void )
 {
@@ -62,7 +62,7 @@ ERIAnimation::EPreloadQueue::~EPreloadQueue( void )
 }
 
 //
-// ”z—ñ‚ÌÅ‘å‚Ì’·‚³‚ğİ’è
+// é…åˆ—ã®æœ€å¤§ã®é•·ã•ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::EPreloadQueue::SetLimit( unsigned int nLimit )
 {
@@ -72,7 +72,7 @@ void ERIAnimation::EPreloadQueue::SetLimit( unsigned int nLimit )
 }
 
 //
-// ”z—ñ‚ğÁ‹
+// é…åˆ—ã‚’æ¶ˆå»
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::EPreloadQueue::RemoveAll( void )
 {
@@ -90,7 +90,7 @@ void ERIAnimation::EPreloadQueue::RemoveAll( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EKeyPointList::EKeyPointList( void )
 {
@@ -100,7 +100,7 @@ ERIAnimation::EKeyPointList::EKeyPointList( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EKeyPointList::~EKeyPointList( void )
 {
@@ -108,7 +108,7 @@ ERIAnimation::EKeyPointList::~EKeyPointList( void )
 }
 
 //
-// ”z—ñ‚ÌÅÜ‚Ì’·‚³‚ğİ’è
+// é…åˆ—ã®æœ€å‰¤ã®é•·ã•ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::EKeyPointList::SetLimit( unsigned int nLimit )
 {
@@ -118,7 +118,7 @@ void ERIAnimation::EKeyPointList::SetLimit( unsigned int nLimit )
 }
 
 //
-// ”z—ñ‚ğÁ‹
+// é…åˆ—ã‚’æ¶ˆå»
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::EKeyPointList::RemoveAll( void )
 {
@@ -132,7 +132,7 @@ void ERIAnimation::EKeyPointList::RemoveAll( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::ERIAnimation( void )
 {
@@ -152,7 +152,7 @@ ERIAnimation::ERIAnimation( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::~ERIAnimation( void )
 {
@@ -161,7 +161,7 @@ ERIAnimation::~ERIAnimation( void )
 }
 
 //
-// ‰æ‘œ“WŠJo—Íƒoƒbƒtƒ@—v‹
+// ç”»åƒå±•é–‹å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡è¦æ±‚
 //////////////////////////////////////////////////////////////////////////////
 RASTER_IMAGE_INFO * ERIAnimation::CreateImageBuffer
 	( DWORD format, SDWORD width, SDWORD height,
@@ -196,7 +196,7 @@ RASTER_IMAGE_INFO * ERIAnimation::CreateImageBuffer
 }
 
 //
-// ‰æ‘œ“WŠJo—Íƒoƒbƒtƒ@Á‹
+// ç”»åƒå±•é–‹å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡æ¶ˆå»
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::DeleteImageBuffer
 	( RASTER_IMAGE_INFO * prii, ENTIS_PALETTE * paltbl )
@@ -213,7 +213,7 @@ void ERIAnimation::DeleteImageBuffer
 }
 
 //
-// ‰æ‘œ“WŠJƒIƒuƒWƒFƒNƒg¶¬
+// ç”»åƒå±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç”Ÿæˆ
 //////////////////////////////////////////////////////////////////////////////
 ERIDecoder * ERIAnimation::CreateERIDecoder( void )
 {
@@ -221,7 +221,7 @@ ERIDecoder * ERIAnimation::CreateERIDecoder( void )
 }
 
 //
-// ‰¹º“WŠJƒIƒuƒWƒFƒNƒg¶¬
+// éŸ³å£°å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç”Ÿæˆ
 //////////////////////////////////////////////////////////////////////////////
 MIODecoder * ERIAnimation::CreateMIODecoder( void )
 {
@@ -229,7 +229,7 @@ MIODecoder * ERIAnimation::CreateMIODecoder( void )
 }
 
 //
-// ‰¹ºo—Í—v‹
+// éŸ³å£°å‡ºåŠ›è¦æ±‚
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::RequestWaveOut
 	( DWORD channels, DWORD frequency, DWORD bps )
@@ -238,14 +238,14 @@ bool ERIAnimation::RequestWaveOut
 }
 
 //
-// ‰¹ºo—ÍI—¹
+// éŸ³å£°å‡ºåŠ›çµ‚äº†
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::CloseWaveOut( void )
 {
 }
 
 //
-// ‰¹ºƒf[ƒ^o—Í
+// éŸ³å£°ãƒ‡ãƒ¼ã‚¿å‡ºåŠ›
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::PushWaveBuffer( void * ptrWaveBuf, DWORD dwBytes )
 {
@@ -253,7 +253,7 @@ void ERIAnimation::PushWaveBuffer( void * ptrWaveBuf, DWORD dwBytes )
 }
 
 //
-// ‰¹ºƒoƒbƒtƒ@Šm•Û
+// éŸ³å£°ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 //////////////////////////////////////////////////////////////////////////////
 void * ERIAnimation::AllocateWaveBuffer( DWORD dwBytes )
 {
@@ -261,7 +261,7 @@ void * ERIAnimation::AllocateWaveBuffer( DWORD dwBytes )
 }
 
 //
-// ‰¹ºƒf[ƒ^”jŠü‹–‰Â
+// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ç ´æ£„è¨±å¯
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::DeleteWaveBuffer( void * ptrWaveBuf )
 {
@@ -269,7 +269,7 @@ void ERIAnimation::DeleteWaveBuffer( void * ptrWaveBuf )
 }
 
 //
-// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOŠJn
+// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°é–‹å§‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::BeginWaveStreaming( void )
 {
@@ -293,7 +293,7 @@ void ERIAnimation::BeginWaveStreaming( void )
 }
 
 //
-// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOI—¹
+// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°çµ‚äº†
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::EndWaveStreaming( void )
 {
@@ -301,21 +301,21 @@ void ERIAnimation::EndWaveStreaming( void )
 }
 
 //
-// ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::Open
 	( EFileObject * pFile, unsigned int nPreloadSize, bool fTopDown )
 {
 	Close( ) ;
 	//
-	// ERIƒtƒ@ƒCƒ‹‚ğŠJ‚­iƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚Ü‚ÅŠJ‚­j
+	// ERIãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãï¼ˆã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã¾ã§é–‹ãï¼‰
 	//////////////////////////////////////////////////////////////////////////
 	if ( !m_erif.Open( pFile, m_erif.otOpenStream ) )
 	{
 		return	false ;
 	}
 	//
-	// “WŠJƒIƒuƒWƒFƒNƒg‚ğ‰Šú‰»‚·‚é
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	m_perid = CreateERIDecoder( ) ;
 	if ( m_perid->Initialize( m_erif.m_InfoHeader ) )
@@ -328,26 +328,26 @@ bool ERIAnimation::Open
 	if ( m_erif.m_fdwReadMask & ERIFile::rmSoundInfo )
 	{
 		//
-		// ƒTƒEƒ“ƒh‚ªŠÜ‚Ü‚ê‚Ä‚¢‚é
+		// ã‚µã‚¦ãƒ³ãƒ‰ãŒå«ã¾ã‚Œã¦ã„ã‚‹
 		m_pmiod = CreateMIODecoder( ) ;
 		if ( !m_pmiod->Initialize( m_erif.m_MIOInfHdr ) )
 		{
 			m_pmioc = new EFileDecodeContext( &m_erif, 0x10000 ) ;
 			//
-			// ‰¹ºo—Í—v‹
+			// éŸ³å£°å‡ºåŠ›è¦æ±‚
 			if ( RequestWaveOut
 				( m_erif.m_MIOInfHdr.dwChannelCount,
 					m_erif.m_MIOInfHdr.dwSamplesPerSec,
 					m_erif.m_MIOInfHdr.dwBitsPerSample ) )
 			{
 				//
-				// ‰¹ºo—Í—v‹‚ªó‚¯“ü‚ê‚ç‚ê‚½
+				// éŸ³å£°å‡ºåŠ›è¦æ±‚ãŒå—ã‘å…¥ã‚Œã‚‰ã‚ŒãŸ
 				m_fWaveOutput = true ;
 			}
 		}
 	}
 	//
-	// ‰æ‘œƒoƒbƒtƒ@‚ğ¶¬
+	// ç”»åƒãƒãƒƒãƒ•ã‚¡ã‚’ç”Ÿæˆ
 	//////////////////////////////////////////////////////////////////////////
 	m_fTopDown = fTopDown ;
 	signed int			nImageHeight ;
@@ -383,7 +383,7 @@ bool ERIAnimation::Open
 		(PBYTE) ::eriAllocateMemory
 			( m_pWorkImage->BytesPerLine * m_pWorkImage->nImageHeight ) ;
 	//
-	// æ“Ç‚İƒoƒbƒtƒ@”z—ñ‚ğŠm•Û
+	// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡é…åˆ—ã‚’ç¢ºä¿
 	//////////////////////////////////////////////////////////////////////////
 	if ( nPreloadSize == 0 )
 	{
@@ -391,12 +391,12 @@ bool ERIAnimation::Open
 	}
 	m_queueImage.SetLimit( nPreloadSize ) ;
 	//
-	// ƒtƒŒ[ƒ€ƒV[ƒN—pƒL[ƒ|ƒCƒ“ƒg”z—ñŠm•Û
+	// ãƒ•ãƒ¬ãƒ¼ãƒ ã‚·ãƒ¼ã‚¯ç”¨ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆé…åˆ—ç¢ºä¿
 	//////////////////////////////////////////////////////////////////////////
 	m_listKeyFrame.SetLimit( m_erif.m_FileHeader.dwFrameCount ) ;
 	m_listKeyWave.SetLimit( m_erif.m_FileHeader.dwFrameCount ) ;
 	//
-	// ƒXƒŒƒbƒh‚ğ¶¬
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ç”Ÿæˆ
 	//////////////////////////////////////////////////////////////////////////
 	m_hQueueNotEmpty = ::CreateEvent( NULL, TRUE, FALSE, NULL ) ;
 	m_hQueueSpace = ::CreateEvent( NULL, TRUE, TRUE, NULL ) ;
@@ -407,7 +407,7 @@ bool ERIAnimation::Open
 		return	false ;
 	}
 	//
-	// ‘æ1ƒtƒŒ[ƒ€‚ğ“WŠJ‚·‚é
+	// ç¬¬1ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( !SeekToNextFrame( ) )
 	{
@@ -418,12 +418,12 @@ bool ERIAnimation::Open
 }
 
 //
-// ƒAƒjƒ[ƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::Close( void )
 {
 	//
-	// ƒXƒŒƒbƒh‚ğI—¹‚³‚¹‚é
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’çµ‚äº†ã•ã›ã‚‹
 	if ( m_hThread != NULL )
 	{
 		::PostThreadMessage( m_idThread, tmQuit, 0, 0 ) ;
@@ -432,7 +432,7 @@ void ERIAnimation::Close( void )
 		m_hThread = NULL ;
 	}
 	//
-	// æ“Ç‚İƒLƒ…[‚ğƒNƒŠƒA‚·‚é
+	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 	if ( m_hQueueNotEmpty != NULL )
 	{
 		::CloseHandle( m_hQueueNotEmpty ) ;
@@ -445,11 +445,11 @@ void ERIAnimation::Close( void )
 	}
 	m_queueImage.RemoveAll( ) ;
 	//
-	// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg”z—ñ‚ğƒNƒŠƒA‚·‚é
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆé…åˆ—ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 	m_listKeyFrame.RemoveAll( ) ;
 	m_listKeyWave.RemoveAll( ) ;
 	//
-	// ‰æ‘œƒoƒbƒtƒ@‚ğíœ‚·‚é
+	// ç”»åƒãƒãƒƒãƒ•ã‚¡ã‚’å‰Šé™¤ã™ã‚‹
 	if ( m_pDstImage != NULL )
 	{
 		DeleteImageBuffer( m_pDstImage, m_pPaletteTable ) ;
@@ -463,7 +463,7 @@ void ERIAnimation::Close( void )
 		m_pWorkImage = NULL ;
 	}
 	//
-	// “WŠJƒIƒuƒWƒFƒNƒg‚ğíœ‚·‚é
+	// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤ã™ã‚‹
 	if ( m_perid != NULL )
 	{
 		m_perid->Delete( ) ;
@@ -487,24 +487,24 @@ void ERIAnimation::Close( void )
 		m_pmioc = NULL ;
 	}
 	//
-	// ‰¹ºo—Í‚ÌI—¹
+	// éŸ³å£°å‡ºåŠ›ã®çµ‚äº†
 	if ( m_fWaveOutput )
 	{
 		CloseWaveOut( ) ;
 		m_fWaveOutput = false ;
 	}
 	//
-	// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	m_erif.Close( ) ;
 }
 
 //
-// æ“ªƒtƒŒ[ƒ€‚ÖˆÚ“®
+// å…ˆé ­ãƒ•ãƒ¬ãƒ¼ãƒ ã¸ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::SeekToBegin( void )
 {
 	//
-	// ƒXƒŒƒbƒh‚ÉƒV[ƒNƒƒbƒZ[ƒW‚ğ‘—‚é
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã«ã‚·ãƒ¼ã‚¯ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( m_hThread == NULL )
 	{
@@ -523,7 +523,7 @@ bool ERIAnimation::SeekToBegin( void )
 		return	false ;
 	}
 	//
-	// æ“ªƒtƒŒ[ƒ€‚ğ“WŠJ
+	// å…ˆé ­ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( !SeekToNextFrame( ) )
 	{
@@ -534,7 +534,7 @@ bool ERIAnimation::SeekToBegin( void )
 }
 
 //
-// Ÿ‚ÌƒtƒŒ[ƒ€‚ÖˆÚ“®
+// æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¸ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 {
@@ -543,8 +543,8 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 		return	false ;
 	}
 	//
-	// w’èƒtƒŒ[ƒ€‚ªƒL[ƒtƒŒ[ƒ€‚ğ‹²‚ñ‚Å‚¢‚éê‡A
-	// ƒL[ƒtƒŒ[ƒ€ƒf[ƒ^‚Ü‚Å‚ÌŠÔ‚ğ“Ç‚İ”ò‚Î‚·
+	// æŒ‡å®šãƒ•ãƒ¬ãƒ¼ãƒ ãŒã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æŒŸã‚“ã§ã„ã‚‹å ´åˆã€
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã¾ã§ã®é–“ã‚’èª­ã¿é£›ã°ã™
 	//////////////////////////////////////////////////////////////////////////
 	int	nBreakCount = 0 ;
 	if ( (nSkipFrame > 0) && (GetKeyFrameCount() != 0) )
@@ -569,7 +569,7 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 		}
 	}
 	//
-	// ƒL[ƒtƒŒ[ƒ€ƒf[ƒ^‚Ü‚Å‚ğ”jŠü‚·‚é
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã¾ã§ã‚’ç ´æ£„ã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( nBreakCount > 0 )
 	{
@@ -577,7 +577,7 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 		for ( ; ; )
 		{
 			//
-			// ƒtƒŒ[ƒ€‚ª“Ç‚İ‚Ü‚ê‚é‚Ü‚Å‘Ò‚Â
+			// ãƒ•ãƒ¬ãƒ¼ãƒ ãŒèª­ã¿è¾¼ã¾ã‚Œã‚‹ã¾ã§å¾…ã¤
 			HANDLE	hEventList[2] =
 			{
 				m_hQueueNotEmpty, m_hThread
@@ -589,7 +589,7 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 				return	false ;
 			}
 			//
-			// ƒtƒŒ[ƒ€ƒf[ƒ^‚ğˆê‚Â”jŠü‚·‚é
+			// ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚’ä¸€ã¤ç ´æ£„ã™ã‚‹
 			Lock( ) ;
 			EPreloadBuffer *	pBuffer = GetPreloadBuffer( ) ;
 			if ( pBuffer != NULL )
@@ -599,13 +599,13 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 						(recid == *((UINT64*)"DiffeFrm")) )
 				{
 					//
-					// ƒtƒŒ[ƒ€ƒf[ƒ^‚Í”jŠü
+					// ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã¯ç ´æ£„
 					++ nBreakedCount ;
 				}
 				else if ( recid == *((UINT64*)"Palette ") )
 				{
 					//
-					// ƒpƒŒƒbƒgƒf[ƒ^‚Í“K—p
+					// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ‡ãƒ¼ã‚¿ã¯é©ç”¨
 					unsigned int	nBytes = pBuffer->GetLength( ) ;
 					if ( nBytes > sizeof(ENTIS_PALETTE) * 0x100 )
 						nBytes = sizeof(ENTIS_PALETTE) * 0x100 ;
@@ -622,7 +622,7 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 		}
 	}
 	//
-	// w’èƒtƒŒ[ƒ€‚Ü‚Å‡Ÿ“WŠJ
+	// æŒ‡å®šãƒ•ãƒ¬ãƒ¼ãƒ ã¾ã§é †æ¬¡å±•é–‹
 	//////////////////////////////////////////////////////////////////////////
 	int	nSkippedCount = 0 ;
 	nSkipFrame ++ ;
@@ -642,12 +642,12 @@ bool ERIAnimation::SeekToNextFrame( int nSkipFrame )
 }
 
 //
-// w’è‚ÌƒtƒŒ[ƒ€‚ÉˆÚ“®
+// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã«ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::SeekToFrame( unsigned int iFrameIndex )
 {
 	//
-	// “ÁêğŒ
+	// ç‰¹æ®Šæ¡ä»¶
 	//////////////////////////////////////////////////////////////////////////
 	if ( m_iCurrentFrame == iFrameIndex )
 	{
@@ -666,7 +666,7 @@ bool ERIAnimation::SeekToFrame( unsigned int iFrameIndex )
 		}
 	}
 	//
-	// ƒXƒgƒŠ[ƒ~ƒ“ƒO’â~
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°åœæ­¢
 	//////////////////////////////////////////////////////////////////////////
 	if ( m_fWaveStreaming )
 	{
@@ -674,7 +674,7 @@ bool ERIAnimation::SeekToFrame( unsigned int iFrameIndex )
 		m_fWaveStreaming = false ;
 	}
 	//
-	// ƒXƒŒƒbƒh‚ÉƒV[ƒNƒƒbƒZ[ƒW‚ğ‘—‚é
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã«ã‚·ãƒ¼ã‚¯ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( m_hThread == NULL )
 	{
@@ -700,14 +700,14 @@ bool ERIAnimation::SeekToFrame( unsigned int iFrameIndex )
 		return	false ;
 	}
 	//
-	// ƒL[ƒtƒŒ[ƒ€‚ğ“WŠJ
+	// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( !SeekToNextFrame( ) )
 	{
 		return	false ;
 	}
 	//
-	// ·•ªƒtƒŒ[ƒ€‚ğ“WŠJ
+	// å·®åˆ†ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹
 	//////////////////////////////////////////////////////////////////////////
 	if ( iFrameIndex > iKeyFrame )
 	{
@@ -721,7 +721,7 @@ bool ERIAnimation::SeekToFrame( unsigned int iFrameIndex )
 }
 
 //
-// w’è‚ÌƒtƒŒ[ƒ€‚ÍƒL[ƒtƒŒ[ƒ€‚©H
+// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¯ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‹ï¼Ÿ
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::IsKeyFrame( unsigned int iFrameIndex )
 {
@@ -736,7 +736,7 @@ bool ERIAnimation::IsKeyFrame( unsigned int iFrameIndex )
 }
 
 //
-// Ÿ‚ÌƒtƒŒ[ƒ€‚ğ“WŠJ‚·‚é
+// æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å±•é–‹ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 bool ERIAnimation::DecodeNextFrame( void )
 {
@@ -749,7 +749,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 	for ( ; ; )
 	{
 		//
-		// ƒtƒŒ[ƒ€‚ª“Ç‚İ‚Ü‚ê‚é‚Ü‚Å‘Ò‚Â
+		// ãƒ•ãƒ¬ãƒ¼ãƒ ãŒèª­ã¿è¾¼ã¾ã‚Œã‚‹ã¾ã§å¾…ã¤
 		//////////////////////////////////////////////////////////////////////
 		HANDLE	hEventList[2] =
 		{
@@ -762,7 +762,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 			return	false ;
 		}
 		//
-		// 1ƒtƒŒ[ƒ€æ“¾
+		// 1ãƒ•ãƒ¬ãƒ¼ãƒ å–å¾—
 		//////////////////////////////////////////////////////////////////////
 		bool	fDecodedFrame = false ;
 		Lock( ) ;
@@ -774,7 +774,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 					(recid == *((UINT64*)"DiffeFrm")) )
 			{
 				//
-				// ƒtƒŒ[ƒ€ƒf[ƒ^‚ğ“WŠJ
+				// ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿ã‚’å±•é–‹
 				bool	fKeyFrame = (recid == *((UINT64*)"ImageFrm")) ;
 				RASTER_IMAGE_INFO *	prii ;
 				if ( fKeyFrame )
@@ -793,7 +793,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 					fResult = true ;
 				}
 				//
-				// ·•ªˆ—
+				// å·®åˆ†å‡¦ç†
 				if ( !fKeyFrame )
 				{
 					::eriAdditionOfFrame( *m_pDstImage, *m_pWorkImage ) ;
@@ -805,7 +805,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 			else if ( recid == *((UINT64*)"Palette ") )
 			{
 				//
-				// ƒpƒŒƒbƒgƒf[ƒ^‚ğ“K—p
+				// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ‡ãƒ¼ã‚¿ã‚’é©ç”¨
 				unsigned int	nBytes = pBuffer->GetLength( ) ;
 				if ( nBytes > sizeof(ENTIS_PALETTE) * 0x100 )
 					nBytes = sizeof(ENTIS_PALETTE) * 0x100 ;
@@ -825,7 +825,7 @@ bool ERIAnimation::DecodeNextFrame( void )
 }
 
 //
-// æ“Ç‚İƒoƒbƒtƒ@‚ğæ“¾‚·‚é
+// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::EPreloadBuffer * ERIAnimation::GetPreloadBuffer( void )
 {
@@ -852,7 +852,7 @@ ERIAnimation::EPreloadBuffer * ERIAnimation::GetPreloadBuffer( void )
 }
 
 //
-// æ“Ç‚İƒoƒbƒtƒ@‚É’Ç‰Á‚·‚é
+// å…ˆèª­ã¿ãƒãƒƒãƒ•ã‚¡ã«è¿½åŠ ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::AddPreloadBuffer( EPreloadBuffer * pBuffer )
 {
@@ -873,7 +873,7 @@ void ERIAnimation::AddPreloadBuffer( EPreloadBuffer * pBuffer )
 }
 
 //
-// ERIFile ƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+// ERIFile ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 const ERIFile & ERIAnimation::GetERIFile( void ) const
 {
@@ -881,7 +881,7 @@ const ERIFile & ERIAnimation::GetERIFile( void ) const
 }
 
 //
-// ƒJƒŒƒ“ƒgƒtƒŒ[ƒ€‚ÌƒCƒ“ƒfƒbƒNƒX‚ğæ“¾‚·‚é
+// ã‚«ãƒ¬ãƒ³ãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::CurrentIndex( void ) const
 {
@@ -889,7 +889,7 @@ unsigned int ERIAnimation::CurrentIndex( void ) const
 }
 
 //
-// ƒJƒŒƒ“ƒgƒtƒŒ[ƒ€‚Ì‰æ‘œ‚ğæ“¾
+// ã‚«ãƒ¬ãƒ³ãƒˆãƒ•ãƒ¬ãƒ¼ãƒ ã®ç”»åƒã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 const RASTER_IMAGE_INFO * ERIAnimation::GetImageInfo( void ) const
 {
@@ -897,7 +897,7 @@ const RASTER_IMAGE_INFO * ERIAnimation::GetImageInfo( void ) const
 }
 
 //
-// ƒpƒŒƒbƒgƒe[ƒuƒ‹æ“¾
+// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 const ENTIS_PALETTE * ERIAnimation::GetPaletteEntries( void ) const
 {
@@ -905,7 +905,7 @@ const ENTIS_PALETTE * ERIAnimation::GetPaletteEntries( void ) const
 }
 
 //
-// ƒL[ƒtƒŒ[ƒ€‚ğæ“¾
+// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::GetKeyFrameCount( void ) const
 {
@@ -913,7 +913,7 @@ unsigned int ERIAnimation::GetKeyFrameCount( void ) const
 }
 
 //
-// ‘SƒtƒŒ[ƒ€”‚ğæ“¾
+// å…¨ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::GetAllFrameCount( void ) const
 {
@@ -921,7 +921,7 @@ unsigned int ERIAnimation::GetAllFrameCount( void ) const
 }
 
 //
-// ‘SƒAƒjƒ[ƒVƒ‡ƒ“ŠÔ‚ğæ“¾
+// å…¨ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::GetTotalTime( void ) const
 {
@@ -929,7 +929,7 @@ unsigned int ERIAnimation::GetTotalTime( void ) const
 }
 
 //
-// ƒtƒŒ[ƒ€”Ô†‚©‚çŠÔ‚Ö•ÏŠ·
+// ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·ã‹ã‚‰æ™‚é–“ã¸å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::FrameIndexToTime( unsigned int iFrameIndex ) const
 {
@@ -942,7 +942,7 @@ unsigned int ERIAnimation::FrameIndexToTime( unsigned int iFrameIndex ) const
 }
 
 //
-// ŠÔ‚©‚çƒtƒŒ[ƒ€”Ô†‚Ö•ÏŠ·
+// æ™‚é–“ã‹ã‚‰ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·ã¸å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 unsigned int ERIAnimation::TimeToFrameIndex( unsigned int nMilliSec ) const
 {
@@ -955,7 +955,7 @@ unsigned int ERIAnimation::TimeToFrameIndex( unsigned int nMilliSec ) const
 }
 
 //
-// ƒXƒŒƒbƒhŠÖ”
+// ã‚¹ãƒ¬ãƒƒãƒ‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 DWORD WINAPI ERIAnimation::ThreadProc( LPVOID parameter )
 {
@@ -965,12 +965,12 @@ DWORD WINAPI ERIAnimation::ThreadProc( LPVOID parameter )
 DWORD ERIAnimation::LoadingThreadProc( void )
 {
 	//
-	// ƒƒbƒZ[ƒWƒLƒ…[‚ğì¬
+	// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚­ãƒ¥ãƒ¼ã‚’ä½œæˆ
 	//////////////////////////////////////////////////////////////////////////
 	MSG		msg ;
 	::PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE ) ;
 	//
-	// •Ï”‰Šú‰»
+	// å¤‰æ•°åˆæœŸåŒ–
 	//////////////////////////////////////////////////////////////////////////
 	unsigned int	iCurrentFrame = 0 ;
 	KEY_POINT	keypoint ;
@@ -978,30 +978,30 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 	keypoint.dwRecOffset = m_erif.GetPointer( ) ;
 	AddKeyPoint( m_listKeyFrame, keypoint ) ;
 	//
-	// ŠeƒŒƒR[ƒh‚ğ“Ç‚İ‚Ş
+	// å„ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚€
 	//////////////////////////////////////////////////////////////////////////
 	for ( ; ; )
 	{
 		//
-		// ƒŒƒR[ƒh‚ğŠJ‚­
+		// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 		//////////////////////////////////////////////////////////////////////
 		DWORD	dwRecPosition = m_erif.GetPointer( ) ;
 		if ( !m_erif.DescendRecord( ) )
 		{
 			if ( iCurrentFrame == 0 )
 			{
-				// 1‚Â‚à‰æ‘œƒŒƒR[ƒh‚ª–³‚¢ê‡‚ÍƒGƒ‰[
+				// 1ã¤ã‚‚ç”»åƒãƒ¬ã‚³ãƒ¼ãƒ‰ãŒç„¡ã„å ´åˆã¯ã‚¨ãƒ©ãƒ¼
 				break ;
 			}
 			//
-			// ƒŒƒR[ƒh‚ÌI’[‚É“’B‚µ‚½‚ç
-			// ©“®“I‚Éæ“ª‚ÉˆÚ“®
+			// ãƒ¬ã‚³ãƒ¼ãƒ‰ã®çµ‚ç«¯ã«åˆ°é”ã—ãŸã‚‰
+			// è‡ªå‹•çš„ã«å…ˆé ­ã«ç§»å‹•
 			iCurrentFrame = 0 ;
 			m_erif.Seek( 0 ) ;
 			continue ;
 		}
 		//
-		// ƒŒƒR[ƒh‚Ìí—Ş‚ğ”»•Ê
+		// ãƒ¬ã‚³ãƒ¼ãƒ‰ã®ç¨®é¡ã‚’åˆ¤åˆ¥
 		//////////////////////////////////////////////////////////////////////
 		UINT64	recid = m_erif.GetRecordID( ) ;
 		EPreloadBuffer *	pBuffer = NULL ;
@@ -1009,7 +1009,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 				(recid == *((UINT64*)"DiffeFrm")) )
 		{
 			//
-			// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh
+			// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰
 			//
 			DWORD	dwDataBytes = m_erif.GetLength( ) ;
 			pBuffer = new EPreloadBuffer( dwDataBytes ) ;
@@ -1035,7 +1035,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 		else if ( recid == *((UINT64*)"Palette ") )
 		{
 			//
-			// ƒpƒŒƒbƒgƒe[ƒuƒ‹ƒŒƒR[ƒh
+			// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ãƒ¬ã‚³ãƒ¼ãƒ‰
 			//
 			DWORD	dwDataBytes = m_erif.GetLength( ) ;
 			pBuffer = new EPreloadBuffer( dwDataBytes ) ;
@@ -1047,7 +1047,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 		else if ( recid == *((UINT64*)"SoundStm") )
 		{
 			//
-			// ‰¹ºƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh
+			// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰
 			//
 			MIO_DATA_HEADER	miodh ;
 			m_erif.Read( &miodh, sizeof(MIO_DATA_HEADER) ) ;
@@ -1066,8 +1066,8 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 			if ( m_fWaveStreaming && m_fWaveOutput )
 			{
 				//
-				// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOƒ‚[ƒh
-				//		¨ ƒfƒR[ƒh‚µ‚Äo—Í
+				// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ãƒ¢ãƒ¼ãƒ‰
+				//		â†’ ãƒ‡ã‚³ãƒ¼ãƒ‰ã—ã¦å‡ºåŠ›
 				//
 				DWORD	dwBytes = miodh.dwSampleCount
 							* m_erif.m_MIOInfHdr.dwChannelCount
@@ -1091,18 +1091,18 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 		else
 		{
 			//
-			// ƒŒƒR[ƒh‚ğ•Â‚¶‚é
+			// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‰ã˜ã‚‹
 			//////////////////////////////////////////////////////////////////////
 			m_erif.AscendRecord( ) ;
 		}
 		//
-		// ƒƒbƒZ[ƒW‚ğóM•ƒEƒFƒCƒg
+		// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ä¿¡ï¼†ã‚¦ã‚§ã‚¤ãƒˆ
 		//////////////////////////////////////////////////////////////////////
 		bool	fQuit = false ;
 		do
 		{
 			//
-			// ƒLƒ…[‚ª‹ó‚­‚©ƒƒbƒZ[ƒW‚ğóM‚·‚é‚Ü‚Å‘Ò‚Â
+			// ã‚­ãƒ¥ãƒ¼ãŒç©ºãã‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ä¿¡ã™ã‚‹ã¾ã§å¾…ã¤
 			DWORD	dwWaitResult =
 				::MsgWaitForMultipleObjects
 					( 1, &m_hQueueSpace, FALSE, INFINITE, QS_ALLINPUT ) ;
@@ -1117,7 +1117,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 				if ( msg.message == tmSeekFrame )
 				{
 					//
-					// ƒL[ƒtƒŒ[ƒ€‚ÉƒV[ƒN
+					// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã«ã‚·ãƒ¼ã‚¯
 					//
 					if ( pBuffer != NULL )
 					{
@@ -1133,7 +1133,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 				else if ( msg.message == tmSeekSound )
 				{
 					//
-					// ‰¹ºƒf[ƒ^‚ğƒV[ƒN
+					// éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã‚’ã‚·ãƒ¼ã‚¯
 					//
 					SeekKeyWave( m_listKeyWave, msg.wParam ) ;
 					//
@@ -1142,7 +1142,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 				else if ( msg.message == tmQuit )
 				{
 					//
-					// I—¹
+					// çµ‚äº†
 					//
 					fQuit = true ;
 					break ;
@@ -1162,7 +1162,7 @@ DWORD ERIAnimation::LoadingThreadProc( void )
 }
 
 //
-// ƒL[ƒtƒŒ[ƒ€ƒ|ƒCƒ“ƒg‚ğ’Ç‰Á‚·‚é
+// ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ãƒã‚¤ãƒ³ãƒˆã‚’è¿½åŠ ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::AddKeyPoint
 	( ERIAnimation::EKeyPointList & list, ERIAnimation::KEY_POINT key )
@@ -1176,7 +1176,7 @@ void ERIAnimation::AddKeyPoint
 }
 
 //
-// w’è‚ÌƒL[ƒtƒŒ[ƒ€‚ğŒŸõ‚·‚é
+// æŒ‡å®šã®ã‚­ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ¤œç´¢ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ERIAnimation::KEY_POINT * ERIAnimation::SearchKeyPoint
 	( ERIAnimation::EKeyPointList & list, unsigned int iKeyFrame )
@@ -1220,7 +1220,7 @@ ERIAnimation::KEY_POINT * ERIAnimation::SearchKeyPoint
 }
 
 //
-// w’è‚ÌƒtƒŒ[ƒ€‚ÉƒV[ƒN‚·‚é
+// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã«ã‚·ãƒ¼ã‚¯ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::SeekKeyPoint
 	( ERIAnimation::EKeyPointList & list,
@@ -1229,7 +1229,7 @@ void ERIAnimation::SeekKeyPoint
 	if ( !IsKeyFrame( iFrame ) )
 		return ;
 	//
-	// æ“Ç‚İƒLƒ…[‚É“Ç‚İ‚Ü‚ê‚Ä‚¢‚é‚©”»’f
+	// å…ˆèª­ã¿ã‚­ãƒ¥ãƒ¼ã«èª­ã¿è¾¼ã¾ã‚Œã¦ã„ã‚‹ã‹åˆ¤æ–­
 	//
 	bool	fHaveSeeked = false ;
 	Lock( ) ;
@@ -1254,15 +1254,15 @@ void ERIAnimation::SeekKeyPoint
 	if ( !fHaveSeeked )
 	{
 		//
-		// ƒŠƒXƒg‚Éw’èƒtƒŒ[ƒ€‚Ìƒ|ƒCƒ“ƒ^‚ª
-		// “o˜^‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ğ’²‚×‚é
+		// ãƒªã‚¹ãƒˆã«æŒ‡å®šãƒ•ãƒ¬ãƒ¼ãƒ ã®ãƒã‚¤ãƒ³ã‚¿ãŒ
+		// ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’èª¿ã¹ã‚‹
 		//
 		KEY_POINT *	pKeyPoint = SearchKeyPoint( m_listKeyFrame, iFrame ) ;
 		//
 		if ( pKeyPoint != NULL )
 		{
 			//
-			// ƒ|ƒCƒ“ƒ^‚ÉƒV[ƒN
+			// ãƒã‚¤ãƒ³ã‚¿ã«ã‚·ãƒ¼ã‚¯
 			//
 			m_erif.Seek( pKeyPoint->dwRecOffset ) ;
 			iCurrentFrame = iFrame ;
@@ -1270,12 +1270,12 @@ void ERIAnimation::SeekKeyPoint
 		else
 		{
 			//
-			// w’è‚ÌƒtƒŒ[ƒ€‚ğ’T‚·
+			// æŒ‡å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ¢ã™
 			//
 			do
 			{
 				//
-				// Ÿ‚ÌƒŒƒR[ƒh‚ğŠJ‚­
+				// æ¬¡ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 				//
 				DWORD	dwRecPosition = m_erif.GetPointer( ) ;
 				if ( !m_erif.DescendRecord( ) )
@@ -1285,14 +1285,14 @@ void ERIAnimation::SeekKeyPoint
 					break ;
 				}
 				//
-				// ƒŒƒR[ƒh‚Ìí—Ş‚ğ”»•Ê
+				// ãƒ¬ã‚³ãƒ¼ãƒ‰ã®ç¨®é¡ã‚’åˆ¤åˆ¥
 				//
 				UINT64	recid = m_erif.GetRecordID( ) ;
 				if ( (recid == *((UINT64*)"ImageFrm")) ||
 						(recid == *((UINT64*)"DiffeFrm")) )
 				{
 					//
-					// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh
+					// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰
 					//
 					m_erif.AscendRecord( ) ;
 					++ iCurrentFrame ;
@@ -1316,7 +1316,7 @@ void ERIAnimation::SeekKeyPoint
 				else if ( recid == *((UINT64*)"SoundStm") )
 				{
 					//
-					// ‰¹ºƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh
+					// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰
 					//
 					MIO_DATA_HEADER	miodh ;
 					m_erif.Read( &miodh, sizeof(MIO_DATA_HEADER) ) ;
@@ -1345,7 +1345,7 @@ void ERIAnimation::SeekKeyPoint
 }
 
 //
-// w’è‚Ì‰¹ºƒf[ƒ^‚Ü‚ÅƒV[ƒN‚µ‚ÄƒXƒgƒŠ[ƒ~ƒ“ƒOo—Í‚·‚é
+// æŒ‡å®šã®éŸ³å£°ãƒ‡ãƒ¼ã‚¿ã¾ã§ã‚·ãƒ¼ã‚¯ã—ã¦ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::SeekKeyWave
 	( EKeyPointList & list, unsigned int iFrame )
@@ -1355,7 +1355,7 @@ void ERIAnimation::SeekKeyWave
 		return ;
 	}
 	//
-	// ƒV[ƒNƒ|ƒCƒ“ƒg‚æ‚èèŠÔ‚ÅAÅ‚à‹ß‚¢ƒL[ƒ|ƒCƒ“ƒg‚ğŒŸõ‚·‚é
+	// ã‚·ãƒ¼ã‚¯ãƒã‚¤ãƒ³ãƒˆã‚ˆã‚Šæ‰‹é–“ã§ã€æœ€ã‚‚è¿‘ã„ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒˆã‚’æ¤œç´¢ã™ã‚‹
 	//
 	int		iFirst, iMiddle, iEnd ;
 	KEY_POINT *	pKeyPoint ;
@@ -1388,18 +1388,18 @@ void ERIAnimation::SeekKeyWave
 	}
 	Unlock( ) ;
 	//
-	// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğˆÚ“®
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ã‚’ç§»å‹•
 	//
 	DWORD	dwOriginalPointer = m_erif.GetPointer( ) ;
 	unsigned int	iCurrentFrame = pKeyPoint->iKeyFrame ;
 	m_erif.Seek( pKeyPoint->dwRecOffset ) ;
 	//
-	// w’è‚ÌêŠ‚ğ’T‚·
+	// æŒ‡å®šã®å ´æ‰€ã‚’æ¢ã™
 	//
 	do
 	{
 		//
-		// Ÿ‚ÌƒŒƒR[ƒh‚ğŠJ‚­
+		// æ¬¡ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 		//
 		DWORD	dwRecPosition = m_erif.GetPointer( ) ;
 		if ( !m_erif.DescendRecord( ) )
@@ -1408,14 +1408,14 @@ void ERIAnimation::SeekKeyWave
 			break ;
 		}
 		//
-		// ƒŒƒR[ƒh‚Ìí—Ş‚ğ”»•Ê
+		// ãƒ¬ã‚³ãƒ¼ãƒ‰ã®ç¨®é¡ã‚’åˆ¤åˆ¥
 		//
 		UINT64	recid = m_erif.GetRecordID( ) ;
 		if ( (recid == *((UINT64*)"ImageFrm")) ||
 				(recid == *((UINT64*)"DiffeFrm")) )
 		{
 			//
-			// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh
+			// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰
 			//
 			m_erif.AscendRecord( ) ;
 			++ iCurrentFrame ;
@@ -1435,7 +1435,7 @@ void ERIAnimation::SeekKeyWave
 		else if ( recid == *((UINT64*)"SoundStm") )
 		{
 			//
-			// ‰¹ºƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh
+			// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰
 			//
 			MIO_DATA_HEADER	miodh ;
 			m_erif.Read( &miodh, sizeof(MIO_DATA_HEADER) ) ;
@@ -1452,8 +1452,8 @@ void ERIAnimation::SeekKeyWave
 				}
 			}
 			//
-			// ‰¹ºƒXƒgƒŠ[ƒ~ƒ“ƒOƒ‚[ƒh
-			//		¨ ƒfƒR[ƒh‚µ‚Äo—Í
+			// éŸ³å£°ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ãƒ¢ãƒ¼ãƒ‰
+			//		â†’ ãƒ‡ã‚³ãƒ¼ãƒ‰ã—ã¦å‡ºåŠ›
 			//
 			DWORD	dwBytes = miodh.dwSampleCount
 						* m_erif.m_MIOInfHdr.dwChannelCount
@@ -1489,7 +1489,7 @@ void ERIAnimation::SeekKeyWave
 }
 
 //
-// ”r‘¼ˆ—iƒNƒŠƒeƒBƒJƒ‹ƒZƒNƒVƒ‡ƒ“j
+// æ’ä»–å‡¦ç†ï¼ˆã‚¯ãƒªãƒ†ã‚£ã‚«ãƒ«ã‚»ã‚¯ã‚·ãƒ§ãƒ³ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 void ERIAnimation::Lock( void )
 {

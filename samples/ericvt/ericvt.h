@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                       Œb—‚¿‚á‚ñ‰æ‘œƒRƒ“ƒo[ƒ^[ CL
+                       æµç†ã¡ã‚ƒã‚“ç”»åƒã‚³ãƒ³ãƒãƒ¼ã‚¿ãƒ¼ CL
  -----------------------------------------------------------------------------
            Copyright (C) 20001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -14,7 +14,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include <eritypes.h>
@@ -25,7 +25,7 @@ typedef	const UINT64 *		PCUINT64 ;
 
 
 //
-// ƒrƒbƒgƒ}ƒbƒvƒIƒuƒWƒFƒNƒg
+// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 class	MyBitmap
@@ -37,68 +37,68 @@ protected:
 	void *				m_ptrBitmap ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MyBitmap( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MyBitmap( void ) ;
-	// ‰æ‘œƒf[ƒ^æ“¾
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿å–å¾—
 	const RASTER_IMAGE_INFO & GetRasterImage( void ) const ;
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹æ“¾
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«å–å¾—
 	const RGBQUAD * GetPaletteTable( void ) const ;
-	// ƒrƒbƒgƒ}ƒbƒvƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚İ
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã¿
 	bool ReadBitmap( EFileObject * pfile ) ;
-	// ƒrƒbƒgƒ}ƒbƒvƒf[ƒ^‚ğì¬
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿ã‚’ä½œæˆ
 	bool CreateBitmap
 		( DWORD format, SDWORD width, SDWORD height,
 					DWORD bpp, ENTIS_PALETTE * paltbl ) ;
-	// ƒrƒbƒgƒ}ƒbƒvƒtƒ@ƒCƒ‹‚ğ‘‚«o‚·
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ›¸ãå‡ºã™
 	bool WriteBitmap( EWriteFileObj * pfile ) ;
-	// ƒf[ƒ^‚ğíœ
+	// ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
 	void Delete( void ) ;
 
 } ;
 
 
 //
-// ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”ƒIƒuƒWƒFƒNƒg
+// ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 class	MyArgument
 {
 public:
-	bool			m_fNologo ;				// ƒƒS‚ğ•\¦‚µ‚È‚¢
-	bool			m_fTime ;				// ŠÔ‚ğŒv‘ª‚·‚é
-	bool			m_fEncode ;				// ˆ³k‚©L’£‚©H
-	bool			m_fDstIsDir ;			// o—Íæ‚ÍƒfƒBƒŒƒNƒgƒŠ‚©H
-	bool			m_fIndependentBlock ;	// ƒuƒƒbƒN“Æ—§Œ^‚©H
-	bool			m_fEnhancedMode ;		// Šg’£ƒtƒH[ƒ}ƒbƒg‚ğg‚¤H
-	int				m_nBlockSize ;			// ƒuƒƒbƒLƒ“ƒOƒTƒCƒY
-	int				m_nCompressMode ;		// ˆ³kƒ‚[ƒh
+	bool			m_fNologo ;				// ãƒ­ã‚´ã‚’è¡¨ç¤ºã—ãªã„
+	bool			m_fTime ;				// æ™‚é–“ã‚’è¨ˆæ¸¬ã™ã‚‹
+	bool			m_fEncode ;				// åœ§ç¸®ã‹ä¼¸å¼µã‹ï¼Ÿ
+	bool			m_fDstIsDir ;			// å‡ºåŠ›å…ˆã¯ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‹ï¼Ÿ
+	bool			m_fIndependentBlock ;	// ãƒ–ãƒ­ãƒƒã‚¯ç‹¬ç«‹å‹ã‹ï¼Ÿ
+	bool			m_fEnhancedMode ;		// æ‹¡å¼µãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’ä½¿ã†ï¼Ÿ
+	int				m_nBlockSize ;			// ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã‚µã‚¤ã‚º
+	int				m_nCompressMode ;		// åœ§ç¸®ãƒ¢ãƒ¼ãƒ‰
 
-	bool			m_fLossless ;			// ‰Â‹tˆ³k‚©H
-	int				m_nBlockingDegree ;		// ƒuƒƒbƒLƒ“ƒOƒTƒCƒY
-	DWORD			m_dwSamplingFlags ;		// ƒTƒ“ƒvƒŠƒ“ƒOƒtƒ‰ƒO
-	ERIEncoder::PARAMETER	m_eriep ;		// ˆ³kƒpƒ‰ƒ[ƒ^
+	bool			m_fLossless ;			// å¯é€†åœ§ç¸®ã‹ï¼Ÿ
+	int				m_nBlockingDegree ;		// ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã‚µã‚¤ã‚º
+	DWORD			m_dwSamplingFlags ;		// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ•ãƒ©ã‚°
+	ERIEncoder::PARAMETER	m_eriep ;		// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 
-	const char *	m_pszSrcName ;			// “ü—Íƒtƒ@ƒCƒ‹–¼
-	const char *	m_pszDstName ;			// o—Íƒtƒ@ƒCƒ‹–¼
+	const char *	m_pszSrcName ;			// å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«å
+	const char *	m_pszDstName ;			// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«å
 	char *			m_pszDstBuf ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MyArgument( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MyArgument( void ) ;
-	// ˆø”‰ğÍ
+	// å¼•æ•°è§£æ
 	bool Interpret( int argc, const char *const * argv ) ;
-	// ”ñ‰Â‹tˆ³kƒpƒ‰ƒ[ƒ^‚ğİ’è
+	// éå¯é€†åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®š
 	bool LoadCompressionParameter( const char * pszIniFile ) ;
-	// ini ƒtƒ@ƒCƒ‹‚©‚çw’è‚Ìƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+	// ini ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æŒ‡å®šã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	static bool GetParameter
 		( REAL32 * val,
 			const char * pszIniFile, const char * pszSection,
 			const char * pszKey, const char * pszDefault ) ;
-	// •¶š—ñ‚©‚ç”’l‚É•ÏŠ·
+	// æ–‡å­—åˆ—ã‹ã‚‰æ•°å€¤ã«å¤‰æ›
 	static bool Value( const char * str, int * val ) ;
 	static bool Real( const char * str, REAL32 * val ) ;
 
@@ -106,15 +106,15 @@ public:
 
 
 //
-// ˆ³kƒIƒuƒWƒFƒNƒg
+// åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 class	MyERIEncoder	: public	ERIEncoder
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MyERIEncoder( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MyERIEncoder( void ) ;
 
 protected:
@@ -122,33 +122,33 @@ protected:
 	DWORD			m_dwLastProgress ;
 
 public:
-	// isó‹µ•¶š—ñ‚ğŠÖ˜A•t‚¯‚é
+	// é€²è¡ŒçŠ¶æ³æ–‡å­—åˆ—ã‚’é–¢é€£ä»˜ã‘ã‚‹
 	void AttachProgressFormat( const char * pszPrgFormat ) ;
-	// ‰æ‘œ‚ğˆ³k
+	// ç”»åƒã‚’åœ§ç¸®
 	int EncodeImage
 		( const RASTER_IMAGE_INFO & srcimginf,
 			RLHEncodeContext & context, DWORD fdwFlags = 0x0021 ) ;
 
 protected:
-	// “WŠJisó‹µ’Ê’mŠÖ”
+	// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 	virtual int OnEncodedBlock( LONG line, LONG column ) ;
 	virtual int OnEncodedLine( LONG line ) ;
-	// isó‹µ•\¦
+	// é€²è¡ŒçŠ¶æ³è¡¨ç¤º
 	void PrintProgress( DWORD dwProgress ) ;
 
 } ;
 
 
 //
-// “WŠJƒIƒuƒWƒFƒNƒg
+// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 class	MyERIDecoder	: public	ERIDecoder
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MyERIDecoder( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MyERIDecoder( void ) ;
 
 protected:
@@ -156,52 +156,52 @@ protected:
 	DWORD			m_dwLastProgress ;
 
 public:
-	// isó‹µ•¶š—ñ‚ğŠÖ˜A•t‚¯‚é
+	// é€²è¡ŒçŠ¶æ³æ–‡å­—åˆ—ã‚’é–¢é€£ä»˜ã‘ã‚‹
 	void AttachProgressFormat( const char * pszPrgFormat ) ;
-	// ‰æ‘œ‚ğ“WŠJ
+	// ç”»åƒã‚’å±•é–‹
 	int DecodeImage
 		( const RASTER_IMAGE_INFO & dstimginf,
 			RLHDecodeContext & context, bool fTopDown ) ;
 
 protected:
-	// “WŠJisó‹µ’Ê’mŠÖ”
+	// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 	virtual int OnDecodedBlock( LONG line, LONG column ) ;
 	virtual int OnDecodedLine( LONG line ) ;
-	// isó‹µ•\¦
+	// é€²è¡ŒçŠ¶æ³è¡¨ç¤º
 	void PrintProgress( DWORD dwProgress ) ;
 
 } ;
 
 
 //
-// ƒOƒ[ƒoƒ‹ŠÖ”
+// ã‚°ãƒ­ãƒ¼ãƒãƒ«é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 
-// ƒƒS‚ğ•\¦
+// ãƒ­ã‚´ã‚’è¡¨ç¤º
 void PrintLogo( void ) ;
 
-// ‘®‚ğ•\¦
+// æ›¸å¼ã‚’è¡¨ç¤º
 void PrintUsage( void ) ;
 
-// ERI ‚Éˆ³k
+// ERI ã«åœ§ç¸®
 void EncodeToEri( MyArgument & argument ) ;
 
-// BMP ‚ğ ERI ‚Éˆ³k
+// BMP ã‚’ ERI ã«åœ§ç¸®
 void EncodeBmpToEri
 ( const char * pszBmpFile, const char * pszEriFile, MyArgument & argument ) ;
 
-// ERI ‚ğ BMP ‚É“WŠJ
+// ERI ã‚’ BMP ã«å±•é–‹
 void DecodeEriToBmp( MyArgument & argument ) ;
 
-// ƒpƒX‚©‚çƒfƒBƒŒƒNƒgƒŠ‚ğ’Šo
+// ãƒ‘ã‚¹ã‹ã‚‰ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’æŠ½å‡º
 char * GetPathDirectory( const char * pszPath ) ;
 
-// ƒpƒX‚©‚çƒtƒ@ƒCƒ‹–¼‚ğ’Šo
+// ãƒ‘ã‚¹ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŠ½å‡º
 const char * GetFilePathName( const char * pszPath ) ;
 
-// ƒtƒ@ƒCƒ‹–¼‚©‚çƒtƒ@ƒCƒ‹ƒ^ƒCƒgƒ‹‚ğ’Šo
+// ãƒ•ã‚¡ã‚¤ãƒ«åã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒˆãƒ«ã‚’æŠ½å‡º
 char * GetFileNameTitle( const char * pszFileName ) ;
 
-// •¶š—ñ‚ğŒ‹‡
+// æ–‡å­—åˆ—ã‚’çµåˆ
 char * CombineString( const char * str1, const char * str2 ) ;
 

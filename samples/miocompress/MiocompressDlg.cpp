@@ -1,4 +1,4 @@
-// miocompressDlg.cpp : ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“ ƒtƒ@ƒCƒ‹
+// miocompressDlg.cpp : ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -13,25 +13,25 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ìƒo[ƒWƒ‡ƒ“î•ñ‚ÅŽg‚í‚ê‚Ä‚¢‚é CAboutDlg ƒ_ƒCƒAƒƒO
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã§ä½¿ã‚ã‚Œã¦ã„ã‚‹ CAboutDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 class CAboutDlg : public CDialog
 {
 public:
 	CAboutDlg();
 
-// ƒ_ƒCƒAƒƒO ƒf[ƒ^
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒ‡ãƒ¼ã‚¿
 	//{{AFX_DATA(CAboutDlg)
 	enum { IDD = IDD_ABOUTBOX };
 	//}}AFX_DATA
 
-	// ClassWizard ‚Í‰¼‘zŠÖ”‚ÌƒI[ƒo[ƒ‰ƒCƒh‚ð¶¬‚µ‚Ü‚·
+	// ClassWizard ã¯ä»®æƒ³é–¢æ•°ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚’ç”Ÿæˆã—ã¾ã™
 	//{{AFX_VIRTUAL(CAboutDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ‚ÌƒTƒ|[ƒg
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ã®ã‚µãƒãƒ¼ãƒˆ
 	//}}AFX_VIRTUAL
 
-// ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“
+// ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³
 protected:
 	//{{AFX_MSG(CAboutDlg)
 	//}}AFX_MSG
@@ -53,19 +53,19 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 	//{{AFX_MSG_MAP(CAboutDlg)
-		// ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰‚ª‚ ‚è‚Ü‚¹‚ñB
+		// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãŒã‚ã‚Šã¾ã›ã‚“ã€‚
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CMiocompressDlg ƒ_ƒCƒAƒƒO
+// CMiocompressDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 CMiocompressDlg::CMiocompressDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CMiocompressDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMiocompressDlg)
 	//}}AFX_DATA_INIT
-	// ƒƒ‚: LoadIcon ‚Í Win32 ‚Ì DestroyIcon ‚ÌƒTƒuƒV[ƒPƒ“ƒX‚ð—v‹‚µ‚Ü‚¹‚ñB
+	// ãƒ¡ãƒ¢: LoadIcon ã¯ Win32 ã® DestroyIcon ã®ã‚µãƒ–ã‚·ãƒ¼ã‚±ãƒ³ã‚¹ã‚’è¦æ±‚ã—ã¾ã›ã‚“ã€‚
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -99,15 +99,15 @@ BEGIN_MESSAGE_MAP(CMiocompressDlg, CDialog)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CMiocompressDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰
+// CMiocompressDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©
 
 BOOL CMiocompressDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// "ƒo[ƒWƒ‡ƒ“î•ñ..." ƒƒjƒ…[€–Ú‚ðƒVƒXƒeƒ€ ƒƒjƒ…[‚Ö’Ç‰Á‚µ‚Ü‚·B
+	// "ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±..." ãƒ¡ãƒ‹ãƒ¥ãƒ¼é …ç›®ã‚’ã‚·ã‚¹ãƒ†ãƒ  ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã¸è¿½åŠ ã—ã¾ã™ã€‚
 
-	// IDM_ABOUTBOX ‚ÍƒRƒ}ƒ“ƒh ƒƒjƒ…[‚Ì”ÍˆÍ‚Å‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB
+	// IDM_ABOUTBOX ã¯ã‚³ãƒžãƒ³ãƒ‰ ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç¯„å›²ã§ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -123,12 +123,12 @@ BOOL CMiocompressDlg::OnInitDialog()
 		}
 	}
 
-	// ‚±‚Ìƒ_ƒCƒAƒƒO—p‚ÌƒAƒCƒRƒ“‚ðÝ’è‚µ‚Ü‚·BƒtƒŒ[ƒ€ƒ[ƒN‚ÍƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒƒCƒ“
-	// ƒEƒBƒ“ƒhƒE‚ªƒ_ƒCƒAƒƒO‚Å‚È‚¢Žž‚ÍŽ©“®“I‚ÉÝ’è‚µ‚Ü‚¹‚ñB
-	SetIcon(m_hIcon, TRUE);			// ‘å‚«‚¢ƒAƒCƒRƒ“‚ðÝ’è
-	SetIcon(m_hIcon, FALSE);		// ¬‚³‚¢ƒAƒCƒRƒ“‚ðÝ’è
+	// ã“ã®ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ç”¨ã®ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®šã—ã¾ã™ã€‚ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã¯ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ¡ã‚¤ãƒ³
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã§ãªã„æ™‚ã¯è‡ªå‹•çš„ã«è¨­å®šã—ã¾ã›ã‚“ã€‚
+	SetIcon(m_hIcon, TRUE);			// å¤§ãã„ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®š
+	SetIcon(m_hIcon, FALSE);		// å°ã•ã„ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¨­å®š
 	
-	// TODO: “Á•Ê‚È‰Šú‰»‚ðs‚¤Žž‚Í‚±‚ÌêŠ‚É’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
+	// TODO: ç‰¹åˆ¥ãªåˆæœŸåŒ–ã‚’è¡Œã†æ™‚ã¯ã“ã®å ´æ‰€ã«è¿½åŠ ã—ã¦ãã ã•ã„ã€‚
 	int	nSimpleOption =
 		theApp.GetProfileInt( "option", "simple_option", 4 ) ;
 	m_comboOption.SetCurSel( nSimpleOption ) ;
@@ -159,7 +159,7 @@ BOOL CMiocompressDlg::OnInitDialog()
 	//
 	DragAcceptFiles( TRUE ) ;
 
-	return TRUE;  // TRUE ‚ð•Ô‚·‚ÆƒRƒ“ƒgƒ[ƒ‹‚ÉÝ’è‚µ‚½ƒtƒH[ƒJƒX‚ÍŽ¸‚í‚ê‚Ü‚¹‚ñB
+	return TRUE;  // TRUE ã‚’è¿”ã™ã¨ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã«è¨­å®šã—ãŸãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã¯å¤±ã‚ã‚Œã¾ã›ã‚“ã€‚
 }
 
 void CMiocompressDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -175,19 +175,19 @@ void CMiocompressDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// ‚à‚µƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚ÉÅ¬‰»ƒ{ƒ^ƒ“‚ð’Ç‰Á‚·‚é‚È‚ç‚ÎAƒAƒCƒRƒ“‚ð•`‰æ‚·‚é
-// ƒR[ƒh‚ðˆÈ‰º‚É‹Lq‚·‚é•K—v‚ª‚ ‚è‚Ü‚·BMFC ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Í document/view
-// ƒ‚ƒfƒ‹‚ðŽg‚Á‚Ä‚¢‚é‚Ì‚ÅA‚±‚Ìˆ—‚ÍƒtƒŒ[ƒ€ƒ[ƒN‚É‚æ‚èŽ©“®“I‚Éˆ—‚³‚ê‚Ü‚·B
+// ã‚‚ã—ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã«æœ€å°åŒ–ãƒœã‚¿ãƒ³ã‚’è¿½åŠ ã™ã‚‹ãªã‚‰ã°ã€ã‚¢ã‚¤ã‚³ãƒ³ã‚’æç”»ã™ã‚‹
+// ã‚³ãƒ¼ãƒ‰ã‚’ä»¥ä¸‹ã«è¨˜è¿°ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚MFC ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯ document/view
+// ãƒ¢ãƒ‡ãƒ«ã‚’ä½¿ã£ã¦ã„ã‚‹ã®ã§ã€ã“ã®å‡¦ç†ã¯ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«å‡¦ç†ã•ã‚Œã¾ã™ã€‚
 
 void CMiocompressDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // •`‰æ—p‚ÌƒfƒoƒCƒX ƒRƒ“ƒeƒLƒXƒg
+		CPaintDC dc(this); // æç”»ç”¨ã®ãƒ‡ãƒã‚¤ã‚¹ ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 
 		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// ƒNƒ‰ƒCƒAƒ“ƒg‚Ì‹éŒ`—Ìˆæ“à‚Ì’†‰›
+		// ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®çŸ©å½¢é ˜åŸŸå†…ã®ä¸­å¤®
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -195,7 +195,7 @@ void CMiocompressDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ƒAƒCƒRƒ“‚ð•`‰æ‚µ‚Ü‚·B
+		// ã‚¢ã‚¤ã‚³ãƒ³ã‚’æç”»ã—ã¾ã™ã€‚
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -204,15 +204,15 @@ void CMiocompressDlg::OnPaint()
 	}
 }
 
-// ƒVƒXƒeƒ€‚ÍAƒ†[ƒU[‚ªÅ¬‰»ƒEƒBƒ“ƒhƒE‚ðƒhƒ‰ƒbƒO‚µ‚Ä‚¢‚éŠÔA
-// ƒJ[ƒ\ƒ‹‚ð•\Ž¦‚·‚é‚½‚ß‚É‚±‚±‚ðŒÄ‚Ño‚µ‚Ü‚·B
+// ã‚·ã‚¹ãƒ†ãƒ ã¯ã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒæœ€å°åŒ–ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦ã„ã‚‹é–“ã€
+// ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ã“ã“ã‚’å‘¼ã³å‡ºã—ã¾ã™ã€‚
 HCURSOR CMiocompressDlg::OnQueryDragIcon()
 {
 	return (HCURSOR) m_hIcon;
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ðƒhƒƒbƒv‚µ‚½
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ‰ãƒ­ãƒƒãƒ—ã—ãŸ
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnDropFiles(HDROP hDropInfo) 
 {
@@ -231,12 +231,12 @@ void CMiocompressDlg::OnDropFiles(HDROP hDropInfo)
 }
 
 //
-// ƒtƒ@ƒCƒ‹’Ç‰Á
+// ãƒ•ã‚¡ã‚¤ãƒ«è¿½åŠ 
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnButtonAdd() 
 {
 	//
-	// ƒtƒ@ƒCƒ‹‘I‘ð
+	// ãƒ•ã‚¡ã‚¤ãƒ«é¸æŠž
 	CString	strFileBuf ;
 	CFileDialog	fdlg( TRUE, NULL, NULL,
 		(OFN_ALLOWMULTISELECT | OFN_FILEMUSTEXIST),
@@ -247,7 +247,7 @@ void CMiocompressDlg::OnButtonAdd()
 	if ( fdlg.DoModal( ) == IDOK )
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ðƒŠƒXƒg‚É’Ç‰Á
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒªã‚¹ãƒˆã«è¿½åŠ 
 		POSITION	pos = fdlg.GetStartPosition( ) ;
 		while ( pos != NULL )
 		{
@@ -257,7 +257,7 @@ void CMiocompressDlg::OnButtonAdd()
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ðƒŠƒXƒg‚©‚çíœ
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnButtonDelete() 
 {
@@ -276,7 +276,7 @@ void CMiocompressDlg::OnButtonDelete()
 }
 
 //
-// ‘S‚Ä‚Ìƒtƒ@ƒCƒ‹‚ðƒŠƒXƒg‚©‚çíœ
+// å…¨ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnButtonDeleteAll() 
 {
@@ -284,7 +284,7 @@ void CMiocompressDlg::OnButtonDeleteAll()
 }
 
 //
-// ŠÈˆÕƒpƒ‰ƒ[ƒ^Žw’è‚ª•ÏX‚³‚ê‚½
+// ç°¡æ˜“ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æŒ‡å®šãŒå¤‰æ›´ã•ã‚ŒãŸ
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnSelchangeComboOption( )
 {
@@ -293,7 +293,7 @@ void CMiocompressDlg::OnSelchangeComboOption( )
 }
 
 //
-// ƒvƒŠƒZƒbƒg’l‚ðÝ’è
+// ãƒ—ãƒªã‚»ãƒƒãƒˆå€¤ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::SetPresetParameter( int nSimpleOption )
 {
@@ -357,16 +357,16 @@ void CMiocompressDlg::SetPresetParameter( int nSimpleOption )
 }
 
 //
-// ŽÀ”‚ðŽæ“¾‚·‚é
+// å®Ÿæ•°ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 bool CMiocompressDlg::GetDlgItemDouble( int nID, double & value )
 {
 	//
-	// •¶Žš—ñŽæ“¾
+	// æ–‡å­—åˆ—å–å¾—
 	CString	string ;
 	GetDlgItemText( nID, string ) ;
 	//
-	// ŽÀ”‚É•ÏŠ·
+	// å®Ÿæ•°ã«å¤‰æ›
 	bool	fSuccessful = true ;
 	int		i = 0 ;
 	double	r = 0.0 ;
@@ -402,12 +402,12 @@ bool CMiocompressDlg::GetDlgItemDouble( int nID, double & value )
 }
 
 //
-// ŽÀ”‚ðÝ’è‚·‚é
+// å®Ÿæ•°ã‚’è¨­å®šã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::SetDlgItemDouble( int nID, double value )
 {
 	//
-	// •¶Žš—ñ¶¬
+	// æ–‡å­—åˆ—ç”Ÿæˆ
 	CString	string ;
 	string.Format( "%d.", (int) value ) ;
 	//
@@ -419,18 +419,18 @@ void CMiocompressDlg::SetDlgItemDouble( int nID, double value )
 		decimal = (decimal - n * 10000) * 10 ;
 	}
 	//
-	// •¶Žš—ñÝ’è
+	// æ–‡å­—åˆ—è¨­å®š
 	SetDlgItemText( nID, string ) ;
 }
 
 //
-// ˆ³kŠJŽn
+// åœ§ç¸®é–‹å§‹
 //////////////////////////////////////////////////////////////////////////////
 void CMiocompressDlg::OnOK() 
 {
 	CProgressDlg	prgdlg( this ) ;
 	//
-	// ˆ³kƒpƒ‰ƒ[ƒ^Ý’è
+	// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 	//
 	BOOL			fTrans ;
 	bool			fLossless ;
@@ -449,62 +449,62 @@ void CMiocompressDlg::OnOK()
 	if ( !fLossless && !fTrans )
 	{
 		MessageBox
-			( "u’áŽü”g‚Ìd‚Ýv‚É³‚µ‚­”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œä½Žå‘¨æ³¢ã®é‡ã¿ã€ã«æ­£ã—ãæ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	fTrans = GetDlgItemDouble( IDC_EDIT_MIDDLE_WEIGHT, rMiddleWeight ) ;
 	if ( !fLossless && !fTrans )
 	{
 		MessageBox
-			( "u’†Žü”g‚Ìd‚Ýv‚É³‚µ‚­”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œä¸­å‘¨æ³¢ã®é‡ã¿ã€ã«æ­£ã—ãæ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	nOddWeight = GetDlgItemInt( IDC_EDIT_ODD_WEIGHT, &fTrans, FALSE ) ;
 	if ( !fLossless && !fTrans )
 	{
 		MessageBox
-			( "u‚a˜c‘ÎôŒW”v‚É³‚µ‚­”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œï¼¢æ­ªå¯¾ç­–ä¿‚æ•°ã€ã«æ­£ã—ãæ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	if ( (nOddWeight < 0) || (nOddWeight > 2) )
 	{
 		MessageBox
-			( "u‚a˜c‘ÎôŒW”v‚É‚ÍA0`2‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œï¼¢æ­ªå¯¾ç­–ä¿‚æ•°ã€ã«ã¯ã€0ã€œ2ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	nPEThreshold = GetDlgItemInt( IDC_EDIT_PE_THRESHOLD, &fTrans, FALSE ) ;
 	if ( !fLossless && !fTrans )
 	{
 		MessageBox
-			( "uPEè‡’lŒW”v‚É³‚µ‚­”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€ŒPEé–¾å€¤ä¿‚æ•°ã€ã«æ­£ã—ãæ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	if ( nPEThreshold < 2 )
 	{
 		MessageBox
-			( "uPEè‡’lŒW”v‚É‚ÍA2ˆÈã‚Ì”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€ŒPEé–¾å€¤ä¿‚æ•°ã€ã«ã¯ã€2ä»¥ä¸Šã®æ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	nPowerScale = GetDlgItemInt( IDC_EDIT_POWER_SCALE, &fTrans, FALSE ) ;
 	if ( !fLossless && !fTrans )
 	{
 		MessageBox
-			( "u—ÊŽq‰»ŒW”v‚É³‚µ‚­”’l‚ðŽw’è‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œé‡å­åŒ–ä¿‚æ•°ã€ã«æ­£ã—ãæ•°å€¤ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	nDegreeSel = m_comboDegree.GetCurSel( ) ;
 	if ( (nDegreeSel < 0) || (nDegreeSel > 4) )
 	{
 		MessageBox
-			( "us—ñƒTƒCƒYv‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ã€Œè¡Œåˆ—ã‚µã‚¤ã‚ºã€ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 	}
 	else
 	{
@@ -516,14 +516,14 @@ void CMiocompressDlg::OnOK()
 		( fLossless, rLowWeight, rMiddleWeight, nOddWeight,
 			nPEThreshold, nPowerScale / 256.0, nMatrixDegree, 1, fUseMSS ) ;
 	//
-	// ˆ³kƒtƒ@ƒCƒ‹ƒŠƒXƒgÝ’è
+	// åœ§ç¸®ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆè¨­å®š
 	//
 	int		nFileCount = m_listFiles.GetCount( ) ;
 	if ( nFileCount <= 0 )
 	{
 		MessageBox
-			( "ƒtƒ@ƒCƒ‹‚ªŽw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB",
-				"ƒGƒ‰[", (MB_OK | MB_ICONERROR) ) ;
+			( "ãƒ•ã‚¡ã‚¤ãƒ«ãŒæŒ‡å®šã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚",
+				"ã‚¨ãƒ©ãƒ¼", (MB_OK | MB_ICONERROR) ) ;
 		return ;
 	}
 	for ( int i = 0; i < nFileCount; i ++ )
@@ -533,7 +533,7 @@ void CMiocompressDlg::OnOK()
 		prgdlg.AddFileEntry( strFilePath ) ;
 	}
 	//
-	// ˆ³kƒpƒ‰ƒ[ƒ^‚ð•Û‘¶
+	// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¿å­˜
 	//
 	theApp.WriteProfileInt( "option", "simple_option", nSimpleOption ) ;
 	theApp.WriteProfileInt
@@ -546,13 +546,13 @@ void CMiocompressDlg::OnOK()
 	theApp.WriteProfileInt( "option", "matrix_degree", nDegreeSel ) ;
 	theApp.WriteProfileInt( "option", "use_mss", fUseMSS ) ;
 	//
-	// ƒvƒƒOƒŒƒXƒo[‚ð•\Ž¦
+	// ãƒ—ãƒ­ã‚°ãƒ¬ã‚¹ãƒãƒ¼ã‚’è¡¨ç¤º
 	//
 	if ( prgdlg.DoModal( ) == IDOK )
 	{
 		if ( MessageBox
-			( "ƒŠƒXƒg‚©‚ç‘S‚Ä‚Ìƒtƒ@ƒCƒ‹‚ðíœ‚µ‚Ü‚·‚©H",
-				"MIOˆ³kŠ®—¹", (MB_YESNO | MB_ICONQUESTION) ) == IDYES )
+			( "ãƒªã‚¹ãƒˆã‹ã‚‰å…¨ã¦ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ",
+				"MIOåœ§ç¸®å®Œäº†", (MB_YESNO | MB_ICONQUESTION) ) == IDYES )
 		{
 			m_listFiles.ResetContent( ) ;
 		}

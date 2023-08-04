@@ -7,53 +7,53 @@ This is written by Japanese with ShiftJIS.
 ###############################################################################
 
 
-�P�D�����A
-�@���̓x�́A�uERINA-Library�v���_�E�����[�h���������܂��āA���ɂ��肪�Ƃ��������܂��B
+１．ご挨拶
+　この度は、「ERINA-Library」をダウンロードくださいまして、誠にありがとうございます。
 
 
-�Q�D�������e
-�@���̃A�[�J�C�u�͈ȉ��̍\���ɂȂ��Ă��܂��B
+２．同梱内容
+　このアーカイブは以下の構成になっています。
 
-\ ���[�g
-���� document\
-���� library\
-���@�@���� asm\
-���@�@���� borland\
-���@�@���� common\
-���@�@���� cpp\
-���@�@���� include\
-���@�@���� source\
-���� samples\
-���@�@���� bin\
-���@�@���� cpp\
-���@�@���� ericvt\
-���@�@���� iferi2\
-���@�@���� miocompress\
-���@�@���@�@���� res\
-���@�@���� mioplayer\
-���@�@�@�@�@���� res\
-���� license.txt
-���� readme.txt �i���̃t�@�C���j
+\ ルート
+├─ document\
+├─ library\
+│　　├─ asm\
+│　　├─ borland\
+│　　├─ common\
+│　　├─ cpp\
+│　　├─ include\
+│　　└─ source\
+├─ samples\
+│　　├─ bin\
+│　　├─ cpp\
+│　　├─ ericvt\
+│　　├─ iferi2\
+│　　├─ miocompress\
+│　　│　　└─ res\
+│　　└─ mioplayer\
+│　　　　　└─ res\
+├─ license.txt
+└─ readme.txt （このファイル）
 
-�@���C�u�����́Alibrary �f�B���N�g���ɓ����Ă��܂��B
-�@library\include �f�B���N�g���ɂ���t�@�C�����A�C���N���[�h�p�X�̒ʂ�f�B���N�g���ɐݒ肷�邩�A�R�s�[���Ă��������B
-�@document �f�B���N�g���ɂ́A�t�@�C���t�H�[�}�b�g�d�l���A�y�у��C�u�����d�l���������Ă��܂��BMS-Word �ŉ{�����Ă��������B
-�@samples �f�B���N�g���ɂ́AERINA-Library �̃T���v���v���O�����̃\�[�X�R�[�h����������Ă��܂��B
-�@license.txt �t�@�C���ɂ́A�{���C�u�����̎g�p�������L���Ă���܂��B���C�u�����������p�̍ۂɂ͖ڂ����ʂ����������B
-
-
-�R�D���C�u�����̋@�\
-�@���̃��C�u�����́AERI�t�H�[�}�b�g��1���������4�����܂ł̂��ׂẴf�R�[�h�y�уG���R�[�h���\�ł��B
-�@Win32 �����ł́A�A�Z���u�����g���č��������ꂽ�o�C�i���𗘗p�ł���ق��AMMX�ASSE���߂Ȃǂɂ��Ή����Ă���̂ŁA�����Ȉ��k�A�W�J���\�ł��B
+　ライブラリは、library ディレクトリに入っています。
+　library\include ディレクトリにあるファイルを、インクルードパスの通るディレクトリに設定するか、コピーしてください。
+　document ディレクトリには、ファイルフォーマット仕様書、及びライブラリ仕様書が入っています。MS-Word で閲覧してください。
+　samples ディレクトリには、ERINA-Library のサンプルプログラムのソースコードが同梱されています。
+　license.txt ファイルには、本ライブラリの使用許諾を記してあります。ライブラリをご利用の際には目をお通しください。
 
 
-�S�D�Ō��
-�@�{�\�t�g�E�F�A�̓t���[�E�F�A�ł����A���쌠����������킯�ł͂������܂���̂ŁA�����ӂ��������B�܂��A�{�\�t�g�E�F�A�̂��g�p�ɋN�����邢���Ȃ鎖�Ԃɂ��ӔC�𕉂����˂܂��̂ŁA���炩���߂��������������B
-�@�܂��A�{�\�t�g�E�F�A�𗘗p�������앨�̔z�z�Ɋւ��ẮA������ license.txt ���Q�Ƃ��������B
-�@ERI�t�H�[�}�b�g�Ɋւ���ŐV���A���₢���킹�́A
+３．ライブラリの機能
+　このライブラリは、ERIフォーマット第1水準から第4水準までのすべてのデコード及びエンコードが可能です。
+　Win32 環境下では、アセンブラを使って高速化されたバイナリを利用できるほか、MMX、SSE命令などにも対応しているので、高速な圧縮、展開が可能です。
+
+
+４．最後に
+　本ソフトウェアはフリーウェアですが、著作権を放棄したわけではございませんので、ご注意ください。また、本ソフトウェアのご使用に起因するいかなる事態にも責任を負いかねますので、あらかじめご了承ください。
+　また、本ソフトウェアを利用した著作物の配布に関しては、同梱の license.txt を参照ください。
+　ERIフォーマットに関する最新情報、お問い合わせは、
 	URL	: http://www.entis.gr.jp/eri/
 	E-mail	: eri@entis.jp
-�ւ��肢���܂��B
+へお願いします。
 
 
 Copyright (C) 2000-2002 Leshade Entis, Entis-soft. All rights reserved.

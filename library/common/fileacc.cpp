@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                           E R I N A - L i b r a r y
-                                                      ÅIXV 2001/11/04
+                                                      æœ€çµ‚æ›´æ–° 2001/11/04
  ----------------------------------------------------------------------------
           Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 //
-// ERINA “WŠJƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA å±•é–‹ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -20,7 +20,7 @@
 
 
 /*****************************************************************************
-                        ƒtƒ@ƒCƒ‹’ŠÛƒIƒuƒWƒFƒNƒg
+                        ãƒ•ã‚¡ã‚¤ãƒ«æŠ½è±¡ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 EFileObject::EFileObject( void )
@@ -33,11 +33,11 @@ EFileObject::~EFileObject( void )
 
 
 /*****************************************************************************
-                          ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+                          ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EReadFile::EReadFile( void )
 {
@@ -52,7 +52,7 @@ EReadFile::EReadFile( HANDLE hFile )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EReadFile::~EReadFile( void )
 {
@@ -60,7 +60,7 @@ EReadFile::~EReadFile( void )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool EReadFile::Open( const char * pszFile )
 {
@@ -80,7 +80,7 @@ bool EReadFile::Open( const char * pszFile )
 }
 
 //
-// ƒtƒ@ƒCƒ‹ƒnƒ“ƒhƒ‹‚ğŠÖ˜A•t‚¯‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ³ãƒ‰ãƒ«ã‚’é–¢é€£ä»˜ã‘ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void EReadFile::Attach( HANDLE hFile )
 {
@@ -90,7 +90,7 @@ void EReadFile::Attach( HANDLE hFile )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void EReadFile::Close( void )
 {
@@ -104,7 +104,7 @@ void EReadFile::Close( void )
 }
 
 //
-// “Ç‚İ‚İ
+// èª­ã¿è¾¼ã¿
 //////////////////////////////////////////////////////////////////////////////
 DWORD EReadFile::Read( void * ptrBuf, DWORD dwByte )
 {
@@ -115,7 +115,7 @@ DWORD EReadFile::Read( void * ptrBuf, DWORD dwByte )
 }
 
 //
-// ƒTƒCƒYæ“¾
+// ã‚µã‚¤ã‚ºå–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD EReadFile::GetLength( void )
 {
@@ -123,7 +123,7 @@ DWORD EReadFile::GetLength( void )
 }
 
 //
-// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^æ“¾
+// ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD EReadFile::GetPointer( void )
 {
@@ -131,7 +131,7 @@ DWORD EReadFile::GetPointer( void )
 }
 
 //
-// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^ˆÚ“®
+// ãƒ•ã‚¡ã‚¤ãƒ«ãƒã‚¤ãƒ³ã‚¿ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 void EReadFile::Seek( DWORD dwPointer )
 {
@@ -140,11 +140,11 @@ void EReadFile::Seek( DWORD dwPointer )
 
 
 /*****************************************************************************
-                       ƒƒ‚ƒŠƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+                       ãƒ¡ãƒ¢ãƒªãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EMemFile::EMemFile( const BYTE * ptrMem, DWORD dwLength )
 {
@@ -154,14 +154,14 @@ EMemFile::EMemFile( const BYTE * ptrMem, DWORD dwLength )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EMemFile::~EMemFile( void )
 {
 }
 
 //
-// “Ç‚İ‚İ
+// èª­ã¿è¾¼ã¿
 //////////////////////////////////////////////////////////////////////////////
 DWORD EMemFile::Read( void * ptrBuf, DWORD dwByte )
 {
@@ -174,7 +174,7 @@ DWORD EMemFile::Read( void * ptrBuf, DWORD dwByte )
 }
 
 //
-// ƒTƒCƒYæ“¾
+// ã‚µã‚¤ã‚ºå–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD EMemFile::GetLength( void )
 {
@@ -182,7 +182,7 @@ DWORD EMemFile::GetLength( void )
 }
 
 //
-// ƒ|ƒCƒ“ƒ^æ“¾
+// ãƒã‚¤ãƒ³ã‚¿å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD EMemFile::GetPointer( void )
 {
@@ -190,7 +190,7 @@ DWORD EMemFile::GetPointer( void )
 }
 
 //
-// ƒ|ƒCƒ“ƒ^ˆÚ“®
+// ãƒã‚¤ãƒ³ã‚¿ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 void EMemFile::Seek( DWORD dwPointer )
 {
@@ -201,11 +201,11 @@ void EMemFile::Seek( DWORD dwPointer )
 
 
 /*****************************************************************************
-                          ŠÈˆÕ•¶š—ñƒIƒuƒWƒFƒNƒg
+                          ç°¡æ˜“æ–‡å­—åˆ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::EStringObj::EStringObj( void )
 {
@@ -249,7 +249,7 @@ ERIFile::EStringObj::EStringObj
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::EStringObj::~EStringObj( void )
 {
@@ -260,7 +260,7 @@ ERIFile::EStringObj::~EStringObj( void )
 }
 
 //
-// •¶š—ñ‰„’·
+// æ–‡å­—åˆ—å»¶é•·
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::EStringObj::AddString( const ERIFile::EStringObj & string )
 {
@@ -287,7 +287,7 @@ void ERIFile::EStringObj::AddString( const ERIFile::EStringObj & string )
 }
 
 //
-// ‘ã“ü
+// ä»£å…¥
 //////////////////////////////////////////////////////////////////////////////
 const ERIFile::EStringObj &
 	ERIFile::EStringObj::operator = ( const ERIFile::EStringObj & string )
@@ -309,11 +309,11 @@ const ERIFile::EStringObj &
 
 
 /*****************************************************************************
-                          ƒ^ƒOî•ñ‰ğÍƒNƒ‰ƒX
+                          ã‚¿ã‚°æƒ…å ±è§£æã‚¯ãƒ©ã‚¹
  *****************************************************************************/
 
 //
-// ETagObject \’zŠÖ”
+// ETagObject æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::ETagObject::ETagObject( void )
 {
@@ -321,14 +321,14 @@ ERIFile::ETagObject::ETagObject( void )
 }
 
 //
-// ETagObject Á–ÅŠÖ”
+// ETagObject æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::ETagObject::~ETagObject( void )
 {
 }
 
 //
-// ETagInfo \’zŠÖ”
+// ETagInfo æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::ETagInfo::ETagInfo( void )
 {
@@ -336,7 +336,7 @@ ERIFile::ETagInfo::ETagInfo( void )
 }
 
 //
-// ETagInfo Á–ÅŠÖ”
+// ETagInfo æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::ETagInfo::~ETagInfo( void )
 {
@@ -344,16 +344,16 @@ ERIFile::ETagInfo::~ETagInfo( void )
 }
 
 //
-// ƒ^ƒOî•ñ‰ğÍ
+// ã‚¿ã‚°æƒ…å ±è§£æ
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 {
 	//
-	// Œ»İ‚Ìî•ñ‚ğƒNƒŠƒA
+	// ç¾åœ¨ã®æƒ…å ±ã‚’ã‚¯ãƒªã‚¢
 	//
 	DeleteContents( ) ;
 	//
-	// •¶š—ñ‰ğÍ
+	// æ–‡å­—åˆ—è§£æ
 	//
 	if ( pszDesc == NULL )
 	{
@@ -372,7 +372,7 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 	while ( *pszDesc != '\0' )
 	{
 		//
-		// ƒ^ƒO–¼‚ğæ“¾
+		// ã‚¿ã‚°åã‚’å–å¾—
 		//
 		unsigned char	c ;
 		ETagObject *	pTag = new ETagObject ;
@@ -396,7 +396,7 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 		//
 		pTag->m_tag = EStringObj( pszDesc + iBegin, i - iBegin ) ;
 		//
-		// Ÿ‚Ìs‚Ö
+		// æ¬¡ã®è¡Œã¸
 		//
 		while ( pszDesc[i] != '\0' )
 		{
@@ -409,12 +409,12 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 		}
 		pszDesc += i ;
 		//
-		// ƒ^ƒO‚Ì“à—e‚ğæ“¾
+		// ã‚¿ã‚°ã®å†…å®¹ã‚’å–å¾—
 		//
 		while ( *pszDesc != '\0' )
 		{
 			//
-			// ‚Psæ“¾
+			// ï¼‘è¡Œå–å¾—
 			//
 			iBegin = 0 ;
 			if ( pszDesc[0] == '#' )
@@ -434,7 +434,7 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 				}
 			}
 			//
-			// ‚Ps’Ç‰Á
+			// ï¼‘è¡Œè¿½åŠ 
 			//
 			pTag->m_contents.AddString
 				( EStringObj( pszDesc + iBegin, i - iBegin ) ) ;
@@ -458,7 +458,7 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 			pTag->m_contents = contents ;
 		}
 		//
-		// ƒ^ƒO‚ğ’Ç‰Á
+		// ã‚¿ã‚°ã‚’è¿½åŠ 
 		//
 		if ( pLastTag == NULL )
 		{
@@ -473,7 +473,7 @@ void ERIFile::ETagInfo::CreateTagInfo( const char * pszDesc )
 }
 
 //
-// ƒ^ƒOî•ñ‚ÌƒNƒŠƒA
+// ã‚¿ã‚°æƒ…å ±ã®ã‚¯ãƒªã‚¢
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::ETagInfo::DeleteContents( void )
 {
@@ -488,7 +488,7 @@ void ERIFile::ETagInfo::DeleteContents( void )
 }
 
 //
-// ƒ^ƒOî•ñæ“¾
+// ã‚¿ã‚°æƒ…å ±å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 const char * ERIFile::ETagInfo::GetTagContents( const char * pszTag )
 {
@@ -505,7 +505,7 @@ const char * ERIFile::ETagInfo::GetTagContents( const char * pszTag )
 }
 
 //
-// ƒgƒ‰ƒbƒN”Ô†‚ğæ“¾
+// ãƒˆãƒ©ãƒƒã‚¯ç•ªå·ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 int ERIFile::ETagInfo::GetTrackNumber( void )
 {
@@ -518,7 +518,7 @@ int ERIFile::ETagInfo::GetTrackNumber( void )
 }
 
 //
-// ƒ‹[ƒvƒ|ƒCƒ“ƒg‚ğæ“¾
+// ãƒ«ãƒ¼ãƒ—ãƒã‚¤ãƒ³ãƒˆã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 int ERIFile::ETagInfo::GetRewindPoint( void )
 {
@@ -531,7 +531,7 @@ int ERIFile::ETagInfo::GetRewindPoint( void )
 }
 
 //
-// ƒŠƒŠ[ƒX”NŒ“ú‚ğæ“¾
+// ãƒªãƒªãƒ¼ã‚¹å¹´æœˆæ—¥ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 bool ERIFile::ETagInfo::GetReleaseDate( int & year, int & month, int & day )
 {
@@ -557,7 +557,7 @@ bool ERIFile::ETagInfo::GetReleaseDate( int & year, int & month, int & day )
 }
 
 //
-// •¶š—ñ‚ğ”’l‚É•ÏŠ·
+// æ–‡å­—åˆ—ã‚’æ•°å€¤ã«å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 int ERIFile::ETagInfo::StringToInt( const char *& pszValue )
 {
@@ -584,11 +584,11 @@ int ERIFile::ETagInfo::StringToInt( const char *& pszValue )
 
 
 /*****************************************************************************
-              Œb—‚¿‚á‚ñƒtƒ@ƒCƒ‹ƒCƒ“ƒ^[ƒtƒF[ƒXƒIƒuƒWƒFƒNƒg
+              æµç†ã¡ã‚ƒã‚“ãƒ•ã‚¡ã‚¤ãƒ«ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// ƒ^ƒOî•ñ•¶š—ñ
+// ã‚¿ã‚°æƒ…å ±æ–‡å­—åˆ—
 //////////////////////////////////////////////////////////////////////////////
 const char *	ERIFile::m_pszTagName[ERIFile::tagMax] =
 {
@@ -598,7 +598,7 @@ const char *	ERIFile::m_pszTagName[ERIFile::tagMax] =
 } ;
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::ERIFile( void )
 {
@@ -607,7 +607,7 @@ ERIFile::ERIFile( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIFile::~ERIFile( void )
 {
@@ -615,16 +615,16 @@ ERIFile::~ERIFile( void )
 }
 
 //
-// Œb—‚¿‚á‚ñƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// æµç†ã¡ã‚ƒã‚“ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 {
 	//
-	// “Ç‚İ‚İƒtƒ‰ƒO‚ğƒNƒŠƒA
+	// èª­ã¿è¾¼ã¿ãƒ•ãƒ©ã‚°ã‚’ã‚¯ãƒªã‚¢
 	//////////////////////////////////////////////////////////////////////////
 	m_fdwReadMask = 0 ;
 	//
-	// EMCƒwƒbƒ_‚ğ“Ç‚İ‚Ş
+	// EMCãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã‚€
 	//////////////////////////////////////////////////////////////////////////
 	struct	HEADER_INFO
 	{
@@ -637,12 +637,12 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 			sizeof(HEADER_INFO) ) < sizeof(HEADER_INFO) )
 		return	false ;
 	//
-	// ƒtƒ@ƒCƒ‹ƒVƒOƒlƒ`ƒƒEƒ`ƒFƒbƒN
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚°ãƒãƒãƒ£ãƒ»ãƒã‚§ãƒƒã‚¯
 	if ( *((UINT64*)&emc_header.EMCHeader[0]) != *((UINT64*)"Entis\x1a\0\0") ||
 			emc_header.FileIdentity != 0x03000100 )
 		return	false ;
 	//
-	// “Ç‚İ‚İ€”õ
+	// èª­ã¿è¾¼ã¿æº–å‚™
 	m_pFile = pFile ;
 	m_pRecInf = new RECORD_INFO ;
 	m_pRecInf->pParent = NULL ;
@@ -652,13 +652,13 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 	if ( type == otOpenRoot )
 		return	true ;
 	//
-	// î•ñƒwƒbƒ_ƒŒƒR[ƒh‚ğ“Ç‚İ‚Ş
+	// æƒ…å ±ãƒ˜ãƒƒãƒ€ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’èª­ã¿è¾¼ã‚€
 	//////////////////////////////////////////////////////////////////////////
 	typedef	const UINT64 *	PCUINT64 ;
 	if ( !DescendRecord( (PCUINT64)"Header  " ) )
 		return	false ;
 	//
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğ“Ç‚İ‚Ş
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã‚€
 	if ( !DescendRecord( (PCUINT64)"FileHdr " ) )
 		return	false ;
 	if ( Read( &m_FileHeader,
@@ -668,11 +668,11 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 	//
 	m_fdwReadMask |= rmFileHeader ;
 	//
-	// ƒo[ƒWƒ‡ƒ“î•ñ‚Ìƒ`ƒFƒbƒN
+	// ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã®ãƒã‚§ãƒƒã‚¯
 	if ( m_FileHeader.dwVersion > 0x00020100 )
 		return	false ;
 	//
-	// ‰æ‘œî•ñƒwƒbƒ_‚ğ“Ç‚İ‚Ş
+	// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã‚€
 	for ( ; ; )
 	{
 		if ( !DescendRecord( ) )
@@ -682,7 +682,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 		if ( ui64RecID == *((PCUINT64)"PrevwInf") )
 		{
 			//
-			// ƒvƒŒƒrƒ…[‰æ‘œî•ñƒwƒbƒ_
+			// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 			if ( Read( &m_PreviewInfo,
 					sizeof(ERI_INFO_HEADER) ) == sizeof(ERI_INFO_HEADER) )
 			{
@@ -692,7 +692,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 		else if ( ui64RecID == *((PCUINT64)"ImageInf") )
 		{
 			//
-			// ‰æ‘œî•ñƒwƒbƒ_
+			// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 			if ( Read( &m_InfoHeader,
 					sizeof(ERI_INFO_HEADER) ) == sizeof(ERI_INFO_HEADER) )
 			{
@@ -702,7 +702,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 		else if ( ui64RecID == *((PCUINT64)"SoundInf") )
 		{
 			//
-			// ‰¹ºî•ñƒwƒbƒ_
+			// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€
 			if ( Read( &m_MIOInfHdr,
 					sizeof(MIO_INFO_HEADER) ) == sizeof(MIO_INFO_HEADER) )
 			{
@@ -712,7 +712,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 		else
 		{
 			//
-			// ’˜ìŒ î•ñEƒRƒƒ“ƒg‚È‚Ç
+			// è‘—ä½œæ¨©æƒ…å ±ãƒ»ã‚³ãƒ¡ãƒ³ãƒˆãªã©
 			int	nType = -1 ;
 			if ( ui64RecID == *((PCUINT64)"cpyright") )
 			{
@@ -752,26 +752,26 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 			}
 		}
 		//
-		// Ÿ‚ÌƒŒƒR[ƒh‚Ö
+		// æ¬¡ã®ãƒ¬ã‚³ãƒ¼ãƒ‰ã¸
 		AscendRecord( ) ;
 	}
 	//
 	AscendRecord( ) ;
 	//
-	// ˆ³kƒIƒvƒVƒ‡ƒ“‚Ìƒ`ƒFƒbƒN
+	// åœ§ç¸®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®ãƒã‚§ãƒƒã‚¯
 	if ( !(m_fdwReadMask & rmImageInfo) && !(m_fdwReadMask & rmSoundInfo) )
 		return	false ;
 	if ( type == otReadHeader )
 		return	true ;
 	//
-	// ƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚ğŠJ‚­
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 	//////////////////////////////////////////////////////////////////////////
 	if ( !DescendRecord( (PCUINT64)"Stream  " ) )
 		return	false ;
 	if ( type == otOpenStream )
 		return	true ;
 	//
-	// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh‚ğ‘{õ
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’æœç´¢
 	for ( ; ; )
 	{
 		if ( !DescendRecord( ) )
@@ -781,7 +781,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 		if ( m_pRecInf->header.ui64ID == *((PCUINT64)"Palette ") )
 		{
 			//
-			// ƒpƒŒƒbƒgƒe[ƒuƒ‹“Ç‚İ‚İ
+			// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«èª­ã¿è¾¼ã¿
 			::memset( m_PaletteTable, 0, sizeof(m_PaletteTable) ) ;
 			Read( m_PaletteTable, sizeof(m_PaletteTable) ) ;
 			//
@@ -794,7 +794,7 @@ bool ERIFile::Open( EFileObject * pFile, ERIFile::OpenType type )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::Close( void )
 {
@@ -807,7 +807,7 @@ void ERIFile::Close( void )
 }
 
 //
-// ƒŒƒR[ƒh‚ğŠJ‚­
+// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool ERIFile::DescendRecord( const UINT64 * pRecID )
 {
@@ -844,7 +844,7 @@ bool ERIFile::DescendRecord( const UINT64 * pRecID )
 }
 
 //
-// ƒŒƒR[ƒh‚ğ•Â‚¶‚é
+// ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::AscendRecord( void )
 {
@@ -859,7 +859,7 @@ void ERIFile::AscendRecord( void )
 }
 
 //
-// ƒŒƒR[ƒhID‚ğæ“¾‚·‚é
+// ãƒ¬ã‚³ãƒ¼ãƒ‰IDã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 UINT64 ERIFile::GetRecordID( void ) const
 {
@@ -867,7 +867,7 @@ UINT64 ERIFile::GetRecordID( void ) const
 }
 
 //
-// ƒf[ƒ^‚ğ“Ç‚İ‚Ş
+// ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 //////////////////////////////////////////////////////////////////////////////
 DWORD ERIFile::Read( void * ptrBuf, DWORD dwByte )
 {
@@ -880,7 +880,7 @@ DWORD ERIFile::Read( void * ptrBuf, DWORD dwByte )
 }
 
 //
-// ƒŒƒR[ƒh’·æ“¾
+// ãƒ¬ã‚³ãƒ¼ãƒ‰é•·å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD ERIFile::GetLength( void )
 {
@@ -890,7 +890,7 @@ DWORD ERIFile::GetLength( void )
 }
 
 //
-// ƒ|ƒCƒ“ƒ^æ“¾
+// ãƒã‚¤ãƒ³ã‚¿å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD ERIFile::GetPointer( void )
 {
@@ -900,7 +900,7 @@ DWORD ERIFile::GetPointer( void )
 }
 
 //
-// ƒ|ƒCƒ“ƒ^ˆÚ“®
+// ãƒã‚¤ãƒ³ã‚¿ç§»å‹•
 //////////////////////////////////////////////////////////////////////////////
 void ERIFile::Seek( DWORD dwPointer )
 {

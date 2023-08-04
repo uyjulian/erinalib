@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                           E R I N A - L i b r a r y
-                                                        ÅIXV 2002/05/26
+                                                        æœ€çµ‚æ›´æ–° 2002/05/26
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -14,7 +14,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -23,19 +23,19 @@
 
 
 //
-// ’è”
+// å®šæ•°
 //////////////////////////////////////////////////////////////////////////////
 
-static double	ERI_PI = 3.141592653589 ;	// = ƒÎ
+static double	ERI_PI = 3.141592653589 ;	// = Ï€
 
 
 /*****************************************************************************
-                            ‰¹ºˆ³kƒIƒuƒWƒFƒNƒg
+                            éŸ³å£°åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 
 //
-// MIOEncoder::PARAMETER \’zŠÖ”
+// MIOEncoder::PARAMETER æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIOEncoder::PARAMETER::PARAMETER( void )
 {
@@ -47,7 +47,7 @@ MIOEncoder::PARAMETER::PARAMETER( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIOEncoder::MIOEncoder( void )
 {
@@ -65,7 +65,7 @@ MIOEncoder::MIOEncoder( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIOEncoder::~MIOEncoder( void )
 {
@@ -73,31 +73,31 @@ MIOEncoder::~MIOEncoder( void )
 }
 
 //
-// ‰Šú‰»iƒpƒ‰ƒ[ƒ^‚Ìİ’èj
+// åˆæœŸåŒ–ï¼ˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®šï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::Initialize( const MIO_INFO_HEADER & infhdr )
 {
 	//
-	// ˆÈ‘O‚ÌƒŠƒ\[ƒX‚ğ‰ğ•ú
+	// ä»¥å‰ã®ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾
 	Delete( ) ;
 	//
-	// ‰¹ºî•ñƒwƒbƒ_‚ğƒRƒs[
+	// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’ã‚³ãƒ”ãƒ¼
 	m_mioih = infhdr ;
 	//
-	// ƒpƒ‰ƒ[ƒ^‚Ìƒ`ƒFƒbƒN
+	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒã‚§ãƒƒã‚¯
 	if ( m_mioih.fdwTransformation == CVTYPE_LOSSLESS_ERI )
 	{
 		if ( m_mioih.dwArchitecture != ERI_RUNLENGTH_HUFFMAN )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( (m_mioih.dwChannelCount != 1) && (m_mioih.dwChannelCount != 2) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìƒ`ƒƒƒlƒ‹”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒãƒ£ãƒãƒ«æ•°ï¼‰
 		}
 		if ( (m_mioih.dwBitsPerSample != 8) && (m_mioih.dwBitsPerSample != 16) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌƒTƒ“ƒvƒŠƒ“ƒO•ª‰ğ”\j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°åˆ†è§£èƒ½ï¼‰
 		}
 	}
 	else if ( (m_mioih.fdwTransformation == CVTYPE_LOT_ERI)
@@ -105,31 +105,31 @@ int MIOEncoder::Initialize( const MIO_INFO_HEADER & infhdr )
 	{
 		if ( m_mioih.dwArchitecture != ERI_RUNLENGTH_GAMMA )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( (m_mioih.dwChannelCount != 1) && (m_mioih.dwChannelCount != 2) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìƒ`ƒƒƒlƒ‹”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒãƒ£ãƒãƒ«æ•°ï¼‰
 		}
 		if ( m_mioih.dwBitsPerSample != 16 )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌƒTƒ“ƒvƒŠƒ“ƒO•ª‰ğ”\j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°åˆ†è§£èƒ½ï¼‰
 		}
 		if ( (m_mioih.dwSubbandDegree < 8) ||
 				(m_mioih.dwSubbandDegree > MAX_DCT_DEGREE) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌDCTŸ”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®DCTæ¬¡æ•°ï¼‰
 		}
 		if ( m_mioih.dwLappedDegree != 1 )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìd•¡ŒW”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®é‡è¤‡ä¿‚æ•°ï¼‰
 		}
 		//
-		// ˆ³kƒpƒ‰ƒ[ƒ^‰Šú‰»
+		// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿åˆæœŸåŒ–
 		PARAMETER	parameter ;
 		SetCompressionParameter( parameter ) ;
 		//
-		// DCT —pƒoƒbƒtƒ@Šm•Û
+		// DCT ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 		m_ptrBuffer1 =
 			::eriAllocateMemory
 				( m_mioih.dwChannelCount *
@@ -149,12 +149,12 @@ int MIOEncoder::Initialize( const MIO_INFO_HEADER & infhdr )
 			(REAL32*) ::eriAllocateMemory
 					( sizeof(REAL32) << m_mioih.dwSubbandDegree ) ;
 		//
-		// d‚İƒe[ƒuƒ‹‚ğŠm•Û
+		// é‡ã¿ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ç¢ºä¿
 		m_ptrWeightTable =
 			(REAL32*) ::eriAllocateMemory
 					( sizeof(REAL32) << m_mioih.dwSubbandDegree ) ;
 		//
-		// LOT —pƒoƒbƒtƒ@Šm•Û
+		// LOT ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 		unsigned int	i, nBlocksetSamples, nLappedSamples ;
 		nBlocksetSamples = m_mioih.dwChannelCount << m_mioih.dwSubbandDegree ;
 		nLappedSamples = nBlocksetSamples * m_mioih.dwLappedDegree ;
@@ -169,20 +169,20 @@ int MIOEncoder::Initialize( const MIO_INFO_HEADER & infhdr )
 			}
 		}
 		//
-		// ƒpƒ‰ƒ[ƒ^İ’è
+		// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 		InitializeWithDegree( m_mioih.dwSubbandDegree ) ;
 	}
 	else
 	{
-		return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+		return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 	}
 	//
-	// ³íI—¹
+	// æ­£å¸¸çµ‚äº†
 	return	0 ;
 }
 
 //
-// I—¹iƒƒ‚ƒŠ‚Ì‰ğ•ú‚È‚Çj
+// çµ‚äº†ï¼ˆãƒ¡ãƒ¢ãƒªã®è§£æ”¾ãªã©ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::Delete( void )
 {
@@ -240,7 +240,7 @@ void MIOEncoder::Delete( void )
 }
 
 //
-// ‰¹º‚ğˆ³k
+// éŸ³å£°ã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeSound
 	( RLHEncodeContext & context,
@@ -274,11 +274,11 @@ int MIOEncoder::EncodeSound
 		}
 	}
 
-	return	1 ;		// ƒGƒ‰[
+	return	1 ;		// ã‚¨ãƒ©ãƒ¼
 }
 
 //
-// ˆ³kƒIƒvƒVƒ‡ƒ“‚ğİ’è
+// åœ§ç¸®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::SetCompressionParameter
 	( const MIOEncoder::PARAMETER & parameter )
@@ -287,14 +287,14 @@ void MIOEncoder::SetCompressionParameter
 }
 
 //
-// 8ƒrƒbƒg‚ÌPCM‚ğˆ³k
+// 8ãƒ“ãƒƒãƒˆã®PCMã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeSoundPCM8
 	( RLHEncodeContext & context,
 		const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf )
 {
 	//
-	// ‰‰Z—pƒoƒbƒtƒ@‚ğŠm•Û
+	// æ¼”ç®—ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	unsigned int	nSampleCount = datahdr.dwSampleCount ;
 	if ( nSampleCount > m_nBufLength )
 	{
@@ -307,7 +307,7 @@ int MIOEncoder::EncodeSoundPCM8
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// ƒ`ƒƒƒlƒ‹‚²‚Æ‚ÉƒTƒ“ƒvƒŠƒ“ƒO‚µ‚Ä·•ªˆ—
+	// ãƒãƒ£ãƒãƒ«ã”ã¨ã«ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã—ã¦å·®åˆ†å‡¦ç†
 	PBYTE	ptrDstBuf = (PBYTE) m_ptrBuffer1 ;
 	PBYTE	ptrSrcBuf ;
 	unsigned int	nStep = m_mioih.dwChannelCount ;
@@ -327,7 +327,7 @@ int MIOEncoder::EncodeSoundPCM8
 		}
 	}
 	//
-	// ƒnƒtƒ}ƒ“•„†‚Å•„†‰»
+	// ãƒãƒ•ãƒãƒ³ç¬¦å·ã§ç¬¦å·åŒ–
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
 		context.PrepareToEncodeERINACode( ) ;
@@ -336,21 +336,21 @@ int MIOEncoder::EncodeSoundPCM8
 	if ( context.EncodeERINACodesSBZL
 			( (const SBYTE *) m_ptrBuffer1, nBytes ) < nBytes )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	context.Flushout( ) ;
 	return	0 ;
 }
 
 //
-// 16ƒrƒbƒg‚ÌPCM‚ğˆ³k
+// 16ãƒ“ãƒƒãƒˆã®PCMã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeSoundPCM16
 	( RLHEncodeContext & context,
 		const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf )
 {
 	//
-	// ‰‰Z—pƒoƒbƒtƒ@‚ğŠm•Û
+	// æ¼”ç®—ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	i, j ;
 	unsigned int	nSampleCount = datahdr.dwSampleCount ;
@@ -375,7 +375,7 @@ int MIOEncoder::EncodeSoundPCM16
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// ƒ`ƒƒƒlƒ‹‚²‚Æ‚ÉƒTƒ“ƒvƒŠƒ“ƒO‚µ‚Ä·•ªˆ—
+	// ãƒãƒ£ãƒãƒ«ã”ã¨ã«ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã—ã¦å·®åˆ†å‡¦ç†
 	//
 	SWORD *	ptrDstBuf = (SWORD*) m_ptrBuffer1 ;
 	SWORD *	ptrSrcBuf ;
@@ -399,7 +399,7 @@ int MIOEncoder::EncodeSoundPCM16
 		ptrDstBuf += nSampleCount ;
 	}
 	//
-	// ƒ[ƒh‚ÌãˆÊ‚Æ‰ºˆÊ‚ğ•ª—£‚µ‚Ä®—ñ
+	// ãƒ¯ãƒ¼ãƒ‰ã®ä¸Šä½ã¨ä¸‹ä½ã‚’åˆ†é›¢ã—ã¦æ•´åˆ—
 	//
 	PBYTE	pbytDstBuf1, pbytDstBuf2, pbytSrcBuf ;
 	for ( i = 0; i < nChannelCount; i ++ )
@@ -418,7 +418,7 @@ int MIOEncoder::EncodeSoundPCM16
 		}
 	}
 	//
-	// ƒnƒtƒ}ƒ“•„†‚Å•„†‰»
+	// ãƒãƒ•ãƒãƒ³ç¬¦å·ã§ç¬¦å·åŒ–
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
 		context.PrepareToEncodeERINACode( ) ;
@@ -427,19 +427,19 @@ int MIOEncoder::EncodeSoundPCM16
 	if ( context.EncodeERINACodesSBZL
 			( (const SBYTE *) m_ptrBuffer2, nBytes ) < nBytes )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	context.Flushout( ) ;
 	return	0 ;
 }
 
 //
-// s—ñƒTƒCƒY‚Ì•ÏX‚É”º‚¤ƒpƒ‰ƒ[ƒ^‚ÌÄŒvZ
+// è¡Œåˆ—ã‚µã‚¤ã‚ºã®å¤‰æ›´ã«ä¼´ã†ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å†è¨ˆç®—
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::InitializeWithDegree( unsigned int nSubbandDegree )
 {
 	//
-	// ‰ñ“]ƒpƒ‰ƒ[ƒ^¶¬
+	// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç”Ÿæˆ
 	if ( m_pRevolveParam != NULL )
 	{
 		::eriFreeMemory( m_pRevolveParam ) ;
@@ -447,7 +447,7 @@ void MIOEncoder::InitializeWithDegree( unsigned int nSubbandDegree )
 	m_pRevolveParam =
 		::eriCreateRevolveParameter( nSubbandDegree ) ;
 	//
-	// —Êq‰»—pƒpƒ‰ƒ[ƒ^İ’è
+	// é‡å­åŒ–ç”¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 	static const int	freq_width[7] =
 	{
 		-6, -6, -5, -4, -3, -2, -1
@@ -459,13 +459,13 @@ void MIOEncoder::InitializeWithDegree( unsigned int nSubbandDegree )
 		j += m_nFrequencyWidth[i] ;
 	}
 	//
-	// ƒ[ƒJƒ‹ƒpƒ‰ƒ[ƒ^‚ğİ’è
+	// ãƒ­ãƒ¼ã‚«ãƒ«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®š
 	m_nSubbandDegree = nSubbandDegree ;
 	m_nDegreeNum = (1 << nSubbandDegree) ;
 }
 
 //
-// w’èƒTƒ“ƒvƒ‹—ñ‚Ì‰¹—Ê‚ğ‹‚ß‚é
+// æŒ‡å®šã‚µãƒ³ãƒ—ãƒ«åˆ—ã®éŸ³é‡ã‚’æ±‚ã‚ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 double MIOEncoder::EvaluateVolume( const REAL32 * ptrWave, int nCount )
 {
@@ -479,7 +479,7 @@ double MIOEncoder::EvaluateVolume( const REAL32 * ptrWave, int nCount )
 }
 
 //
-// •ª‰ğƒR[ƒh‚ğæ“¾‚·‚é
+// åˆ†è§£ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::GetDivisionCode( const REAL32 * ptrSamples )
 {
@@ -504,14 +504,14 @@ int MIOEncoder::GetDivisionCode( const REAL32 * ptrSamples )
 }
 
 //
-// 16ƒrƒbƒg‚Ì”ñ‰Â‹tˆ³k
+// 16ãƒ“ãƒƒãƒˆã®éå¯é€†åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeSoundDCT
 	( RLHEncodeContext & context,
 		const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf )
 {
 	//
-	// ƒoƒbƒtƒ@‚ğŠm•Û
+	// ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	nDegreeWidth = (1 << m_mioih.dwSubbandDegree) ;
 	unsigned int	nSampleCount =
@@ -540,7 +540,7 @@ int MIOEncoder::EncodeSoundDCT
 	//
 	m_ptrNextDstBuf = (SWORD*) m_ptrBuffer2 ;
 	//
-	// —\–ñƒrƒbƒg‚ğ‘—o
+	// äºˆç´„ãƒ“ãƒƒãƒˆã‚’é€å‡º
 	//
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
@@ -548,7 +548,7 @@ int MIOEncoder::EncodeSoundDCT
 	}
 	context.OutNBits( 0, 1 ) ;
 	//
-	// ƒTƒuƒoƒ“ƒh’PˆÊ‚Å•ª‰ğ‚µAŠeXDCT•ÏŠ·‚ğ{‚·
+	// ã‚µãƒ–ãƒãƒ³ãƒ‰å˜ä½ã§åˆ†è§£ã—ã€å„ã€…DCTå¤‰æ›ã‚’æ–½ã™
 	//
 	unsigned int	i, j, k ;
 	const SWORD *	ptrSrcBuf = (const SWORD *) ptrWaveBuf ;
@@ -574,7 +574,7 @@ int MIOEncoder::EncodeSoundDCT
 		for ( j = 0; j < nChannelCount; j ++ )
 		{
 			//
-			// ƒTƒ“ƒvƒŠƒ“ƒO
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 			//
 			const SWORD *	ptrSrcHead = ptrSubbandHead + j ;
 			//
@@ -588,12 +588,12 @@ int MIOEncoder::EncodeSoundDCT
 				m_ptrSamplingBuf[k ++] = 0.0F ;
 			}
 			//
-			// d•¡ˆ——pƒoƒbƒtƒ@‚ğæ“¾
+			// é‡è¤‡å‡¦ç†ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—
 			//
 			int		nChannelStep = nDegreeWidth * m_mioih.dwLappedDegree * j ;
 			m_ptrLastDCTBuf = m_ptrLastDCT + nChannelStep ;
 			//
-			// •ª‰ğƒR[ƒh‚ğæ“¾
+			// åˆ†è§£ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 			//
 			REAL32			rPowerScale = (REAL32) m_parameter.rPowerScale ;
 			unsigned int	nDivisionCode = GetDivisionCode( m_ptrSamplingBuf ) ;
@@ -606,14 +606,14 @@ int MIOEncoder::EncodeSoundDCT
 			//
 			context.OutNBits( (((DWORD) nDivisionCode) << 30), 2 ) ;
 			//
-			// s—ñƒTƒCƒY‚ª•Ï‰»‚·‚éÛ‚Ìˆ—
+			// è¡Œåˆ—ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã™ã‚‹éš›ã®å‡¦ç†
 			//
 			bool	fLeadBlock = false ;
 			//
 			if ( pLastDivision[j] != nDivisionCode )
 			{
 				//
-				// ’¼‘O‚Ü‚Å‚Ìs—ñ‚ğŠ®¬‚³‚¹‚é
+				// ç›´å‰ã¾ã§ã®è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 				//
 				if ( i != 0 )
 				{
@@ -630,7 +630,7 @@ int MIOEncoder::EncodeSoundDCT
 					}
 				}
 				//
-				// s—ñƒTƒCƒY‚ğ•Ï‰»‚³‚¹‚é‚½‚ß‚Ìƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒgƒAƒbƒv
+				// è¡Œåˆ—ã‚µã‚¤ã‚ºã‚’å¤‰åŒ–ã•ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 				//
 				pLastDivision[j] = nDivisionCode ;
 				fLeadBlock = true ;
@@ -642,7 +642,7 @@ int MIOEncoder::EncodeSoundDCT
 				nCurrentDivision = nDivisionCode ;
 			}
 			//
-			// ‡Ÿ LOT •ÏŠ·‚ğ{‚·
+			// é †æ¬¡ LOT å¤‰æ›ã‚’æ–½ã™
 			//
 			REAL32 *	ptrNextSamples = m_ptrSamplingBuf ;
 			//
@@ -651,7 +651,7 @@ int MIOEncoder::EncodeSoundDCT
 				if ( fLeadBlock )
 				{
 					//
-					// ƒŠ[ƒhƒuƒƒbƒN‚ğo—Í‚·‚é
+					// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‡ºåŠ›ã™ã‚‹
 					//
 					if ( EncodeLeadBlock
 							( context, ptrNextSamples, rPowerScale ) )
@@ -664,7 +664,7 @@ int MIOEncoder::EncodeSoundDCT
 				else
 				{
 					//
-					// ’ÊíƒuƒƒbƒN‚ğo—Í‚·‚é
+					// é€šå¸¸ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‡ºåŠ›ã™ã‚‹
 					//
 					if ( EncodeInternalBlock
 							( context, ptrNextSamples, rPowerScale ) )
@@ -673,14 +673,14 @@ int MIOEncoder::EncodeSoundDCT
 					}
 				}
 				//
-				// Ÿ‚Ö
+				// æ¬¡ã¸
 				//
 				ptrNextSamples += m_nDegreeNum ;
 			}
 		}
 	}
 	//
-	// s—ñ‚ğŠ®¬‚³‚¹‚é
+	// è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 	//
 	if ( nSubbandCount > 0 )
 	{
@@ -705,7 +705,7 @@ int MIOEncoder::EncodeSoundDCT
 	//
 	delete []	pLastDivision ;
 	//
-	// ƒCƒ“ƒ^[ƒŠ[ƒu‚µ‚Ä•„†‰»
+	// ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–ã—ã¦ç¬¦å·åŒ–
 	//
 	SBYTE *	ptrHBuf = m_ptrBuffer3 ;
 	SBYTE *	ptrLBuf = m_ptrBuffer3 + nAllSampleCount ;
@@ -731,7 +731,7 @@ int MIOEncoder::EncodeSoundDCT
 	if ( context.EncodeERINACodesSBZL
 			( m_ptrBuffer3, nAllSampleCount * 2 ) < (int) nAllSampleCount * 2 )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
 	context.Flushout( ) ;
@@ -740,14 +740,14 @@ int MIOEncoder::EncodeSoundDCT
 }
 
 //
-// LOT •ÏŠ·‚ğ{‚·
+// LOT å¤‰æ›ã‚’æ–½ã™
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::PerformLOT
 	( RLHEncodeContext & context,
 		REAL32 * ptrSamples, REAL32 rPowerScale )
 {
 	//
-	// DCT •ÏŠ·‚ğ{‚·
+	// DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	REAL32	rMatrixScale = (REAL32) sqrt(2.0 / m_nDegreeNum) ;
 	::eriFastDCT
@@ -756,7 +756,7 @@ void MIOEncoder::PerformLOT
 	::eriScalarMultiply
 		( m_ptrInternalBuf, rMatrixScale, m_nDegreeNum ) ;
 	//
-	// LOT ‚ğ{‚·
+	// LOT ã‚’æ–½ã™
 	//
 	::eriFastPLOT
 		( m_ptrInternalBuf, m_nSubbandDegree ) ;
@@ -771,7 +771,7 @@ void MIOEncoder::PerformLOT
 		m_ptrLastDCTBuf[i] = m_ptrInternalBuf[i] ;
 	}
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//
 	DWORD	nWeightCode ;
 	int		nCoefficient ;
@@ -780,25 +780,25 @@ void MIOEncoder::PerformLOT
 			m_nDegreeNum, rPowerScale,
 			&nWeightCode, &nCoefficient ) ;
 	//
-	// —Êq‰»ŒW”‚ğo—Í
+	// é‡å­åŒ–ä¿‚æ•°ã‚’å‡ºåŠ›
 	//
 	context.OutNBits( nWeightCode, 32 ) ;
 	context.OutNBits( (((DWORD) nCoefficient) << 16), 16 ) ;
 }
 
 //
-// ’Êí‚ÌƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// é€šå¸¸ã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeInternalBlock
 	( RLHEncodeContext & context,
 		REAL32 * ptrSamples, REAL32 rPowerScale )
 {
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	PerformLOT( context, ptrSamples, rPowerScale ) ;
 	//
-	// •„†‰»
+	// ç¬¦å·åŒ–
 	//
 	for ( unsigned int i = 0; i < m_nDegreeNum; i ++ )
 	{
@@ -808,14 +808,14 @@ int MIOEncoder::EncodeInternalBlock
 }
 
 //
-// ƒŠ[ƒhƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeLeadBlock
 	( RLHEncodeContext & context,
 		REAL32 * ptrSamples, REAL32 rPowerScale )
 {
 	//
-	// d•¡ŒW”‚ğ‰Šú‰»
+	// é‡è¤‡ä¿‚æ•°ã‚’åˆæœŸåŒ–
 	//
 	unsigned int	i ;
 	for ( i = 0; i < m_nDegreeNum; i ++ )
@@ -823,11 +823,11 @@ int MIOEncoder::EncodeLeadBlock
 		m_ptrLastDCTBuf[i] = 0.0F ;
 	}
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	PerformLOT( context, ptrSamples, rPowerScale ) ;
 	//
-	// •„†‰»
+	// ç¬¦å·åŒ–
 	//
 	PINT	ptrSrcBuffer = (PINT) m_ptrBuffer1 ;
 	unsigned int	nHalfDegree = m_nDegreeNum / 2 ;
@@ -839,13 +839,13 @@ int MIOEncoder::EncodeLeadBlock
 }
 
 //
-// ƒ|ƒXƒgƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// ãƒã‚¹ãƒˆãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodePostBlock
 	( RLHEncodeContext & context, REAL32 rPowerScale )
 {
 	//
-	// ƒ_ƒ~[‚Ì“ü—ÍM†‚ğ‘—M‚·‚é
+	// ãƒ€ãƒŸãƒ¼ã®å…¥åŠ›ä¿¡å·ã‚’é€ä¿¡ã™ã‚‹
 	//
 	unsigned int	i ;
 	REAL32 *	ptrSamples = (REAL32*) m_ptrBuffer1 ;
@@ -854,11 +854,11 @@ int MIOEncoder::EncodePostBlock
 		ptrSamples[i] = 0.0F ;
 	}
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	PerformLOT( context, ptrSamples, rPowerScale ) ;
 	//
-	// •„†‰»
+	// ç¬¦å·åŒ–
 	//
 	PINT	ptrSrcBuffer = (PINT) m_ptrBuffer1 ;
 	unsigned int	nHalfDegree = m_nDegreeNum / 2 ;
@@ -870,7 +870,7 @@ int MIOEncoder::EncodePostBlock
 }
 
 //
-// —Êq‰»
+// é‡å­åŒ–
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::Quantumize
 	( PINT ptrQuantumized, const REAL32 * ptrSource,
@@ -878,12 +878,12 @@ void MIOEncoder::Quantumize
 		DWORD * ptrWeightCode, int * ptrCoefficient )
 {
 	//
-	// ŠÖ”‰Šúİ’è
+	// é–¢æ•°åˆæœŸè¨­å®š
 	//////////////////////////////////////////////////////////////////////////
 	int		i, j ;
 	int		nHalfDegree = nDegreeNum / 2 ;
 	//
-	// Šeü”g”‘Ñ‚ÌƒGƒlƒ‹ƒMW’†“x‚©‚çü”g”‚²‚Æ‚Ì—Êq‰»ŒW”‚ğZo‚·‚é
+	// å„å‘¨æ³¢æ•°å¸¯ã®ã‚¨ãƒãƒ«ã‚®é›†ä¸­åº¦ã‹ã‚‰å‘¨æ³¢æ•°ã”ã¨ã®é‡å­åŒ–ä¿‚æ•°ã‚’ç®—å‡ºã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	double	rPresetWeight[7] ;
 	rPresetWeight[0] = rPresetWeight[1] =
@@ -970,7 +970,7 @@ void MIOEncoder::Quantumize
 		m_ptrWeightTable[i] *= rOddWeight ;
 	}
 	//
-	// â‘Î’l‚Ì•½‹Ï‚ğZo
+	// çµ¶å¯¾å€¤ã®å¹³å‡ã‚’ç®—å‡º
 	//////////////////////////////////////////////////////////////////////////
 	double	rAvg ;
 	double	rMax = 0.0 ;
@@ -991,7 +991,7 @@ void MIOEncoder::Quantumize
 	rAvg = (rSum / nDegreeNum) ;
 	rAvg *= rAvg ;
 	//
-	// ŒW”‚ğZo
+	// ä¿‚æ•°ã‚’ç®—å‡º
 	//////////////////////////////////////////////////////////////////////////
 	double	rCoefficient ;
 	double	rMinCoefficient = rMax / 0x7800 ;
@@ -1019,7 +1019,7 @@ void MIOEncoder::Quantumize
 	//
 	m_ptrWeightTable[nDegreeNum-1] = (REAL32) nCoefficient ;
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//////////////////////////////////////////////////////////////////////////
 	for ( i = 0; i < nDegreeNum; i ++ )
 	{
@@ -1038,21 +1038,21 @@ void MIOEncoder::Quantumize
 }
 
 //
-// 16ƒrƒbƒg‚Ì”ñ‰Â‹tˆ³kiƒ~ƒhƒ‹ƒTƒCƒhƒXƒeƒŒƒIj
+// 16ãƒ“ãƒƒãƒˆã®éå¯é€†åœ§ç¸®ï¼ˆãƒŸãƒ‰ãƒ«ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒ¬ã‚ªï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeSoundDCT_MSS
 	( RLHEncodeContext & context,
 		const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf )
 {
 	//
-	// ƒoƒbƒtƒ@‚ğŠm•Û
+	// ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	nDegreeWidth = (1 << m_mioih.dwSubbandDegree) ;
 	unsigned int	nSampleCount =
 		(datahdr.dwSampleCount + nDegreeWidth - 1) & ~(nDegreeWidth - 1) ;
 	unsigned int	nSubbandCount =
 		(nSampleCount >> m_mioih.dwSubbandDegree) ;
-	unsigned int	nChannelCount = m_mioih.dwChannelCount ;	// í‚É‚Q
+	unsigned int	nChannelCount = m_mioih.dwChannelCount ;	// å¸¸ã«ï¼’
 	unsigned int	nAllSampleCount = nSampleCount * nChannelCount ;
 	//
 	if ( nSampleCount > m_nBufLength )
@@ -1074,7 +1074,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 	//
 	m_ptrNextDstBuf = (SWORD*) m_ptrBuffer2 ;
 	//
-	// —\–ñƒrƒbƒg‚ğ‘—o
+	// äºˆç´„ãƒ“ãƒƒãƒˆã‚’é€å‡º
 	//
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
@@ -1082,7 +1082,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 	}
 	context.OutNBits( 0, 1 ) ;
 	//
-	// ƒTƒuƒoƒ“ƒh’PˆÊ‚Å•ª‰ğ‚µAŠeXDCT•ÏŠ·‚ğ{‚·
+	// ã‚µãƒ–ãƒãƒ³ãƒ‰å˜ä½ã§åˆ†è§£ã—ã€å„ã€…DCTå¤‰æ›ã‚’æ–½ã™
 	//
 	unsigned int	i, j, k ;
 	const SWORD *	ptrSrcBuf = (const SWORD *) ptrWaveBuf ;
@@ -1100,7 +1100,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 			nCopySamples = nDegreeWidth ;
 		}
 		//
-		// ƒTƒ“ƒvƒŠƒ“ƒO
+		// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 		//
 		unsigned int	nDivisionCode = 0 ;
 		for ( j = 0; j < nChannelCount; j ++ )
@@ -1125,7 +1125,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 			}
 		}
 		//
-		// •ª‰ğƒR[ƒh‚ğæ“¾
+		// åˆ†è§£ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 		//
 		REAL32			rPowerScale = (REAL32) m_parameter.rPowerScale ;
 		unsigned int	nDivisionCount = (1 << nDivisionCode) ;
@@ -1137,14 +1137,14 @@ int MIOEncoder::EncodeSoundDCT_MSS
 		//
 		context.OutNBits( (((DWORD) nDivisionCode) << 30), 2 ) ;
 		//
-		// s—ñƒTƒCƒY‚ª•Ï‰»‚·‚éÛ‚Ìˆ—
+		// è¡Œåˆ—ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã™ã‚‹éš›ã®å‡¦ç†
 		//
 		bool	fLeadBlock = false ;
 		//
 		if ( nLastDivision != nDivisionCode )
 		{
 			//
-			// ’¼‘O‚Ü‚Å‚Ìs—ñ‚ğŠ®¬‚³‚¹‚é
+			// ç›´å‰ã¾ã§ã®è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 			//
 			if ( i != 0 )
 			{
@@ -1155,7 +1155,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 				}
 			}
 			//
-			// s—ñƒTƒCƒY‚ğ•Ï‰»‚³‚¹‚é‚½‚ß‚Ìƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒgƒAƒbƒv
+			// è¡Œåˆ—ã‚µã‚¤ã‚ºã‚’å¤‰åŒ–ã•ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 			//
 			nLastDivision = nDivisionCode ;
 			InitializeWithDegree
@@ -1163,7 +1163,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 			fLeadBlock = true ;
 		}
 		//
-		// ‡Ÿ LOT •ÏŠ·‚ğ{‚·
+		// é †æ¬¡ LOT å¤‰æ›ã‚’æ–½ã™
 		//
 		REAL32 *	ptrNextSrc1 = m_ptrSamplingBuf ;
 		REAL32 *	ptrNextSrc2 = m_ptrSamplingBuf + nDegreeWidth ;
@@ -1173,7 +1173,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 			if ( fLeadBlock )
 			{
 				//
-				// ƒŠ[ƒhƒuƒƒbƒN‚ğo—Í‚·‚é
+				// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‡ºåŠ›ã™ã‚‹
 				//
 				if ( EncodeLeadBlock_MSS
 						( context, ptrNextSrc1, ptrNextSrc2, rPowerScale ) )
@@ -1186,7 +1186,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 			else
 			{
 				//
-				// ’ÊíƒuƒƒbƒN‚ğo—Í‚·‚é
+				// é€šå¸¸ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‡ºåŠ›ã™ã‚‹
 				//
 				if ( EncodeInternalBlock_MSS
 						( context, ptrNextSrc1, ptrNextSrc2, rPowerScale ) )
@@ -1195,14 +1195,14 @@ int MIOEncoder::EncodeSoundDCT_MSS
 				}
 			}
 			//
-			// Ÿ‚Ö
+			// æ¬¡ã¸
 			//
 			ptrNextSrc1 += m_nDegreeNum ;
 			ptrNextSrc2 += m_nDegreeNum ;
 		}
 	}
 	//
-	// s—ñ‚ğŠ®¬‚³‚¹‚é
+	// è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 	//
 	if ( nSubbandCount > 0 )
 	{
@@ -1213,7 +1213,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 		}
 	}
 	//
-	// ƒCƒ“ƒ^[ƒŠ[ƒu‚µ‚Ä•„†‰»
+	// ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–ã—ã¦ç¬¦å·åŒ–
 	//
 	SBYTE *	ptrHBuf = m_ptrBuffer3 ;
 	SBYTE *	ptrLBuf = m_ptrBuffer3 + nAllSampleCount ;
@@ -1239,7 +1239,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 	if ( context.EncodeERINACodesSBZL
 			( m_ptrBuffer3, nAllSampleCount * 2 ) < (int) nAllSampleCount * 2 )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
 	context.Flushout( ) ;
@@ -1248,7 +1248,7 @@ int MIOEncoder::EncodeSoundDCT_MSS
 }
 
 //
-// ‰ñ“]ƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::GetRevolveCode
 	( const REAL32 * ptrBuf1, const REAL32 * ptrBuf2 )
@@ -1297,13 +1297,13 @@ int MIOEncoder::GetRevolveCode
 }
 
 //
-// LOT •ÏŠ·‚ğ{‚·
+// LOT å¤‰æ›ã‚’æ–½ã™
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::PerformLOT_MSS
 	( REAL32 * ptrDst, REAL32 * ptrLapBuf, REAL32 * ptrSrc )
 {
 	//
-	// DCT •ÏŠ·‚ğ{‚·
+	// DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	REAL32	rMatrixScale = (REAL32) sqrt(2.0 / m_nDegreeNum) ;
 	::eriFastDCT
@@ -1312,7 +1312,7 @@ void MIOEncoder::PerformLOT_MSS
 	::eriScalarMultiply
 		( m_ptrInternalBuf, rMatrixScale, m_nDegreeNum ) ;
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	::eriFastPLOT
 		( m_ptrInternalBuf, m_nSubbandDegree ) ;
@@ -1329,14 +1329,14 @@ void MIOEncoder::PerformLOT_MSS
 }
 
 //
-// ’Êí‚ÌƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// é€šå¸¸ã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeInternalBlock_MSS
 	( RLHEncodeContext & context,
 		REAL32 * ptrSrc1, REAL32 * ptrSrc2, REAL32 rPowerScale )
 {
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	REAL32 *	ptrDstBuf2 = m_ptrDstBuf + m_nDegreeNum ;
 	REAL32 *	ptrLapBuf2 = m_ptrLastDCT + m_nDegreeNum ;
@@ -1344,13 +1344,13 @@ int MIOEncoder::EncodeInternalBlock_MSS
 	PerformLOT_MSS( m_ptrDstBuf, m_ptrLastDCT, ptrSrc1 ) ;
 	PerformLOT_MSS( ptrDstBuf2, ptrLapBuf2, ptrSrc2 ) ;
 	//
-	// ‰ñ“]ƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+	// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	//
 	int		nRevCode1 = GetRevolveCode( m_ptrDstBuf, ptrDstBuf2 ) ;
 	int		nRevCode2 = GetRevolveCode( m_ptrDstBuf + 1, ptrDstBuf2 + 1 ) ;
 	DWORD	dwRevCode = (nRevCode1 << 2) | nRevCode2 ;
 	//
-	// ‰ñ“]ˆ—
+	// å›è»¢å‡¦ç†
 	//
 	REAL32	rSin, rCos ;
 	//
@@ -1366,7 +1366,7 @@ int MIOEncoder::EncodeInternalBlock_MSS
 	//
 	context.OutNBits( (dwRevCode << 28), 4 ) ;
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//
 	DWORD	nWeightCode ;
 	int		nCoefficient ;
@@ -1375,12 +1375,12 @@ int MIOEncoder::EncodeInternalBlock_MSS
 			m_nDegreeNum, rPowerScale,
 			&nWeightCode, &nCoefficient ) ;
 	//
-	// —Êq‰»ŒW”‚ğo—Í
+	// é‡å­åŒ–ä¿‚æ•°ã‚’å‡ºåŠ›
 	//
 	context.OutNBits( nWeightCode, 32 ) ;
 	context.OutNBits( (((DWORD) nCoefficient) << 16), 16 ) ;
 	//
-	// o—Í
+	// å‡ºåŠ›
 	//
 	const INT *	ptrSrcBuf = (const INT *) m_ptrBuffer1 ;
 	for ( unsigned int i = 0; i < m_nDegreeNum; i ++ )
@@ -1394,14 +1394,14 @@ int MIOEncoder::EncodeInternalBlock_MSS
 }
 
 //
-// ƒŠ[ƒhƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodeLeadBlock_MSS
 	( RLHEncodeContext & context,
 		REAL32 * ptrSrc1, REAL32 * ptrSrc2, REAL32 rPowerScale )
 {
 	//
-	// d•¡ŒW”‚ğ‰Šú‰»
+	// é‡è¤‡ä¿‚æ•°ã‚’åˆæœŸåŒ–
 	//
 	unsigned int	i ;
 	for ( i = 0; i < m_nDegreeNum * 2; i ++ )
@@ -1409,7 +1409,7 @@ int MIOEncoder::EncodeLeadBlock_MSS
 		m_ptrLastDCT[i] = 0.0F ;
 	}
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	REAL32 *	ptrDstBuf2 = m_ptrDstBuf + m_nDegreeNum ;
 	REAL32 *	ptrLapBuf2 = m_ptrLastDCT + m_nDegreeNum ;
@@ -1417,11 +1417,11 @@ int MIOEncoder::EncodeLeadBlock_MSS
 	PerformLOT_MSS( m_ptrDstBuf, m_ptrLastDCT, ptrSrc1 ) ;
 	PerformLOT_MSS( ptrDstBuf2, ptrLapBuf2, ptrSrc2 ) ;
 	//
-	// ‰ñ“]ƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+	// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	//
 	int		nRevCode2 = GetRevolveCode( m_ptrDstBuf + 1, ptrDstBuf2 + 1 ) ;
 	//
-	// ‰ñ“]ˆ—
+	// å›è»¢å‡¦ç†
 	//
 	REAL32	rSin, rCos ;
 	//
@@ -1438,7 +1438,7 @@ int MIOEncoder::EncodeLeadBlock_MSS
 	//
 	context.OutNBits( (nRevCode2 << 30), 2 ) ;
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//
 	DWORD	nWeightCode ;
 	int		nCoefficient ;
@@ -1447,12 +1447,12 @@ int MIOEncoder::EncodeLeadBlock_MSS
 			m_nDegreeNum, rPowerScale,
 			&nWeightCode, &nCoefficient ) ;
 	//
-	// —Êq‰»ŒW”‚ğo—Í
+	// é‡å­åŒ–ä¿‚æ•°ã‚’å‡ºåŠ›
 	//
 	context.OutNBits( nWeightCode, 32 ) ;
 	context.OutNBits( (((DWORD) nCoefficient) << 16), 16 ) ;
 	//
-	// o—Í
+	// å‡ºåŠ›
 	//
 	const INT *	ptrSrcBuf = (const INT *) m_ptrBuffer1 ;
 	for ( i = 0; i < m_nDegreeNum; i ++ )
@@ -1465,13 +1465,13 @@ int MIOEncoder::EncodeLeadBlock_MSS
 }
 
 //
-// ƒ|ƒXƒgƒuƒƒbƒN‚ğ•„†‰»‚µ‚Äo—Í‚·‚é
+// ãƒã‚¹ãƒˆãƒ–ãƒ­ãƒƒã‚¯ã‚’ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIOEncoder::EncodePostBlock_MSS
 	( RLHEncodeContext & context, REAL32 rPowerScale )
 {
 	//
-	// ƒ_ƒ~[‚Ì“ü—ÍM†‚ğ‘—M‚·‚é
+	// ãƒ€ãƒŸãƒ¼ã®å…¥åŠ›ä¿¡å·ã‚’é€ä¿¡ã™ã‚‹
 	//
 	unsigned int	i ;
 	REAL32 *	ptrSamples1 = (REAL32*) m_ptrBuffer1 ;
@@ -1481,7 +1481,7 @@ int MIOEncoder::EncodePostBlock_MSS
 		ptrSamples1[i * 2 + 1] = 0.0F ;
 	}
 	//
-	// LOT •ÏŠ·‚ğ{‚·
+	// LOT å¤‰æ›ã‚’æ–½ã™
 	//
 	REAL32 *	ptrDstBuf2 = m_ptrDstBuf + m_nDegreeNum ;
 	REAL32 *	ptrLapBuf2 = m_ptrLastDCT + m_nDegreeNum ;
@@ -1490,11 +1490,11 @@ int MIOEncoder::EncodePostBlock_MSS
 	PerformLOT_MSS( m_ptrDstBuf, m_ptrLastDCT, ptrSamples1 ) ;
 	PerformLOT_MSS( ptrDstBuf2, ptrLapBuf2, ptrSamples2 ) ;
 	//
-	// ‰ñ“]ƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+	// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	//
 	int		nRevCode2 = GetRevolveCode( m_ptrDstBuf + 1, ptrDstBuf2 + 1 ) ;
 	//
-	// ‰ñ“]ˆ—
+	// å›è»¢å‡¦ç†
 	//
 	REAL32	rSin, rCos ;
 	//
@@ -1511,7 +1511,7 @@ int MIOEncoder::EncodePostBlock_MSS
 	//
 	context.OutNBits( (nRevCode2 << 30), 2 ) ;
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//
 	DWORD	nWeightCode ;
 	int		nCoefficient ;
@@ -1520,12 +1520,12 @@ int MIOEncoder::EncodePostBlock_MSS
 			m_nDegreeNum, rPowerScale,
 			&nWeightCode, &nCoefficient ) ;
 	//
-	// —Êq‰»ŒW”‚ğo—Í
+	// é‡å­åŒ–ä¿‚æ•°ã‚’å‡ºåŠ›
 	//
 	context.OutNBits( nWeightCode, 32 ) ;
 	context.OutNBits( (((DWORD) nCoefficient) << 16), 16 ) ;
 	//
-	// o—Í
+	// å‡ºåŠ›
 	//
 	const INT *	ptrSrcBuf = (const INT *) m_ptrBuffer1 ;
 	for ( i = 0; i < m_nDegreeNum; i ++ )
@@ -1538,7 +1538,7 @@ int MIOEncoder::EncodePostBlock_MSS
 }
 
 //
-// —Êq‰»
+// é‡å­åŒ–
 //////////////////////////////////////////////////////////////////////////////
 void MIOEncoder::Quantumize_MSS
 	( PINT ptrQuantumized, const REAL32 * ptrSource,
@@ -1546,12 +1546,12 @@ void MIOEncoder::Quantumize_MSS
 		DWORD * ptrWeightCode, int * ptrCoefficient )
 {
 	//
-	// ŠÖ”‰Šúİ’è
+	// é–¢æ•°åˆæœŸè¨­å®š
 	//////////////////////////////////////////////////////////////////////////
 	int		i, j ;
 	int		nHalfDegree = nDegreeNum / 2 ;
 	//
-	// Šeü”g”‘Ñ‚ÌƒGƒlƒ‹ƒMW’†“x‚©‚çü”g”‚²‚Æ‚Ì—Êq‰»ŒW”‚ğZo‚·‚é
+	// å„å‘¨æ³¢æ•°å¸¯ã®ã‚¨ãƒãƒ«ã‚®é›†ä¸­åº¦ã‹ã‚‰å‘¨æ³¢æ•°ã”ã¨ã®é‡å­åŒ–ä¿‚æ•°ã‚’ç®—å‡ºã™ã‚‹
 	//////////////////////////////////////////////////////////////////////////
 	double	rPresetWeight[7] ;
 	rPresetWeight[0] = rPresetWeight[1] =
@@ -1640,7 +1640,7 @@ void MIOEncoder::Quantumize_MSS
 		m_ptrWeightTable[i] *= rOddWeight ;
 	}
 	//
-	// â‘Î’l‚Ì•½‹Ï‚ğZo
+	// çµ¶å¯¾å€¤ã®å¹³å‡ã‚’ç®—å‡º
 	//////////////////////////////////////////////////////////////////////////
 	double	rAvg ;
 	double	rMax = 0.0 ;
@@ -1672,7 +1672,7 @@ void MIOEncoder::Quantumize_MSS
 	rAvg = (rSum / nDegreeNum / 2) ;
 	rAvg *= rAvg ;
 	//
-	// ŒW”‚ğZo
+	// ä¿‚æ•°ã‚’ç®—å‡º
 	//////////////////////////////////////////////////////////////////////////
 	double	rCoefficient ;
 	double	rMinCoefficient = rMax / 0x7800 ;
@@ -1700,7 +1700,7 @@ void MIOEncoder::Quantumize_MSS
 	//
 	m_ptrWeightTable[nDegreeNum-1] = (REAL32) nCoefficient ;
 	//
-	// —Êq‰»
+	// é‡å­åŒ–
 	//////////////////////////////////////////////////////////////////////////
 	for ( j = 0; j < 2; j ++ )
 	{
@@ -1723,11 +1723,11 @@ void MIOEncoder::Quantumize_MSS
 
 
 /*****************************************************************************
-                            ‰¹º“WŠJƒIƒuƒWƒFƒNƒg
+                            éŸ³å£°å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODecoder::MIODecoder( void )
 {
@@ -1749,7 +1749,7 @@ MIODecoder::MIODecoder( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIODecoder::~MIODecoder( void )
 {
@@ -1757,31 +1757,31 @@ MIODecoder::~MIODecoder( void )
 }
 
 //
-// ‰Šú‰»iƒpƒ‰ƒ[ƒ^‚Ìİ’èj
+// åˆæœŸåŒ–ï¼ˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®šï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::Initialize( const MIO_INFO_HEADER & infhdr )
 {
 	//
-	// ˆÈ‘O‚ÌƒŠƒ\[ƒX‚ğ‰ğ•ú
+	// ä»¥å‰ã®ãƒªã‚½ãƒ¼ã‚¹ã‚’è§£æ”¾
 	Delete( ) ;
 	//
-	// ‰¹ºî•ñƒwƒbƒ_‚ğƒRƒs[
+	// éŸ³å£°æƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’ã‚³ãƒ”ãƒ¼
 	m_mioih = infhdr ;
 	//
-	// ƒpƒ‰ƒ[ƒ^‚Ìƒ`ƒFƒbƒN
+	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒã‚§ãƒƒã‚¯
 	if ( m_mioih.fdwTransformation == CVTYPE_LOSSLESS_ERI )
 	{
 		if ( m_mioih.dwArchitecture != ERI_RUNLENGTH_HUFFMAN )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( (m_mioih.dwChannelCount != 1) && (m_mioih.dwChannelCount != 2) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìƒ`ƒƒƒlƒ‹”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒãƒ£ãƒãƒ«æ•°ï¼‰
 		}
 		if ( (m_mioih.dwBitsPerSample != 8) && (m_mioih.dwBitsPerSample != 16) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌƒTƒ“ƒvƒŠƒ“ƒO•ª‰ğ”\j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°åˆ†è§£èƒ½ï¼‰
 		}
 	}
 	else if ( (m_mioih.fdwTransformation == CVTYPE_LOT_ERI)
@@ -1789,27 +1789,27 @@ int MIODecoder::Initialize( const MIO_INFO_HEADER & infhdr )
 	{
 		if ( m_mioih.dwArchitecture != ERI_RUNLENGTH_GAMMA )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( (m_mioih.dwChannelCount != 1) && (m_mioih.dwChannelCount != 2) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìƒ`ƒƒƒlƒ‹”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒãƒ£ãƒãƒ«æ•°ï¼‰
 		}
 		if ( m_mioih.dwBitsPerSample != 16 )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌƒTƒ“ƒvƒŠƒ“ƒO•ª‰ğ”\j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°åˆ†è§£èƒ½ï¼‰
 		}
 		if ( (m_mioih.dwSubbandDegree < 8) ||
 				(m_mioih.dwSubbandDegree > MAX_DCT_DEGREE) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚ÌDCTŸ”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®DCTæ¬¡æ•°ï¼‰
 		}
 		if ( m_mioih.dwLappedDegree != 1 )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìd•¡ŒW”j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®é‡è¤‡ä¿‚æ•°ï¼‰
 		}
 		//
-		// DCT —pƒoƒbƒtƒ@Šm•Û
+		// DCT ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 		m_ptrBuffer1 =
 			::eriAllocateMemory
 				( m_mioih.dwChannelCount *
@@ -1829,12 +1829,12 @@ int MIODecoder::Initialize( const MIO_INFO_HEADER & infhdr )
 			(REAL32*) ::eriAllocateMemory
 					( sizeof(REAL32) << m_mioih.dwSubbandDegree ) ;
 		//
-		// d‚İƒe[ƒuƒ‹‚ğŠm•Û
+		// é‡ã¿ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ç¢ºä¿
 		m_ptrWeightTable =
 			(REAL32*) ::eriAllocateMemory
 					( sizeof(REAL32) << m_mioih.dwSubbandDegree ) ;
 		//
-		// LOT —pƒoƒbƒtƒ@Šm•Û
+		// LOT ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 		unsigned int	i, nBlocksetSamples, nLappedSamples ;
 		nBlocksetSamples = m_mioih.dwChannelCount << m_mioih.dwSubbandDegree ;
 		nLappedSamples = nBlocksetSamples * m_mioih.dwLappedDegree ;
@@ -1849,20 +1849,20 @@ int MIODecoder::Initialize( const MIO_INFO_HEADER & infhdr )
 			}
 		}
 		//
-		// ƒpƒ‰ƒ[ƒ^‰Šú‰»
+		// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿åˆæœŸåŒ–
 		InitializeWithDegree( m_mioih.dwSubbandDegree ) ;
 	}
 	else
 	{
-		return	1 ;		// i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+		return	1 ;		// ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 	}
 	//
-	// ³íI—¹
+	// æ­£å¸¸çµ‚äº†
 	return	0 ;
 }
 
 //
-// I—¹iƒƒ‚ƒŠ‚Ì‰ğ•ú‚È‚Çj
+// çµ‚äº†ï¼ˆãƒ¡ãƒ¢ãƒªã®è§£æ”¾ãªã©ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 void MIODecoder::Delete( void )
 {
@@ -1940,7 +1940,7 @@ void MIODecoder::Delete( void )
 }
 
 //
-// ‰¹º‚ğˆ³k
+// éŸ³å£°ã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeSound
 	( RLHDecodeContext & context,
@@ -1973,18 +1973,18 @@ int MIODecoder::DecodeSound
 		}
 	}
 
-	return	1 ;			// ƒGƒ‰[
+	return	1 ;			// ã‚¨ãƒ©ãƒ¼
 }
 
 //
-// 8ƒrƒbƒg‚ÌPCM‚ğ“WŠJ
+// 8ãƒ“ãƒƒãƒˆã®PCMã‚’å±•é–‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeSoundPCM8
 	( RLHDecodeContext & context,
 		const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf )
 {
 	//
-	// ‰‰Z—pƒoƒbƒtƒ@‚ğŠm•Û
+	// æ¼”ç®—ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	unsigned int	nSampleCount = datahdr.dwSampleCount ;
 	if ( nSampleCount > m_nBufLength )
 	{
@@ -1997,7 +1997,7 @@ int MIODecoder::DecodeSoundPCM8
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// ƒnƒtƒ}ƒ“•„†‚ğ•œ†
+	// ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å¾©å·
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
 		context.PrepareToDecodeERINACode( ) ;
@@ -2006,10 +2006,10 @@ int MIODecoder::DecodeSoundPCM8
 	if ( context.DecodeERINACodesSBZL
 			( (SBYTE *) m_ptrBuffer1, nBytes ) < nBytes )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
-	// ·•ªˆ—‚ğ{‚µ‚Äo—Í
+	// å·®åˆ†å‡¦ç†ã‚’æ–½ã—ã¦å‡ºåŠ›
 	PBYTE	ptrSrcBuf = (PBYTE) m_ptrBuffer1 ;
 	PBYTE	ptrDstBuf ;
 	unsigned int	nStep = m_mioih.dwChannelCount ;
@@ -2032,14 +2032,14 @@ int MIODecoder::DecodeSoundPCM8
 }
 
 //
-// 16ƒrƒbƒg‚ÌPCM‚ğ“WŠJ
+// 16ãƒ“ãƒƒãƒˆã®PCMã‚’å±•é–‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeSoundPCM16
 	( RLHDecodeContext & context,
 		const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf )
 {
 	//
-	// ‰‰Z—pƒoƒbƒtƒ@‚ğŠm•Û
+	// æ¼”ç®—ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	i, j ;
 	unsigned int	nSampleCount = datahdr.dwSampleCount ;
@@ -2064,7 +2064,7 @@ int MIODecoder::DecodeSoundPCM16
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// ƒnƒtƒ}ƒ“•„†‚ğ•œ†
+	// ãƒãƒ•ãƒãƒ³ç¬¦å·ã‚’å¾©å·
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
 		context.PrepareToDecodeERINACode( ) ;
@@ -2073,10 +2073,10 @@ int MIODecoder::DecodeSoundPCM16
 	if ( context.DecodeERINACodesSBZL
 			( (SBYTE *) m_ptrBuffer1, nBytes ) < nBytes )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
-	// ãˆÊƒoƒCƒg‚Æ‰ºˆÊƒoƒCƒg‚ğƒpƒbƒLƒ“ƒO
+	// ä¸Šä½ãƒã‚¤ãƒˆã¨ä¸‹ä½ãƒã‚¤ãƒˆã‚’ãƒ‘ãƒƒã‚­ãƒ³ã‚°
 	PBYTE	pbytSrcBuf1, pbytSrcBuf2, pbytDstBuf ;
 	for ( i = 0; i < m_mioih.dwChannelCount; i ++ )
 	{
@@ -2094,7 +2094,7 @@ int MIODecoder::DecodeSoundPCM16
 		}
 	}
 	//
-	// ·•ªˆ—‚ğ{‚µ‚Äo—Í
+	// å·®åˆ†å‡¦ç†ã‚’æ–½ã—ã¦å‡ºåŠ›
 	SWORD *	ptrSrcBuf = (SWORD*) m_ptrBuffer2 ;
 	SWORD *	ptrDstBuf ;
 	unsigned int	nStep = m_mioih.dwChannelCount ;
@@ -2118,19 +2118,19 @@ int MIODecoder::DecodeSoundPCM16
 }
 
 //
-// s—ñƒTƒCƒY‚Ì•ÏX‚É”º‚¤ƒpƒ‰ƒ[ƒ^‚ÌÄŒvZ
+// è¡Œåˆ—ã‚µã‚¤ã‚ºã®å¤‰æ›´ã«ä¼´ã†ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å†è¨ˆç®—
 //////////////////////////////////////////////////////////////////////////////
 void MIODecoder::InitializeWithDegree( unsigned int nSubbandDegree )
 {
 	//
-	// ‰ñ“]ƒpƒ‰ƒ[ƒ^¶¬
+	// å›è»¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç”Ÿæˆ
 	if ( m_pRevolveParam != NULL )
 	{
 		::eriFreeMemory( m_pRevolveParam ) ;
 	}
 	m_pRevolveParam = ::eriCreateRevolveParameter( nSubbandDegree ) ;
 	//
-	// ‹t—Êq‰»—pƒpƒ‰ƒ[ƒ^¶¬
+	// é€†é‡å­åŒ–ç”¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç”Ÿæˆ
 	static const int	freq_width[7] =
 	{
 		-6, -6, -5, -4, -3, -2, -1
@@ -2142,20 +2142,20 @@ void MIODecoder::InitializeWithDegree( unsigned int nSubbandDegree )
 		j += nFrequencyWidth ;
 	}
 	//
-	// ƒ[ƒJƒ‹ƒpƒ‰ƒ[ƒ^‚ğİ’è
+	// ãƒ­ãƒ¼ã‚«ãƒ«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®š
 	m_nSubbandDegree = nSubbandDegree ;
 	m_nDegreeNum = (1 << nSubbandDegree) ;
 }
 
 //
-// 16ƒrƒbƒg‚Ì”ñ‰Â‹t“WŠJ
+// 16ãƒ“ãƒƒãƒˆã®éå¯é€†å±•é–‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeSoundDCT
 	( RLHDecodeContext & context,
 		const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf )
 {
 	//
-	// ƒoƒbƒtƒ@‚ğŠm•Û
+	// ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	i, j, k ;
 	unsigned int	nDegreeWidth = (1 << m_mioih.dwSubbandDegree) ;
@@ -2203,7 +2203,7 @@ int MIODecoder::DecodeSoundDCT
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// —Êq‰»ŒW”ƒe[ƒuƒ‹‚ğ•œ†
+	// é‡å­åŒ–ä¿‚æ•°ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å¾©å·
 	//
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
@@ -2262,12 +2262,12 @@ int MIODecoder::DecodeSoundDCT
 		return	1 ;
 	}
 	//
-	// •œ†‚µ‚Ä‹tƒCƒ“ƒ^[ƒŠƒu
+	// å¾©å·ã—ã¦é€†ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ–
 	//
 	if ( context.DecodeERINACodesSBZL
 			( m_ptrBuffer3, nAllSampleCount * 2 ) < nAllSampleCount * 2 )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
 	SBYTE *	ptrHBuf = m_ptrBuffer3 ;
@@ -2286,7 +2286,7 @@ int MIODecoder::DecodeSoundDCT
 		}
 	}
 	//
-	// ƒTƒuƒoƒ“ƒh’PˆÊ‚Å‹t DCT •ÏŠ·‚ğ{‚·
+	// ã‚µãƒ–ãƒãƒ³ãƒ‰å˜ä½ã§é€† DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	unsigned int	nSamples ;
 	unsigned int *	pRestSamples = new unsigned int [nChannelCount] ;
@@ -2310,24 +2310,24 @@ int MIODecoder::DecodeSoundDCT
 		for ( j = 0; j < nChannelCount; j ++ )
 		{
 			//
-			// •ª‰ğƒR[ƒh‚ğæ“¾
+			// åˆ†è§£ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 			//
 			unsigned int	nDivisionCode = *(m_ptrNextDivision ++) ;
 			unsigned int	nDivisionCount = (1 << nDivisionCode) ;
 			//
-			// d•¡ˆ——pƒoƒbƒtƒ@‚ğæ“¾
+			// é‡è¤‡å‡¦ç†ç”¨ãƒãƒƒãƒ•ã‚¡ã‚’å–å¾—
 			//
 			int		nChannelStep = nDegreeWidth * m_mioih.dwLappedDegree * j ;
 			m_ptrLastDCTBuf = m_ptrLastDCT + nChannelStep ;
 			//
-			// s—ñƒTƒCƒY‚ª•Ï‰»‚·‚éÛ‚Ìˆ—
+			// è¡Œåˆ—ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã™ã‚‹éš›ã®å‡¦ç†
 			//
 			bool	fLeadBlock = false ;
 			//
 			if ( pLastDivision[j] != nDivisionCode )
 			{
 				//
-				// ’¼‘O‚Ü‚Å‚Ìs—ñ‚ğŠ®¬‚³‚¹‚é
+				// ç›´å‰ã¾ã§ã®è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 				//
 				if ( i != 0 )
 				{
@@ -2350,7 +2350,7 @@ int MIODecoder::DecodeSoundDCT
 					ptrDstBuf[j] += nSamples * nChannelCount ;
 				}
 				//
-				// s—ñƒTƒCƒY‚ğ•Ï‰»‚³‚¹‚é‚½‚ß‚Ìƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒgƒAƒbƒv
+				// è¡Œåˆ—ã‚µã‚¤ã‚ºã‚’å¤‰åŒ–ã•ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 				//
 				pLastDivision[j] = nDivisionCode ;
 				fLeadBlock = true ;
@@ -2362,14 +2362,14 @@ int MIODecoder::DecodeSoundDCT
 				nCurrentDivision = nDivisionCode ;
 			}
 			//
-			// ‡Ÿ‹t LOT •ÏŠ·‚ğ{‚·
+			// é †æ¬¡é€† LOT å¤‰æ›ã‚’æ–½ã™
 			//
 			for ( k = 0; k < nDivisionCount; k ++ )
 			{
 				if ( fLeadBlock )
 				{
 					//
-					// ƒŠ[ƒhƒuƒƒbƒN‚ğ•œ†‚·‚é
+					// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 					//
 					if ( DecodeLeadBlock( ) )
 					{
@@ -2381,7 +2381,7 @@ int MIODecoder::DecodeSoundDCT
 				else
 				{
 					//
-					// ’ÊíƒuƒƒbƒN‚ğ•œ†‚·‚é
+					// é€šå¸¸ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 					//
 					nSamples = pRestSamples[j] ;
 					if ( nSamples > m_nDegreeNum )
@@ -2400,7 +2400,7 @@ int MIODecoder::DecodeSoundDCT
 		}
 	}
 	//
-	// s—ñ‚ğŠ®¬‚³‚¹‚é
+	// è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 	//
 	if ( nSubbandCount > 0 )
 	{
@@ -2437,13 +2437,13 @@ int MIODecoder::DecodeSoundDCT
 }
 
 //
-// ’Êí‚ÌƒuƒƒbƒN‚ğ•œ†‚·‚é
+// é€šå¸¸ã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeInternalBlock
 	( SWORD * ptrDst, unsigned int nSamples )
 {
 	//
-	// ‹t—Êq‰»
+	// é€†é‡å­åŒ–
 	//
 	SDWORD	nWeightCode = *(m_ptrNextWeight ++) ;
 	int		nCoefficient = *(m_ptrNextCoefficient ++) ;
@@ -2452,7 +2452,7 @@ int MIODecoder::DecodeInternalBlock
 			m_nDegreeNum, nWeightCode, nCoefficient ) ;
 	m_ptrNextSource += m_nDegreeNum ;
 	//
-	// ‹t LOT ‚ğ{‚·
+	// é€† LOT ã‚’æ–½ã™
 	//
 	::eriOddGivensInverseMatrix
 		( m_ptrMatrixBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -2468,13 +2468,13 @@ int MIODecoder::DecodeInternalBlock
 		m_ptrMatrixBuf[i] = m_ptrWorkBuf[i] ;
 	}
 	//
-	// ‹t DCT •ÏŠ·‚ğ{‚·
+	// é€† DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	::eriFastIDCT
 		( m_ptrInternalBuf, m_ptrMatrixBuf,
 			1, m_ptrWorkBuf, m_nSubbandDegree ) ;
 	//
-	// ƒXƒgƒA
+	// ã‚¹ãƒˆã‚¢
 	//
 	if ( nSamples != 0 )
 	{
@@ -2487,12 +2487,12 @@ int MIODecoder::DecodeInternalBlock
 }
 
 //
-// ƒŠ[ƒhƒuƒƒbƒN‚ğ•œ†‚·‚é
+// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeLeadBlock( void )
 {
 	//
-	// ‹t—Êq‰»
+	// é€†é‡å­åŒ–
 	//
 	SDWORD	nWeightCode = *(m_ptrNextWeight ++) ;
 	int		nCoefficient = *(m_ptrNextCoefficient ++) ;
@@ -2508,7 +2508,7 @@ int MIODecoder::DecodeLeadBlock( void )
 		( m_ptrLastDCTBuf, ptrSrcBuf,
 			m_nDegreeNum, nWeightCode, nCoefficient ) ;
 	//
-	// d•¡ƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+	// é‡è¤‡ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 	//
 	::eriOddGivensInverseMatrix
 		( m_ptrLastDCTBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -2525,13 +2525,13 @@ int MIODecoder::DecodeLeadBlock( void )
 }
 
 //
-// ƒ|ƒXƒgƒuƒƒbƒN‚ğ•œ†‚·‚é
+// ãƒã‚¹ãƒˆãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodePostBlock
 	( SWORD * ptrDst, unsigned int nSamples )
 {
 	//
-	// ‹t—Êq‰»
+	// é€†é‡å­åŒ–
 	//
 	SDWORD	nWeightCode = *(m_ptrNextWeight ++) ;
 	int		nCoefficient = *(m_ptrNextCoefficient ++) ;
@@ -2547,7 +2547,7 @@ int MIODecoder::DecodePostBlock
 		( m_ptrMatrixBuf, ptrSrcBuf,
 			m_nDegreeNum, nWeightCode, nCoefficient ) ;
 	//
-	// ‹t LOT ‚ğ{‚·
+	// é€† LOT ã‚’æ–½ã™
 	//
 	::eriOddGivensInverseMatrix
 		( m_ptrMatrixBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -2568,13 +2568,13 @@ int MIODecoder::DecodePostBlock
 		m_ptrMatrixBuf[i] = m_ptrWorkBuf[i] ;
 	}
 	//
-	// ‹t DCT •ÏŠ·‚ğ{‚·
+	// é€† DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	::eriFastIDCT
 		( m_ptrInternalBuf, m_ptrMatrixBuf,
 			1, m_ptrWorkBuf, m_nSubbandDegree ) ;
 	//
-	// ƒXƒgƒA
+	// ã‚¹ãƒˆã‚¢
 	//
 	if ( nSamples != 0 )
 	{
@@ -2587,7 +2587,7 @@ int MIODecoder::DecodePostBlock
 }
 
 //
-// ‹t—Êq‰»
+// é€†é‡å­åŒ–
 //////////////////////////////////////////////////////////////////////////////
 void MIODecoder::IQuantumize
 	( REAL32 * ptrDestination,
@@ -2595,16 +2595,16 @@ void MIODecoder::IQuantumize
 		SDWORD nWeightCode, int nCoefficient )
 {
 	//
-	// ŠÖ”‰Šúİ’è
+	// é–¢æ•°åˆæœŸè¨­å®š
 	//
 	int		i, j ;
 	//
-	// ŒW”‚ğZo
+	// ä¿‚æ•°ã‚’ç®—å‡º
 	//
 	double	rMatrixScale = sqrt(2.0 / nDegreeNum) ;
 	double	rCoefficient = rMatrixScale * nCoefficient ;
 	//
-	// d‚İƒe[ƒuƒ‹‚ğ¶¬‚·‚é
+	// é‡ã¿ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ç”Ÿæˆã™ã‚‹
 	//
 	double	rAvgRatio[7] ;
 	for ( i= 0; i < 6; i++ )
@@ -2647,7 +2647,7 @@ void MIODecoder::IQuantumize
 		m_ptrWeightTable[i] = 1.0F / m_ptrWeightTable[i] ;
 	}
 	//
-	// ‹t—Êq‰»
+	// é€†é‡å­åŒ–
 	//
 	for ( i = 0; i < nDegreeNum; i ++ )
 	{
@@ -2657,14 +2657,14 @@ void MIODecoder::IQuantumize
 }
 
 //
-// 16ƒrƒbƒg‚Ì”ñ‰Â‹t“WŠJiƒ~ƒhƒ‹ƒTƒCƒhƒXƒeƒŒƒIj
+// 16ãƒ“ãƒƒãƒˆã®éå¯é€†å±•é–‹ï¼ˆãƒŸãƒ‰ãƒ«ã‚µã‚¤ãƒ‰ã‚¹ãƒ†ãƒ¬ã‚ªï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeSoundDCT_MSS
 	( RLHDecodeContext & context,
 		const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf )
 {
 	//
-	// ƒoƒbƒtƒ@‚ğŠm•Û
+	// ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿
 	//
 	unsigned int	i, j, k ;
 	unsigned int	nDegreeWidth = (1 << m_mioih.dwSubbandDegree) ;
@@ -2672,7 +2672,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 		(datahdr.dwSampleCount + nDegreeWidth - 1) & ~(nDegreeWidth - 1) ;
 	unsigned int	nSubbandCount =
 		(nSampleCount >> m_mioih.dwSubbandDegree) ;
-	unsigned int	nChannelCount = m_mioih.dwChannelCount ;	// í‚É‚Q
+	unsigned int	nChannelCount = m_mioih.dwChannelCount ;	// å¸¸ã«ï¼’
 	unsigned int	nAllSampleCount = nSampleCount * nChannelCount ;
 	unsigned int	nAllSubbandCount = nSubbandCount ;
 	//
@@ -2718,7 +2718,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 		m_nBufLength = nSampleCount ;
 	}
 	//
-	// —Êq‰»ŒW”ƒe[ƒuƒ‹‚ğ•œ†
+	// é‡å­åŒ–ä¿‚æ•°ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’å¾©å·
 	//
 	if ( datahdr.bytFlags & MIO_LEAD_BLOCK )
 	{
@@ -2781,12 +2781,12 @@ int MIODecoder::DecodeSoundDCT_MSS
 		return	1 ;
 	}
 	//
-	// •œ†‚µ‚Ä‹tƒCƒ“ƒ^[ƒŠƒu
+	// å¾©å·ã—ã¦é€†ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ–
 	//
 	if ( context.DecodeERINACodesSBZL
 			( m_ptrBuffer3, nAllSampleCount * 2 ) < nAllSampleCount * 2 )
 	{
-		return	1 ;			// ƒGƒ‰[
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼
 	}
 	//
 	SBYTE *	ptrHBuf = m_ptrBuffer3 ;
@@ -2805,7 +2805,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 		}
 	}
 	//
-	// ƒTƒuƒoƒ“ƒh’PˆÊ‚Å‹t DCT •ÏŠ·‚ğ{‚·
+	// ã‚µãƒ–ãƒãƒ³ãƒ‰å˜ä½ã§é€† DCT å¤‰æ›ã‚’æ–½ã™
 	//
 	unsigned int	nSamples ;
 	unsigned int	nRestSamples = datahdr.dwSampleCount ;
@@ -2821,19 +2821,19 @@ int MIODecoder::DecodeSoundDCT_MSS
 	for ( i = 0; i < nSubbandCount; i ++ )
 	{
 		//
-		// •ª‰ğƒR[ƒh‚ğæ“¾
+		// åˆ†è§£ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 		//
 		unsigned int	nDivisionCode = *(m_ptrNextDivision ++) ;
 		unsigned int	nDivisionCount = (1 << nDivisionCode) ;
 		//
-		// s—ñƒTƒCƒY‚ª•Ï‰»‚·‚éÛ‚Ìˆ—
+		// è¡Œåˆ—ã‚µã‚¤ã‚ºãŒå¤‰åŒ–ã™ã‚‹éš›ã®å‡¦ç†
 		//
 		bool	fLeadBlock = false ;
 		//
 		if ( nLastDivision != nDivisionCode )
 		{
 			//
-			// ’¼‘O‚Ü‚Å‚Ìs—ñ‚ğŠ®¬‚³‚¹‚é
+			// ç›´å‰ã¾ã§ã®è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 			//
 			if ( i != 0 )
 			{
@@ -2850,7 +2850,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 				ptrDstBuf += nSamples * nChannelCount ;
 			}
 			//
-			// s—ñƒTƒCƒY‚ğ•Ï‰»‚³‚¹‚é‚½‚ß‚Ìƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒgƒAƒbƒv
+			// è¡Œåˆ—ã‚µã‚¤ã‚ºã‚’å¤‰åŒ–ã•ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 			//
 			InitializeWithDegree
 				( m_mioih.dwSubbandDegree - nDivisionCode ) ;
@@ -2858,14 +2858,14 @@ int MIODecoder::DecodeSoundDCT_MSS
 			fLeadBlock = true ;
 		}
 		//
-		// ‡Ÿ‹t LOT •ÏŠ·‚ğ{‚·
+		// é †æ¬¡é€† LOT å¤‰æ›ã‚’æ–½ã™
 		//
 		for ( k = 0; k < nDivisionCount; k ++ )
 		{
 			if ( fLeadBlock )
 			{
 				//
-				// ƒŠ[ƒhƒuƒƒbƒN‚ğ•œ†‚·‚é
+				// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 				//
 				if ( DecodeLeadBlock_MSS( ) )
 				{
@@ -2877,7 +2877,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 			else
 			{
 				//
-				// ’ÊíƒuƒƒbƒN‚ğ•œ†‚·‚é
+				// é€šå¸¸ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 				//
 				nSamples = nRestSamples ;
 				if ( nSamples > m_nDegreeNum )
@@ -2894,7 +2894,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 		}
 	}
 	//
-	// s—ñ‚ğŠ®¬‚³‚¹‚é
+	// è¡Œåˆ—ã‚’å®Œæˆã•ã›ã‚‹
 	//
 	if ( nSubbandCount > 0 )
 	{
@@ -2915,7 +2915,7 @@ int MIODecoder::DecodeSoundDCT_MSS
 }
 
 //
-// ’Êí‚ÌƒuƒƒbƒN‚ğ•œ†‚·‚é
+// é€šå¸¸ã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeInternalBlock_MSS
 	( SWORD * ptrDst, unsigned int nSamples )
@@ -2930,7 +2930,7 @@ int MIODecoder::DecodeInternalBlock_MSS
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// ‹t—Êq‰»
+		// é€†é‡å­åŒ–
 		//
 		IQuantumize
 			( ptrSrcBuf, m_ptrNextSource,
@@ -2939,7 +2939,7 @@ int MIODecoder::DecodeInternalBlock_MSS
 		ptrSrcBuf += m_nDegreeNum ;
 	}
 	//
-	// ‰ñ“]•ÏŠ·
+	// å›è»¢å¤‰æ›
 	//
 	REAL32	rSin, rCos ;
 	int		nRevCode = *(m_ptrNextRevCode ++) ;
@@ -2964,7 +2964,7 @@ int MIODecoder::DecodeInternalBlock_MSS
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// ‹t LOT ‚ğ{‚·
+		// é€† LOT ã‚’æ–½ã™
 		//
 		::eriOddGivensInverseMatrix
 			( ptrSrcBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -2979,13 +2979,13 @@ int MIODecoder::DecodeInternalBlock_MSS
 			ptrSrcBuf[j] = m_ptrWorkBuf[j] ;
 		}
 		//
-		// ‹t DCT •ÏŠ·‚ğ{‚·
+		// é€† DCT å¤‰æ›ã‚’æ–½ã™
 		//
 		::eriFastIDCT
 			( m_ptrInternalBuf, ptrSrcBuf,
 				1, m_ptrWorkBuf, m_nSubbandDegree ) ;
 		//
-		// ƒXƒgƒA
+		// ã‚¹ãƒˆã‚¢
 		//
 		if ( nSamples != 0 )
 		{
@@ -3001,7 +3001,7 @@ int MIODecoder::DecodeInternalBlock_MSS
 }
 
 //
-// ƒŠ[ƒhƒuƒƒbƒN‚ğ•œ†‚·‚é
+// ãƒªãƒ¼ãƒ‰ãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodeLeadBlock_MSS( void )
 {
@@ -3014,7 +3014,7 @@ int MIODecoder::DecodeLeadBlock_MSS( void )
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// ‹t—Êq‰»
+		// é€†é‡å­åŒ–
 		//
 		PINT	ptrSrcBuf = (PINT) m_ptrBuffer1 ;
 		for ( j = 0; j < nHalfDegree; j ++ )
@@ -3029,7 +3029,7 @@ int MIODecoder::DecodeLeadBlock_MSS( void )
 		ptrLapBuf += m_nDegreeNum ;
 	}
 	//
-	// ‰ñ“]•ÏŠ·
+	// å›è»¢å¤‰æ›
 	//
 	REAL32	rSin, rCos ;
 	int		nRevCode = *(m_ptrNextRevCode ++) ;
@@ -3047,7 +3047,7 @@ int MIODecoder::DecodeLeadBlock_MSS( void )
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// d•¡ƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+		// é‡è¤‡ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		//
 		::eriOddGivensInverseMatrix
 			( ptrLapBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -3066,7 +3066,7 @@ int MIODecoder::DecodeLeadBlock_MSS( void )
 }
 
 //
-// ƒ|ƒXƒgƒuƒƒbƒN‚ğ•œ†‚·‚é
+// ãƒã‚¹ãƒˆãƒ–ãƒ­ãƒƒã‚¯ã‚’å¾©å·ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int MIODecoder::DecodePostBlock_MSS
 	( SWORD * ptrDst, unsigned int nSamples )
@@ -3082,7 +3082,7 @@ int MIODecoder::DecodePostBlock_MSS
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// ‹t—Êq‰»
+		// é€†é‡å­åŒ–
 		//
 		PINT	ptrTempBuf = (PINT) m_ptrBuffer1 ;
 		for ( j = 0; j < nHalfDegree; j ++ )
@@ -3097,7 +3097,7 @@ int MIODecoder::DecodePostBlock_MSS
 		ptrSrcBuf += m_nDegreeNum ;
 	}
 	//
-	// ‰ñ“]•ÏŠ·
+	// å›è»¢å¤‰æ›
 	//
 	REAL32	rSin, rCos ;
 	int		nRevCode = *(m_ptrNextRevCode ++) ;
@@ -3115,7 +3115,7 @@ int MIODecoder::DecodePostBlock_MSS
 	for ( i = 0; i < 2; i ++ )
 	{
 		//
-		// ‹t LOT ‚ğ{‚·
+		// é€† LOT ã‚’æ–½ã™
 		//
 		::eriOddGivensInverseMatrix
 			( ptrSrcBuf, m_pRevolveParam, m_nSubbandDegree ) ;
@@ -3135,13 +3135,13 @@ int MIODecoder::DecodePostBlock_MSS
 			ptrSrcBuf[j] = m_ptrWorkBuf[j] ;
 		}
 		//
-		// ‹t DCT •ÏŠ·‚ğ{‚·
+		// é€† DCT å¤‰æ›ã‚’æ–½ã™
 		//
 		::eriFastIDCT
 			( m_ptrInternalBuf, ptrSrcBuf,
 				1, m_ptrWorkBuf, m_nSubbandDegree ) ;
 		//
-		// ƒXƒgƒA
+		// ã‚¹ãƒˆã‚¢
 		//
 		if ( nSamples != 0 )
 		{

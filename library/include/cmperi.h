@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ЌЕЏIЌXђV 2002/05/26
+                                                      жњЂзµ‚ж›ґж–° 2002/05/26
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -14,23 +14,23 @@
 
 
 /*****************************************************************************
-                               ѓtѓ@ѓCѓ‹ѓIѓuѓWѓFѓNѓg
+                               гѓ•г‚Ўг‚¤гѓ«г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
  *****************************************************************************/
 
 class	EWriteFileObj
 {
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	EWriteFileObj( void ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~EWriteFileObj( void ) ;
-	// ѓfЃ[ѓ^‚рЏ‘‚«Џo‚·
+	// гѓ‡гѓјг‚їг‚’ж›ёгЃЌе‡єгЃ™
 	virtual DWORD Write( const void * ptrBuf, DWORD dwByte ) = 0 ;
-	// ѓtѓ@ѓCѓ‹‚М’·‚і‚рЋж“ѕ‚·‚й
+	// гѓ•г‚Ўг‚¤гѓ«гЃ®й•·гЃ•г‚’еЏ–еѕ—гЃ™г‚‹
 	virtual DWORD GetLength( void ) = 0 ;
-	// ѓtѓ@ѓCѓ‹ѓ|ѓCѓ“ѓ^‚рЋж“ѕ‚·‚й
+	// гѓ•г‚Ўг‚¤гѓ«гѓќг‚¤гѓіг‚їг‚’еЏ–еѕ—гЃ™г‚‹
 	virtual DWORD GetPointer( void ) = 0 ;
-	// ѓtѓ@ѓCѓ‹ѓ|ѓCѓ“ѓ^‚р€Ъ“®‚·‚й
+	// гѓ•г‚Ўг‚¤гѓ«гѓќг‚¤гѓіг‚їг‚’з§»е‹•гЃ™г‚‹
 	virtual void Seek( DWORD dwPointer ) = 0 ;
 
 } ;
@@ -71,7 +71,7 @@ protected:
 
 public:
 	//
-	// ѓtѓ@ѓCѓ‹ID
+	// гѓ•г‚Ўг‚¤гѓ«ID
 	enum	FileID
 	{
 		fidImage,
@@ -79,7 +79,7 @@ public:
 		fidMovie
 	} ;
 	//
-	// Unicode •¶Ћљ—сѓIѓuѓWѓFѓNѓg
+	// Unicode ж–‡е­—е€—г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
 	class	EWStringObj
 	{
 	protected:
@@ -87,66 +87,66 @@ public:
 		int			m_nLength ;
 		int			m_nBufLimit ;
 	public:
-		// Ќ\’zЉЦђ”
+		// ж§‹зЇ‰й–ўж•°
 		EWStringObj( void ) ;
 		EWStringObj( const char * pszString, int nLength = -1 ) ;
 		EWStringObj( const wchar_t * pwszString, int nLength = -1 ) ;
-		// ЏБ–ЕЉЦђ”
+		// ж¶€ж»…й–ўж•°
 		~EWStringObj( void ) ;
-		// •¶Ћљ—сЋQЏЖ
+		// ж–‡е­—е€—еЏ‚з…§
 		operator const wchar_t * ( void ) const
 			{	return	m_pwszString ;	}
 		const wchar_t * CharPtr( void ) const
 			{	return	m_pwszString ;	}
 		int GetLength( void ) const
 			{	return	m_nLength ;		}
-		// •¶Ћљ—с‰„’·
+		// ж–‡е­—е€—е»¶й•·
 		void AddString( const EWStringObj & string ) ;
-		// ‘г“ь
+		// д»Је…Ґ
 		const EWStringObj & operator = ( const EWStringObj & string ) ;
 	} ;
 	//
-	// ѓ^ѓOЏо•сЌ\’zѓIѓuѓWѓFѓNѓg
+	// г‚їг‚°жѓ…е ±ж§‹зЇ‰г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
 	class	ETagInfo
 	{
 	protected:
 		wchar_t *	m_pwszData ;
 		int			m_nLength ;
 	public:
-		// Ќ\’zЉЦђ”
+		// ж§‹зЇ‰й–ўж•°
 		ETagInfo( void ) ;
-		// ЏБ–ЕЉЦђ”
+		// ж¶€ж»…й–ўж•°
 		~ETagInfo( void ) ;
-		// ѓ^ѓOЏо•сЋж“ѕ
+		// г‚їг‚°жѓ…е ±еЏ–еѕ—
 		const wchar_t * GetTagData( void ) const
 			{	return	m_pwszData ;	}
 		int GetTagBytes( void ) const
 			{	return	m_nLength * sizeof(wchar_t) ;	}
-		// ѓ^ѓOЏо•сЃi’ЌмЊ Џо•сЃjђЭ’и
+		// г‚їг‚°жѓ…е ±пј€и‘—дЅњжЁ©жѓ…е ±пј‰иЁ­е®љ
 		void CreatePlaneText
 			( const EWStringObj & string, int nAlign = 0x20 ) ;
-		// ѓ^ѓOЏо•сЃiѓfѓBѓXѓNѓЉѓvѓVѓ‡ѓ“ЃjђЭ’и
+		// г‚їг‚°жѓ…е ±пј€гѓ‡г‚Јг‚№г‚ЇгѓЄгѓ—г‚·гѓ§гѓіпј‰иЁ­е®љ
 		void CreateTagInfo
 			( ERIFile::ETagObject * pTags, int nAlign = 0x40 ) ;
-		// ѓЃѓ‚ѓЉ‰р•ъ
+		// гѓЎгѓўгѓЄи§Јж”ѕ
 		void DeleteContents( void ) ;
 	} ;
 
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	ERIWriteFile( void ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~ERIWriteFile( void ) ;
-	// Њb—ќ‚ї‚б‚сѓtѓ@ѓCѓ‹‚рЉJ‚­
+	// жЃµзђ†гЃЎг‚ѓг‚“гѓ•г‚Ўг‚¤гѓ«г‚’й–‹гЃЏ
 	bool Open( EWriteFileObj * pFile, FileID fidType ) ;
-	// Њb—ќ‚ї‚б‚сѓtѓ@ѓCѓ‹‚р•В‚¶‚й
+	// жЃµзђ†гЃЎг‚ѓг‚“гѓ•г‚Ўг‚¤гѓ«г‚’й–‰гЃг‚‹
 	void Close( void ) ;
-	// ѓwѓbѓ_ѓЊѓRЃ[ѓh‚рЏ‘‚«Џo‚·
+	// гѓгѓѓгѓЂгѓ¬г‚ігѓјгѓ‰г‚’ж›ёгЃЌе‡єгЃ™
 	bool WriteHeader
 		( const ERI_FILE_HEADER & efh, const ERI_INFO_HEADER & eih ) ;
-	// ѓЊѓRЃ[ѓh‚рЉJ‚­
+	// гѓ¬г‚ігѓјгѓ‰г‚’й–‹гЃЏ
 	bool DescendRecord( const UINT64 * pRecID ) ;
-	// ѓЊѓRЃ[ѓh‚р•В‚¶‚й
+	// гѓ¬г‚ігѓјгѓ‰г‚’й–‰гЃг‚‹
 	void AscendRecord( void ) ;
 
 	virtual DWORD Write( const void * ptrBuf, DWORD dwByte ) ;
@@ -158,17 +158,17 @@ public:
 
 
 /*****************************************************************************
-                   ѓ‰ѓ“ѓЊѓ“ѓOѓXЃEѓKѓ“ѓ}ЃEѓRѓ“ѓeѓLѓXѓg
+                   гѓ©гѓігѓ¬гѓіг‚°г‚№гѓ»г‚¬гѓігѓћгѓ»г‚ігѓігѓ†г‚­г‚№гѓ€
  *****************************************************************************/
 
 class	RLHEncodeContext
 {
 protected:
-	int		m_nIntBufCount ;	// ’†ЉФ“ь—Нѓoѓbѓtѓ@‚Й’~ђП‚і‚к‚Д‚ў‚йѓrѓbѓgђ”
-	DWORD	m_dwIntBuffer ;		// ’†ЉФ“ь—Нѓoѓbѓtѓ@
-	ULONG	m_nBufferingSize ;	// ѓoѓbѓtѓ@ѓЉѓ“ѓO‚·‚йѓoѓCѓgђ”
-	ULONG	m_nBufCount ;		// ѓoѓbѓtѓ@‚Й’~ђП‚і‚к‚Д‚ў‚йѓoѓCѓgђ”
-	PBYTE	m_ptrBuffer ;		// Џo—Нѓoѓbѓtѓ@‚Мђж“Є‚Ц‚Мѓ|ѓCѓ“ѓ^
+	int		m_nIntBufCount ;	// дё­й–“е…ҐеЉ›гѓђгѓѓгѓ•г‚ЎгЃ«и“„з©ЌгЃ•г‚ЊгЃ¦гЃ„г‚‹гѓ“гѓѓгѓ€ж•°
+	DWORD	m_dwIntBuffer ;		// дё­й–“е…ҐеЉ›гѓђгѓѓгѓ•г‚Ў
+	ULONG	m_nBufferingSize ;	// гѓђгѓѓгѓ•г‚ЎгѓЄгѓіг‚°гЃ™г‚‹гѓђг‚¤гѓ€ж•°
+	ULONG	m_nBufCount ;		// гѓђгѓѓгѓ•г‚ЎгЃ«и“„з©ЌгЃ•г‚ЊгЃ¦гЃ„г‚‹гѓђг‚¤гѓ€ж•°
+	PBYTE	m_ptrBuffer ;		// е‡єеЉ›гѓђгѓѓгѓ•г‚ЎгЃ®е…€й ­гЃёгЃ®гѓќг‚¤гѓіг‚ї
 
 	struct	MTF_TABLE
 	{
@@ -177,55 +177,55 @@ protected:
 		inline void Initialize( void ) ;
 		inline int Search( BYTE p ) ;
 	} ;
-	MTF_TABLE *	m_pMTFTable[0x101] ;	// MTFѓeЃ[ѓuѓ‹
+	MTF_TABLE *	m_pMTFTable[0x101] ;	// MTFгѓ†гѓјгѓ–гѓ«
 
 	ERINA_HUFFMAN_TREE *	m_pLastHuffmanTree ;
 	ERINA_HUFFMAN_TREE *	m_pHuffmanTree[0x101] ;
 
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	RLHEncodeContext( ULONG nBufferingSize ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~RLHEncodeContext( void ) ;
 
-	// ‚ЋѓrѓbѓgЏo—Н‚·‚й
+	// пЅЋгѓ“гѓѓгѓ€е‡єеЉ›гЃ™г‚‹
 	int OutNBits( DWORD dwData, int n ) ;
-	// ѓKѓ“ѓ}ѓRЃ[ѓh‚Й•„Ќ†‰»‚µ‚ЅЌЫ‚Мѓrѓbѓgђ”‚рЊvЋZ
+	// г‚¬гѓігѓћг‚ігѓјгѓ‰гЃ«з¬¦еЏ·еЊ–гЃ—гЃџйљ›гЃ®гѓ“гѓѓгѓ€ж•°г‚’иЁ€з®—
 	static inline int TryOutACode( int num ) ;
-	// ѓKѓ“ѓ}ѓRЃ[ѓh‚рЏo—Н‚·‚й
+	// г‚¬гѓігѓћг‚ігѓјгѓ‰г‚’е‡єеЉ›гЃ™г‚‹
 	int OutACode( int num ) ;
-	// ѓoѓbѓtѓ@‚М“а—e‚рЏo—Н‚µ‚Д‹у‚Й‚·‚й
+	// гѓђгѓѓгѓ•г‚ЎгЃ®е†…е®№г‚’е‡єеЉ›гЃ—гЃ¦з©єгЃ«гЃ™г‚‹
 	int Flushout( void ) ;
-	// ѓoѓbѓtѓ@‚М“а—e‚рЏo—Н‚·‚й
+	// гѓђгѓѓгѓ•г‚ЎгЃ®е†…е®№г‚’е‡єеЉ›гЃ™г‚‹
 	virtual ULONG WriteNextData( const BYTE * ptrBuffer, ULONG nBytes ) = 0 ;
 
-	// ѓ‰ѓ“ѓЊѓ“ѓOѓXѓKѓ“ѓ}•„Ќ†‚Й•„Ќ†‰»‚µ‚ЅЌЫ‚МѓTѓCѓYЃiѓrѓbѓgђ”Ѓj‚рЊvЋZ
+	// гѓ©гѓігѓ¬гѓіг‚°г‚№г‚¬гѓігѓћз¬¦еЏ·гЃ«з¬¦еЏ·еЊ–гЃ—гЃџйљ›гЃ®г‚µг‚¤г‚єпј€гѓ“гѓѓгѓ€ж•°пј‰г‚’иЁ€з®—
 	static int TryEncodeGammaCodes( const INT * ptrSrc, int nCount ) ;
-	// ѓ‰ѓ“ѓЊѓ“ѓOѓXѓKѓ“ѓ}•„Ќ†‚Й•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// гѓ©гѓігѓ¬гѓіг‚°г‚№г‚¬гѓігѓћз¬¦еЏ·гЃ«з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeGammaCodes( const INT * ptrSrc, int nCount ) ;
 
-	// RL-MTF-G •„Ќ†‚М•„Ќ†‰»‚МЏЂ”х‚р‚·‚й
+	// RL-MTF-G з¬¦еЏ·гЃ®з¬¦еЏ·еЊ–гЃ®жє–е‚™г‚’гЃ™г‚‹
 	void PrepareToEncodeRLMTFGCode( void ) ;
-	// RL-MTF-G •„Ќ†‚Й•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// RL-MTF-G з¬¦еЏ·гЃ«з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeRLMTFGCodes( PBYTE ptrSrc, int nCount ) ;
 
-	// ERINA •„Ќ†‚М•„Ќ†‰»‚МЏЂ”х‚р‚·‚й
+	// ERINA з¬¦еЏ·гЃ®з¬¦еЏ·еЊ–гЃ®жє–е‚™г‚’гЃ™г‚‹
 	void PrepareToEncodeERINACode( void ) ;
-	// ѓnѓtѓ}ѓ“•„Ќ†‚ЕЏo—Н‚·‚й
+	// гѓЏгѓ•гѓћгѓіз¬¦еЏ·гЃ§е‡єеЉ›гЃ™г‚‹
 	int OutAHuffmanCode( ERINA_HUFFMAN_TREE * tree, int num ) ;
-	// ’·‚і‚рѓnѓtѓ}ѓ“•„Ќ†‚ЕЏo—Н‚·‚й
+	// й•·гЃ•г‚’гѓЏгѓ•гѓћгѓіз¬¦еЏ·гЃ§е‡єеЉ›гЃ™г‚‹
 	int OutLengthHuffman( ERINA_HUFFMAN_TREE * tree, int length ) ;
-	// ERINA •„Ќ†‚Й•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// ERINA з¬¦еЏ·гЃ«з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeERINACodes( const INT * ptrSrc, int nCount ) ;
-	// ERINA •„Ќ†‚Й•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// ERINA з¬¦еЏ·гЃ«з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeERINACodesSBZL( const SBYTE * ptrSrc, int nCount ) ;
-	// ERINA •„Ќ†Ѓi256ђF—pЃj‚Й•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// ERINA з¬¦еЏ·пј€256и‰Із”Ёпј‰гЃ«з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeERINACodes256( const BYTE * ptrSrc, int nCount ) ;
 
 } ;
 
 //
-// MTF_TABLE ‚рЏ‰Љъ‰»‚·‚й
+// MTF_TABLE г‚’е€ќжњџеЊ–гЃ™г‚‹
 //////////////////////////////////////////////////////////////////////////////
 inline void RLHEncodeContext::MTF_TABLE::Initialize( void )
 {
@@ -234,7 +234,7 @@ inline void RLHEncodeContext::MTF_TABLE::Initialize( void )
 }
 
 //
-// ѓeЃ[ѓuѓ‹‚М’†‚рЊџЌх‚µ‚ДЃAMove To Front ‚рЋАЌs
+// гѓ†гѓјгѓ–гѓ«гЃ®дё­г‚’ж¤њзґўгЃ—гЃ¦гЂЃMove To Front г‚’е®џиЎЊ
 //////////////////////////////////////////////////////////////////////////////
 inline int RLHEncodeContext::MTF_TABLE::Search( BYTE p )
 {
@@ -253,7 +253,7 @@ inline int RLHEncodeContext::MTF_TABLE::Search( BYTE p )
 }
 
 //
-// ѓKѓ“ѓ}ѓRЃ[ѓh‚Й•„Ќ†‰»‚µ‚ЅЌЫ‚Мѓrѓbѓgђ”‚рЊvЋZ
+// г‚¬гѓігѓћг‚ігѓјгѓ‰гЃ«з¬¦еЏ·еЊ–гЃ—гЃџйљ›гЃ®гѓ“гѓѓгѓ€ж•°г‚’иЁ€з®—
 //////////////////////////////////////////////////////////////////////////////
 inline int RLHEncodeContext::TryOutACode( int num )
 {
@@ -270,35 +270,35 @@ inline int RLHEncodeContext::TryOutACode( int num )
 
 
 /*****************************************************************************
-                               €іЏkѓIѓuѓWѓFѓNѓg
+                               ењ§зё®г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
  *****************************************************************************/
 
 class	ERIEncoder
 {
 protected:
-	ERI_INFO_HEADER		m_EriInfHdr ;			// ‰ж‘њЏо•сѓwѓbѓ_
+	ERI_INFO_HEADER		m_EriInfHdr ;			// з”»еѓЏжѓ…е ±гѓгѓѓгѓЂ
 
-	UINT				m_nBlockSize ;			// ѓuѓЌѓbѓLѓ“ѓOѓTѓCѓY
-	ULONG				m_nBlockArea ;			// ѓuѓЌѓbѓN–КђП
-	ULONG				m_nBlockSamples ;		// ѓuѓЌѓbѓN‚МѓTѓ“ѓvѓ‹ђ”
-	UINT				m_nChannelCount ;		// ѓ`ѓѓѓlѓ‹ђ”
-	ULONG				m_nWidthBlocks ;		// ‰ж‘њ‚М•ќЃiѓuѓЌѓbѓNђ”Ѓj
-	ULONG				m_nHeightBlocks ;		// ‰ж‘њ‚МЌ‚‚іЃiѓuѓЌѓbѓNђ”Ѓj
+	UINT				m_nBlockSize ;			// гѓ–гѓ­гѓѓг‚­гѓіг‚°г‚µг‚¤г‚є
+	ULONG				m_nBlockArea ;			// гѓ–гѓ­гѓѓг‚Їйќўз©Ќ
+	ULONG				m_nBlockSamples ;		// гѓ–гѓ­гѓѓг‚ЇгЃ®г‚µгѓігѓ—гѓ«ж•°
+	UINT				m_nChannelCount ;		// гѓЃгѓЈгѓЌгѓ«ж•°
+	ULONG				m_nWidthBlocks ;		// з”»еѓЏгЃ®е№…пј€гѓ–гѓ­гѓѓг‚Їж•°пј‰
+	ULONG				m_nHeightBlocks ;		// з”»еѓЏгЃ®й«гЃ•пј€гѓ–гѓ­гѓѓг‚Їж•°пј‰
 
-	UINT				m_nSrcBytesPerPixel ;	// 1ѓsѓNѓZѓ‹‚МѓoѓCѓgђ”
+	UINT				m_nSrcBytesPerPixel ;	// 1гѓ”г‚Їг‚»гѓ«гЃ®гѓђг‚¤гѓ€ж•°
 
-	PINT				m_ptrColumnBuf ;		// —сѓoѓbѓtѓ@
-	PINT				m_ptrLineBuf ;			// Ќsѓoѓbѓtѓ@
-	PINT				m_ptrBuffer1 ;			// “а•”ѓoѓbѓtѓ@
+	PINT				m_ptrColumnBuf ;		// е€—гѓђгѓѓгѓ•г‚Ў
+	PINT				m_ptrLineBuf ;			// иЎЊгѓђгѓѓгѓ•г‚Ў
+	PINT				m_ptrBuffer1 ;			// е†…йѓЁгѓђгѓѓгѓ•г‚Ў
 	PINT				m_ptrBuffer2 ;
-	int					m_nChannelDepth ;		// ѓ`ѓѓѓlѓ‹‚Мѓrѓbѓgђ[“x
+	int					m_nChannelDepth ;		// гѓЃгѓЈгѓЌгѓ«гЃ®гѓ“гѓѓгѓ€ж·±еє¦
 
-	PINT				m_pArrangeTable[4] ;	// ѓTѓ“ѓvѓЉѓ“ѓOѓeЃ[ѓuѓ‹
+	PINT				m_pArrangeTable[4] ;	// г‚µгѓігѓ—гѓЄгѓіг‚°гѓ†гѓјгѓ–гѓ«
 
-	PBYTE				m_ptrOperations ;		// ѓIѓyѓЊЃ[ѓVѓ‡ѓ“ѓeЃ[ѓuѓ‹
-	PINT				m_ptrDstBuffer ;		// ѓfѓBѓXѓeѓBѓlЃ[ѓVѓ‡ѓ“ѓoѓbѓtѓ@
+	PBYTE				m_ptrOperations ;		// г‚Єгѓљгѓ¬гѓјг‚·гѓ§гѓігѓ†гѓјгѓ–гѓ«
+	PINT				m_ptrDstBuffer ;		// гѓ‡г‚Јг‚№гѓ†г‚ЈгѓЌгѓјг‚·гѓ§гѓігѓђгѓѓгѓ•г‚Ў
 
-	ERINA_HUFFMAN_TREE *	m_pHuffmanTree ;	// ѓnѓtѓ}ѓ“–Ш
+	ERINA_HUFFMAN_TREE *	m_pHuffmanTree ;	// гѓЏгѓ•гѓћгѓіжњЁ
 
 public:
 	typedef	void (ERIEncoder::*PFUNC_COLOR_OPRATION)( void ) ;
@@ -310,85 +310,85 @@ public:
 	typedef	void (ERIEncoder::*PFUNC_BLOCK_SCALING)( void ) ;
 
 protected:
-	UINT				m_nBlocksetCount ;		// 1ѓuѓЌѓbѓNѓZѓbѓg‚МѓuѓЌѓbѓNђ”
-	PFUNC_BLOCK_SCALING	m_pfnBlockScaling ;		// ѓuѓЌѓbѓNѓXѓPЃ[ѓЉѓ“ѓOЉЦђ”
+	UINT				m_nBlocksetCount ;		// 1гѓ–гѓ­гѓѓг‚Їг‚»гѓѓгѓ€гЃ®гѓ–гѓ­гѓѓг‚Їж•°
+	PFUNC_BLOCK_SCALING	m_pfnBlockScaling ;		// гѓ–гѓ­гѓѓг‚Їг‚№г‚±гѓјгѓЄгѓіг‚°й–ўж•°
 
-	REAL32 *			m_ptrBuffer3[4][4] ;	// “а•”ѓoѓbѓtѓ@
+	REAL32 *			m_ptrBuffer3[4][4] ;	// е†…йѓЁгѓђгѓѓгѓ•г‚Ў
 	REAL32 *			m_ptrBuffer4[16] ;
 	REAL32 *			m_ptrBuffer5[16] ;
-	REAL32 *			m_ptrWorkDCT1 ;			// DCT •ПЉ·—pЌм‹Ж—М€ж
+	REAL32 *			m_ptrWorkDCT1 ;			// DCT е¤‰жЏ›з”ЁдЅњжҐ­й еџџ
 	REAL32 *			m_ptrWorkDCT2 ;
-	INT					m_nDCDiffBuffer[16] ;	// DC ђ¬•ЄЌ·•Є—pѓoѓbѓtѓ@
+	INT					m_nDCDiffBuffer[16] ;	// DC ж€ђе€†е·®е€†з”Ёгѓђгѓѓгѓ•г‚Ў
 
-	PINT				m_ptrTableDC ;			// ’ј—¬ђ¬•Є
+	PINT				m_ptrTableDC ;			// з›ґжµЃж€ђе€†
 
 public:
 	struct	PARAMETER
 	{
-		REAL32			m_rYScaleDC ;			// ‹P“x’ј—¬ђ¬•Є‚М—КЋq‰»ЊWђ”
-		REAL32			m_rCScaleDC ;			// ђFЌ·’ј—¬ђ¬•Є‚М—КЋq‰»ЊWђ”
-		REAL32			m_rYScaleLow ;			// ‹P“x’бЋь”gђ¬•Є‚М—КЋq‰»ЊWђ”
-		REAL32			m_rCScaleLow ;			// ђFЌ·’бЋь”gђ¬•Є‚М—КЋq‰»ЊWђ”
-		REAL32			m_rYScaleHigh ;			// ‹P“xЌ‚Ћь”gђ¬•Є‚М—КЋq‰»ЊWђ”
-		REAL32			m_rCScaleHigh ;			// ђFЌ·Ќ‚Ћь”gђ¬•Є‚М—КЋq‰»ЊWђ”
-		int				m_nLowThreshold ;		// ‹P“x’бЋь”gђ¬•Є‚Ми‡’l
-		int				m_nHighThreshold ;		// ‹P“xЌ‚Ћь”gђ¬•Є‚Ми‡’l
+		REAL32			m_rYScaleDC ;			// ијќеє¦з›ґжµЃж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		REAL32			m_rCScaleDC ;			// и‰Іе·®з›ґжµЃж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		REAL32			m_rYScaleLow ;			// ијќеє¦дЅЋе‘Ёжіўж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		REAL32			m_rCScaleLow ;			// и‰Іе·®дЅЋе‘Ёжіўж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		REAL32			m_rYScaleHigh ;			// ијќеє¦й«е‘Ёжіўж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		REAL32			m_rCScaleHigh ;			// и‰Іе·®й«е‘Ёжіўж€ђе€†гЃ®й‡Џе­ђеЊ–дї‚ж•°
+		int				m_nLowThreshold ;		// ијќеє¦дЅЋе‘Ёжіўж€ђе€†гЃ®й–ѕеЂ¤
+		int				m_nHighThreshold ;		// ијќеє¦й«е‘Ёжіўж€ђе€†гЃ®й–ѕеЂ¤
 
 		PARAMETER( void ) ;
 	} ;
 protected:
-	PARAMETER			m_parameter ;			// €іЏkѓpѓ‰ѓЃЃ[ѓ^
+	PARAMETER			m_parameter ;			// ењ§зё®гѓ‘гѓ©гѓЎгѓјг‚ї
 
 	static PFUNC_COLOR_OPRATION	m_pfnColorOperation[0x10] ;
 
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	ERIEncoder( void ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~ERIEncoder( void ) ;
 
-	// Џ‰Љъ‰»Ѓiѓpѓ‰ѓЃЃ[ѓ^‚МђЭ’иЃj
+	// е€ќжњџеЊ–пј€гѓ‘гѓ©гѓЎгѓјг‚їгЃ®иЁ­е®љпј‰
 	virtual int Initialize( const ERI_INFO_HEADER & infhdr ) ;
-	// ЏI—№ЃiѓЃѓ‚ѓЉ‚М‰р•ъ‚И‚ЗЃj
+	// зµ‚дє†пј€гѓЎгѓўгѓЄгЃ®и§Јж”ѕгЃЄгЃ©пј‰
 	virtual void Delete( void ) ;
-	// ‰ж‘њ‚р€іЏk
+	// з”»еѓЏг‚’ењ§зё®
 	virtual int EncodeImage
 		( const RASTER_IMAGE_INFO & srcimginf,
 			RLHEncodeContext & context, DWORD fdwFlags = 0x0021 ) ;
-	// €іЏkѓIѓvѓVѓ‡ѓ“‚рђЭ’и
+	// ењ§зё®г‚Єгѓ—г‚·гѓ§гѓіг‚’иЁ­е®љ
 	void SetCompressionParameter( const PARAMETER & parameter ) ;
 
 protected:
-	// ѓTѓ“ѓvѓЉѓ“ѓOѓeЃ[ѓuѓ‹‚МЏ‰Љъ‰»
+	// г‚µгѓігѓ—гѓЄгѓіг‚°гѓ†гѓјгѓ–гѓ«гЃ®е€ќжњџеЊ–
 	void InitializeSamplingTable( void ) ;
-	// ѓtѓ‹ѓJѓ‰Ѓ[‰ж‘њ‚М€іЏk
+	// гѓ•гѓ«г‚«гѓ©гѓјз”»еѓЏгЃ®ењ§зё®
 	int EncodeTrueColorImage
 		( const RASTER_IMAGE_INFO & imginf,
 			RLHEncodeContext & context, DWORD fdwFlags ) ;
-	// ѓtѓ‹ѓJѓ‰Ѓ[‰ж‘њ‚М€іЏk
+	// гѓ•гѓ«г‚«гѓ©гѓјз”»еѓЏгЃ®ењ§зё®
 	int EncodeTrueColorImageII
 		( const RASTER_IMAGE_INFO & imginf,
 			RLHEncodeContext & context, DWORD fdwFlags ) ;
-	// ѓpѓЊѓbѓg‰ж‘њ‚М€іЏk
+	// гѓ‘гѓ¬гѓѓгѓ€з”»еѓЏгЃ®ењ§зё®
 	int EncodePaletteImage
 		( const RASTER_IMAGE_INFO & imginf, RLHEncodeContext & context ) ;
 
-	// Ќ·•ЄЏ€—ќ
+	// е·®е€†е‡¦зђ†
 	void DifferentialOperation( LONG nAllBlockLines, PINT * ptrNextLineBuf ) ;
-	// ѓIѓyѓЊЃ[ѓVѓ‡ѓ“ѓRЃ[ѓh‚рЋж“ѕ
+	// г‚Єгѓљгѓ¬гѓјг‚·гѓ§гѓіг‚ігѓјгѓ‰г‚’еЏ–еѕ—
 	DWORD DecideOperationCode
 		( int nCompressMode, LONG nAllBlockLines, PINT * ptrNextLineBuf ) ;
 
-	// ѓ`ѓѓѓlѓ‹‚Мѓrѓbѓgђ[“x‚рЋж“ѕ‚·‚й
+	// гѓЃгѓЈгѓЌгѓ«гЃ®гѓ“гѓѓгѓ€ж·±еє¦г‚’еЏ–еѕ—гЃ™г‚‹
 	virtual int GetChannelDepth
 		( DWORD fdwFormatType, DWORD dwBitsPerPixel ) ;
-	// Ћw’и‚Мѓrѓbѓgђ[“x‚ЙѓfЃ[ѓ^‚рђі‹K‰»‚·‚й
+	// жЊ‡е®љгЃ®гѓ“гѓѓгѓ€ж·±еє¦гЃ«гѓ‡гѓјг‚їг‚’ж­Ји¦ЏеЊ–гЃ™г‚‹
 	void NormalizeWithDepth( PINT ptrDst, PINT ptrSrc, int nCount ) ;
-	// ‰ж‘њ‚рѓTѓ“ѓvѓЉѓ“ѓO‚·‚йЉЦђ”‚Ц‚Мѓ|ѓCѓ“ѓ^‚рЋж“ѕ‚·‚й
+	// з”»еѓЏг‚’г‚µгѓігѓ—гѓЄгѓіг‚°гЃ™г‚‹й–ўж•°гЃёгЃ®гѓќг‚¤гѓіг‚їг‚’еЏ–еѕ—гЃ™г‚‹
 	virtual PFUNC_SAMPLING GetSamplingFunc
 		( DWORD fdwFormatType, DWORD dwBitsPerPixel ) ;
 
-	// ѓJѓ‰Ѓ[ѓIѓyѓЊЃ[ѓVѓ‡ѓ“ЉЦђ”ЊQ
+	// г‚«гѓ©гѓјг‚Єгѓљгѓ¬гѓјг‚·гѓ§гѓій–ўж•°зѕ¤
 	void ColorOperation0000( void ) ;
 	void ColorOperation0101( void ) ;
 	void ColorOperation0110( void ) ;
@@ -400,61 +400,61 @@ protected:
 	void ColorOperation1110( void ) ;
 	void ColorOperation1111( void ) ;
 
-	// ѓOѓЊѓC‰ж‘њ‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// г‚°гѓ¬г‚¤з”»еѓЏгЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingGray8
 		( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGB‰ж‘њ(15ѓrѓbѓg)‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// RGBз”»еѓЏ(15гѓ“гѓѓгѓ€)гЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingRGB16
 		( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGB‰ж‘њ‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// RGBз”»еѓЏгЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingRGB24
 		( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGBA‰ж‘њ‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// RGBAз”»еѓЏгЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingRGBA32
 		( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight ) ;
 
 protected:
-	// ѓTѓ“ѓvѓЉѓ“ѓOѓeЃ[ѓuѓ‹‚МЏ‰Љъ‰»
+	// г‚µгѓігѓ—гѓЄгѓіг‚°гѓ†гѓјгѓ–гѓ«гЃ®е€ќжњџеЊ–
 	void InitializeZigZagTable( void ) ;
-	// ѓtѓ‹ѓJѓ‰Ѓ[‰ж‘њ‚М€іЏk
+	// гѓ•гѓ«г‚«гѓ©гѓјз”»еѓЏгЃ®ењ§зё®
 	int EncodeTrueColorImageDCT
 		( const RASTER_IMAGE_INFO & imginf,
 			RLHEncodeContext & context, DWORD fdwFlags ) ;
 
-	// ‰ж‘њ‚рѓTѓ“ѓvѓЉѓ“ѓO‚·‚йЉЦђ”‚Ц‚Мѓ|ѓCѓ“ѓ^‚рЋж“ѕ‚·‚й
+	// з”»еѓЏг‚’г‚µгѓігѓ—гѓЄгѓіг‚°гЃ™г‚‹й–ўж•°гЃёгЃ®гѓќг‚¤гѓіг‚їг‚’еЏ–еѕ—гЃ™г‚‹
 	virtual PFUNC_SAMPLINGII GetSamplingFuncII
 		( DWORD fdwFormatType, DWORD dwBitsPerPixel ) ;
 
-	// RGB‰ж‘њ‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// RGBз”»еѓЏгЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingRGB24II
 		( REAL32 * ptrBuffer[], PBYTE ptrSrc,
 			LONG nLineBytes, int nWidth, int nHeight ) ;
-	// RGBA‰ж‘њ‚МѓTѓ“ѓvѓЉѓ“ѓO
+	// RGBAз”»еѓЏгЃ®г‚µгѓігѓ—гѓЄгѓіг‚°
 	void SamplingRGBA32II
 		( REAL32 * ptrBuffer[], PBYTE ptrSrc,
 			LONG nLineBytes, int nWidth, int nHeight ) ;
-	// ”ј’[—М€ж‚ЙЋw’и’l‚рђЭ’и
+	// еЌЉз«Їй еџџгЃ«жЊ‡е®љеЂ¤г‚’иЁ­е®љ
 	void FillOddArea
 		( REAL32 * ptrBuffer, int nWidth, int nHeight, REAL32 rFill ) ;
 
-	// RGB -> YUV •ПЉ·ЉЦђ”
+	// RGB -> YUV е¤‰жЏ›й–ўж•°
 	void ConvertRGBtoYUV( void ) ;
 
-	// 4:4:4 ѓXѓPЃ[ѓЉѓ“ѓO
+	// 4:4:4 г‚№г‚±гѓјгѓЄгѓіг‚°
 	void BlockScaling444( void ) ;
-	// 4:2:2 ѓXѓPЃ[ѓЉѓ“ѓO
+	// 4:2:2 г‚№г‚±гѓјгѓЄгѓіг‚°
 	void BlockScaling422( void ) ;
-	// 4:1:1 ѓXѓPЃ[ѓЉѓ“ѓO
+	// 4:1:1 г‚№г‚±гѓјгѓЄгѓіг‚°
 	void BlockScaling411( void ) ;
 
-	// DCT •ПЉ·‚рЋ{‚·
+	// DCT е¤‰жЏ›г‚’ж–ЅгЃ™
 	void PerformDCT( void ) ;
 
-	// —КЋq‰»‚рЋ{‚·
+	// й‡Џе­ђеЊ–г‚’ж–ЅгЃ™
 	void ArrangeAndQuantumize( BYTE bytCoefficient[] ) ;
 
 protected:
-	// “WЉJђiЌsЏу‹µ’К’mЉЦђ”
+	// е±•й–‹йЂІиЎЊзЉ¶жіЃйЂљзџҐй–ўж•°
 	virtual int OnEncodedBlock( LONG line, LONG column ) ;
 	virtual int OnEncodedLine( LONG line ) ;
 
@@ -467,24 +467,24 @@ protected:
 
 
 /*****************************************************************************
-                     ѓtѓ@ѓCѓ‹ѓXѓgѓЉЃ[ѓЂѓRѓ“ѓeѓLѓXѓg
+                     гѓ•г‚Ўг‚¤гѓ«г‚№гѓ€гѓЄгѓјгѓ г‚ігѓігѓ†г‚­г‚№гѓ€
  *****************************************************************************/
 
 class	EFileEncodeContext	: public	RLHEncodeContext
 {
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	EFileEncodeContext( EWriteFileObj * pFileObj, ULONG nBufferingSize ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~EFileEncodeContext( void ) ;
 
 protected:
 	EWriteFileObj *	m_pFileObj ;
 
 public:
-	// Ћџ‚МѓfЃ[ѓ^‚рЏ‘‚«Џo‚·
+	// ж¬ЎгЃ®гѓ‡гѓјг‚їг‚’ж›ёгЃЌе‡єгЃ™
 	virtual ULONG WriteNextData( const BYTE * ptrBuffer, ULONG nBytes ) ;
-	// ѓtѓ@ѓCѓ‹ѓIѓuѓWѓFѓNѓg‚рђЭ’и‚·‚й
+	// гѓ•г‚Ўг‚¤гѓ«г‚Єгѓ–г‚ёг‚§г‚Їгѓ€г‚’иЁ­е®љгЃ™г‚‹
 	void AttachFileObject( EWriteFileObj * pFileObj ) ;
 
 } ;

@@ -1,25 +1,25 @@
 
 ; ****************************************************************************
 ;                        E R I N A - L i b r a r y
-;                                                      ÅIXV 2000/04/06
+;                                                      æœ€çµ‚æ›´æ–° 2000/04/06
 ; ----------------------------------------------------------------------------
 ;         Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
 ; ****************************************************************************
 
 
 ;
-;	ˆ³kƒRƒ“ƒeƒLƒXƒg
+;	åœ§ç¸®ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 ; ----------------------------------------------------------------------------
 
 RLHEncodeContext	Struct
 
-pvfnTable		PVOID	?	; ‰¼‘zŠÖ”ƒe[ƒuƒ‹
+pvfnTable		PVOID	?	; ä»®æƒ³é–¢æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 
-m_nIntBufCount		SDWord	?	; ’†ŠÔ“ü—Íƒoƒbƒtƒ@‚É’~Ï‚³‚ê‚Ä‚¢‚éƒrƒbƒg”
-m_dwIntBuffer		DWord	?	; ’†ŠÔ“ü—Íƒoƒbƒtƒ@
-m_nBufferingSize	DWord	?	; ƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚éƒoƒCƒg”
-m_nBufCount		DWord	?	; ƒoƒbƒtƒ@‚É’~Ï‚³‚ê‚Ä‚¢‚éƒoƒCƒg”
-m_ptrBuffer		PBYTE	?	; o—Íƒoƒbƒtƒ@‚Ìæ“ª‚Ö‚Ìƒ|ƒCƒ“ƒ^
+m_nIntBufCount		SDWord	?	; ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡ã«è“„ç©ã•ã‚Œã¦ã„ã‚‹ãƒ“ãƒƒãƒˆæ•°
+m_dwIntBuffer		DWord	?	; ä¸­é–“å…¥åŠ›ãƒãƒƒãƒ•ã‚¡
+m_nBufferingSize	DWord	?	; ãƒãƒƒãƒ•ã‚¡ãƒªãƒ³ã‚°ã™ã‚‹ãƒã‚¤ãƒˆæ•°
+m_nBufCount		DWord	?	; ãƒãƒƒãƒ•ã‚¡ã«è“„ç©ã•ã‚Œã¦ã„ã‚‹ãƒã‚¤ãƒˆæ•°
+m_ptrBuffer		PBYTE	?	; å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®å…ˆé ­ã¸ã®ãƒã‚¤ãƒ³ã‚¿
 
 m_pMTFTable		PMTF_TABLE	101H Dup( ? )
 
@@ -35,36 +35,36 @@ VFI_WriteNextData	Equ	4
 
 
 ;
-;	ˆ³kƒIƒuƒWƒFƒNƒg
+;	åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 ; ----------------------------------------------------------------------------
 
 ERIEncoder		Struct
 
-pvfnTable		PVOID	?		; ‰¼‘zŠÖ”ƒe[ƒuƒ‹
+pvfnTable		PVOID	?		; ä»®æƒ³é–¢æ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 
-m_EriInfHdr		ERI_INFO_HEADER	{ }	; ‰æ‘œî•ñƒwƒbƒ_
+m_EriInfHdr		ERI_INFO_HEADER	{ }	; ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€
 
-m_nBlockSize		DWord	?		; ƒuƒƒbƒLƒ“ƒOƒTƒCƒY
-m_nBlockArea		DWord	?		; ƒuƒƒbƒN–ÊÏ
-m_nBlockSamples		DWord	?		; ƒuƒƒbƒN‚ÌƒTƒ“ƒvƒ‹”
-m_nChannelCount		DWord	?		; ƒ`ƒƒƒlƒ‹”
-m_nWidthBlocks		DWord	?		; ‰æ‘œ‚Ì•iƒuƒƒbƒN”j
-m_nHeightBlocks		DWord	?		; ‰æ‘œ‚Ì‚‚³iƒuƒƒbƒN”j
+m_nBlockSize		DWord	?		; ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã‚µã‚¤ã‚º
+m_nBlockArea		DWord	?		; ãƒ–ãƒ­ãƒƒã‚¯é¢ç©
+m_nBlockSamples		DWord	?		; ãƒ–ãƒ­ãƒƒã‚¯ã®ã‚µãƒ³ãƒ—ãƒ«æ•°
+m_nChannelCount		DWord	?		; ãƒãƒ£ãƒãƒ«æ•°
+m_nWidthBlocks		DWord	?		; ç”»åƒã®å¹…ï¼ˆãƒ–ãƒ­ãƒƒã‚¯æ•°ï¼‰
+m_nHeightBlocks		DWord	?		; ç”»åƒã®é«˜ã•ï¼ˆãƒ–ãƒ­ãƒƒã‚¯æ•°ï¼‰
 
-m_nSrcBytesPerPixel	DWord	?		; 1ƒsƒNƒZƒ‹‚ÌƒoƒCƒg”
+m_nSrcBytesPerPixel	DWord	?		; 1ãƒ”ã‚¯ã‚»ãƒ«ã®ãƒã‚¤ãƒˆæ•°
 
-m_ptrColumnBuf		PINT	?		; —ñƒoƒbƒtƒ@
-m_ptrLineBuf		PINT	?		; sƒoƒbƒtƒ@
-m_ptrBuffer1		PINT	?		; “à•”ƒoƒbƒtƒ@
+m_ptrColumnBuf		PINT	?		; åˆ—ãƒãƒƒãƒ•ã‚¡
+m_ptrLineBuf		PINT	?		; è¡Œãƒãƒƒãƒ•ã‚¡
+m_ptrBuffer1		PINT	?		; å†…éƒ¨ãƒãƒƒãƒ•ã‚¡
 m_ptrBuffer2		PINT	?
-m_nChannelDepth		SDWord	?		; ƒ`ƒƒƒlƒ‹‚Ìƒrƒbƒg[“x
+m_nChannelDepth		SDWord	?		; ãƒãƒ£ãƒãƒ«ã®ãƒ“ãƒƒãƒˆæ·±åº¦
 
-m_pArrangeTable		PINT	4 Dup( ? )	; ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹
+m_pArrangeTable		PINT	4 Dup( ? )	; ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«
 
-m_ptrOperations		PBYTE	?		; ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒe[ƒuƒ‹
-m_ptrDstBuffer		PINT	?		; ƒfƒXƒeƒBƒl[ƒVƒ‡ƒ“ƒoƒbƒtƒ@
+m_ptrOperations		PBYTE	?		; ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ãƒ¼ãƒ–ãƒ«
+m_ptrDstBuffer		PINT	?		; ãƒ‡ã‚¹ãƒ†ã‚£ãƒãƒ¼ã‚·ãƒ§ãƒ³ãƒãƒƒãƒ•ã‚¡
 
-m_pHuffmanTree		PERINA_HUFFMAN_TREE ?	; ƒnƒtƒ}ƒ“–Ø
+m_pHuffmanTree		PERINA_HUFFMAN_TREE ?	; ãƒãƒ•ãƒžãƒ³æœ¨
 
 ERIEncoder		EndS
 
@@ -73,7 +73,7 @@ PERIEncoder	TypeDef	Ptr ERIEncoder
 
 
 ;
-;	ŠÖ”ƒvƒƒgƒ^ƒCƒv
+;	é–¢æ•°ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—
 ; ----------------------------------------------------------------------------
 
 IfNDef	_BORLAND_CPP

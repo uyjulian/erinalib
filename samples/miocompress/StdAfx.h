@@ -1,6 +1,6 @@
-// stdafx.h : •W€‚ÌƒVƒXƒeƒ€ ƒCƒ“ƒNƒ‹[ƒh ƒtƒ@ƒCƒ‹A
-//            ‚Ü‚½‚ÍŽQÆ‰ñ”‚ª‘½‚­A‚©‚Â‚ ‚Ü‚è•ÏX‚³‚ê‚È‚¢
-//            ƒvƒƒWƒFƒNƒgê—p‚ÌƒCƒ“ƒNƒ‹[ƒh ƒtƒ@ƒCƒ‹‚ð‹Lq‚µ‚Ü‚·B
+// stdafx.h : æ¨™æº–ã®ã‚·ã‚¹ãƒ†ãƒ  ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ ãƒ•ã‚¡ã‚¤ãƒ«ã€
+//            ã¾ãŸã¯å‚ç…§å›žæ•°ãŒå¤šãã€ã‹ã¤ã‚ã¾ã‚Šå¤‰æ›´ã•ã‚Œãªã„
+//            ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå°‚ç”¨ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨˜è¿°ã—ã¾ã™ã€‚
 //
 
 #if !defined(AFX_STDAFX_H__B107F4B0_556F_4519_8F3D_AD2061DD7B0A__INCLUDED_)
@@ -10,13 +10,13 @@
 #pragma once
 #endif // _MSC_VER >= 1000
 
-#define VC_EXTRALEAN		// Windows ƒwƒbƒ_[‚©‚ç–w‚ÇŽg—p‚³‚ê‚È‚¢ƒXƒ^ƒbƒt‚ðœŠO‚µ‚Ü‚·B
+#define VC_EXTRALEAN		// Windows ãƒ˜ãƒƒãƒ€ãƒ¼ã‹ã‚‰æ®†ã©ä½¿ç”¨ã•ã‚Œãªã„ã‚¹ã‚¿ãƒƒãƒ•ã‚’é™¤å¤–ã—ã¾ã™ã€‚
 
-#include <afxwin.h>         // MFC ‚ÌƒRƒA‚¨‚æ‚Ñ•W€ƒRƒ“ƒ|[ƒlƒ“ƒg
-#include <afxext.h>         // MFC ‚ÌŠg’£•”•ª
-#include <afxdisp.h>        // MFC ‚Ì OLE ƒI[ƒgƒ[ƒVƒ‡ƒ“ ƒNƒ‰ƒX
+#include <afxwin.h>         // MFC ã®ã‚³ã‚¢ãŠã‚ˆã³æ¨™æº–ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
+#include <afxext.h>         // MFC ã®æ‹¡å¼µéƒ¨åˆ†
+#include <afxdisp.h>        // MFC ã® OLE ã‚ªãƒ¼ãƒˆãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ ã‚¯ãƒ©ã‚¹
 #ifndef _AFX_NO_AFXCMN_SUPPORT
-#include <afxcmn.h>			// MFC ‚Ì Windows ƒRƒ‚ƒ“ ƒRƒ“ƒgƒ[ƒ‹ ƒTƒ|[ƒg
+#include <afxcmn.h>			// MFC ã® Windows ã‚³ãƒ¢ãƒ³ ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ« ã‚µãƒãƒ¼ãƒˆ
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include <mmsystem.h>
@@ -28,6 +28,6 @@
 
 
 //{{AFX_INSERT_LOCATION}}
-// Microsoft Developer Studio ‚Í‘Os‚Ì’¼‘O‚É’Ç‰Á‚ÌéŒ¾‚ð‘}“ü‚µ‚Ü‚·B
+// Microsoft Developer Studio ã¯å‰è¡Œã®ç›´å‰ã«è¿½åŠ ã®å®£è¨€ã‚’æŒ¿å…¥ã—ã¾ã™ã€‚
 
 #endif // !defined(AFX_STDAFX_H__B107F4B0_556F_4519_8F3D_AD2061DD7B0A__INCLUDED_)

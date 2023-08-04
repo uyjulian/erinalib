@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                       Œb—‚¿‚á‚ñ‰æ‘œƒRƒ“ƒo[ƒ^[ CL
+                       æµç†ã¡ã‚ƒã‚“ç”»åƒã‚³ãƒ³ãƒãƒ¼ã‚¿ãƒ¼ CL
  -----------------------------------------------------------------------------
            Copyright (C) 20001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -11,16 +11,16 @@
 
 
 //
-// ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+// ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 int main( int argc, char * argv[] )
 {
 	//
-	// ƒ‰ƒCƒuƒ‰ƒŠ‚ğ‰Šú‰»
+	// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’åˆæœŸåŒ–
 	//
 	eriInitializeLibrary( ) ;
 	//
-	// ˆø”‚ğ‰ğÍ
+	// å¼•æ•°ã‚’è§£æ
 	//
 	MyArgument	argument ;
 	bool	fError = !argument.Interpret( argc, argv ) ;
@@ -37,19 +37,19 @@ int main( int argc, char * argv[] )
 	if ( argument.m_fEncode )
 	{
 		//
-		// ˆ³kÀs
+		// åœ§ç¸®å®Ÿè¡Œ
 		//
 		EncodeToEri( argument ) ;
 	}
 	else
 	{
 		//
-		// L’£Às
+		// ä¼¸å¼µå®Ÿè¡Œ
 		//
 		DecodeEriToBmp( argument ) ;
 	}
 	//
-	// ƒ‰ƒCƒuƒ‰ƒŠ‚ğI—¹
+	// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’çµ‚äº†
 	//
 	eriCloseLibrary( ) ;
 	//
@@ -57,62 +57,62 @@ int main( int argc, char * argv[] )
 }
 
 //
-// ƒƒS‚ğ•\¦
+// ãƒ­ã‚´ã‚’è¡¨ç¤º
 //////////////////////////////////////////////////////////////////////////////
 void PrintLogo( void )
 {
-	printf( "Œb—‚¿‚á‚ñ‰æ‘œƒRƒ“ƒo[ƒ^[ ‚b‚k version 1.02\n" ) ;
+	printf( "æµç†ã¡ã‚ƒã‚“ç”»åƒã‚³ãƒ³ãƒãƒ¼ã‚¿ãƒ¼ ï¼£ï¼¬ version 1.02\n" ) ;
 	printf( "Copyright (C) 2001 Leshade Entis. All rights reserved.\n\n" ) ;
 }
 
 //
-// ‘®‚ğ•\¦
+// æ›¸å¼ã‚’è¡¨ç¤º
 //////////////////////////////////////////////////////////////////////////////
 void PrintUsage( void )
 {
-	printf( "‘®‚PFericvt [<ƒIƒvƒVƒ‡ƒ“>...] <“ü—Íƒtƒ@ƒCƒ‹> [<o—Íƒtƒ@ƒCƒ‹>]\n" ) ;
-	printf( "‘®‚QFericvt [<ƒIƒvƒVƒ‡ƒ“>...] <“ü—Íƒtƒ@ƒCƒ‹> <o—ÍƒfƒBƒŒƒNƒgƒŠ>\n" ) ;
+	printf( "æ›¸å¼ï¼‘ï¼šericvt [<ã‚ªãƒ—ã‚·ãƒ§ãƒ³>...] <å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«> [<å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«>]\n" ) ;
+	printf( "æ›¸å¼ï¼’ï¼šericvt [<ã‚ªãƒ—ã‚·ãƒ§ãƒ³>...] <å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«> <å‡ºåŠ›ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª>\n" ) ;
 	printf( "\n" ) ;
-	printf( "ƒIƒvƒVƒ‡ƒ“G\n" ) ;
-	printf( "    -nologo : ƒƒS‚ğ•\¦‚µ‚Ü‚¹‚ñB(ƒfƒtƒHƒ‹ƒg‚Í–³w’è)\n" ) ;
-	printf( "    -time   : Š—vŠÔ‚ğŒv‘ª‚µ‚Ü‚·B(ƒfƒtƒHƒ‹ƒg‚Í–³w’è)\n" ) ;
-	printf( "    -e      : BMP ‚©‚ç ERI ƒtƒ@ƒCƒ‹‚Öˆ³k‚µ‚Ü‚·B\n" ) ;
-	printf( "    -d      : ERI ‚©‚ç BMP ƒtƒ@ƒCƒ‹‚Ö“WŠJ‚µ‚Ü‚·B(ƒfƒtƒHƒ‹ƒg)\n" ) ;
-	printf( "    -x      : Šg’£ƒtƒH[ƒ}ƒbƒg‚ğg‚Á‚Äˆ³k‚µ‚Ü‚·B(ƒfƒtƒHƒ‹ƒg)\n" ) ;
-	printf( "    -s      : •W€ƒtƒH[ƒ}ƒbƒg‚ğg‚Á‚Äˆ³k‚µ‚Ü‚·B\n" ) ;
-	printf( "    -i      : ƒuƒƒbƒN“Æ—§Œ^‚Åˆ³k‚µ‚Ü‚·B(ƒfƒtƒHƒ‹ƒg‚Í–³w’è)\n" ) ;
-	printf( "    -b<n>   : ƒuƒƒbƒN‰»ŒW”‚ğw’è‚µ‚Ü‚·B\n" ) ;
-	printf( "              n ‚Í 3 ˆÈã‚Ì®”B\n" ) ;
-	printf( "              w’è‚µ‚È‚¢‚ÆƒvƒƒOƒ‰ƒ€‚ª©“®“I‚ÉŒˆ’è‚µ‚Ü‚·B\n" ) ;
-	printf( "    -p<n>   : ˆ³kƒ‚[ƒh‚ğw’è‚µ‚Ü‚·Bn ‚Í 0 ‚©‚ç 3 ‚Ü‚Å‚Ì®”B\n" ) ;
-	printf( "              -p0 ‚ÅÅ‚ˆ³k—¦Å’á‘¬“xA-p3 ‚ÅÅ’áˆ³k—¦Å‚‘¬“x‚Æ‚È‚è‚Ü‚·B\n" ) ;
-	printf( "              ƒtƒ‹ƒJƒ‰[ˆ³k‚Ì‚Æ‚«‚Ì‚İ—LŒøBƒfƒtƒHƒ‹ƒg‚Í -p1 ‚Å‚·B\n" ) ;
+	printf( "ã‚ªãƒ—ã‚·ãƒ§ãƒ³ï¼›\n" ) ;
+	printf( "    -nologo : ãƒ­ã‚´ã‚’è¡¨ç¤ºã—ã¾ã›ã‚“ã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç„¡æŒ‡å®š)\n" ) ;
+	printf( "    -time   : æ‰€è¦æ™‚é–“ã‚’è¨ˆæ¸¬ã—ã¾ã™ã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç„¡æŒ‡å®š)\n" ) ;
+	printf( "    -e      : BMP ã‹ã‚‰ ERI ãƒ•ã‚¡ã‚¤ãƒ«ã¸åœ§ç¸®ã—ã¾ã™ã€‚\n" ) ;
+	printf( "    -d      : ERI ã‹ã‚‰ BMP ãƒ•ã‚¡ã‚¤ãƒ«ã¸å±•é–‹ã—ã¾ã™ã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ)\n" ) ;
+	printf( "    -x      : æ‹¡å¼µãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’ä½¿ã£ã¦åœ§ç¸®ã—ã¾ã™ã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ)\n" ) ;
+	printf( "    -s      : æ¨™æº–ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’ä½¿ã£ã¦åœ§ç¸®ã—ã¾ã™ã€‚\n" ) ;
+	printf( "    -i      : ãƒ–ãƒ­ãƒƒã‚¯ç‹¬ç«‹å‹ã§åœ§ç¸®ã—ã¾ã™ã€‚(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç„¡æŒ‡å®š)\n" ) ;
+	printf( "    -b<n>   : ãƒ–ãƒ­ãƒƒã‚¯åŒ–ä¿‚æ•°ã‚’æŒ‡å®šã—ã¾ã™ã€‚\n" ) ;
+	printf( "              n ã¯ 3 ä»¥ä¸Šã®æ•´æ•°ã€‚\n" ) ;
+	printf( "              æŒ‡å®šã—ãªã„ã¨ãƒ—ãƒ­ã‚°ãƒ©ãƒ ãŒè‡ªå‹•çš„ã«æ±ºå®šã—ã¾ã™ã€‚\n" ) ;
+	printf( "    -p<n>   : åœ§ç¸®ãƒ¢ãƒ¼ãƒ‰ã‚’æŒ‡å®šã—ã¾ã™ã€‚n ã¯ 0 ã‹ã‚‰ 3 ã¾ã§ã®æ•´æ•°ã€‚\n" ) ;
+	printf( "              -p0 ã§æœ€é«˜åœ§ç¸®ç‡æœ€ä½é€Ÿåº¦ã€-p3 ã§æœ€ä½åœ§ç¸®ç‡æœ€é«˜é€Ÿåº¦ã¨ãªã‚Šã¾ã™ã€‚\n" ) ;
+	printf( "              ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼åœ§ç¸®ã®ã¨ãã®ã¿æœ‰åŠ¹ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ -p1 ã§ã™ã€‚\n" ) ;
 	printf( "    -l=<parameter-file>\n" ) ;
-	printf( "            : ”ñ‰Â‹tˆ³k‚ğs‚¢‚Ü‚·B\n" ) ;
-	printf( "              parameter-file ‚É‚Íƒpƒ‰ƒ[ƒ^‚ğŠi”[‚µ‚½ƒtƒ@ƒCƒ‹–¼‚ğw’è‚µ‚Ü‚·B\n" ) ;
+	printf( "            : éå¯é€†åœ§ç¸®ã‚’è¡Œã„ã¾ã™ã€‚\n" ) ;
+	printf( "              parameter-file ã«ã¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ ¼ç´ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®šã—ã¾ã™ã€‚\n" ) ;
 }
 
 
 //
-// ƒOƒ[ƒoƒ‹•Ï”
+// ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
 //////////////////////////////////////////////////////////////////////////////
 
 int		nEncodedCount = 0 ;
 
 
 //
-// BMP ‚ğ ERI ‚Éˆ³k
+// BMP ã‚’ ERI ã«åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 void EncodeToEri( MyArgument & argument )
 {
 	//
-	// ƒtƒ@ƒCƒ‹‚ğ’T‚µ‚Ä‡Ÿˆ³k
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¢ã—ã¦é †æ¬¡åœ§ç¸®
 	//
 	WIN32_FIND_DATA	wfd ;
 	HANDLE	hFind = ::FindFirstFile( argument.m_pszSrcName, &wfd ) ;
 	if ( hFind == INVALID_HANDLE_VALUE )
 	{
-		printf( "w’è‚³‚ê‚½ƒtƒ@ƒCƒ‹‚ğŒ©‚Â‚¯‚é‚±‚Æ‚ªo—ˆ‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+		printf( "æŒ‡å®šã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¦‹ã¤ã‘ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 		return ;
 	}
 	char *	pszDir = GetPathDirectory( argument.m_pszSrcName ) ;
@@ -120,7 +120,7 @@ void EncodeToEri( MyArgument & argument )
 	do
 	{
 		//
-		// “üo—Íƒtƒ@ƒCƒ‹–¼‚ğ¶¬
+		// å…¥å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç”Ÿæˆ
 		//
 		char *	pszBmpFile = CombineString( pszDir, wfd.cFileName ) ;
 		char *	pszEriFile ;
@@ -137,7 +137,7 @@ void EncodeToEri( MyArgument & argument )
 			pszEriFile = CombineString( argument.m_pszDstName, "" ) ;
 		}
 		//
-		// ƒtƒ@ƒCƒ‹‚ğˆ³k
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’åœ§ç¸®
 		//
 		EncodeBmpToEri( pszBmpFile, pszEriFile, argument ) ;
 		//
@@ -148,48 +148,48 @@ void EncodeToEri( MyArgument & argument )
 	//
 	::eriFreeMemory( pszDir ) ;
 	//
-	printf( "\n%d –‡‚Ì‰æ‘œ‚ğˆ³k‚µ‚Ü‚µ‚½B\n\n", nEncodedCount ) ;
+	printf( "\n%d æšã®ç”»åƒã‚’åœ§ç¸®ã—ã¾ã—ãŸã€‚\n\n", nEncodedCount ) ;
 }
 
 //
-// BMP ‚ğ ERI ‚Éˆ³k
+// BMP ã‚’ ERI ã«åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 void EncodeBmpToEri
 ( const char * pszBmpFile, const char * pszEriFile, MyArgument & argument )
 {
 	//
-	// ƒtƒ@ƒCƒ‹‚Ìˆ³kŠJn
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã®åœ§ç¸®é–‹å§‹
 	//
 	char	szProgress[0x100] ;
-	sprintf( szProgress, "%s : %%d “\r", GetFilePathName( pszBmpFile ) ) ;
+	sprintf( szProgress, "%s : %%d ï¼…\r", GetFilePathName( pszBmpFile ) ) ;
 	printf( "%s : \r", GetFilePathName( pszBmpFile ) ) ;
 	//
-	// BMP ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	// BMP ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	//
 	EReadFile	rf ;
 	if ( !rf.Open( pszBmpFile ) )
 	{
-		printf( "\nƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+		printf( "\nãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 		return ;
 	}
 	MyBitmap	bmp ;
 	if ( !bmp.ReadBitmap( &rf ) )
 	{
-		printf( "\n•s³‚Èƒrƒbƒgƒ}ƒbƒvƒtƒ@ƒCƒ‹‚Å‚·B\n" ) ;
+		printf( "\nä¸æ­£ãªãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚\n" ) ;
 		return ;
 	}
 	//
-	// ERI ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ERI ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	//
 	EWriteFile	wf ;
 	ERIWriteFile	erif ;
 	if ( !wf.Open( pszEriFile ) || !erif.Open( &wf, erif.fidImage ) )
 	{
-		printf( "\no—Íƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+		printf( "\nå‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 		return ;
 	}
 	//
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğ‘‚«o‚·
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	//
 	ERI_FILE_HEADER	efh ;
 	ERI_INFO_HEADER	eih ;
@@ -258,26 +258,26 @@ void EncodeBmpToEri
 	//
 	if ( !erif.WriteHeader( efh, eih ) )
 	{
-		printf( "\nƒwƒbƒ_î•ñ‚Ì‘‚«o‚µ‚É¸”s‚µ‚Ü‚µ‚½B\n" ) ;
+		printf( "\nãƒ˜ãƒƒãƒ€æƒ…å ±ã®æ›¸ãå‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n" ) ;
 		erif.Close( ) ;
 		wf.Close( ) ;
 		return ;
 	}
 	//
-	// ƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚Ì‘‚«o‚µ
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã®æ›¸ãå‡ºã—
 	//
 	bool	fSuccessful = false ;
 	do
 	{
 		//
-		// ƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚ğŠJ‚­
+		// ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 		//
 		if ( !erif.DescendRecord( (PCUINT64)"Stream  " ) )
 		{
 			break ;
 		}
 		//
-		// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚Ì‘‚«o‚µ
+		// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã®æ›¸ãå‡ºã—
 		//
 		if ( srii.fdwFormatType & ERI_WITH_PALETTE )
 		{
@@ -294,14 +294,14 @@ void EncodeBmpToEri
 			erif.AscendRecord( ) ;
 		}
 		//
-		// ‰æ‘œƒf[ƒ^ƒŒƒR[ƒh‚ğŠJ‚­
+		// ç”»åƒãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‹ã
 		//
 		if ( !erif.DescendRecord( (PCUINT64)"ImageFrm" ) )
 		{
 			break ;
 		}
 		//
-		// ‰æ‘œƒf[ƒ^ˆ³k€”õ
+		// ç”»åƒãƒ‡ãƒ¼ã‚¿åœ§ç¸®æº–å‚™
 		//
 		EFileEncodeContext	context( &erif, 0x10000 ) ;
 		MyERIEncoder		encoder ;
@@ -320,7 +320,7 @@ void EncodeBmpToEri
 			encoder.SetCompressionParameter( argument.m_eriep ) ;
 		}
 		//
-		// ŠÔŒv‘ªŠJn
+		// æ™‚é–“è¨ˆæ¸¬é–‹å§‹
 		//
 		BOOL	fPeformanceCounter ;
 		__int64	qwFrequency, qwBeginTime ;
@@ -343,7 +343,7 @@ void EncodeBmpToEri
 			}
 		}
 		//
-		// ‰æ‘œƒf[ƒ^‚ğˆ³k
+		// ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’åœ§ç¸®
 		//
 		if ( encoder.EncodeImage( srii, context, fdwFlags ) )
 		{
@@ -357,19 +357,19 @@ void EncodeBmpToEri
 				__int64	qwEndTime, qwDurationTime ;
 				QueryPerformanceCounter( (LARGE_INTEGER*) &qwEndTime ) ;
 				qwDurationTime = qwEndTime - qwBeginTime ;
-				printf( "%s : ˆ³kŠÔ %.5f [ms]\r",
+				printf( "%s : åœ§ç¸®æ™‚é–“ %.5f [ms]\r",
 					GetFilePathName( pszBmpFile ),
 					(double) qwDurationTime * 1000.0 / qwFrequency ) ;
 			}
 			else
 			{
 				DWORD	dwDurationTime = GetTickCount( ) - dwBegintTime ;
-				printf( "%s : ˆ³kŠÔ %d [ms]\r",
+				printf( "%s : åœ§ç¸®æ™‚é–“ %d [ms]\r",
 					GetFilePathName( pszBmpFile ), dwDurationTime ) ;
 			}
 		}
 		//
-		// ƒXƒgƒŠ[ƒ€ƒŒƒR[ƒh‚ğ•Â‚¶‚é
+		// ã‚¹ãƒˆãƒªãƒ¼ãƒ ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’é–‰ã˜ã‚‹
 		//
 		erif.AscendRecord( ) ;
 		erif.AscendRecord( ) ;
@@ -388,23 +388,23 @@ void EncodeBmpToEri
 	}
 	else
 	{
-		printf( "\n“WŠJ‚É¸”s‚µ‚Ü‚µ‚½B\n" ) ;
+		printf( "\nå±•é–‹ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n" ) ;
 	}
 }
 
 //
-// ERI ‚ğ BMP ‚É“WŠJ
+// ERI ã‚’ BMP ã«å±•é–‹
 //////////////////////////////////////////////////////////////////////////////
 void DecodeEriToBmp( MyArgument & argument )
 {
 	//
-	// ƒtƒ@ƒCƒ‹‚ğ’T‚µ‚Ä‡Ÿˆ³k
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¢ã—ã¦é †æ¬¡åœ§ç¸®
 	//
 	WIN32_FIND_DATA	wfd ;
 	HANDLE	hFind = ::FindFirstFile( argument.m_pszSrcName, &wfd ) ;
 	if ( hFind == INVALID_HANDLE_VALUE )
 	{
-		printf( "w’è‚³‚ê‚½ƒtƒ@ƒCƒ‹‚ğŒ©‚Â‚¯‚é‚±‚Æ‚ªo—ˆ‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+		printf( "æŒ‡å®šã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¦‹ã¤ã‘ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 		return ;
 	}
 	int		nDecodedCount = 0 ;
@@ -412,26 +412,26 @@ void DecodeEriToBmp( MyArgument & argument )
 	do
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚Ìˆ³kŠJn
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã®åœ§ç¸®é–‹å§‹
 		//
 		char	szProgress[0x100] ;
-		sprintf( szProgress, "%s : %%d “\r", GetFilePathName( wfd.cFileName ) ) ;
+		sprintf( szProgress, "%s : %%d ï¼…\r", GetFilePathName( wfd.cFileName ) ) ;
 		printf( "%s : \r", wfd.cFileName ) ;
 		//
-		// ERI ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// ERI ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		//
 		char *	pszEriFile = CombineString( pszDir, wfd.cFileName ) ;
 		EReadFile	rf ;
 		ERIFile		erif ;
 		if ( !rf.Open( pszEriFile ) || !erif.Open( &rf ) )
 		{
-			printf( "\nƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+			printf( "\nãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 			::eriFreeMemory( pszEriFile ) ;
 			continue ;
 		}
 		::eriFreeMemory( pszEriFile ) ;
 		//
-		// “WŠJæ‚Ìƒrƒbƒgƒ}ƒbƒv‚ğì‚é
+		// å±•é–‹å…ˆã®ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚’ä½œã‚‹
 		//
 		MyBitmap	bmp ;
 		bmp.CreateBitmap
@@ -439,19 +439,19 @@ void DecodeEriToBmp( MyArgument & argument )
 				erif.m_InfoHeader.nImageWidth, erif.m_InfoHeader.nImageHeight,
 				erif.m_InfoHeader.dwBitsPerPixel, erif.m_PaletteTable ) ;
 		//
-		// ERI ‚Ì“WŠJ‚ğ€”õ‚·‚é
+		// ERI ã®å±•é–‹ã‚’æº–å‚™ã™ã‚‹
 		//
 		EFileDecodeContext	context( &erif, 0x10000 ) ;
 		MyERIDecoder		decoder ;
 		if ( decoder.Initialize( erif.m_InfoHeader ) )
 		{
-			printf( "\n“WŠJ‚Å‚«‚È‚¢Œ`®‚Å‚·B\n" ) ;
+			printf( "\nå±•é–‹ã§ããªã„å½¢å¼ã§ã™ã€‚\n" ) ;
 			erif.Close( ) ;
 			rf.Close( ) ;
 			continue ;
 		}
 		//
-		// ŠÔ‚ÌŒv‘ªŠJn
+		// æ™‚é–“ã®è¨ˆæ¸¬é–‹å§‹
 		//
 		BOOL	fPeformanceCounter ;
 		__int64	qwFrequency, qwBeginTime ;
@@ -474,11 +474,11 @@ void DecodeEriToBmp( MyArgument & argument )
 			}
 		}
 		//
-		// ERI ‚ğ“WŠJ‚·‚é
+		// ERI ã‚’å±•é–‹ã™ã‚‹
 		//
 		if ( decoder.DecodeImage( bmp.GetRasterImage(), context, false ) )
 		{
-			printf( "\n“WŠJ‚É¸”s‚µ‚Ü‚µ‚½B\n" ) ;
+			printf( "\nå±•é–‹ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n" ) ;
 			erif.Close( ) ;
 			rf.Close( ) ;
 			continue ;
@@ -491,19 +491,19 @@ void DecodeEriToBmp( MyArgument & argument )
 				__int64	qwEndTime, qwDurationTime ;
 				QueryPerformanceCounter( (LARGE_INTEGER*) &qwEndTime ) ;
 				qwDurationTime = qwEndTime - qwBeginTime ;
-				printf( "%s : “WŠJŠÔ %.5f [ms]\r",
+				printf( "%s : å±•é–‹æ™‚é–“ %.5f [ms]\r",
 					GetFilePathName( wfd.cFileName ),
 					(double) qwDurationTime * 1000.0 / qwFrequency ) ;
 			}
 			else
 			{
 				DWORD	dwDurationTime = GetTickCount( ) - dwBegintTime ;
-				printf( "%s : “WŠJŠÔ %d [ms]\r",
+				printf( "%s : å±•é–‹æ™‚é–“ %d [ms]\r",
 					GetFilePathName( wfd.cFileName ), dwDurationTime ) ;
 			}
 		}
 		//
-		// BMP ƒtƒ@ƒCƒ‹‚ğ‘‚«o‚·
+		// BMP ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ›¸ãå‡ºã™
 		//
 		EWriteFile	wf ;
 		char *	pszBmpFile ;
@@ -521,7 +521,7 @@ void DecodeEriToBmp( MyArgument & argument )
 		}
 		if ( !wf.Open( pszBmpFile ) )
 		{
-			printf( "\no—Íƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B\n" ) ;
+			printf( "\nå‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚\n" ) ;
 			::eriFreeMemory( pszBmpFile ) ;
 			continue ;
 		}
@@ -529,7 +529,7 @@ void DecodeEriToBmp( MyArgument & argument )
 		//
 		if ( !bmp.WriteBitmap( &wf ) )
 		{
-			printf( "\nBMP ƒtƒ@ƒCƒ‹‚Ì‘‚«o‚µ‚É¸”s‚µ‚Ü‚µ‚½B\n" ) ;
+			printf( "\nBMP ãƒ•ã‚¡ã‚¤ãƒ«ã®æ›¸ãå‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n" ) ;
 			continue ;
 		}
 		//
@@ -540,11 +540,11 @@ void DecodeEriToBmp( MyArgument & argument )
 	//
 	::eriFreeMemory( pszDir ) ;
 	//
-	printf( "\n%d –‡‚Ì‰æ‘œ‚ğ“WŠJ‚µ‚Ü‚µ‚½B\n\n", nDecodedCount ) ;
+	printf( "\n%d æšã®ç”»åƒã‚’å±•é–‹ã—ã¾ã—ãŸã€‚\n\n", nDecodedCount ) ;
 }
 
 //
-// ƒpƒX‚©‚çƒfƒBƒŒƒNƒgƒŠ‚ğ’Šo
+// ãƒ‘ã‚¹ã‹ã‚‰ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’æŠ½å‡º
 //////////////////////////////////////////////////////////////////////////////
 char * GetPathDirectory( const char * pszPath )
 {
@@ -570,7 +570,7 @@ char * GetPathDirectory( const char * pszPath )
 }
 
 //
-// ƒpƒX‚©‚çƒtƒ@ƒCƒ‹–¼‚ğ’Šo
+// ãƒ‘ã‚¹ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŠ½å‡º
 //////////////////////////////////////////////////////////////////////////////
 const char * GetFilePathName( const char * pszPath )
 {
@@ -593,7 +593,7 @@ const char * GetFilePathName( const char * pszPath )
 }
 
 //
-// ƒtƒ@ƒCƒ‹–¼‚©‚çƒtƒ@ƒCƒ‹ƒ^ƒCƒgƒ‹‚ğ’Šo
+// ãƒ•ã‚¡ã‚¤ãƒ«åã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒˆãƒ«ã‚’æŠ½å‡º
 //////////////////////////////////////////////////////////////////////////////
 char * GetFileNameTitle( const char * pszFileName )
 {
@@ -620,7 +620,7 @@ char * GetFileNameTitle( const char * pszFileName )
 }
 
 //
-// •¶š—ñ‚ğŒ‹‡
+// æ–‡å­—åˆ—ã‚’çµåˆ
 //////////////////////////////////////////////////////////////////////////////
 char * CombineString( const char * str1, const char * str2 )
 {
@@ -635,11 +635,11 @@ char * CombineString( const char * str1, const char * str2 )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ƒrƒbƒgƒ}ƒbƒvƒIƒuƒWƒFƒNƒg
+// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyBitmap::MyBitmap( void )
 {
@@ -647,7 +647,7 @@ MyBitmap::MyBitmap( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyBitmap::~MyBitmap( void )
 {
@@ -655,7 +655,7 @@ MyBitmap::~MyBitmap( void )
 }
 
 //
-// ‰æ‘œƒf[ƒ^æ“¾
+// ç”»åƒãƒ‡ãƒ¼ã‚¿å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 const RASTER_IMAGE_INFO & MyBitmap::GetRasterImage( void ) const
 {
@@ -663,7 +663,7 @@ const RASTER_IMAGE_INFO & MyBitmap::GetRasterImage( void ) const
 }
 
 //
-// ƒpƒŒƒbƒgƒe[ƒuƒ‹æ“¾
+// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 const RGBQUAD * MyBitmap::GetPaletteTable( void ) const
 {
@@ -671,16 +671,16 @@ const RGBQUAD * MyBitmap::GetPaletteTable( void ) const
 }
 
 //
-// ƒrƒbƒgƒ}ƒbƒvƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚İ
+// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã¿
 //////////////////////////////////////////////////////////////////////////////
 bool MyBitmap::ReadBitmap( EFileObject * pfile )
 {
 	//
-	// Œ»İ‚Ìƒf[ƒ^‚ğíœ
+	// ç¾åœ¨ã®ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
 	//
 	Delete( ) ;
 	//
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğ“Ç‚İ‚Ş
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã‚€
 	//
 	BITMAPFILEHEADER	bfh ;
 	if ( pfile->Read( &bfh, sizeof(bfh) ) < sizeof(bfh) )
@@ -692,14 +692,14 @@ bool MyBitmap::ReadBitmap( EFileObject * pfile )
 		return	false ;
 	}
 	//
-	// î•ñƒwƒbƒ_‚ğ“Ç‚İ‚Ş
+	// æƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’èª­ã¿è¾¼ã‚€
 	//
 	if ( pfile->Read( &m_bmih, sizeof(m_bmih) ) < sizeof(m_bmih) )
 	{
 		return	false ;
 	}
 	//
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚ğ“Ç‚İ‚Ş
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	//
 	unsigned int	plen = 0 ;
 	if ( m_bmih.biClrUsed != 0 )
@@ -725,7 +725,7 @@ bool MyBitmap::ReadBitmap( EFileObject * pfile )
 		return	false ;
 	}
 	//
-	// ‰æ‘œî•ñ‚ğİ’è‚·‚é
+	// ç”»åƒæƒ…å ±ã‚’è¨­å®šã™ã‚‹
 	//
 	m_rii.fdwFormatType = ERI_RGB_IMAGE ;
 	m_rii.nImageWidth = m_bmih.biWidth ;
@@ -753,7 +753,7 @@ bool MyBitmap::ReadBitmap( EFileObject * pfile )
 		}
 	}
 	//
-	// ƒrƒbƒgƒ}ƒbƒv”z—ñ‚ğ“Ç‚İ‚Ş
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—é…åˆ—ã‚’èª­ã¿è¾¼ã‚€
 	//
 	m_bmih.biSizeImage = m_rii.BytesPerLine * m_rii.nImageHeight ;
 	m_ptrBitmap = ::eriAllocateMemory( m_bmih.biSizeImage ) ;
@@ -767,18 +767,18 @@ bool MyBitmap::ReadBitmap( EFileObject * pfile )
 }
 
 //
-// ƒrƒbƒgƒ}ƒbƒvƒf[ƒ^‚ğì¬
+// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿ã‚’ä½œæˆ
 //////////////////////////////////////////////////////////////////////////////
 bool MyBitmap::CreateBitmap
 	( DWORD format, SDWORD width, SDWORD height,
 				DWORD bpp, ENTIS_PALETTE * paltbl )
 {
 	//
-	// Œ»İ‚Ìƒf[ƒ^‚ğíœ
+	// ç¾åœ¨ã®ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
 	//
 	Delete( ) ;
 	//
-	// ‰æ‘œî•ñ‚ğİ’è
+	// ç”»åƒæƒ…å ±ã‚’è¨­å®š
 	//
 	if ( height < 0 )
 	{
@@ -790,7 +790,7 @@ bool MyBitmap::CreateBitmap
 	m_rii.dwBitsPerPixel = bpp ;
 	m_rii.BytesPerLine = ((width * bpp / 8) + 0x03) & ~0x03 ;
 	//
-	// ƒrƒbƒgƒ}ƒbƒvŒ`®‚É•ÏŠ·
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—å½¢å¼ã«å¤‰æ›
 	//
 	::memset( &m_bmih, 0, sizeof(m_bmih) ) ;
 	m_bmih.biSize = sizeof(m_bmih) ;
@@ -804,12 +804,12 @@ bool MyBitmap::CreateBitmap
 		m_bmih.biClrUsed = (1 << bpp) ;
 	}
 	//
-	// ƒrƒbƒgƒ}ƒbƒvƒƒ‚ƒŠ‚ğŠm•Û
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 	//
 	m_ptrBitmap = ::eriAllocateMemory( m_bmih.biSizeImage ) ;
 	m_rii.ptrImageArray = (PBYTE) m_ptrBitmap ;
 	//
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚ğİ’è
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã‚’è¨­å®š
 	//
 	if ( format == ERI_GRAY_IMAGE )
 	{
@@ -830,7 +830,7 @@ bool MyBitmap::CreateBitmap
 }
 
 //
-// ƒrƒbƒgƒ}ƒbƒvƒtƒ@ƒCƒ‹‚ğ‘‚«o‚·
+// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ›¸ãå‡ºã™
 //////////////////////////////////////////////////////////////////////////////
 bool MyBitmap::WriteBitmap( EWriteFileObj * pfile )
 {
@@ -839,7 +839,7 @@ bool MyBitmap::WriteBitmap( EWriteFileObj * pfile )
 		return	false ;
 	}
 	//
-	// ƒtƒ@ƒCƒ‹ƒwƒbƒ_‚ğ‘‚«o‚·
+	// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	//
 	BITMAPFILEHEADER	bfh ;
 	bfh.bfType = 'MB' ;
@@ -855,14 +855,14 @@ bool MyBitmap::WriteBitmap( EWriteFileObj * pfile )
 		return	false ;
 	}
 	//
-	// î•ñƒwƒbƒ_‚ğ‘‚«o‚·
+	// æƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’æ›¸ãå‡ºã™
 	//
 	if ( pfile->Write( &m_bmih, sizeof(m_bmih) ) < sizeof(m_bmih) )
 	{
 		return	false ;
 	}
 	//
-	// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚ğ‘‚«o‚·
+	// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã‚’æ›¸ãå‡ºã™
 	//
 	if ( m_bmih.biBitCount <= 8 )
 	{
@@ -872,7 +872,7 @@ bool MyBitmap::WriteBitmap( EWriteFileObj * pfile )
 		}
 	}
 	//
-	// ƒrƒbƒgƒ}ƒbƒv”z—ñ‚ğ“Ç‚İ‚Ş
+	// ãƒ“ãƒƒãƒˆãƒãƒƒãƒ—é…åˆ—ã‚’èª­ã¿è¾¼ã‚€
 	//
 	if ( pfile->Write( m_ptrBitmap, m_bmih.biSizeImage ) < m_bmih.biSizeImage )
 	{
@@ -883,7 +883,7 @@ bool MyBitmap::WriteBitmap( EWriteFileObj * pfile )
 }
 
 //
-// ƒf[ƒ^‚ğíœ
+// ãƒ‡ãƒ¼ã‚¿ã‚’å‰Šé™¤
 //////////////////////////////////////////////////////////////////////////////
 void MyBitmap::Delete( void )
 {
@@ -896,11 +896,11 @@ void MyBitmap::Delete( void )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”ƒIƒuƒWƒFƒNƒg
+// ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyArgument::MyArgument( void )
 {
@@ -920,7 +920,7 @@ MyArgument::MyArgument( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyArgument::~MyArgument( void )
 {
@@ -931,12 +931,12 @@ MyArgument::~MyArgument( void )
 }
 
 //
-// ˆø”‰ğÍ
+// å¼•æ•°è§£æ
 //////////////////////////////////////////////////////////////////////////////
 bool MyArgument::Interpret( int argc, const char *const * argv )
 {
 	//
-	// ƒIƒvƒVƒ‡ƒ“‰ğÍ
+	// ã‚ªãƒ—ã‚·ãƒ§ãƒ³è§£æ
 	//
 	int		i = 1 ;
 	while ( i < argc )
@@ -1066,7 +1066,7 @@ bool MyArgument::Interpret( int argc, const char *const * argv )
 		++ i ;
 	}
 	//
-	// “üo—Íƒtƒ@ƒCƒ‹–¼æ“¾
+	// å…¥å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åå–å¾—
 	//
 	if ( argc < i + 1 )
 	{
@@ -1087,7 +1087,7 @@ bool MyArgument::Interpret( int argc, const char *const * argv )
 		m_pszDstName = argv[i + 1] ;
 	}
 	//
-	// o—Íæ‚ªƒfƒBƒŒƒNƒgƒŠ‚©‚Ç‚¤‚©”»•Ê
+	// å‡ºåŠ›å…ˆãŒãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‹ã©ã†ã‹åˆ¤åˆ¥
 	//
 	for ( i = 0; m_pszDstName[i] != '\0'; i ++ )
 		;
@@ -1097,18 +1097,18 @@ bool MyArgument::Interpret( int argc, const char *const * argv )
 		m_fDstIsDir = true ;
 	}
 	//
-	// ³íI—¹
+	// æ­£å¸¸çµ‚äº†
 	//
 	return	true ;
 }
 
 //
-// ”ñ‰Â‹tˆ³kƒpƒ‰ƒ[ƒ^‚ğİ’è
+// éå¯é€†åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 {
 	//
-	// ƒTƒ“ƒvƒŠƒ“ƒOƒtƒ‰ƒO‚ğæ“¾
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ•ãƒ©ã‚°ã‚’å–å¾—
 	//
 	char	szBuf[0x100] ;
 	if ( ::GetPrivateProfileString
@@ -1134,7 +1134,7 @@ bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 		return	false ;
 	}
 	//
-	// ƒuƒƒbƒLƒ“ƒOƒTƒCƒY‚ğæ“¾
+	// ãƒ–ãƒ­ãƒƒã‚­ãƒ³ã‚°ã‚µã‚¤ã‚ºã‚’å–å¾—
 	//
 	if ( ::GetPrivateProfileString
 		( "parameter", "blocking_degree",
@@ -1151,7 +1151,7 @@ bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 		return	false ;
 	}
 	//
-	// —Êq‰»ŒW”‚ğæ“¾
+	// é‡å­åŒ–ä¿‚æ•°ã‚’å–å¾—
 	//
 	if ( !GetParameter( &m_eriep.m_rYScaleDC,
 			pszIniFile, "parameter", "y_dc_scale", "1.0" ) )
@@ -1184,7 +1184,7 @@ bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 		return	false ;
 	}
 	//
-	// è‡’l‚ğæ“¾
+	// é–¾å€¤ã‚’å–å¾—
 	//
 	if ( ::GetPrivateProfileString
 		( "parameter", "low_threshold",
@@ -1207,7 +1207,7 @@ bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 		return	false ;
 	}
 	//
-	// ”ñ‰Â‹tˆ³k‚Éİ’è
+	// éå¯é€†åœ§ç¸®ã«è¨­å®š
 	//
 	m_fEncode = true ;
 	m_fEnhancedMode = true ;
@@ -1217,7 +1217,7 @@ bool MyArgument::LoadCompressionParameter( const char * pszIniFile )
 }
 
 //
-// ini ƒtƒ@ƒCƒ‹‚©‚çw’è‚Ìƒpƒ‰ƒ[ƒ^‚ğæ“¾‚·‚é
+// ini ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰æŒ‡å®šã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 bool MyArgument::GetParameter
 	( REAL32 * val,
@@ -1234,7 +1234,7 @@ bool MyArgument::GetParameter
 }
 
 //
-// •¶š—ñ‚©‚ç”’l‚É•ÏŠ·
+// æ–‡å­—åˆ—ã‹ã‚‰æ•°å€¤ã«å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 bool MyArgument::Value( const char * str, int * val )
 {
@@ -1259,7 +1259,7 @@ bool MyArgument::Value( const char * str, int * val )
 }
 
 //
-// •¶š—ñ‚©‚çÀ”‚É•ÏŠ·
+// æ–‡å­—åˆ—ã‹ã‚‰å®Ÿæ•°ã«å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 bool MyArgument::Real( const char * str, REAL32 * val )
 {
@@ -1307,11 +1307,11 @@ bool MyArgument::Real( const char * str, REAL32 * val )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ˆ³kƒIƒuƒWƒFƒNƒg
+// åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyERIEncoder::MyERIEncoder( void )
 {
@@ -1320,14 +1320,14 @@ MyERIEncoder::MyERIEncoder( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyERIEncoder::~MyERIEncoder( void )
 {
 }
 
 //
-// isó‹µ•¶š—ñ‚ğŠÖ˜A•t‚¯‚é
+// é€²è¡ŒçŠ¶æ³æ–‡å­—åˆ—ã‚’é–¢é€£ä»˜ã‘ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MyERIEncoder::AttachProgressFormat( const char * pszPrgFormat )
 {
@@ -1335,7 +1335,7 @@ void MyERIEncoder::AttachProgressFormat( const char * pszPrgFormat )
 }
 
 //
-// ‰æ‘œ‚ğˆ³k
+// ç”»åƒã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int MyERIEncoder::EncodeImage
 	( const RASTER_IMAGE_INFO & srcimginf,
@@ -1347,7 +1347,7 @@ int MyERIEncoder::EncodeImage
 }
 
 //
-// “WŠJisó‹µ’Ê’mŠÖ”
+// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 int MyERIEncoder::OnEncodedBlock( LONG line, LONG column )
 {
@@ -1371,7 +1371,7 @@ int MyERIEncoder::OnEncodedLine( LONG line )
 }
 
 //
-// isó‹µ•\¦
+// é€²è¡ŒçŠ¶æ³è¡¨ç¤º
 //////////////////////////////////////////////////////////////////////////////
 void MyERIEncoder::PrintProgress( DWORD dwProgress )
 {
@@ -1385,11 +1385,11 @@ void MyERIEncoder::PrintProgress( DWORD dwProgress )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// “WŠJƒIƒuƒWƒFƒNƒg
+// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyERIDecoder::MyERIDecoder( void )
 {
@@ -1398,14 +1398,14 @@ MyERIDecoder::MyERIDecoder( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MyERIDecoder::~MyERIDecoder( void )
 {
 }
 
 //
-// isó‹µ•¶š—ñ‚ğŠÖ˜A•t‚¯‚é
+// é€²è¡ŒçŠ¶æ³æ–‡å­—åˆ—ã‚’é–¢é€£ä»˜ã‘ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MyERIDecoder::AttachProgressFormat( const char * pszPrgFormat )
 {
@@ -1413,7 +1413,7 @@ void MyERIDecoder::AttachProgressFormat( const char * pszPrgFormat )
 }
 
 //
-// ‰æ‘œ‚ğ“WŠJ
+// ç”»åƒã‚’å±•é–‹
 //////////////////////////////////////////////////////////////////////////////
 int MyERIDecoder::DecodeImage
 	( const RASTER_IMAGE_INFO & dstimginf,
@@ -1425,7 +1425,7 @@ int MyERIDecoder::DecodeImage
 }
 
 //
-// “WŠJisó‹µ’Ê’mŠÖ”
+// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 int MyERIDecoder::OnDecodedBlock( LONG line, LONG column )
 {
@@ -1449,7 +1449,7 @@ int MyERIDecoder::OnDecodedLine( LONG line )
 }
 
 //
-// isó‹µ•\¦
+// é€²è¡ŒçŠ¶æ³è¡¨ç¤º
 //////////////////////////////////////////////////////////////////////////////
 void MyERIDecoder::PrintProgress( DWORD dwProgress )
 {

@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                           E R I N A - L i b r a r y
-                                                        ЌЕЏIЌXђV 2002/05/26
+                                                        жњЂзµ‚ж›ґж–° 2002/05/26
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2002 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -20,33 +20,33 @@
 
 
 /*****************************************************************************
-                            ‰№ђє€іЏkѓIѓuѓWѓFѓNѓg
+                            йџіеЈ°ењ§зё®г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
  *****************************************************************************/
 
 class	MIOEncoder
 {
 protected:
-	MIO_INFO_HEADER		m_mioih ;				// ‰№ђєЏо•сѓwѓbѓ_
+	MIO_INFO_HEADER		m_mioih ;				// йџіеЈ°жѓ…е ±гѓгѓѓгѓЂ
 
-	unsigned int		m_nBufLength ;			// ѓoѓbѓtѓ@’·ЃiѓTѓ“ѓvѓ‹ђ”Ѓj
-	void *				m_ptrBuffer1 ;			// Ќ·•ЄЏ€—ќѓoѓbѓtѓ@
-	void *				m_ptrBuffer2 ;			// •А‚С‘Ц‚¦ѓoѓbѓtѓ@
-	SBYTE *				m_ptrBuffer3 ;			// ѓCѓ“ѓ^Ѓ[ѓЉЃ[ѓu—pѓoѓbѓtѓ@
-	REAL32 *			m_ptrSamplingBuf ;		// ѓTѓ“ѓvѓЉѓ“ѓO—pѓoѓbѓtѓ@
-	REAL32 *			m_ptrInternalBuf ;		// ’†ЉФѓoѓbѓtѓ@
-	REAL32 *			m_ptrDstBuf ;			// Џo—Н—pѓoѓbѓtѓ@
-	REAL32 *			m_ptrWorkBuf ;			// DCT ‰‰ЋZ—pѓЏЃ[ѓNѓGѓЉѓA
-	REAL32 *			m_ptrWeightTable ;		// ЉeЋь”gђ”ђ¬•Є‚МЏd‚ЭѓeЃ[ѓuѓ‹
-	REAL32 *			m_ptrLastDCT ;			// ’ј‘OѓuѓЌѓbѓN‚М DCT ЊWђ”
+	unsigned int		m_nBufLength ;			// гѓђгѓѓгѓ•г‚Ўй•·пј€г‚µгѓігѓ—гѓ«ж•°пј‰
+	void *				m_ptrBuffer1 ;			// е·®е€†е‡¦зђ†гѓђгѓѓгѓ•г‚Ў
+	void *				m_ptrBuffer2 ;			// дё¦гЃіж›їгЃ€гѓђгѓѓгѓ•г‚Ў
+	SBYTE *				m_ptrBuffer3 ;			// г‚¤гѓіг‚їгѓјгѓЄгѓјгѓ–з”Ёгѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrSamplingBuf ;		// г‚µгѓігѓ—гѓЄгѓіг‚°з”Ёгѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrInternalBuf ;		// дё­й–“гѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrDstBuf ;			// е‡єеЉ›з”Ёгѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrWorkBuf ;			// DCT жј”з®—з”ЁгѓЇгѓјг‚Їг‚ЁгѓЄг‚ў
+	REAL32 *			m_ptrWeightTable ;		// еђ„е‘Ёжіўж•°ж€ђе€†гЃ®й‡ЌгЃїгѓ†гѓјгѓ–гѓ«
+	REAL32 *			m_ptrLastDCT ;			// з›ґе‰Ќгѓ–гѓ­гѓѓг‚ЇгЃ® DCT дї‚ж•°
 
 public:
 	struct	PARAMETER
 	{
-		double			rLowWeight ;			// ’бЋь”gђ¬•Є‚МЏd‚Э
-		double			rMiddleWeight ;			// ’†Ћь”gђ¬•Є‚МЏd‚Э
-		double			rPowerScale ;			// —КЋq‰»‚МЉоЏЂѓrѓbѓgђ”
-		int				nOddWeight ;			// ѓuѓЌѓbѓNc‘ОЌфЊWђ”
-		int				nPreEchoThreshold ;		// ѓvѓЉѓGѓRЃ[‘ОЌфи‡’l
+		double			rLowWeight ;			// дЅЋе‘Ёжіўж€ђе€†гЃ®й‡ЌгЃї
+		double			rMiddleWeight ;			// дё­е‘Ёжіўж€ђе€†гЃ®й‡ЌгЃї
+		double			rPowerScale ;			// й‡Џе­ђеЊ–гЃ®еџєжє–гѓ“гѓѓгѓ€ж•°
+		int				nOddWeight ;			// гѓ–гѓ­гѓѓг‚Їж­ЄеЇѕз­–дї‚ж•°
+		int				nPreEchoThreshold ;		// гѓ—гѓЄг‚Ёг‚ігѓјеЇѕз­–й–ѕеЂ¤
 
 		PARAMETER( void ) ;
 	} ;
@@ -54,98 +54,98 @@ public:
 protected:
 	PARAMETER			m_parameter ;
 
-	SWORD *				m_ptrNextDstBuf ;		// Џo—Нѓoѓbѓtѓ@ѓAѓhѓЊѓX
-	REAL32 *			m_ptrLastDCTBuf ;		// Џd•Ў‰‰ЋZ—pѓoѓbѓtѓ@
-	unsigned int		m_nSubbandDegree ;		// Ќs—с‚МѓTѓCѓY
+	SWORD *				m_ptrNextDstBuf ;		// е‡єеЉ›гѓђгѓѓгѓ•г‚Ўг‚ўгѓ‰гѓ¬г‚№
+	REAL32 *			m_ptrLastDCTBuf ;		// й‡Ќи¤‡жј”з®—з”Ёгѓђгѓѓгѓ•г‚Ў
+	unsigned int		m_nSubbandDegree ;		// иЎЊе€—гЃ®г‚µг‚¤г‚є
 	unsigned int		m_nDegreeNum ;
-	int					m_nFrequencyWidth[7] ;	// ЉeЋь”gђ”‘С‚М•ќ
-	int					m_nFrequencyPoint[7] ;	// ЉeЋь”gђ”‘С‚М’†ђS€К’u
+	int					m_nFrequencyWidth[7] ;	// еђ„е‘Ёжіўж•°еёЇгЃ®е№…
+	int					m_nFrequencyPoint[7] ;	// еђ„е‘Ёжіўж•°еёЇгЃ®дё­еїѓдЅЌзЅ®
 	SIN_COS *			m_pRevolveParam ;
 
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	MIOEncoder( void ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~MIOEncoder( void ) ;
 
-	// Џ‰Љъ‰»Ѓiѓpѓ‰ѓЃЃ[ѓ^‚МђЭ’иЃj
+	// е€ќжњџеЊ–пј€гѓ‘гѓ©гѓЎгѓјг‚їгЃ®иЁ­е®љпј‰
 	virtual int Initialize( const MIO_INFO_HEADER & infhdr ) ;
-	// ЏI—№ЃiѓЃѓ‚ѓЉ‚М‰р•ъ‚И‚ЗЃj
+	// зµ‚дє†пј€гѓЎгѓўгѓЄгЃ®и§Јж”ѕгЃЄгЃ©пј‰
 	virtual void Delete( void ) ;
-	// ‰№ђє‚р€іЏk
+	// йџіеЈ°г‚’ењ§зё®
 	virtual int EncodeSound
 		( RLHEncodeContext & context,
 			const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf ) ;
-	// €іЏkѓIѓvѓVѓ‡ѓ“‚рђЭ’и
+	// ењ§зё®г‚Єгѓ—г‚·гѓ§гѓіг‚’иЁ­е®љ
 	void SetCompressionParameter( const PARAMETER & parameter ) ;
 
-protected:		// ‰В‹t€іЏk
-	// 8ѓrѓbѓg‚МPCM‚р€іЏk
+protected:		// еЏЇйЂ†ењ§зё®
+	// 8гѓ“гѓѓгѓ€гЃ®PCMг‚’ењ§зё®
 	int EncodeSoundPCM8
 		( RLHEncodeContext & context,
 			const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf ) ;
-	// 16ѓrѓbѓg‚МPCM‚р€іЏk
+	// 16гѓ“гѓѓгѓ€гЃ®PCMг‚’ењ§зё®
 	int EncodeSoundPCM16
 		( RLHEncodeContext & context,
 			const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf ) ;
 
-protected:		// ”с‰В‹t€іЏk
-	// Ќs—сѓTѓCѓY‚М•ПЌX‚Й”є‚¤ѓpѓ‰ѓЃЃ[ѓ^‚МЌДЊvЋZ
+protected:		// йќћеЏЇйЂ†ењ§зё®
+	// иЎЊе€—г‚µг‚¤г‚єгЃ®е¤‰ж›ґгЃ«дјґгЃ†гѓ‘гѓ©гѓЎгѓјг‚їгЃ®е†ЌиЁ€з®—
 	void InitializeWithDegree( unsigned int nSubbandDegree ) ;
-	// Ћw’иѓTѓ“ѓvѓ‹—с‚М‰№—К‚р‹Ѓ‚Я‚й
+	// жЊ‡е®љг‚µгѓігѓ—гѓ«е€—гЃ®йџій‡Џг‚’ж±‚г‚Ѓг‚‹
 	double EvaluateVolume( const REAL32 * ptrWave, int nCount ) ;
-	// •Є‰рѓRЃ[ѓh‚рЋж“ѕ‚·‚й
+	// е€†и§Јг‚ігѓјгѓ‰г‚’еЏ–еѕ—гЃ™г‚‹
 	int GetDivisionCode( const REAL32 * ptrSamples ) ;
 
-protected:	// ѓ‚ѓmѓ‰ѓ‹ЃEѓXѓeѓЊѓI
-	// 16ѓrѓbѓg‚М”с‰В‹t€іЏk
+protected:	// гѓўгѓЋгѓ©гѓ«гѓ»г‚№гѓ†гѓ¬г‚Є
+	// 16гѓ“гѓѓгѓ€гЃ®йќћеЏЇйЂ†ењ§зё®
 	int EncodeSoundDCT
 		( RLHEncodeContext & context,
 			const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf ) ;
-	// LOT •ПЉ·‚рЋ{‚·
+	// LOT е¤‰жЏ›г‚’ж–ЅгЃ™
 	void PerformLOT
 		( RLHEncodeContext & context,
 			REAL32 * ptrSamples, REAL32 rPowerScale ) ;
-	// ’КЏн‚МѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// йЂљеёёгЃ®гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeInternalBlock
 		( RLHEncodeContext & context,
 			REAL32 * ptrSamples, REAL32 rPowerScale ) ;
-	// ѓЉЃ[ѓhѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// гѓЄгѓјгѓ‰гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeLeadBlock
 		( RLHEncodeContext & context,
 			REAL32 * ptrSamples, REAL32 rPowerScale ) ;
-	// ѓ|ѓXѓgѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// гѓќг‚№гѓ€гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodePostBlock
 		( RLHEncodeContext & context, REAL32 rPowerScale ) ;
-	// —КЋq‰»
+	// й‡Џе­ђеЊ–
 	void Quantumize
 		( PINT ptrQuantumized, const REAL32 * ptrSource,
 			int nDegreeNum, REAL32 rPowerScale,
 			DWORD * ptrWeightCode, int * ptrCoefficient ) ;
 
-protected:		// ѓ~ѓhѓ‹ѓTѓCѓhѓXѓeѓЊѓI
-	// 16ѓrѓbѓg‚М”с‰В‹t€іЏk
+protected:		// гѓџгѓ‰гѓ«г‚µг‚¤гѓ‰г‚№гѓ†гѓ¬г‚Є
+	// 16гѓ“гѓѓгѓ€гЃ®йќћеЏЇйЂ†ењ§зё®
 	int EncodeSoundDCT_MSS
 		( RLHEncodeContext & context,
 			const MIO_DATA_HEADER & datahdr, const void * ptrWaveBuf ) ;
-	// ‰с“]ѓpѓ‰ѓЃЃ[ѓ^‚рЋж“ѕ‚·‚й
+	// е›ћи»ўгѓ‘гѓ©гѓЎгѓјг‚їг‚’еЏ–еѕ—гЃ™г‚‹
 	int GetRevolveCode
 		( const REAL32 * ptrBuf1, const REAL32 * ptrBuf2 ) ;
-	// LOT •ПЉ·‚рЋ{‚·
+	// LOT е¤‰жЏ›г‚’ж–ЅгЃ™
 	void PerformLOT_MSS
 		( REAL32 * ptrDst, REAL32 * ptrLapBuf, REAL32 * ptrSrc ) ;
-	// ’КЏн‚МѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// йЂљеёёгЃ®гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeInternalBlock_MSS
 		( RLHEncodeContext & context,
 			REAL32 * ptrSrc1, REAL32 * ptrSrc2, REAL32 rPowerScale ) ;
-	// ѓЉЃ[ѓhѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// гѓЄгѓјгѓ‰гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodeLeadBlock_MSS
 		( RLHEncodeContext & context,
 			REAL32 * ptrSrc1, REAL32 * ptrSrc2, REAL32 rPowerScale ) ;
-	// ѓ|ѓXѓgѓuѓЌѓbѓN‚р•„Ќ†‰»‚µ‚ДЏo—Н‚·‚й
+	// гѓќг‚№гѓ€гѓ–гѓ­гѓѓг‚Їг‚’з¬¦еЏ·еЊ–гЃ—гЃ¦е‡єеЉ›гЃ™г‚‹
 	int EncodePostBlock_MSS
 		( RLHEncodeContext & context, REAL32 rPowerScale ) ;
-	// —КЋq‰»
+	// й‡Џе­ђеЊ–
 	void Quantumize_MSS
 		( PINT ptrQuantumized, const REAL32 * ptrSource,
 			int nDegreeNum, REAL32 rPowerScale,
@@ -155,97 +155,97 @@ protected:		// ѓ~ѓhѓ‹ѓTѓCѓhѓXѓeѓЊѓI
 
 
 /*****************************************************************************
-                            ‰№ђє“WЉJѓIѓuѓWѓFѓNѓg
+                            йџіеЈ°е±•й–‹г‚Єгѓ–г‚ёг‚§г‚Їгѓ€
  *****************************************************************************/
 
 class	MIODecoder
 {
 protected:
-	MIO_INFO_HEADER		m_mioih ;				// ‰№ђєЏо•сѓwѓbѓ_
+	MIO_INFO_HEADER		m_mioih ;				// йџіеЈ°жѓ…е ±гѓгѓѓгѓЂ
 
-	unsigned int		m_nBufLength ;			// ѓoѓbѓtѓ@’·ЃiѓTѓ“ѓvѓ‹ђ”Ѓj
-	void *				m_ptrBuffer1 ;			// Ќ·•ЄЏ€—ќѓoѓbѓtѓ@
-	void *				m_ptrBuffer2 ;			// •А‚С‘Ц‚¦ѓoѓbѓtѓ@
-	SBYTE *				m_ptrBuffer3 ;			// ѓCѓ“ѓ^Ѓ[ѓЉЃ[ѓu—pѓoѓbѓtѓ@
-	PBYTE				m_ptrDivisionTable ;	// •Є‰рѓRЃ[ѓhѓeЃ[ѓuѓ‹
-	PBYTE				m_ptrRevolveCode ;		// ‰с“]ѓRЃ[ѓhѓeЃ[ѓuѓ‹
-	SDWORD *			m_ptrWeightCode ;		// —КЋq‰»ЊWђ”ѓeЃ[ѓuѓ‹
+	unsigned int		m_nBufLength ;			// гѓђгѓѓгѓ•г‚Ўй•·пј€г‚µгѓігѓ—гѓ«ж•°пј‰
+	void *				m_ptrBuffer1 ;			// е·®е€†е‡¦зђ†гѓђгѓѓгѓ•г‚Ў
+	void *				m_ptrBuffer2 ;			// дё¦гЃіж›їгЃ€гѓђгѓѓгѓ•г‚Ў
+	SBYTE *				m_ptrBuffer3 ;			// г‚¤гѓіг‚їгѓјгѓЄгѓјгѓ–з”Ёгѓђгѓѓгѓ•г‚Ў
+	PBYTE				m_ptrDivisionTable ;	// е€†и§Јг‚ігѓјгѓ‰гѓ†гѓјгѓ–гѓ«
+	PBYTE				m_ptrRevolveCode ;		// е›ћи»ўг‚ігѓјгѓ‰гѓ†гѓјгѓ–гѓ«
+	SDWORD *			m_ptrWeightCode ;		// й‡Џе­ђеЊ–дї‚ж•°гѓ†гѓјгѓ–гѓ«
 	PINT				m_ptrCoefficient ;		//
-	REAL32 *			m_ptrMatrixBuf ;		// Ќs—с‰‰ЋZ—pѓoѓbѓtѓ@
-	REAL32 *			m_ptrInternalBuf ;		// ’†ЉФѓoѓbѓtѓ@
-	REAL32 *			m_ptrWorkBuf ;			// DCT ‰‰ЋZ—pѓЏЃ[ѓNѓGѓЉѓA
+	REAL32 *			m_ptrMatrixBuf ;		// иЎЊе€—жј”з®—з”Ёгѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrInternalBuf ;		// дё­й–“гѓђгѓѓгѓ•г‚Ў
+	REAL32 *			m_ptrWorkBuf ;			// DCT жј”з®—з”ЁгѓЇгѓјг‚Їг‚ЁгѓЄг‚ў
 	REAL32 *			m_ptrWorkBuf2 ;
-	REAL32 *			m_ptrWeightTable ;		// ЉeЋь”gђ”ђ¬•Є‚МЏd‚ЭѓeЃ[ѓuѓ‹
-	REAL32 *			m_ptrLastDCT ;			// ’ј‘O‚М DCT ЊWђ”
+	REAL32 *			m_ptrWeightTable ;		// еђ„е‘Ёжіўж•°ж€ђе€†гЃ®й‡ЌгЃїгѓ†гѓјгѓ–гѓ«
+	REAL32 *			m_ptrLastDCT ;			// з›ґе‰ЌгЃ® DCT дї‚ж•°
 
-	PBYTE				m_ptrNextDivision ;		// Ћџ‚М•Є‰рѓRЃ[ѓh
-	PBYTE				m_ptrNextRevCode ;		// Ћџ‚М‰с“]ѓRЃ[ѓh
-	SDWORD *			m_ptrNextWeight ;		// Ћџ‚М—КЋq‰»ЊWђ”
+	PBYTE				m_ptrNextDivision ;		// ж¬ЎгЃ®е€†и§Јг‚ігѓјгѓ‰
+	PBYTE				m_ptrNextRevCode ;		// ж¬ЎгЃ®е›ћи»ўг‚ігѓјгѓ‰
+	SDWORD *			m_ptrNextWeight ;		// ж¬ЎгЃ®й‡Џе­ђеЊ–дї‚ж•°
 	PINT				m_ptrNextCoefficient ;	//
-	PINT				m_ptrNextSource ;		// Ћџ‚М“ь—НђMЌ†
-	REAL32 *			m_ptrLastDCTBuf ;		// Џd•Ў‰‰ЋZ—pѓoѓbѓtѓ@
-	unsigned int		m_nSubbandDegree ;		// Ќs—с‚МѓTѓCѓY
+	PINT				m_ptrNextSource ;		// ж¬ЎгЃ®е…ҐеЉ›дїЎеЏ·
+	REAL32 *			m_ptrLastDCTBuf ;		// й‡Ќи¤‡жј”з®—з”Ёгѓђгѓѓгѓ•г‚Ў
+	unsigned int		m_nSubbandDegree ;		// иЎЊе€—гЃ®г‚µг‚¤г‚є
 	unsigned int		m_nDegreeNum ;
 	SIN_COS *			m_pRevolveParam ;
-	int					m_nFrequencyPoint[7] ;	// ЉeЋь”gђ”‘С‚М’†ђS€К’u
+	int					m_nFrequencyPoint[7] ;	// еђ„е‘Ёжіўж•°еёЇгЃ®дё­еїѓдЅЌзЅ®
 
 public:
-	// Ќ\’zЉЦђ”
+	// ж§‹зЇ‰й–ўж•°
 	MIODecoder( void ) ;
-	// ЏБ–ЕЉЦђ”
+	// ж¶€ж»…й–ўж•°
 	virtual ~MIODecoder( void ) ;
 
-	// Џ‰Љъ‰»Ѓiѓpѓ‰ѓЃЃ[ѓ^‚МђЭ’иЃj
+	// е€ќжњџеЊ–пј€гѓ‘гѓ©гѓЎгѓјг‚їгЃ®иЁ­е®љпј‰
 	virtual int Initialize( const MIO_INFO_HEADER & infhdr ) ;
-	// ЏI—№ЃiѓЃѓ‚ѓЉ‚М‰р•ъ‚И‚ЗЃj
+	// зµ‚дє†пј€гѓЎгѓўгѓЄгЃ®и§Јж”ѕгЃЄгЃ©пј‰
 	virtual void Delete( void ) ;
-	// ‰№ђє‚р€іЏk
+	// йџіеЈ°г‚’ењ§зё®
 	virtual int DecodeSound
 		( RLHDecodeContext & context,
 			const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf ) ;
 
-protected:		// ‰В‹t€іЏk
-	// 8ѓrѓbѓg‚МPCM‚р“WЉJ
+protected:		// еЏЇйЂ†ењ§зё®
+	// 8гѓ“гѓѓгѓ€гЃ®PCMг‚’е±•й–‹
 	int DecodeSoundPCM8
 		( RLHDecodeContext & context,
 			const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf ) ;
-	// 16ѓrѓbѓg‚МPCM‚р“WЉJ
+	// 16гѓ“гѓѓгѓ€гЃ®PCMг‚’е±•й–‹
 	int DecodeSoundPCM16
 		( RLHDecodeContext & context,
 			const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf ) ;
 
-protected:		// ѓ‚ѓmѓ‰ѓ‹ЃEѓXѓeѓЊѓI
-	// Ќs—сѓTѓCѓY‚М•ПЌX‚Й”є‚¤ѓpѓ‰ѓЃЃ[ѓ^‚МЌДЊvЋZ
+protected:		// гѓўгѓЋгѓ©гѓ«гѓ»г‚№гѓ†гѓ¬г‚Є
+	// иЎЊе€—г‚µг‚¤г‚єгЃ®е¤‰ж›ґгЃ«дјґгЃ†гѓ‘гѓ©гѓЎгѓјг‚їгЃ®е†ЌиЁ€з®—
 	void InitializeWithDegree( unsigned int nSubbandDegree ) ;
-	// 16ѓrѓbѓg‚М”с‰В‹t“WЉJ
+	// 16гѓ“гѓѓгѓ€гЃ®йќћеЏЇйЂ†е±•й–‹
 	int DecodeSoundDCT
 		( RLHDecodeContext & context,
 			const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf ) ;
-	// ’КЏн‚МѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// йЂљеёёгЃ®гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodeInternalBlock
 		( SWORD * ptrDst, unsigned int nSamples ) ;
-	// ѓЉЃ[ѓhѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// гѓЄгѓјгѓ‰гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodeLeadBlock( void ) ;
-	// ѓ|ѓXѓgѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// гѓќг‚№гѓ€гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodePostBlock
 		( SWORD * ptrDst, unsigned int nSamples ) ;
-	// ‹t—КЋq‰»
+	// йЂ†й‡Џе­ђеЊ–
 	void IQuantumize
 		( REAL32 * ptrDestination,
 			const INT * ptrQuantumized, int nDegreeNum,
 			SDWORD nWeightCode, int nCoefficient ) ;
 
-protected:		// ѓ~ѓhѓ‹ѓTѓCѓhѓXѓeѓЊѓI
-	// 16ѓrѓbѓg‚М”с‰В‹t“WЉJ
+protected:		// гѓџгѓ‰гѓ«г‚µг‚¤гѓ‰г‚№гѓ†гѓ¬г‚Є
+	// 16гѓ“гѓѓгѓ€гЃ®йќћеЏЇйЂ†е±•й–‹
 	int DecodeSoundDCT_MSS
 		( RLHDecodeContext & context,
 			const MIO_DATA_HEADER & datahdr, void * ptrWaveBuf ) ;
-	// ’КЏн‚МѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// йЂљеёёгЃ®гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodeInternalBlock_MSS
 		( SWORD * ptrDst, unsigned int nSamples ) ;
-	// ѓЉЃ[ѓhѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// гѓЄгѓјгѓ‰гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodeLeadBlock_MSS( void ) ;
-	// ѓ|ѓXѓgѓuѓЌѓbѓN‚р•њЌ†‚·‚й
+	// гѓќг‚№гѓ€гѓ–гѓ­гѓѓг‚Їг‚’еѕ©еЏ·гЃ™г‚‹
 	int DecodePostBlock_MSS
 		( SWORD * ptrDst, unsigned int nSamples ) ;
 

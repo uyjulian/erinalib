@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                  WAV ƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ~ƒ“ƒOƒIƒuƒWƒFƒNƒg
+                  WAV ãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 
@@ -9,7 +9,7 @@
 
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EWaveFileStream::EWaveFileStream( void )
 {
@@ -19,7 +19,7 @@ EWaveFileStream::EWaveFileStream( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EWaveFileStream::~EWaveFileStream( void )
 {
@@ -27,13 +27,13 @@ EWaveFileStream::~EWaveFileStream( void )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 bool EWaveFileStream::Open( const char * pszFileName )
 {
 	Close( ) ;
 	//
-	// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	m_pfile = new CFile ;
 	if ( !m_pfile->Open( pszFileName, CFile::modeRead ) )
 	{
@@ -42,7 +42,7 @@ bool EWaveFileStream::Open( const char * pszFileName )
 		return	false ;
 	}
 	//
-	// WAV ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// WAV ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	//
 	// === Windows Wave Form Audio header ===
 	// 'RIFF' : 4 Bytes     : RIFF header
@@ -60,7 +60,7 @@ bool EWaveFileStream::Open( const char * pszFileName )
 		return	false ;
 	}
 	//
-	// ƒtƒH[ƒ}ƒbƒgƒ`ƒƒƒ“ƒN‚ğ“Ç‚İ‚Ş
+	// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãƒãƒ£ãƒ³ã‚¯ã‚’èª­ã¿è¾¼ã‚€
 	//
 	// === Wave Format Header ===
 	// 'fmt ' : 4 Bytes     : fmt Chunk
@@ -88,7 +88,7 @@ bool EWaveFileStream::Open( const char * pszFileName )
 		return	false ;
 	}
 	//
-	// ƒf[ƒ^ƒ`ƒƒƒ“ƒN‚ğŠJ‚­
+	// ãƒ‡ãƒ¼ã‚¿ãƒãƒ£ãƒ³ã‚¯ã‚’é–‹ã
 	//
 	// === Wave Data ===
 	// 'data' : 4 Bytes     : data chunk
@@ -114,7 +114,7 @@ bool EWaveFileStream::Open( const char * pszFileName )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void EWaveFileStream::Close( void )
 {
@@ -132,7 +132,7 @@ void EWaveFileStream::Close( void )
 }
 
 //
-// ƒf[ƒ^Œ`®‚ğæ“¾
+// ãƒ‡ãƒ¼ã‚¿å½¢å¼ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 WAVEFORMATEX * EWaveFileStream::GetWaveFormat( void )
 {
@@ -140,7 +140,7 @@ WAVEFORMATEX * EWaveFileStream::GetWaveFormat( void )
 }
 
 //
-// ƒf[ƒ^‚Ì‘ƒoƒCƒg”‚ğæ“¾
+// ãƒ‡ãƒ¼ã‚¿ã®ç·ãƒã‚¤ãƒˆæ•°ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD EWaveFileStream::GetDataLength( void )
 {
@@ -148,7 +148,7 @@ DWORD EWaveFileStream::GetDataLength( void )
 }
 
 //
-// ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 //////////////////////////////////////////////////////////////////////////////
 UINT EWaveFileStream::Read( void * lpBuf, UINT nBytes )
 {

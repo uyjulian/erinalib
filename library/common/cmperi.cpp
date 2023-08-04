@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2001/11/16
+                                                      æœ€çµ‚æ›´æ–° 2001/11/16
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -13,7 +13,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -22,11 +22,11 @@
 
 
 /*****************************************************************************
-                   ƒ‰ƒ“ƒŒƒ“ƒOƒXEƒKƒ“ƒ}EƒRƒ“ƒeƒLƒXƒg
+                   ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ãƒ»ã‚¬ãƒ³ãƒãƒ»ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 RLHEncodeContext::RLHEncodeContext( ULONG nBufferingSize )
 {
@@ -44,7 +44,7 @@ RLHEncodeContext::RLHEncodeContext( ULONG nBufferingSize )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 RLHEncodeContext::~RLHEncodeContext( void )
 {
@@ -57,13 +57,13 @@ RLHEncodeContext::~RLHEncodeContext( void )
 }
 
 //
-// ƒKƒ“ƒ}ƒR[ƒh‚ğo—Í‚·‚é
+// ã‚¬ãƒ³ãƒã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::OutACode( int num )
 {
 	int	b = 0, c = 1 ;
 	//
-	// ƒR[ƒh‚Ì’·‚³‚ğŒˆ’è‚·‚é
+	// ã‚³ãƒ¼ãƒ‰ã®é•·ã•ã‚’æ±ºå®šã™ã‚‹
 	num -- ;
 	while ( num >= c )
 	{
@@ -72,12 +72,12 @@ int RLHEncodeContext::OutACode( int num )
 		b ++ ;
 	}
 	//
-	// ƒR[ƒh‚ğo—Í
+	// ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 	DWORD	dwNum = (DWORD) num << (32 - b) ;
 	while ( b > 0 )
 	{
 		//
-		// "1" ‚ğo—Í
+		// "1" ã‚’å‡ºåŠ›
 		m_dwIntBuffer = (m_dwIntBuffer << 1) | 0x01 ;
 		if ( ++ m_nIntBufCount >= 32 )
 		{
@@ -95,7 +95,7 @@ int RLHEncodeContext::OutACode( int num )
 			}
 		}
 		//
-		// ƒR[ƒh‚ğo—Í
+		// ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 		m_dwIntBuffer = (m_dwIntBuffer << 1) | (dwNum >> 31) ;
 		dwNum <<= 1 ;
 		if ( ++ m_nIntBufCount >= 32 )
@@ -117,7 +117,7 @@ int RLHEncodeContext::OutACode( int num )
 		b -- ;
 	}
 	//
-	// ƒR[ƒh‚ÌI’[‚ğo—Í
+	// ã‚³ãƒ¼ãƒ‰ã®çµ‚ç«¯ã‚’å‡ºåŠ›
 	m_dwIntBuffer <<= 1 ;
 	if ( ++ m_nIntBufCount >= 32 )
 	{
@@ -139,7 +139,7 @@ int RLHEncodeContext::OutACode( int num )
 }
 
 //
-// ƒoƒbƒtƒ@‚Ì“à—e‚ğo—Í‚µ‚Ä‹ó‚É‚·‚é
+// ãƒãƒƒãƒ•ã‚¡ã®å†…å®¹ã‚’å‡ºåŠ›ã—ã¦ç©ºã«ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::Flushout( void )
 {
@@ -160,7 +160,7 @@ int RLHEncodeContext::Flushout( void )
 }
 
 //
-// ƒ‰ƒ“ƒŒƒ“ƒOƒXƒKƒ“ƒ}•„†‚É•„†‰»‚µ‚Äo—Í‚·‚é
+// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã‚¬ãƒ³ãƒç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::EncodeGammaCodes( const INT * ptrSrc, int nCount )
 {
@@ -176,7 +176,7 @@ int RLHEncodeContext::EncodeGammaCodes( const INT * ptrSrc, int nCount )
 		if ( ptrSrc[i] == 0 )
 		{
 			//
-			// ƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			// ã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			c = i ;
 			while ( ptrSrc[i] == 0 )
 			{
@@ -184,14 +184,14 @@ int RLHEncodeContext::EncodeGammaCodes( const INT * ptrSrc, int nCount )
 					break ;
 			}
 			//
-			// ƒ[ƒM†‚Ì’·‚³‚ğo—Í
+			// ã‚¼ãƒ­ä¿¡å·ã®é•·ã•ã‚’å‡ºåŠ›
 			if ( OutACode( i - c ) )
 				break ;
 		}
 		else
 		{
 			//
-			// ”ñƒ[ƒM†‚Ì˜A‘±”‚ğæ“¾
+			// éã‚¼ãƒ­ä¿¡å·ã®é€£ç¶šæ•°ã‚’å–å¾—
 			c = i ;
 			while ( ptrSrc[c] != 0 )
 			{
@@ -199,11 +199,11 @@ int RLHEncodeContext::EncodeGammaCodes( const INT * ptrSrc, int nCount )
 					break ;
 			}
 			//
-			// ”ñƒ[ƒM†‚Ì’·‚³‚ğo—Í
+			// éã‚¼ãƒ­ä¿¡å·ã®é•·ã•ã‚’å‡ºåŠ›
 			if ( OutACode( c - i ) )
 				break ;
 			//
-			// Še•„†‚ğ•„†‰»
+			// å„ç¬¦å·ã‚’ç¬¦å·åŒ–
 			while ( i < c )
 			{
 				int	num = ptrSrc[i ++] ;
@@ -228,12 +228,12 @@ int RLHEncodeContext::EncodeGammaCodes( const INT * ptrSrc, int nCount )
 }
 
 //
-// RL-MTF-G •„†‚Ì•„†‰»‚Ì€”õ‚ğ‚·‚é
+// RL-MTF-G ç¬¦å·ã®ç¬¦å·åŒ–ã®æº–å‚™ã‚’ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void RLHEncodeContext::PrepareToEncodeRLMTFGCode( void )
 {
 	//
-	// MTFƒe[ƒuƒ‹‚ğŠm•Û
+	// MTFãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ç¢ºä¿
 	PBYTE	ptrBuffer ;
 	if ( m_pMTFTable[0] != NULL )
 	{
@@ -245,7 +245,7 @@ void RLHEncodeContext::PrepareToEncodeRLMTFGCode( void )
 			(PBYTE) ::eriAllocateMemory( sizeof(MTF_TABLE) * 0x101 ) ;
 	}
 	//
-	// MTFƒe[ƒuƒ‹‚ğ‰Šú‰»
+	// MTFãƒ†ãƒ¼ãƒ–ãƒ«ã‚’åˆæœŸåŒ–
 	for ( int i = 0; i < 0x101; i ++ )
 	{
 		m_pMTFTable[i] = (MTF_TABLE*) ptrBuffer ;
@@ -255,30 +255,30 @@ void RLHEncodeContext::PrepareToEncodeRLMTFGCode( void )
 }
 
 //
-// RL-MTF-G •„†‚É•„†‰»‚µ‚Äo—Í‚·‚é
+// RL-MTF-G ç¬¦å·ã«ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int RLHEncodeContext::EncodeRLMTFGCodes( PBYTE ptrSrc, int nCount )
 {
 	int		i = 0 ;
 	//
-	// ƒJƒŒƒ“ƒgMTFƒe[ƒuƒ‹‚ğİ’è
+	// ã‚«ãƒ¬ãƒ³ãƒˆMTFãƒ†ãƒ¼ãƒ–ãƒ«ã‚’è¨­å®š
 	int	iLastPlt = -1 ;
 	MTF_TABLE *	pCurTable = m_pMTFTable[0x100] ;
 	//
-	// ƒ‰ƒCƒ“‚ğ‘S‚ÄƒGƒ“ƒR[ƒh‚·‚é‚Ü‚ÅŒJ‚è•Ô‚µ
+	// ãƒ©ã‚¤ãƒ³ã‚’å…¨ã¦ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã™ã‚‹ã¾ã§ç¹°ã‚Šè¿”ã—
 	while ( i < nCount )
 	{
 		//
-		// Œ»İ‚ÌƒpƒŒƒbƒg”Ô†‚ğMTFƒe[ƒuƒ‹‚©‚çŒŸõ‚µ‚Ä•„†‰»
+		// ç¾åœ¨ã®ãƒ‘ãƒ¬ãƒƒãƒˆç•ªå·ã‚’MTFãƒ†ãƒ¼ãƒ–ãƒ«ã‹ã‚‰æ¤œç´¢ã—ã¦ç¬¦å·åŒ–
 		BYTE	iCurPlt = ptrSrc[i ++] ;
 		if ( OutACode( pCurTable->Search( iCurPlt ) ) )
 			break ;
 		//
-		// ’¼‘O‚ÌƒpƒŒƒbƒg‚Æˆê’v‚µ‚È‚¢‚©”äŠr
+		// ç›´å‰ã®ãƒ‘ãƒ¬ãƒƒãƒˆã¨ä¸€è‡´ã—ãªã„ã‹æ¯”è¼ƒ
 		if ( iLastPlt == (int) iCurPlt )
 		{
 			//
-			// ƒ‰ƒ“ƒŒƒ“ƒOƒX‚Ìo—Í
+			// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã®å‡ºåŠ›
 			int	j = i - 1 ;
 			while ( i < nCount )
 			{
@@ -293,18 +293,18 @@ int RLHEncodeContext::EncodeRLMTFGCodes( PBYTE ptrSrc, int nCount )
 		else
 		{
 			//
-			// ƒJƒŒƒ“ƒgMTFƒe[ƒuƒ‹‚Ì€^
+			// ã‚«ãƒ¬ãƒ³ãƒˆMTFãƒ†ãƒ¼ãƒ–ãƒ«ã®é …çœŸ
 			iLastPlt = iCurPlt ;
 			pCurTable = m_pMTFTable[iCurPlt] ;
 		}
 	}
 	//
-	// I—¹
+	// çµ‚äº†
 	return	i ;
 }
 
 //
-// ERINA •„†‚Ì•„†‰»‚Ì€”õ‚ğ‚·‚é
+// ERINA ç¬¦å·ã®ç¬¦å·åŒ–ã®æº–å‚™ã‚’ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void RLHEncodeContext::PrepareToEncodeERINACode( void )
 {
@@ -329,7 +329,7 @@ void RLHEncodeContext::PrepareToEncodeERINACode( void )
 
 
 /*****************************************************************************
-                               ˆ³kƒIƒuƒWƒFƒNƒg
+                               åœ§ç¸®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 ERIEncoder::PFUNC_COLOR_OPRATION	ERIEncoder::m_pfnColorOperation[0x10] =
@@ -353,7 +353,7 @@ ERIEncoder::PFUNC_COLOR_OPRATION	ERIEncoder::m_pfnColorOperation[0x10] =
 } ;
 
 //
-// ERIEncoder::PARAMETER \‘¢‘Ì‚Ì\’zŠÖ”
+// ERIEncoder::PARAMETER æ§‹é€ ä½“ã®æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIEncoder::PARAMETER::PARAMETER( void )
 {
@@ -368,7 +368,7 @@ ERIEncoder::PARAMETER::PARAMETER( void )
 }
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIEncoder::ERIEncoder( void )
 {
@@ -397,7 +397,7 @@ ERIEncoder::ERIEncoder( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 ERIEncoder::~ERIEncoder( void )
 {
@@ -405,24 +405,24 @@ ERIEncoder::~ERIEncoder( void )
 }
 
 //
-// ‰Šú‰»iƒpƒ‰ƒ[ƒ^‚Ìİ’èj
+// åˆæœŸåŒ–ï¼ˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®šï¼‰
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 {
 	//
-	// ˆÈ‘O‚Ìƒf[ƒ^‚ğÁ‹
+	// ä»¥å‰ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ¶ˆå»
 	Delete( ) ;
 	//
-	// ‰æ‘œî•ñƒwƒbƒ_‚ğƒRƒs[
+	// ç”»åƒæƒ…å ±ãƒ˜ãƒƒãƒ€ã‚’ã‚³ãƒ”ãƒ¼
 	m_EriInfHdr = infhdr ;
 	//
-	// ƒpƒ‰ƒ[ƒ^‚Ìƒ`ƒFƒbƒN
+	// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒã‚§ãƒƒã‚¯
 	if ( m_EriInfHdr.fdwTransformation == CVTYPE_LOSSLESS_ERI )
 	{
 		if ( (m_EriInfHdr.dwArchitecture != ERI_RUNLENGTH_GAMMA)
 				&& (m_EriInfHdr.dwArchitecture != ERI_RUNLENGTH_HUFFMAN) )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		//
 		switch ( (m_EriInfHdr.fdwFormatType & ERI_TYPE_MASK) )
@@ -441,13 +441,13 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 			break;
 
 		default:
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ì‰æ‘œƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ç”»åƒãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		//
 		if ( m_EriInfHdr.dwBlockingDegree != 0 )
 		{
 			//
-			// Še’è”‚ğŒvZ
+			// å„å®šæ•°ã‚’è¨ˆç®—
 			m_nBlockSize = (ULONG) (1 << m_EriInfHdr.dwBlockingDegree) ;
 			m_nBlockArea = (ULONG) (1 << (m_EriInfHdr.dwBlockingDegree << 1)) ;
 			m_nBlockSamples = m_nBlockArea * m_nChannelCount ;
@@ -466,7 +466,7 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 				(m_nHeightBlocks + m_nBlockSize - 1)
 									>> m_EriInfHdr.dwBlockingDegree ;
 			//
-			// ƒ[ƒLƒ“ƒOƒƒ‚ƒŠ‚ğŠm•Û
+			// ãƒ¯ãƒ¼ã‚­ãƒ³ã‚°ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 			m_ptrColumnBuf =
 				(PINT) ::eriAllocateMemory
 					( m_nBlockSize * m_nChannelCount * sizeof(INT) ) ;
@@ -479,7 +479,7 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 				(PINT) ::eriAllocateMemory( m_nBlockSamples * sizeof(INT) ) ;
 		}
 		//
-		// ƒo[ƒWƒ‡ƒ“‚Ìƒ`ƒFƒbƒN‚ÆƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì€”õ
+		// ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®ãƒã‚§ãƒƒã‚¯ã¨ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®æº–å‚™
 		if ( m_EriInfHdr.dwVersion == 0x00020200 )
 		{
 			if ( m_EriInfHdr.dwBlockingDegree != 0 )
@@ -491,7 +491,7 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 		}
 		else if ( m_EriInfHdr.dwVersion != 0x00020100 )
 		{
-			return	1 ;		// ƒGƒ‰[i–¢‘Î‰‚Ìƒo[ƒWƒ‡ƒ“j
+			return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ï¼‰
 		}
 	}
 	else if ( m_EriInfHdr.fdwTransformation == CVTYPE_DCT_ERI )
@@ -499,16 +499,16 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 		if ( (m_EriInfHdr.dwArchitecture != ERI_RUNLENGTH_GAMMA)
 				&& (m_EriInfHdr.dwArchitecture != ERI_RUNLENGTH_HUFFMAN) )
 		{
-			return	1 ;		// i–¢‘Î‰‚Ìˆ³kƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ï¼ˆæœªå¯¾å¿œã®åœ§ç¸®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		//
 		if ( (m_EriInfHdr.fdwFormatType & ERI_TYPE_MASK) != ERI_RGB_IMAGE )
 		{
-			return	1 ;		// i–¢‘Î‰‚Ì‰æ‘œƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ï¼ˆæœªå¯¾å¿œã®ç”»åƒãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( m_EriInfHdr.dwBitsPerPixel < 24 )
 		{
-			return	1 ;		// i–¢‘Î‰‚Ì‰æ‘œƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ï¼ˆæœªå¯¾å¿œã®ç”»åƒãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( !(m_EriInfHdr.fdwFormatType & ERI_WITH_ALPHA) )
 		{
@@ -522,10 +522,10 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 		if ( (m_EriInfHdr.dwBlockingDegree < 3)
 			|| (5 < m_EriInfHdr.dwBlockingDegree) )
 		{
-			return	1 ;		// i–¢‘Î‰‚ÌƒtƒH[ƒ}ƒbƒgj
+			return	1 ;		// ï¼ˆæœªå¯¾å¿œã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		//
-		// Še’è”‚ğŒvZ
+		// å„å®šæ•°ã‚’è¨ˆç®—
 		m_nBlockSize = (ULONG) (1 << m_EriInfHdr.dwBlockingDegree) ;
 		m_nBlockArea = (ULONG) (1 << (m_EriInfHdr.dwBlockingDegree << 1)) ;
 		m_nBlockSamples = m_nBlockArea * 4 * m_nChannelCount ;
@@ -560,14 +560,14 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 			m_pfnBlockScaling = &ERIEncoder::BlockScaling411 ;
 			break ;
 		default:
-			return	1 ;			// ƒGƒ‰[i–¢‘Î‰‚ÌƒtƒH[ƒ}ƒbƒgj
+			return	1 ;			// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 		}
 		if ( m_nChannelCount == 4 )
 		{
 			m_nBlocksetCount += 4 ;
 		}
 		//
-		// ƒ[ƒLƒ“ƒOƒƒ‚ƒŠ‚ğŠm•Û
+		// ãƒ¯ãƒ¼ã‚­ãƒ³ã‚°ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 		m_ptrBuffer1 =
 			(PINT) ::eriAllocateMemory
 				( m_nBlocksetCount * m_nBlockArea * sizeof(INT) ) ;
@@ -608,34 +608,34 @@ int ERIEncoder::Initialize( const ERI_INFO_HEADER & infhdr )
 		m_ptrWorkDCT2 =
 			(REAL32*) ::eriAllocateMemory( m_nBlockSize * sizeof(REAL32) ) ;
 		//
-		// ƒnƒtƒ}ƒ“–Ø—p‚Ìƒƒ‚ƒŠ‚ğŠm•Û
+		// ãƒãƒ•ãƒãƒ³æœ¨ç”¨ã®ãƒ¡ãƒ¢ãƒªã‚’ç¢ºä¿
 		m_pHuffmanTree = (ERINA_HUFFMAN_TREE*)
 			::eriAllocateMemory( sizeof(ERINA_HUFFMAN_TREE) ) ;
 		//
-		// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì€”õ
+		// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®æº–å‚™
 		InitializeZigZagTable( ) ;
 		//
-		// ƒfƒtƒHƒ‹ƒg‚Ìˆ³kƒpƒ‰ƒ[ƒ^‚ğƒZƒbƒg
+		// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ã‚»ãƒƒãƒˆ
 		PARAMETER	param ;
 		SetCompressionParameter( param ) ;
 	}
 	else
 	{
-		return	1 ;			// ƒGƒ‰[i–¢‘Î‰‚ÌƒtƒH[ƒ}ƒbƒgj
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 	}
 	//
-	// ³íI—¹
+	// æ­£å¸¸çµ‚äº†
 	return	0 ;
 }
 
 //
-// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì‰Šú‰»
+// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::InitializeSamplingTable( void )
 {
 	unsigned int	i, j, k, l, m, n ;
 	//
-	// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹—pƒoƒbƒtƒ@Šm•Û
+	// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ç”¨ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	PINT	ptrTable =
 		(PINT) ::eriAllocateMemory( m_nBlockSamples * 4 * sizeof(INT) ) ;
 	PINT	ptrNext ;
@@ -644,14 +644,14 @@ void ERIEncoder::InitializeSamplingTable( void )
 	m_pArrangeTable[2] = ptrTable + m_nBlockSamples * 2 ;
 	m_pArrangeTable[3] = ptrTable + m_nBlockSamples * 3 ;
 	//
-	// …•½•ûŒü‘–¸
+	// æ°´å¹³æ–¹å‘èµ°æŸ»
 	ptrNext = m_pArrangeTable[0] ;
 	for ( i = 0; i < m_nBlockSamples; i ++ )
 	{
 		ptrNext[i] = i ;
 	}
 	//
-	// ‚’¼•ûŒü‘–¸
+	// å‚ç›´æ–¹å‘èµ°æŸ»
 	ptrNext = m_pArrangeTable[1] ;
 	l = 0 ;
 	for ( i = 0; i < m_nChannelCount; i ++ )
@@ -668,7 +668,7 @@ void ERIEncoder::InitializeSamplingTable( void )
 		l += m_nBlockArea ;
 	}
 	//
-	// …•½•ûŒüƒCƒ“ƒ^[ƒŠ[ƒu
+	// æ°´å¹³æ–¹å‘ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–
 	ptrNext = m_pArrangeTable[2] ;
 	for ( i = 0; i < m_nChannelCount; i ++ )
 	{
@@ -680,7 +680,7 @@ void ERIEncoder::InitializeSamplingTable( void )
 		}
 	}
 	//
-	// ‚’¼•ûŒüƒCƒ“ƒ^[ƒŠ[ƒu
+	// å‚ç›´æ–¹å‘ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–
 	ptrNext = m_pArrangeTable[3] ;
 	n = m_nBlockSize * m_nChannelCount ;
 	for ( i = 0; i < m_nChannelCount; i ++ )
@@ -700,7 +700,7 @@ void ERIEncoder::InitializeSamplingTable( void )
 }
 
 //
-// I—¹iƒƒ‚ƒŠ‚Ì‰ğ•ú‚È‚Çj
+// çµ‚äº†ï¼ˆãƒ¡ãƒ¢ãƒªã®è§£æ”¾ãªã©ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::Delete( void )
 {
@@ -777,14 +777,14 @@ void ERIEncoder::Delete( void )
 }
 
 //
-// ‰æ‘œ‚ğˆ³k
+// ç”»åƒã‚’åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::EncodeImage
 	( const RASTER_IMAGE_INFO & srcimginf,
 		RLHEncodeContext & context, DWORD fdwFlags )
 {
 	//
-	// o—Í‰æ‘œî•ñ‚ğƒRƒs[‚·‚é
+	// å‡ºåŠ›ç”»åƒæƒ…å ±ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 	RASTER_IMAGE_INFO	imginf = srcimginf ;
 	if ( m_EriInfHdr.nImageHeight < 0 )
 	{
@@ -798,13 +798,13 @@ int ERIEncoder::EncodeImage
 		if ( srcimginf.fdwFormatType & ERI_WITH_PALETTE )
 		{
 			//
-			// ƒpƒŒƒbƒg‰æ‘œƒtƒH[ƒ}ƒbƒg
+			// ãƒ‘ãƒ¬ãƒƒãƒˆç”»åƒãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 			return	EncodePaletteImage( imginf, context ) ;
 		}
 		else
 		{
 			//
-			// ƒtƒ‹ƒJƒ‰[ƒtƒH[ƒ}ƒbƒg
+			// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 			if ( m_EriInfHdr.dwVersion == 0x00020200 )
 			{
 				return	EncodeTrueColorImageII( imginf, context, fdwFlags ) ;
@@ -818,15 +818,15 @@ int ERIEncoder::EncodeImage
 	else if ( m_EriInfHdr.fdwTransformation == CVTYPE_DCT_ERI )
 	{
 		//
-		// ”ñ‰Â‹tƒtƒ‹ƒJƒ‰[ƒtƒH[ƒ}ƒbƒg
+		// éå¯é€†ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 		return	EncodeTrueColorImageDCT( imginf, context, fdwFlags ) ;
 	}
 
-	return	1 ;			// –¢‘Î‰‚ÌƒtƒH[ƒ}ƒbƒg
+	return	1 ;			// æœªå¯¾å¿œã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 }
 
 //
-// ˆ³kƒIƒvƒVƒ‡ƒ“‚ğİ’è
+// åœ§ç¸®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SetCompressionParameter
 	( const ERIEncoder::PARAMETER & parameter )
@@ -835,14 +835,14 @@ void ERIEncoder::SetCompressionParameter
 }
 
 //
-// ƒtƒ‹ƒJƒ‰[‰æ‘œ‚Ìˆ³k
+// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒã®åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::EncodeTrueColorImage
 	( const RASTER_IMAGE_INFO & imginf,
 		RLHEncodeContext & context, DWORD fdwFlags )
 {
 	//
-	// ƒoƒbƒtƒ@Šm•Û
+	// ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	ULONG	nAllBlockCount, nAllSampleCount ;
 	PBYTE	ptrNextOpCode ;
 	PINT	ptrNextDstBuf ;
@@ -864,18 +864,18 @@ int ERIEncoder::EncodeTrueColorImage
 		ptrNextDstBuf = m_ptrDstBuffer ;
 	}
 	//
-	// ƒrƒbƒg[“xæ“¾
+	// ãƒ“ãƒƒãƒˆæ·±åº¦å–å¾—
 	m_nChannelDepth = GetChannelDepth
 		( imginf.fdwFormatType, imginf.dwBitsPerPixel ) ;
 	//
-	// ‰æ‘œƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ÌƒAƒhƒŒƒX‚ğæ“¾
+	// ç”»åƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—
 	m_nSrcBytesPerPixel = (UINT) imginf.dwBitsPerPixel >> 3 ;
 	PFUNC_SAMPLING	pfnSampling =
 		GetSamplingFunc( imginf.fdwFormatType, imginf.dwBitsPerPixel ) ;
 	if ( pfnSampling == 0 )
-		return	1 ;		// ƒGƒ‰[iŠY“–‚·‚éƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ª’è‹`‚³‚ê‚Ä‚¢‚È‚¢j
+		return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆè©²å½“ã™ã‚‹ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ãŒå®šç¾©ã•ã‚Œã¦ã„ãªã„ï¼‰
 	//
-	// ƒ‰ƒCƒ“ƒoƒbƒtƒ@‚ğƒNƒŠƒA
+	// ãƒ©ã‚¤ãƒ³ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢
 	INT		i ;
 	LONG	nWidthSamples =
 		m_nChannelCount * (m_nWidthBlocks << m_EriInfHdr.dwBlockingDegree) ;
@@ -884,9 +884,9 @@ int ERIEncoder::EncodeTrueColorImage
 		m_ptrLineBuf[i] = 0 ;
 	}
 	//
-	// ˆ³kŠJn
+	// åœ§ç¸®é–‹å§‹
 	//
-	// ERIƒwƒbƒ_‚ğo—Í
+	// ERIãƒ˜ãƒƒãƒ€ã‚’å‡ºåŠ›
 	if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 	{
 		context.OutNBits( 0x01000000UL, 32 ) ;
@@ -904,14 +904,14 @@ int ERIEncoder::EncodeTrueColorImage
 	for ( nPosY = 0; nPosY < (LONG) m_nHeightBlocks; nPosY ++ )
 	{
 		//
-		// ƒJƒ‰ƒ€ƒoƒbƒtƒ@‚ğƒNƒŠƒA
+		// ã‚«ãƒ©ãƒ ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢
 		LONG	nColumnBufSamples = (LONG) (m_nBlockSize * m_nChannelCount) ;
 		for ( i = 0; i < nColumnBufSamples; i ++ )
 		{
 			m_ptrColumnBuf[i] = 0 ;
 		}
 		//
-		// s‚Ì–‘Oˆ—
+		// è¡Œã®äº‹å‰å‡¦ç†
 		PBYTE	ptrSrcLine = imginf.ptrImageArray
 			+ ((nPosY * imginf.BytesPerLine) << m_EriInfHdr.dwBlockingDegree) ;
 		int	nBlockHeight = (int) m_nBlockSize ;
@@ -924,7 +924,7 @@ int ERIEncoder::EncodeTrueColorImage
 		for ( nPosX = 0; nPosX < (LONG) m_nWidthBlocks; nPosX ++ )
 		{
 			//
-			// ƒuƒƒbƒN‚ğƒTƒ“ƒvƒŠƒ“ƒO
+			// ãƒ–ãƒ­ãƒƒã‚¯ã‚’ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 			int	nBlockWidth = (int) m_nBlockSize ;
 			if ( nBlockWidth > nRestWidth )
 				nBlockWidth = nRestWidth ;
@@ -939,10 +939,10 @@ int ERIEncoder::EncodeTrueColorImage
 			(this->*pfnSampling)
 				( ptrSrcLine, imginf.BytesPerLine, nBlockWidth, nBlockHeight ) ;
 			//
-			// ·•ªˆ—‚ğÀs
+			// å·®åˆ†å‡¦ç†ã‚’å®Ÿè¡Œ
 			DifferentialOperation( nAllBlockLines, &ptrNextLineBuf ) ;
 			//
-			// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[‚·‚é
+			// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 			if ( m_nChannelCount >= 4 )
 			{
 				PINT	ptrSrc = m_ptrBuffer1 + m_nBlockArea * 3 ;
@@ -953,11 +953,11 @@ int ERIEncoder::EncodeTrueColorImage
 				}
 			}
 			//
-			// Å“K‚ÈƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğ‘I‘ğ
+			// æœ€é©ãªã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é¸æŠ
 			if ( m_nChannelCount >= 3 )
 			{
 				//
-				// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğ‡ŸÀs‚µÅ“K‚È‚à‚Ì‚ğ‘I‚Ô
+				// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é †æ¬¡å®Ÿè¡Œã—æœ€é©ãªã‚‚ã®ã‚’é¸ã¶
 				static const int	iClrOpFull[9] =
 				{
 					5, 6, 7, 9, 10, 11, 13, 14, 15
@@ -1003,13 +1003,13 @@ int ERIEncoder::EncodeTrueColorImage
 					}
 				}
 				//
-				// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğo—Í
+				// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 				if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 					context.OutNBits( ((DWORD) iBestClrOp << 28), 4 ) ;
 				else
 					*(ptrNextOpCode ++) = (BYTE)(iBestClrOp << 4) ;
 				// 
-				// ƒJƒ‰[ƒIƒyƒŒ[ƒVƒ‡ƒ“‚ğÀs
+				// ã‚«ãƒ©ãƒ¼ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œ
 				(this->*m_pfnColorOperation[iBestClrOp])( ) ;
 				NormalizeWithDepth
 					( m_ptrBuffer2, m_ptrBuffer2, m_nBlockSamples ) ;
@@ -1017,24 +1017,24 @@ int ERIEncoder::EncodeTrueColorImage
 			else
 			{
 				//
-				// ƒoƒbƒtƒ@‚Ì“à—e‚ğ³‹K‰»‚µ‚ÄƒRƒs[
+				// ãƒãƒƒãƒ•ã‚¡ã®å†…å®¹ã‚’æ­£è¦åŒ–ã—ã¦ã‚³ãƒ”ãƒ¼
 				NormalizeWithDepth
 					( m_ptrBuffer2, m_ptrBuffer1, m_nBlockSamples ) ;
 			}
 			if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 			{
 				//
-				// ƒ‰ƒ“ƒŒƒ“ƒOƒXƒKƒ“ƒ}•„†‚ÉƒGƒ“ƒR[ƒh
+				// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã‚¬ãƒ³ãƒç¬¦å·ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
 				if ( context.EncodeGammaCodes
 					( m_ptrBuffer2, m_nBlockSamples ) < (int) m_nBlockSamples )
 				{
-					return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+					return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 				}
 			}
 			else
 			{
 				//
-				// o—Íƒoƒbƒtƒ@‚ÉƒRƒs[
+				// å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã«ã‚³ãƒ”ãƒ¼
 				for ( i = 0; (ULONG) i < m_nBlockSamples; i ++ )
 				{
 					ptrNextDstBuf[i] = m_ptrBuffer2[i] ;
@@ -1042,10 +1042,10 @@ int ERIEncoder::EncodeTrueColorImage
 				ptrNextDstBuf += m_nBlockSamples ;
 			}
 			//
-			// ˆ³k‚Ìó‹µ‚ğ’Ê’m
+			// åœ§ç¸®ã®çŠ¶æ³ã‚’é€šçŸ¥
 			int	flgContinue = OnEncodedBlock( nPosY, nPosX ) ;
 			if ( flgContinue != 0 )
-				return	flgContinue ;		// ’†’f
+				return	flgContinue ;		// ä¸­æ–­
 			//
 			ptrSrcLine +=
 				(m_nSrcBytesPerPixel << m_EriInfHdr.dwBlockingDegree) ;
@@ -1055,13 +1055,13 @@ int ERIEncoder::EncodeTrueColorImage
 		nRestHeight -= (LONG) m_nBlockSize ;
 	}
 	//
-	// ƒuƒƒbƒN”ñ“Æ—§Œ^‚Ìê‡AˆêŠ‡ˆ³k
+	// ãƒ–ãƒ­ãƒƒã‚¯éç‹¬ç«‹å‹ã®å ´åˆã€ä¸€æ‹¬åœ§ç¸®
 	if ( !(fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK) )
 	{
 		if ( m_nChannelCount >= 3 )
 		{
 			//
-			// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒe[ƒuƒ‹o—Í
+			// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ãƒ¼ãƒ–ãƒ«å‡ºåŠ›
 			int	nOpCodeBits ;
 			if ( m_EriInfHdr.dwVersion == 0x00020100 )
 				nOpCodeBits = 4 ;
@@ -1076,29 +1076,29 @@ int ERIEncoder::EncodeTrueColorImage
 		}
 		context.OutNBits( 0, 1 ) ;
 		//
-		// ƒ‰ƒ“ƒŒƒ“ƒOƒXƒKƒ“ƒ}•„†‚ÉƒGƒ“ƒR[ƒh
+		// ãƒ©ãƒ³ãƒ¬ãƒ³ã‚°ã‚¹ã‚¬ãƒ³ãƒç¬¦å·ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
 		if ( context.EncodeGammaCodes
 			( m_ptrDstBuffer, nAllSampleCount ) < (int) nAllSampleCount )
 		{
-			return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+			return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 		}
 	}
 	//
 	if ( context.Flushout( ) )
 		return	1 ;
 	//
-	return	0 ;				// ³íI—¹
+	return	0 ;				// æ­£å¸¸çµ‚äº†
 }
 
 //
-// ƒtƒ‹ƒJƒ‰[‰æ‘œ‚Ìˆ³k
+// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒã®åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::EncodeTrueColorImageII
 	( const RASTER_IMAGE_INFO & imginf,
 		RLHEncodeContext & context, DWORD fdwFlags )
 {
 	//
-	// ƒoƒbƒtƒ@Šm•Û
+	// ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	ULONG	nAllBlockCount, nAllSampleCount ;
 	PBYTE	ptrNextOpCode ;
 	SBYTE *	ptrNextDstBuf ;
@@ -1120,22 +1120,22 @@ int ERIEncoder::EncodeTrueColorImageII
 		ptrNextDstBuf = (SBYTE*) m_ptrDstBuffer ;
 	}
 	//
-	// ƒRƒ“ƒeƒLƒXƒg‚ğ‰Šú‰»
+	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚’åˆæœŸåŒ–
 	m_pHuffmanTree->Initialize( ) ;
 	context.PrepareToEncodeERINACode( ) ;
 	//
-	// ƒrƒbƒg[“xæ“¾
+	// ãƒ“ãƒƒãƒˆæ·±åº¦å–å¾—
 	m_nChannelDepth = GetChannelDepth
 		( imginf.fdwFormatType, imginf.dwBitsPerPixel ) ;
 	//
-	// ‰æ‘œƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ÌƒAƒhƒŒƒX‚ğæ“¾
+	// ç”»åƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—
 	m_nSrcBytesPerPixel = (UINT) imginf.dwBitsPerPixel >> 3 ;
 	PFUNC_SAMPLING	pfnSampling =
 		GetSamplingFunc( imginf.fdwFormatType, imginf.dwBitsPerPixel ) ;
 	if ( pfnSampling == 0 )
-		return	1 ;		// ƒGƒ‰[iŠY“–‚·‚éƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ª’è‹`‚³‚ê‚Ä‚¢‚È‚¢j
+		return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆè©²å½“ã™ã‚‹ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ãŒå®šç¾©ã•ã‚Œã¦ã„ãªã„ï¼‰
 	//
-	// ƒ‰ƒCƒ“ƒoƒbƒtƒ@‚ğƒNƒŠƒA
+	// ãƒ©ã‚¤ãƒ³ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢
 	INT		i ;
 	LONG	nWidthSamples =
 		m_nChannelCount * (m_nWidthBlocks << m_EriInfHdr.dwBlockingDegree) ;
@@ -1144,9 +1144,9 @@ int ERIEncoder::EncodeTrueColorImageII
 		m_ptrLineBuf[i] = 0 ;
 	}
 	//
-	// ˆ³kŠJn
+	// åœ§ç¸®é–‹å§‹
 	//
-	// ERIƒwƒbƒ_‚ğo—Í
+	// ERIãƒ˜ãƒƒãƒ€ã‚’å‡ºåŠ›
 	if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 	{
 		context.OutNBits( 0x08000008UL, 32 ) ;
@@ -1164,14 +1164,14 @@ int ERIEncoder::EncodeTrueColorImageII
 	for ( nPosY = 0; nPosY < (LONG) m_nHeightBlocks; nPosY ++ )
 	{
 		//
-		// ƒJƒ‰ƒ€ƒoƒbƒtƒ@‚ğƒNƒŠƒA
+		// ã‚«ãƒ©ãƒ ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢
 		LONG	nColumnBufSamples = (LONG) (m_nBlockSize * m_nChannelCount) ;
 		for ( i = 0; i < nColumnBufSamples; i ++ )
 		{
 			m_ptrColumnBuf[i] = 0 ;
 		}
 		//
-		// s‚Ì–‘Oˆ—
+		// è¡Œã®äº‹å‰å‡¦ç†
 		PBYTE	ptrSrcLine = imginf.ptrImageArray
 			+ ((nPosY * imginf.BytesPerLine) << m_EriInfHdr.dwBlockingDegree) ;
 		int	nBlockHeight = (int) m_nBlockSize ;
@@ -1184,7 +1184,7 @@ int ERIEncoder::EncodeTrueColorImageII
 		for ( nPosX = 0; nPosX < (LONG) m_nWidthBlocks; nPosX ++ )
 		{
 			//
-			// ƒuƒƒbƒN‚ğƒTƒ“ƒvƒŠƒ“ƒO
+			// ãƒ–ãƒ­ãƒƒã‚¯ã‚’ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 			int	nBlockWidth = (int) m_nBlockSize ;
 			if ( nBlockWidth > nRestWidth )
 				nBlockWidth = nRestWidth ;
@@ -1199,29 +1199,29 @@ int ERIEncoder::EncodeTrueColorImageII
 			(this->*pfnSampling)
 				( ptrSrcLine, imginf.BytesPerLine, nBlockWidth, nBlockHeight ) ;
 			//
-			// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğæ“¾
+			// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
 			DWORD	dwOpCode =
 				DecideOperationCode
 					( ERI_GET_COMPRESS_MODE(fdwFlags),
 						nAllBlockLines, &ptrNextLineBuf ) ;
 			//
-			// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒR[ƒh‚ğo—Í
+			// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›
 			if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 			{
 				context.OutAHuffmanCode( m_pHuffmanTree, dwOpCode ) ;
 				//
-				// ERINA •„†‚ÉƒGƒ“ƒR[ƒh
+				// ERINA ç¬¦å·ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
 				if ( context.EncodeERINACodes
 					( m_ptrBuffer1, m_nBlockSamples ) < (int) m_nBlockSamples )
 				{
-					return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+					return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 				}
 			}
 			else
 			{
 				*(ptrNextOpCode ++) = (BYTE) dwOpCode ;
 				//
-				// o—Íƒoƒbƒtƒ@‚ÉƒRƒs[
+				// å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã«ã‚³ãƒ”ãƒ¼
 				for ( i = 0; (ULONG) i < m_nBlockSamples; i ++ )
 				{
 					ptrNextDstBuf[i] = (SBYTE) m_ptrBuffer1[i] ;
@@ -1229,10 +1229,10 @@ int ERIEncoder::EncodeTrueColorImageII
 				ptrNextDstBuf += m_nBlockSamples ;
 			}
 			//
-			// ˆ³k‚Ìó‹µ‚ğ’Ê’m
+			// åœ§ç¸®ã®çŠ¶æ³ã‚’é€šçŸ¥
 			int	flgContinue = OnEncodedBlock( nPosY, nPosX ) ;
 			if ( flgContinue != 0 )
-				return	flgContinue ;		// ’†’f
+				return	flgContinue ;		// ä¸­æ–­
 			//
 			ptrSrcLine +=
 				(m_nSrcBytesPerPixel << m_EriInfHdr.dwBlockingDegree) ;
@@ -1242,52 +1242,52 @@ int ERIEncoder::EncodeTrueColorImageII
 		nRestHeight -= (LONG) m_nBlockSize ;
 	}
 	//
-	// ƒuƒƒbƒN”ñ“Æ—§Œ^‚Ìê‡AˆêŠ‡ˆ³k
+	// ãƒ–ãƒ­ãƒƒã‚¯éç‹¬ç«‹å‹ã®å ´åˆã€ä¸€æ‹¬åœ§ç¸®
 	if ( !(fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK) )
 	{
 		//
-		// ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒe[ƒuƒ‹o—Í
+		// ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ†ãƒ¼ãƒ–ãƒ«å‡ºåŠ›
 		for ( i = 0; i < (INT) nAllBlockCount; i ++ )
 		{
 			context.OutAHuffmanCode( m_pHuffmanTree, m_ptrOperations[i] ) ;
 		}
 		context.OutNBits( 0, 1 ) ;
 		//
-		// ERINA •„†‚ÉƒGƒ“ƒR[ƒh
+		// ERINA ç¬¦å·ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
 		if ( context.EncodeERINACodesSBZL
 			( (SBYTE*) m_ptrDstBuffer, nAllSampleCount ) < (int) nAllSampleCount )
 		{
-			return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+			return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 		}
 	}
 	//
 	if ( context.Flushout( ) )
 		return	1 ;
 	//
-	return	0 ;				// ³íI—¹
+	return	0 ;				// æ­£å¸¸çµ‚äº†
 }
 
 //
-// ƒpƒŒƒbƒg‰æ‘œ‚Ìˆ³k
+// ãƒ‘ãƒ¬ãƒƒãƒˆç”»åƒã®åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::EncodePaletteImage
 	( const RASTER_IMAGE_INFO & imginf, RLHEncodeContext & context )
 {
 	//
-	// ƒtƒH[ƒ}ƒbƒg‚ÌŠm”F
+	// ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã®ç¢ºèª
 	if ( imginf.dwBitsPerPixel != 8 )
-		return	1 ;			// ƒGƒ‰[i–¢‘Î‰‚ÌƒtƒH[ƒ}ƒbƒgj
+		return	1 ;			// ã‚¨ãƒ©ãƒ¼ï¼ˆæœªå¯¾å¿œã®ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆï¼‰
 	//
-	// ERIƒwƒbƒ_‚ğo—Í
+	// ERIãƒ˜ãƒƒãƒ€ã‚’å‡ºåŠ›
 	context.OutNBits( 0x02000000UL, 32 ) ;
 	//
-	// ƒRƒ“ƒeƒLƒXƒg‚Ì‰Šú‰»
+	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®åˆæœŸåŒ–
 	if ( m_EriInfHdr.dwArchitecture == 0xFFFFFFFC )
 		context.PrepareToEncodeERINACode( ) ;
 	else
 		context.PrepareToEncodeRLMTFGCode( ) ;
 	//
-	// ˆ³kŠJn
+	// åœ§ç¸®é–‹å§‹
 	LONG	nLine, nHeight ;
 	if ( imginf.nImageHeight < 0 )
 		nHeight = - imginf.nImageHeight ;
@@ -1303,28 +1303,28 @@ int ERIEncoder::EncodePaletteImage
 		if ( m_EriInfHdr.dwArchitecture == 0xFFFFFFFC )
 		{
 			//
-			// ERINA •„†‚ğg‚Á‚Ä1sˆ³k
+			// ERINA ç¬¦å·ã‚’ä½¿ã£ã¦1è¡Œåœ§ç¸®
 			if ( context.EncodeERINACodes256
 					( ptrSrcLine, nImageWidth ) < (int) nImageWidth )
 			{
-				return	1 ;				// ƒGƒ‰[iƒGƒ“ƒR[ƒh‚É¸”sj
+				return	1 ;				// ã‚¨ãƒ©ãƒ¼ï¼ˆã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—ï¼‰
 			}
 		}
 		else
 		{
 			//
-			// RL-MTF-G •„†‚ğg‚Á‚Ä1sˆ³k
+			// RL-MTF-G ç¬¦å·ã‚’ä½¿ã£ã¦1è¡Œåœ§ç¸®
 			if ( context.EncodeRLMTFGCodes
 					( ptrSrcLine, nImageWidth ) < (int) nImageWidth )
 			{
-				return	1 ;				// ƒGƒ‰[iƒGƒ“ƒR[ƒh‚É¸”sj
+				return	1 ;				// ã‚¨ãƒ©ãƒ¼ï¼ˆã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—ï¼‰
 			}
 		}
 		//
-		// “WŠJ‚Ìó‹µ‚ğ’Ê’m
+		// å±•é–‹ã®çŠ¶æ³ã‚’é€šçŸ¥
 		int	flgContinue = OnEncodedLine( nLine ) ;
 		if ( flgContinue != 0 )
-			return	flgContinue ;	// ’†’f
+			return	flgContinue ;	// ä¸­æ–­
 		//
 		ptrSrcLine += nBytesPerLine ;
 	}
@@ -1332,11 +1332,11 @@ int ERIEncoder::EncodePaletteImage
 	if ( context.Flushout( ) )
 		return	1 ;
 	//
-	return	0 ;				// ³íI—¹
+	return	0 ;				// æ­£å¸¸çµ‚äº†
 }
 
 //
-// ƒ`ƒƒƒlƒ‹‚Ìƒrƒbƒg[“x‚ğæ“¾‚·‚é
+// ãƒãƒ£ãƒãƒ«ã®ãƒ“ãƒƒãƒˆæ·±åº¦ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::GetChannelDepth
 	( DWORD fdwFormatType, DWORD dwBitsPerPixel )
@@ -1348,7 +1348,7 @@ int ERIEncoder::GetChannelDepth
 }
 
 //
-// w’è‚Ìƒrƒbƒg[“x‚Éƒf[ƒ^‚ğ³‹K‰»‚·‚é
+// æŒ‡å®šã®ãƒ“ãƒƒãƒˆæ·±åº¦ã«ãƒ‡ãƒ¼ã‚¿ã‚’æ­£è¦åŒ–ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::NormalizeWithDepth( PINT ptrDst, PINT ptrSrc, int nCount )
 {
@@ -1378,7 +1378,7 @@ void ERIEncoder::NormalizeWithDepth( PINT ptrDst, PINT ptrSrc, int nCount )
 }
 
 //
-// ‰æ‘œ‚ğƒTƒ“ƒvƒŠƒ“ƒO‚·‚éŠÖ”‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+// ç”»åƒã‚’ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã™ã‚‹é–¢æ•°ã¸ã®ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ERIEncoder::PFUNC_SAMPLING
 	ERIEncoder::GetSamplingFunc( DWORD fdwFormatType, DWORD dwBitsPerPixel )
@@ -1413,7 +1413,7 @@ ERIEncoder::PFUNC_SAMPLING
 }
 
 //
-// ƒOƒŒƒC‰æ‘œ‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// ã‚°ãƒ¬ã‚¤ç”»åƒã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingGray8
 	( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight )
@@ -1432,7 +1432,7 @@ void ERIEncoder::SamplingGray8
 }
 
 //
-// RGB‰æ‘œ(15ƒrƒbƒg)‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// RGBç”»åƒ(15ãƒ“ãƒƒãƒˆ)ã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingRGB16
 	( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight )
@@ -1461,7 +1461,7 @@ void ERIEncoder::SamplingRGB16
 }
 
 //
-// RGB‰æ‘œ‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// RGBç”»åƒã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingRGB24
 	( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight )
@@ -1491,7 +1491,7 @@ void ERIEncoder::SamplingRGB24
 }
 
 //
-// RGBA‰æ‘œ‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// RGBAç”»åƒã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingRGBA32
 	( PBYTE ptrSrc, LONG nLineBytes, int nWidth, int nHeight )
@@ -1523,7 +1523,7 @@ void ERIEncoder::SamplingRGBA32
 }
 
 //
-// ƒTƒ“ƒvƒŠƒ“ƒOƒe[ƒuƒ‹‚Ì‰Šú‰»
+// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::InitializeZigZagTable( void )
 {
@@ -1577,14 +1577,14 @@ void ERIEncoder::InitializeZigZagTable( void )
 }
 
 //
-// ƒtƒ‹ƒJƒ‰[‰æ‘œ‚Ìˆ³k
+// ãƒ•ãƒ«ã‚«ãƒ©ãƒ¼ç”»åƒã®åœ§ç¸®
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::EncodeTrueColorImageDCT
 	( const RASTER_IMAGE_INFO & imginf,
 		RLHEncodeContext & context, DWORD fdwFlags )
 {
 	//
-	// ƒoƒbƒtƒ@Šm•Û
+	// ãƒãƒƒãƒ•ã‚¡ç¢ºä¿
 	BYTE	bytScaleCode[2] ;
 	ULONG	nAllBlockCount, nAllSampleCount ;
 	PBYTE	ptrNextScaleCode = bytScaleCode ;
@@ -1620,23 +1620,23 @@ int ERIEncoder::EncodeTrueColorImageDCT
 		ptrNextDstBuf = (SBYTE*) m_ptrDstBuffer ;
 	}
 	//
-	// ƒRƒ“ƒeƒLƒXƒg‚ğ‰Šú‰»
+	// ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã‚’åˆæœŸåŒ–
 	m_pHuffmanTree->Initialize( ) ;
 	if ( m_EriInfHdr.dwArchitecture == ERI_RUNLENGTH_HUFFMAN )
 	{
 		context.PrepareToEncodeERINACode( ) ;
 	}
 	//
-	// ‰æ‘œƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ÌƒAƒhƒŒƒX‚ğæ“¾
+	// ç”»åƒã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å–å¾—
 	m_nSrcBytesPerPixel = (imginf.dwBitsPerPixel >> 3) ;
 	PFUNC_SAMPLINGII	pfnSampling =
 		GetSamplingFuncII( imginf.fdwFormatType, imginf.dwBitsPerPixel ) ;
 	if ( pfnSampling == NULL )
-		return	1 ;		// ƒGƒ‰[iŠY“–‚·‚éƒTƒ“ƒvƒŠƒ“ƒOŠÖ”‚ª’è‹`‚³‚ê‚Ä‚¢‚È‚¢j
+		return	1 ;		// ã‚¨ãƒ©ãƒ¼ï¼ˆè©²å½“ã™ã‚‹ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°é–¢æ•°ãŒå®šç¾©ã•ã‚Œã¦ã„ãªã„ï¼‰
 	//
-	// ˆ³kŠJn
+	// åœ§ç¸®é–‹å§‹
 	//
-	// ERIƒwƒbƒ_‚ğo—Í
+	// ERIãƒ˜ãƒƒãƒ€ã‚’å‡ºåŠ›
 	if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 	{
 		context.OutNBits( 0x09000008UL, 32 ) ;
@@ -1647,7 +1647,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 	}
 	context.OutNBits( 0, 1 ) ;
 	//
-	// ’¼—¬¬•ªŒW”‚ğo—Í
+	// ç›´æµæˆåˆ†ä¿‚æ•°ã‚’å‡ºåŠ›
 	int		nScaleDC =
 		::eriRoundR32ToInt( m_parameter.m_rYScaleDC * 256.0F ) - 1 ;
 	if ( nScaleDC < 0 )
@@ -1681,7 +1681,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 	for ( nPosY = 0; nPosY < (LONG) m_nHeightBlocks; nPosY ++ )
 	{
 		//
-		// s‚Ì–‘Oˆ—
+		// è¡Œã®äº‹å‰å‡¦ç†
 		PBYTE	ptrSrcLine =
 			imginf.ptrImageArray
 				+ ((nPosY * imginf.BytesPerLine)
@@ -1701,7 +1701,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 		//
 		LONG	nRestWidth = (LONG) imginf.nImageWidth ;
 		//
-		// ·•ªƒoƒbƒtƒ@‚ğƒNƒŠƒA
+		// å·®åˆ†ãƒãƒƒãƒ•ã‚¡ã‚’ã‚¯ãƒªã‚¢
 		for ( i = 0; i < (INT) m_nBlocksetCount; i ++ )
 		{
 			m_nDCDiffBuffer[i] = 0 ;
@@ -1710,7 +1710,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 		for ( nPosX = 0; nPosX < (LONG) m_nWidthBlocks; nPosX ++ )
 		{
 			//
-			// ƒTƒ“ƒvƒŠƒ“ƒO€”õ
+			// ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æº–å‚™
 			int		nBlockWidthL = m_nBlockSize ;
 			int		nBlockWidthR = m_nBlockSize ;
 			if ( nRestWidth < (LONG) m_nBlockSize )
@@ -1742,7 +1742,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 					+ m_nBlockSize * imginf.BytesPerLine
 			} ;
 			//
-			// ƒuƒƒbƒN‚ğƒTƒ“ƒvƒŠƒ“ƒO
+			// ãƒ–ãƒ­ãƒƒã‚¯ã‚’ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 			for ( i = 0; i < 4; i ++ )
 			{
 				REAL32 *	ptrBuf[4] ;
@@ -1755,19 +1755,19 @@ int ERIEncoder::EncodeTrueColorImageDCT
 						imginf.BytesPerLine, widthBlock[i], heightBlock[i] ) ;
 			}
 			//
-			// RGB -> YUV •ÏŠ·
+			// RGB -> YUV å¤‰æ›
 			ConvertRGBtoYUV( ) ;
 			//
-			// ƒXƒP[ƒŠƒ“ƒO
+			// ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 			(this->*m_pfnBlockScaling)( ) ;
 			//
-			// DCT •ÏŠ·‚ğ{‚·
+			// DCT å¤‰æ›ã‚’æ–½ã™
 			PerformDCT( ) ;
 			//
-			// Ä”z—ñ‚µ‚Ä—Êq‰»‚ğ{‚·
+			// å†é…åˆ—ã—ã¦é‡å­åŒ–ã‚’æ–½ã™
 			ArrangeAndQuantumize( ptrNextScaleCode ) ;
 			//
-			// ’¼—¬¬•ª‚ğ·•ªˆ—
+			// ç›´æµæˆåˆ†ã‚’å·®åˆ†å‡¦ç†
 			for ( i = 0; i < (INT) m_nBlocksetCount; i ++ )
 			{
 				INT		nLastVal = m_ptrBuffer1[i] ;
@@ -1775,19 +1775,19 @@ int ERIEncoder::EncodeTrueColorImageDCT
 				m_nDCDiffBuffer[i] = nLastVal ;
 			}
 			//
-			// •„†‰»‚µ‚Äo—Í
+			// ç¬¦å·åŒ–ã—ã¦å‡ºåŠ›
 			if ( fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK )
 			{
 				//
-				// ’¼—¬¬•ª‚ğo—Í
+				// ç›´æµæˆåˆ†ã‚’å‡ºåŠ›
 				if ( context.EncodeGammaCodes
 						( m_ptrBuffer1, (int) m_nBlocksetCount )
 											< (int) m_nBlocksetCount )
 				{
-					return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+					return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 				}
 				//
-				// —Êq‰»ŒW”‚ğo—Í
+				// é‡å­åŒ–ä¿‚æ•°ã‚’å‡ºåŠ›
 				context.OutAHuffmanCode
 					( m_pHuffmanTree, ptrNextScaleCode[0] ) ;
 				context.OutAHuffmanCode
@@ -1797,7 +1797,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 				context.OutAHuffmanCode
 					( m_pHuffmanTree, ptrNextScaleCode[3] ) ;
 				//
-				// Œğ—¬¬•ª‚ğo—Í
+				// äº¤æµæˆåˆ†ã‚’å‡ºåŠ›
 				PINT	ptrBuf = m_ptrBuffer1 + m_nBlocksetCount ;
 				INT		nACSamples = (m_nBlockArea - 1) * m_nBlocksetCount ;
 				if ( m_EriInfHdr.dwArchitecture == ERI_RUNLENGTH_HUFFMAN )
@@ -1805,7 +1805,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 					if ( context.EncodeERINACodes
 								( ptrBuf, nACSamples ) < nACSamples )
 					{
-						return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+						return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 					}
 				}
 				else
@@ -1813,24 +1813,24 @@ int ERIEncoder::EncodeTrueColorImageDCT
 					if ( context.EncodeGammaCodes
 								( ptrBuf, nACSamples ) < nACSamples )
 					{
-						return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+						return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 					}
 				}
 			}
 			else
 			{
 				//
-				// —Êq‰»ŒW”ƒ|ƒCƒ“ƒ^‚ği‚ß‚é
+				// é‡å­åŒ–ä¿‚æ•°ãƒã‚¤ãƒ³ã‚¿ã‚’é€²ã‚ã‚‹
 				ptrNextScaleCode += 4 ;
 				//
-				// ’¼—¬¬•ª‚ğo—Í
+				// ç›´æµæˆåˆ†ã‚’å‡ºåŠ›
 				for ( i = 0; i < (INT) m_nBlocksetCount; i ++ )
 				{
 					ptrNextDCCode[i] = m_ptrBuffer1[i] ;
 				}
 				ptrNextDCCode += m_nBlocksetCount ;
 				//
-				// Œğ—¬¬•ª‚ğo—Í
+				// äº¤æµæˆåˆ†ã‚’å‡ºåŠ›
 				PINT	ptrBuf = m_ptrBuffer1 + m_nBlocksetCount ;
 				INT		nACSamples = (m_nBlockArea - 1) * m_nBlocksetCount ;
 				if ( m_EriInfHdr.dwArchitecture == ERI_RUNLENGTH_HUFFMAN )
@@ -1852,10 +1852,10 @@ int ERIEncoder::EncodeTrueColorImageDCT
 				}
 			}
 			//
-			// ˆ³k‚Ìó‹µ‚ğ’Ê’m
+			// åœ§ç¸®ã®çŠ¶æ³ã‚’é€šçŸ¥
 			int	flgContinue = OnEncodedBlock( nPosY, nPosX ) ;
 			if ( flgContinue != 0 )
-				return	flgContinue ;		// ’†’f
+				return	flgContinue ;		// ä¸­æ–­
 			//
 			ptrSrcLine +=
 				(m_nSrcBytesPerPixel << (m_EriInfHdr.dwBlockingDegree + 1)) ;
@@ -1865,32 +1865,32 @@ int ERIEncoder::EncodeTrueColorImageDCT
 		nRestHeight -= (LONG) (m_nBlockSize * 2) ;
 	}
 	//
-	// ƒuƒƒbƒN”ñ“Æ—§Œ^‚Ìê‡AˆêŠ‡ˆ³k
+	// ãƒ–ãƒ­ãƒƒã‚¯éç‹¬ç«‹å‹ã®å ´åˆã€ä¸€æ‹¬åœ§ç¸®
 	if ( !(fdwFlags & ERI_ENCODE_INDEPENDENT_BLOCK) )
 	{
 		//
-		// ’¼—¬¬•ª‚ğo—Í
+		// ç›´æµæˆåˆ†ã‚’å‡ºåŠ›
 		INT		nDCSampleCount = nAllBlockCount * m_nBlocksetCount ;
 		if ( context.EncodeGammaCodes
 				( m_ptrTableDC, nDCSampleCount ) < nDCSampleCount )
 		{
-			return	1 ;				// ƒGƒ“ƒR[ƒh‚É¸”s
+			return	1 ;				// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 		}
 		//
-		// Œğ—¬¬•ªŒW”‚ğo—Í
+		// äº¤æµæˆåˆ†ä¿‚æ•°ã‚’å‡ºåŠ›
 		for ( i = 0; i < (INT) nAllBlockCount * 4; i ++ )
 		{
 			context.OutAHuffmanCode
 				( m_pHuffmanTree, m_ptrOperations[i] ) ;
 		}
 		//
-		// ERINA •„†‚ÉƒGƒ“ƒR[ƒh
+		// ERINA ç¬¦å·ã«ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰
 		if ( m_EriInfHdr.dwArchitecture == ERI_RUNLENGTH_HUFFMAN )
 		{
 			if ( context.EncodeERINACodesSBZL
 				( (SBYTE*) m_ptrDstBuffer, nAllSampleCount ) < (int) nAllSampleCount )
 			{
-				return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+				return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 			}
 		}
 		else
@@ -1898,7 +1898,7 @@ int ERIEncoder::EncodeTrueColorImageDCT
 			if ( context.EncodeGammaCodes
 				( m_ptrDstBuffer, nAllSampleCount ) < (int) nAllSampleCount )
 			{
-				return	1 ;			// ƒGƒ“ƒR[ƒh‚É¸”s
+				return	1 ;			// ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã«å¤±æ•—
 			}
 		}
 	}
@@ -1906,11 +1906,11 @@ int ERIEncoder::EncodeTrueColorImageDCT
 	if ( context.Flushout( ) )
 		return	1 ;
 	//
-	return	0 ;				// ³íI—¹
+	return	0 ;				// æ­£å¸¸çµ‚äº†
 }
 
 //
-// ‰æ‘œ‚ğƒTƒ“ƒvƒŠƒ“ƒO‚·‚éŠÖ”‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾‚·‚é
+// ç”»åƒã‚’ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°ã™ã‚‹é–¢æ•°ã¸ã®ãƒã‚¤ãƒ³ã‚¿ã‚’å–å¾—ã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 ERIEncoder::PFUNC_SAMPLINGII ERIEncoder::GetSamplingFuncII
 	( DWORD fdwFormatType, DWORD dwBitsPerPixel )
@@ -1931,7 +1931,7 @@ ERIEncoder::PFUNC_SAMPLINGII ERIEncoder::GetSamplingFuncII
 }
 
 //
-// RGB‰æ‘œ‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// RGBç”»åƒã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingRGB24II
 	( REAL32 * ptrBuffer[], PBYTE ptrSrc,
@@ -1987,7 +1987,7 @@ void ERIEncoder::SamplingRGB24II
 }
 
 //
-// RGBA‰æ‘œ‚ÌƒTƒ“ƒvƒŠƒ“ƒO
+// RGBAç”»åƒã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::SamplingRGBA32II
 	( REAL32 * ptrBuffer[], PBYTE ptrSrc,
@@ -2047,7 +2047,7 @@ void ERIEncoder::SamplingRGBA32II
 }
 
 //
-// ”¼’[—Ìˆæ‚Éw’è’l‚ğİ’è
+// åŠç«¯é ˜åŸŸã«æŒ‡å®šå€¤ã‚’è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::FillOddArea
 	( REAL32 * ptrBuffer, int nWidth, int nHeight, REAL32 rFill )
@@ -2073,7 +2073,7 @@ void ERIEncoder::FillOddArea
 }
 
 //
-// RGB -> YUV •ÏŠ·ŠÖ”
+// RGB -> YUV å¤‰æ›é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::ConvertRGBtoYUV( void )
 {
@@ -2114,12 +2114,12 @@ void ERIEncoder::ConvertRGBtoYUV( void )
 }
 
 //
-// 4:4:4 ƒXƒP[ƒŠƒ“ƒO
+// 4:4:4 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::BlockScaling444( void )
 {
 	//
-	// ‘Sƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// å…¨ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	for ( int i = 0; i < (int) m_nChannelCount; i ++ )
 	{
 		for ( int j = 0; j < 4; j ++ )
@@ -2136,7 +2136,7 @@ void ERIEncoder::BlockScaling444( void )
 }
 
 //
-// 4:2:2 ƒXƒP[ƒŠƒ“ƒO
+// 4:2:2 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::BlockScaling422( void )
 {
@@ -2144,7 +2144,7 @@ void ERIEncoder::BlockScaling422( void )
 	REAL32 *	ptrSrc ;
 	REAL32 *	ptrDst ;
 	//
-	// ‹P“x¬•ª‚ğƒRƒs[
+	// è¼åº¦æˆåˆ†ã‚’ã‚³ãƒ”ãƒ¼
 	for ( i = 0; i < 4; i ++ )
 	{
 		ptrSrc = m_ptrBuffer3[0][i] ;
@@ -2156,7 +2156,7 @@ void ERIEncoder::BlockScaling422( void )
 		}
 	}
 	//
-	// F·¬•ª‚ğ‚’¼•ûŒü‚Éˆ³k
+	// è‰²å·®æˆåˆ†ã‚’å‚ç›´æ–¹å‘ã«åœ§ç¸®
 	for ( i = 0; i < 2; i ++ )
 	{
 		for ( j = 0; j < 2; j ++ )
@@ -2183,7 +2183,7 @@ void ERIEncoder::BlockScaling422( void )
 		}
 	}
 	//
-	// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	if ( m_nChannelCount == 4 )
 	{
 		for ( i = 0; i < 4; i ++ )
@@ -2200,7 +2200,7 @@ void ERIEncoder::BlockScaling422( void )
 }
 
 //
-// 4:1:1 ƒXƒP[ƒŠƒ“ƒO
+// 4:1:1 ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::BlockScaling411( void )
 {
@@ -2208,7 +2208,7 @@ void ERIEncoder::BlockScaling411( void )
 	REAL32 *	ptrSrc ;
 	REAL32 *	ptrDst ;
 	//
-	// ‹P“x¬•ª‚ğƒRƒs[
+	// è¼åº¦æˆåˆ†ã‚’ã‚³ãƒ”ãƒ¼
 	for ( i = 0; i < 4; i ++ )
 	{
 		ptrSrc = m_ptrBuffer3[0][i] ;
@@ -2220,7 +2220,7 @@ void ERIEncoder::BlockScaling411( void )
 		}
 	}
 	//
-	// F·¬•ª‚ğ‚’¼…•½•ûŒü‚Éˆ³k
+	// è‰²å·®æˆåˆ†ã‚’å‚ç›´æ°´å¹³æ–¹å‘ã«åœ§ç¸®
 	DWORD	dwOffset[4] =
 	{
 		0,
@@ -2253,7 +2253,7 @@ void ERIEncoder::BlockScaling411( void )
 		}
 	}
 	//
-	// ƒAƒ‹ƒtƒ@ƒ`ƒƒƒlƒ‹‚ğƒRƒs[
+	// ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒãƒ«ã‚’ã‚³ãƒ”ãƒ¼
 	if ( m_nChannelCount == 4 )
 	{
 		for ( i = 0; i < 4; i ++ )
@@ -2270,7 +2270,7 @@ void ERIEncoder::BlockScaling411( void )
 }
 
 //
-// DCT •ÏŠ·‚ğ{‚·
+// DCT å¤‰æ›ã‚’æ–½ã™
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::PerformDCT( void )
 {
@@ -2292,7 +2292,7 @@ void ERIEncoder::PerformDCT( void )
 }
 
 //
-// —Êq‰»‚ğ{‚·
+// é‡å­åŒ–ã‚’æ–½ã™
 //////////////////////////////////////////////////////////////////////////////
 void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 {
@@ -2300,7 +2300,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 	REAL32	scale[16] ;
 	PINT	pArrange = m_pArrangeTable[0] ;
 	//
-	// ƒWƒOƒUƒO‘–¸‚µ‚ÄƒCƒ“ƒ^[ƒŠ[ƒu
+	// ã‚¸ã‚°ã‚¶ã‚°èµ°æŸ»ã—ã¦ã‚¤ãƒ³ã‚¿ãƒ¼ãƒªãƒ¼ãƒ–
 	REAL32 *	ptrDst = m_ptrBuffer4[0] ;
 	for ( i = 0; i < (int) m_nBlockArea; i ++ )
 	{
@@ -2312,7 +2312,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 		}
 	}
 	//
-	// ’¼—¬¬•ª‚Ì—Êq‰»ŒW”‚ğæ“¾
+	// ç›´æµæˆåˆ†ã®é‡å­åŒ–ä¿‚æ•°ã‚’å–å¾—
 	int		c_count = 12 ;
 	if ( m_EriInfHdr.dwSamplingFlags == ERISF_YUV_4_2_2 )
 	{
@@ -2332,7 +2332,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 		scale[i] = m_parameter.m_rYScaleDC ;
 	}
 	//
-	// ’¼—¬¬•ª‚ğ—Êq‰»
+	// ç›´æµæˆåˆ†ã‚’é‡å­åŒ–
 	REAL32 *	ptrSrc = m_ptrBuffer4[0] ;
 	PINT	ptrQuantumized = m_ptrBuffer1 ;
 	int		count = (int) m_nBlocksetCount ;
@@ -2342,7 +2342,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 			::eriRoundR32ToInt( scale[i] * *(ptrSrc ++) ) ;
 	}
 	//
-	// Œğ—¬’áü”g¬•ª‚Ì—Êq‰»ŒW”‚ğZo
+	// äº¤æµä½å‘¨æ³¢æˆåˆ†ã®é‡å­åŒ–ä¿‚æ•°ã‚’ç®—å‡º
 	count =
 		(int) (((m_nBlockSize - 1)
 			* m_nBlockSize / 2 - 1) * m_nBlocksetCount) ;
@@ -2404,7 +2404,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 		scale[i] = rYScale ;
 	}
 	//
-	// Œğ—¬’áü”g¬•ª‚ğ—Êq‰»
+	// äº¤æµä½å‘¨æ³¢æˆåˆ†ã‚’é‡å­åŒ–
 	int		nQuantumized ;
 	count = ((m_nBlockSize - 1) * m_nBlockSize / 2 - 1) ;
 	for ( i = 0; i < count; i ++ )
@@ -2428,7 +2428,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 		}
 	}
 	//
-	// Œğ—¬‚ü”g¬•ª‚Ì—Êq‰»ŒW”‚ğZo
+	// äº¤æµé«˜å‘¨æ³¢æˆåˆ†ã®é‡å­åŒ–ä¿‚æ•°ã‚’ç®—å‡º
 	count = (int) ((m_nBlockSize
 					* (m_nBlockSize + 1) / 2) * m_nBlocksetCount) ;
 	rMax = 0.0 ;
@@ -2489,7 +2489,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 		scale[i] = rYScale ;
 	}
 	//
-	// Œğ—¬‚ü”g¬•ª‚ğ—Êq‰»
+	// äº¤æµé«˜å‘¨æ³¢æˆåˆ†ã‚’é‡å­åŒ–
 	count = (m_nBlockSize * (m_nBlockSize + 1) / 2) ;
 	for ( i = 0; i < count; i ++ )
 	{
@@ -2514,7 +2514,7 @@ void ERIEncoder::ArrangeAndQuantumize( BYTE bytCoefficient[] )
 }
 
 //
-// “WŠJisó‹µ’Ê’mŠÖ”
+// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 int ERIEncoder::OnEncodedBlock( LONG line, LONG column )
 {
@@ -2528,11 +2528,11 @@ int ERIEncoder::OnEncodedLine( LONG line )
 
 
 /*****************************************************************************
-                     ƒtƒ@ƒCƒ‹ƒXƒgƒŠ[ƒ€ƒRƒ“ƒeƒLƒXƒg
+                     ãƒ•ã‚¡ã‚¤ãƒ«ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
  *****************************************************************************/
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EFileEncodeContext::EFileEncodeContext
 		( EWriteFileObj * pFileObj, ULONG nBufferingSize )
@@ -2541,14 +2541,14 @@ EFileEncodeContext::EFileEncodeContext
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 EFileEncodeContext::~EFileEncodeContext( void )
 {
 }
 
 //
-// Ÿ‚Ìƒf[ƒ^‚ğ‘‚«o‚·
+// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãå‡ºã™
 //////////////////////////////////////////////////////////////////////////////
 ULONG EFileEncodeContext::WriteNextData
 	( const BYTE * ptrBuffer, ULONG nBytes )
@@ -2557,7 +2557,7 @@ ULONG EFileEncodeContext::WriteNextData
 }
 
 //
-// ƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg‚ğİ’è‚·‚é
+// ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¨­å®šã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void EFileEncodeContext::AttachFileObject( EWriteFileObj * pFileObj )
 {

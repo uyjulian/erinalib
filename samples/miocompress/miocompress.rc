@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ���{�� resources
+// 日本語 resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
 #ifdef _WIN32
@@ -50,8 +50,8 @@ BEGIN
     "LANGUAGE 17, 1\r\n"
     "#pragma code_page(932)\r\n"
     "#endif\r\n"
-    "#include ""res\\miocompress.rc2""  // Microsoft Visual C++ �ȊO�̃c�[���ŕҏW���ꂽ���\�[�X\r\n"
-    "#include ""l.jpn\\afxres.rc""          // �W���̃R���|�[�l���g\r\n"
+    "#include ""res\\miocompress.rc2""  // Microsoft Visual C++ 以外のツールで編集されたリソース\r\n"
+    "#include ""l.jpn\\afxres.rc""          // 標準のコンポーネント\r\n"
     "#endif\0"
 END
 
@@ -74,8 +74,8 @@ IDR_MAINFRAME           ICON    DISCARDABLE     "res\\miocompress.ico"
 
 IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "�ް�ޮݏ�� miocompress"
-FONT 9, "�l�r �o�S�V�b�N"
+CAPTION "ﾊﾞｰｼﾞｮﾝ情報 miocompress"
+FONT 9, "ＭＳ Ｐゴシック"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
     LTEXT           "miocompress Version 1.0",IDC_STATIC,40,10,119,8,
@@ -87,10 +87,10 @@ END
 
 IDD_PROGRESS_DLG DIALOG DISCARDABLE  0, 0, 223, 93
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "���k���E�E�E"
-FONT 10, "�l�r �o����"
+CAPTION "圧縮中・・・"
+FONT 10, "ＭＳ Ｐ明朝"
 BEGIN
-    PUSHBUTTON      "�L�����Z��",IDCANCEL,90,65,50,15
+    PUSHBUTTON      "キャンセル",IDCANCEL,90,65,50,15
     LTEXT           "Source File : \nDestination File :",IDC_STATIC_MSG,15,
                     10,195,30
     CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,
@@ -100,8 +100,8 @@ END
 IDD_MIOCOMPRESS_DIALOG DIALOGEX 0, 0, 319, 241
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "MIO���k"
-FONT 10, "�l�r �o����"
+CAPTION "MIO圧縮"
+FONT 10, "ＭＳ Ｐ明朝"
 BEGIN
     COMBOBOX        IDC_COMBO_OPTION,204,45,85,100,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
@@ -116,24 +116,24 @@ BEGIN
     LISTBOX         IDC_LIST_FILES,20,30,155,170,LBS_MULTIPLESEL | 
                     LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
                     WS_TABSTOP
-    PUSHBUTTON      "�ǉ�",IDC_BUTTON_ADD,45,205,40,15
-    PUSHBUTTON      "�폜",IDC_BUTTON_DELETE,90,205,40,15
-    PUSHBUTTON      "�S�폜",IDC_BUTTON_DELETE_ALL,135,205,40,15
-    DEFPUSHBUTTON   "���k�J�n",IDOK,200,215,50,15
-    PUSHBUTTON      "�I��",IDCANCEL,255,215,50,15
-    GROUPBOX        "���k�p�����[�^",IDC_STATIC,190,10,115,195
-    LTEXT           "�ȈՎw��",IDC_STATIC,200,30,60,10
-    LTEXT           "�ʎq���W��",IDC_STATIC,200,150,45,10
-    GROUPBOX        "���k�t�@�C�����X�g",IDC_STATIC,10,15,175,215
-    LTEXT           "����g�̏d��",IDC_STATIC,200,70,45,10
-    LTEXT           "�����g�̏d��",IDC_STATIC,200,90,45,10
-    LTEXT           "�s��T�C�Y",IDC_STATIC,200,170,40,10
-    LTEXT           "�a�c�΍�W��",IDC_STATIC,200,110,45,10
+    PUSHBUTTON      "追加",IDC_BUTTON_ADD,45,205,40,15
+    PUSHBUTTON      "削除",IDC_BUTTON_DELETE,90,205,40,15
+    PUSHBUTTON      "全削除",IDC_BUTTON_DELETE_ALL,135,205,40,15
+    DEFPUSHBUTTON   "圧縮開始",IDOK,200,215,50,15
+    PUSHBUTTON      "終了",IDCANCEL,255,215,50,15
+    GROUPBOX        "圧縮パラメータ",IDC_STATIC,190,10,115,195
+    LTEXT           "簡易指定",IDC_STATIC,200,30,60,10
+    LTEXT           "量子化係数",IDC_STATIC,200,150,45,10
+    GROUPBOX        "圧縮ファイルリスト",IDC_STATIC,10,15,175,215
+    LTEXT           "低周波の重み",IDC_STATIC,200,70,45,10
+    LTEXT           "中周波の重み",IDC_STATIC,200,90,45,10
+    LTEXT           "行列サイズ",IDC_STATIC,200,170,40,10
+    LTEXT           "Ｂ歪対策係数",IDC_STATIC,200,110,45,10
     EDITTEXT        IDC_EDIT_ODD_WEIGHT,245,105,50,15,ES_RIGHT | 
                     ES_AUTOHSCROLL
-    CONTROL         "�~�h���T�C�h�X�e���I���g��",IDC_CHECK_MSS,"Button",
+    CONTROL         "ミドルサイドステレオを使う",IDC_CHECK_MSS,"Button",
                     BS_AUTOCHECKBOX | WS_TABSTOP,200,190,95,10
-    LTEXT           "PE臒l�W��",IDC_STATIC,200,130,45,10
+    LTEXT           "PE閾値係数",IDC_STATIC,200,130,45,10
     EDITTEXT        IDC_EDIT_PE_THRESHOLD,245,125,50,15,ES_RIGHT | 
                     ES_AUTOHSCROLL
 END
@@ -163,13 +163,13 @@ BEGIN
         BLOCK "041104B0"
         BEGIN
             VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "miocompress MFC ���ع����\0"
+            VALUE "FileDescription", "miocompress MFC ｱﾌﾟﾘｹｰｼｮﾝ\0"
             VALUE "FileVersion", "1, 0, 0, 1\0"
             VALUE "InternalName", "miocompress\0"
             VALUE "LegalCopyright", "Copyright (C) 1907\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "miocompress.EXE\0"
-            VALUE "ProductName", "miocompress ���ع����\0"
+            VALUE "ProductName", "miocompress ｱﾌﾟﾘｹｰｼｮﾝ\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
         END
     END
@@ -269,10 +269,10 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_ABOUTBOX            "�ް�ޮݏ��(miocompress) (&A)..."
+    IDS_ABOUTBOX            "ﾊﾞｰｼﾞｮﾝ情報(miocompress) (&A)..."
 END
 
-#endif    // ���{�� resources
+#endif    // 日本語 resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -292,8 +292,8 @@ END
 LANGUAGE 17, 1
 #pragma code_page(932)
 #endif
-#include "res\miocompress.rc2"  // Microsoft Visual C++ �ȊO�̃c�[���ŕҏW���ꂽ���\�[�X
-#include "l.jpn\afxres.rc"          // �W���̃R���|�[�l���g
+#include "res\miocompress.rc2"  // Microsoft Visual C++ 以外のツールで編集されたリソース
+#include "l.jpn\afxres.rc"          // 標準のコンポーネント
 #endif
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED

@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                       MIO ƒtƒ@ƒCƒ‹Ä¶ƒIƒuƒWƒFƒNƒg
+                       MIO ãƒ•ã‚¡ã‚¤ãƒ«å†ç”Ÿã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 
@@ -11,9 +11,9 @@
 class	MIOPlayObject	: public	MIODynamicPlayer
 {
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	MIOPlayObject( void ) ;
-	// Á–ÅŠÖ”
+	// æ¶ˆæ»…é–¢æ•°
 	~MIOPlayObject( void ) ;
 
 protected:
@@ -37,44 +37,44 @@ protected:
 	LPARAM		m_paramNotifyDone ;
 
 public:
-	// MIO ƒtƒ@ƒCƒ‹‚ðŠJ‚­
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	const char * Open( const char * pszMioFile ) ;
-	// MIO ƒtƒ@ƒCƒ‹‚ð•Â‚¶‚é
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	void Close( void ) ;
 
-	// Ä¶ŠJŽn
+	// å†ç”Ÿé–‹å§‹
 	bool PlayFrom( ULONG nSample = 0 ) ;
-	// Ä¶’âŽ~
+	// å†ç”Ÿåœæ­¢
 	bool Stop( void ) ;
-	// Ä¶ˆêŽž’âŽ~
+	// å†ç”Ÿä¸€æ™‚åœæ­¢
 	bool Pause( void ) ;
-	// Ä¶ÄŠJ
+	// å†ç”Ÿå†é–‹
 	bool Restart( void ) ;
 
-	// Œ»ÝÄ¶’†‚©H
+	// ç¾åœ¨å†ç”Ÿä¸­ã‹ï¼Ÿ
 	bool IsPlaying( void ) const ;
-	// ˆêŽž’âŽ~’†‚©H
+	// ä¸€æ™‚åœæ­¢ä¸­ã‹ï¼Ÿ
 	bool IsPaused( void ) const ;
 
-	// Ä¶‚ªI—¹‚µ‚½ŽžAƒ|ƒXƒg‚·‚éƒEƒBƒ“ƒhƒEƒƒbƒZ[ƒW‚ðÝ’è‚·‚é
+	// å†ç”ŸãŒçµ‚äº†ã—ãŸæ™‚ã€ãƒã‚¹ãƒˆã™ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¨­å®šã™ã‚‹
 	void SetWindowToNotifyDone
 		( HWND hwndNotify, UINT uMsg = MM_WOM_DONE, LPARAM lParam = 0 ) ;
-	// Ä¶‚ªI—¹‚µ‚½
+	// å†ç”ŸãŒçµ‚äº†ã—ãŸ
 	virtual void OnEndPlaying( void ) ;
 
-	// Œ»Ý‚ÌÄ¶ƒ|ƒCƒ“ƒgiƒTƒ“ƒvƒ‹”j
+	// ç¾åœ¨ã®å†ç”Ÿãƒã‚¤ãƒ³ãƒˆï¼ˆã‚µãƒ³ãƒ—ãƒ«æ•°ï¼‰
 	DWORD GetCurrentSample( void ) ;
-	// ƒTƒ“ƒvƒ‹”‚©‚çƒ~ƒŠ•b‚ðŽæ“¾
+	// ã‚µãƒ³ãƒ—ãƒ«æ•°ã‹ã‚‰ãƒŸãƒªç§’ã‚’å–å¾—
 	DWORD SampleToMilliSec( DWORD dwSample ) const ;
 
 protected:
-	// WAVE o—ÍƒfƒoƒCƒXƒR[ƒ‹ƒoƒbƒNŠÖ”
+	// WAVE å‡ºåŠ›ãƒ‡ãƒã‚¤ã‚¹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	static void CALLBACK waveOutProc
 		( HWAVEOUT hwo, UINT uMsg,
 			DWORD dwInstance, DWORD dwParam1, DWORD dwParam2 ) ;
 	void WaveOutCallbackProc
 		( HWAVEOUT hwo, UINT uMsg, DWORD dwParam1, DWORD dwParam2 ) ;
-	// ƒXƒgƒŠ[ƒ~ƒ“ƒOˆ——pƒXƒŒƒbƒh
+	// ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°å‡¦ç†ç”¨ã‚¹ãƒ¬ãƒƒãƒ‰
 	static DWORD WINAPI ThreadProc( LPVOID parameter ) ;
 	DWORD StreamingThreadProc( void ) ;
 

@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                       MIO ƒtƒ@ƒCƒ‹Ä¶ƒIƒuƒWƒFƒNƒg
+                       MIO ãƒ•ã‚¡ã‚¤ãƒ«å†ç”Ÿã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  *****************************************************************************/
 
 #include "stdafx.h"
@@ -8,7 +8,7 @@
 
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIOPlayObject::MIOPlayObject( void )
 {
@@ -26,7 +26,7 @@ MIOPlayObject::MIOPlayObject( void )
 }
 
 //
-// Á–ÅŠÖ”
+// æ¶ˆæ»…é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 MIOPlayObject::~MIOPlayObject( void )
 {
@@ -34,29 +34,29 @@ MIOPlayObject::~MIOPlayObject( void )
 }
 
 //
-// MIO ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 //////////////////////////////////////////////////////////////////////////////
 const char * MIOPlayObject::Open( const char * pszMioFile )
 {
 	Close( ) ;
 	//
-	// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	if ( !m_file.Open( pszMioFile ) )
 	{
-		return	"ƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B" ;
+		return	"ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚" ;
 	}
 	//
-	// MIO ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	if ( !MIODynamicPlayer::Open( &m_file ) )
 	{
-		return	"•s³‚ÈMIOƒtƒ@ƒCƒ‹‚Å‚·B" ;
+		return	"ä¸æ­£ãªMIOãƒ•ã‚¡ã‚¤ãƒ«ã§ã™ã€‚" ;
 	}
 	//
-	// ƒXƒŒƒbƒh‚ğ‹N“®‚·‚é
+	// ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’èµ·å‹•ã™ã‚‹
 	m_hThread = ::CreateThread
 		( NULL, 0, &MIOPlayObject::ThreadProc, this, 0, &m_idThread ) ;
 	//
-	// WAVE o—ÍƒfƒoƒCƒX‚ğŠJ‚­
+	// WAVE å‡ºåŠ›ãƒ‡ãƒã‚¤ã‚¹ã‚’é–‹ã
 	WAVEFORMATEX	wfx ;
 	wfx.wFormatTag = WAVE_FORMAT_PCM ;
 	wfx.nChannels = (WORD) GetChannelCount( ) ;
@@ -87,7 +87,7 @@ const char * MIOPlayObject::Open( const char * pszMioFile )
 	//
 	if ( mmr != MMSYSERR_NOERROR )
 	{
-		return	"‰¹ºo—ÍƒfƒoƒCƒX‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B" ;
+		return	"éŸ³å£°å‡ºåŠ›ãƒ‡ãƒã‚¤ã‚¹ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚" ;
 	}
 	//
 	m_hReleased = ::CreateEvent( NULL, TRUE, FALSE, NULL ) ;
@@ -96,14 +96,14 @@ const char * MIOPlayObject::Open( const char * pszMioFile )
 }
 
 //
-// MIO ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+// MIO ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MIOPlayObject::Close( void )
 {
 	if ( m_hWaveOut != NULL )
 	{
 		//
-		// WAVE o—ÍƒfƒoƒCƒX‚ğ•Â‚¶‚é
+		// WAVE å‡ºåŠ›ãƒ‡ãƒã‚¤ã‚¹ã‚’é–‰ã˜ã‚‹
 		Stop( ) ;
 		::waveOutClose( m_hWaveOut ) ;
 		m_hWaveOut = NULL ;
@@ -115,7 +115,7 @@ void MIOPlayObject::Close( void )
 		m_hReleased = NULL ;
 	}
 	//
-	// ƒXƒŒƒbƒhI—¹
+	// ã‚¹ãƒ¬ãƒƒãƒ‰çµ‚äº†
 	if ( m_hThread != NULL )
 	{
 		::PostThreadMessage( m_idThread, WM_QUIT, 0, 0 ) ;
@@ -123,14 +123,14 @@ void MIOPlayObject::Close( void )
 		m_hThread = NULL ;
 	}
 	//
-	// I—¹‘€ì
+	// çµ‚äº†æ“ä½œ
 	MIODynamicPlayer::Close( ) ;
 	//
 	m_file.Close( ) ;
 }
 
 //
-// Ä¶ŠJn
+// å†ç”Ÿé–‹å§‹
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::PlayFrom( ULONG nSample )
 {
@@ -140,7 +140,7 @@ bool MIOPlayObject::PlayFrom( ULONG nSample )
 	}
 	Stop( ) ;
 	//
-	// w’èƒTƒ“ƒvƒ‹‚©‚ç‚Ìƒf[ƒ^‚ğæ“¾‚·‚é
+	// æŒ‡å®šã‚µãƒ³ãƒ—ãƒ«ã‹ã‚‰ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 	DWORD	dwBytes ;
 	m_dwOffsetSample = nSample ;
 	m_nOutBufCount = 0 ;
@@ -150,7 +150,7 @@ bool MIOPlayObject::PlayFrom( ULONG nSample )
 		return	false ;
 	}
 	//
-	// ‰‚ß‚Ìƒf[ƒ^‚ğo—Í‚·‚é
+	// åˆã‚ã®ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›ã™ã‚‹
 	WAVEHDR *	pwh = new WAVEHDR ;
 	memset( pwh, 0, sizeof(WAVEHDR) ) ;
 	pwh->lpData = (LPSTR)((BYTE*)m_pFirstOut) + m_dwPlayOffset ;
@@ -160,7 +160,7 @@ bool MIOPlayObject::PlayFrom( ULONG nSample )
 	::waveOutWrite( m_hWaveOut, pwh, sizeof(WAVEHDR) ) ;
 	::InterlockedIncrement( (LPLONG) &m_nOutBufCount ) ;
 	//
-	// Ÿ‚Ìƒf[ƒ^‚ğæ“¾‚µ‚Äo—Í‚·‚é
+	// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã—ã¦å‡ºåŠ›ã™ã‚‹
 	if ( !IsNextDataRewound( ) )
 	{
 		void *	ptrWaveBuf = GetNextWaveBuffer( dwBytes ) ;
@@ -185,7 +185,7 @@ bool MIOPlayObject::PlayFrom( ULONG nSample )
 }
 
 //
-// Ä¶’â~
+// å†ç”Ÿåœæ­¢
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::Stop( void )
 {
@@ -204,7 +204,7 @@ bool MIOPlayObject::Stop( void )
 }
 
 //
-// Ä¶ˆê’â~
+// å†ç”Ÿä¸€æ™‚åœæ­¢
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::Pause( void )
 {
@@ -222,7 +222,7 @@ bool MIOPlayObject::Pause( void )
 }
 
 //
-// Ä¶ÄŠJ
+// å†ç”Ÿå†é–‹
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::Restart( void )
 {
@@ -240,7 +240,7 @@ bool MIOPlayObject::Restart( void )
 }
 
 //
-// Œ»İÄ¶’†‚©H
+// ç¾åœ¨å†ç”Ÿä¸­ã‹ï¼Ÿ
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::IsPlaying( void ) const
 {
@@ -248,7 +248,7 @@ bool MIOPlayObject::IsPlaying( void ) const
 }
 
 //
-// ˆê’â~’†‚©H
+// ä¸€æ™‚åœæ­¢ä¸­ã‹ï¼Ÿ
 //////////////////////////////////////////////////////////////////////////////
 bool MIOPlayObject::IsPaused( void ) const
 {
@@ -256,7 +256,7 @@ bool MIOPlayObject::IsPaused( void ) const
 }
 
 //
-// Ä¶‚ªI—¹‚µ‚½Aƒ|ƒXƒg‚·‚éƒEƒBƒ“ƒhƒEƒƒbƒZ[ƒW‚ğİ’è‚·‚é
+// å†ç”ŸãŒçµ‚äº†ã—ãŸæ™‚ã€ãƒã‚¹ãƒˆã™ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¨­å®šã™ã‚‹
 //////////////////////////////////////////////////////////////////////////////
 void MIOPlayObject::SetWindowToNotifyDone
 	( HWND hwndNotify, UINT uMsg, LPARAM lParam )
@@ -267,7 +267,7 @@ void MIOPlayObject::SetWindowToNotifyDone
 }
 
 //
-// Ä¶‚ªI—¹‚µ‚½
+// å†ç”ŸãŒçµ‚äº†ã—ãŸ
 //////////////////////////////////////////////////////////////////////////////
 void MIOPlayObject::OnEndPlaying( void )
 {
@@ -281,7 +281,7 @@ void MIOPlayObject::OnEndPlaying( void )
 }
 
 //
-// Œ»İ‚ÌÄ¶ƒ|ƒCƒ“ƒgiƒTƒ“ƒvƒ‹”j
+// ç¾åœ¨ã®å†ç”Ÿãƒã‚¤ãƒ³ãƒˆï¼ˆã‚µãƒ³ãƒ—ãƒ«æ•°ï¼‰
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIOPlayObject::GetCurrentSample( void )
 {
@@ -299,7 +299,7 @@ DWORD MIOPlayObject::GetCurrentSample( void )
 }
 
 //
-// ƒTƒ“ƒvƒ‹”‚©‚çƒ~ƒŠ•b‚ğæ“¾
+// ã‚µãƒ³ãƒ—ãƒ«æ•°ã‹ã‚‰ãƒŸãƒªç§’ã‚’å–å¾—
 //////////////////////////////////////////////////////////////////////////////
 DWORD MIOPlayObject::SampleToMilliSec( DWORD dwSample ) const
 {
@@ -312,7 +312,7 @@ DWORD MIOPlayObject::SampleToMilliSec( DWORD dwSample ) const
 }
 
 //
-// WAVE o—ÍƒfƒoƒCƒXƒR[ƒ‹ƒoƒbƒNŠÖ”
+// WAVE å‡ºåŠ›ãƒ‡ãƒã‚¤ã‚¹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 void CALLBACK MIOPlayObject::waveOutProc
 	( HWAVEOUT hwo, UINT uMsg,
@@ -334,7 +334,7 @@ void MIOPlayObject::WaveOutCallbackProc
 }
 
 //
-// ƒXƒgƒŠ[ƒ~ƒ“ƒOˆ——pƒXƒŒƒbƒh
+// ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°å‡¦ç†ç”¨ã‚¹ãƒ¬ãƒƒãƒ‰
 //////////////////////////////////////////////////////////////////////////////
 DWORD WINAPI MIOPlayObject::ThreadProc( LPVOID parameter )
 {
@@ -353,7 +353,7 @@ DWORD MIOPlayObject::StreamingThreadProc( void )
 		else if ( msg.message == WOM_DONE )
 		{
 			//
-			// ‰ß‹‚Ìƒf[ƒ^‚ğ”jŠü‚·‚é
+			// éå»ã®ãƒ‡ãƒ¼ã‚¿ã‚’ç ´æ£„ã™ã‚‹
 			bool	fFirstBuf = false ;
 			WAVEHDR *	pwh = (WAVEHDR*) msg.lParam ;
 			::waveOutUnprepareHeader( m_hWaveOut, pwh, sizeof(WAVEHDR) ) ;
@@ -376,7 +376,7 @@ DWORD MIOPlayObject::StreamingThreadProc( void )
 			}
 			delete	pwh ;
 			//
-			// Ÿ‚Ìƒf[ƒ^‚ğæ“¾‚·‚é
+			// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹
 			if ( m_fPlaying )
 			{
 				if ( !IsNextDataRewound( ) )

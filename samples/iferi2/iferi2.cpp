@@ -1,6 +1,6 @@
 
 /*****************************************************************************
-                      Œb—‚¿‚á‚ñ“WŠJ Susie ƒvƒ‰ƒOƒCƒ“
+                      æµç†ã¡ã‚ƒã‚“å±•é–‹ Susie ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
  ----------------------------------------------------------------------------
            Copyright (C) 2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -10,7 +10,7 @@
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»
+// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–
 //////////////////////////////////////////////////////////////////////////////
 
 BOOL WINAPI main
@@ -44,18 +44,18 @@ BOOL WINAPI main
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ƒf[ƒ^“ü—ÍƒCƒ“ƒ^[ƒtƒF[ƒX
+// ãƒ‡ãƒ¼ã‚¿å…¥åŠ›ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// \’zŠÖ”
+// æ§‹ç¯‰é–¢æ•°
 ERIInputContext::ERIInputContext( ULONG nBufferingSize )
 	: RLHDecodeContext( nBufferingSize )
 {
 }
 
 //
-// Ÿ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 ULONG ERIInputContext::ReadNextData( PBYTE ptrBuffer, ULONG nBytes )
 {
 	return	m_pFile->Read( ptrBuffer, nBytes ) ;
@@ -63,11 +63,11 @@ ULONG ERIInputContext::ReadNextData( PBYTE ptrBuffer, ULONG nBytes )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// “WŠJƒIƒuƒWƒFƒNƒg
+// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// “WŠJisó‹µ’Ê’mŠÖ”
+// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 int MyERIDecoder::OnDecodedBlock( LONG line, LONG column )
 {
 	if ( m_pfnPrgCallback != NULL )
@@ -106,17 +106,17 @@ int MyERIDecoder::OnDecodedLine( LONG line )
 
 
 //////////////////////////////////////////////////////////////////////////////
-// ƒGƒNƒXƒ|[ƒgŠÖ”
+// ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆé–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 
 //
-// ƒvƒ‰ƒOƒCƒ“‚Ìî•ñ‚ğæ“¾
+// ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®æƒ…å ±ã‚’å–å¾—
 int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen )
 {
 	if ( infono == 0 )
 	{
 		//
-		// ƒo[ƒWƒ‡ƒ“”Ô†
+		// ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç•ªå·
 		static const char	szVersionNo[] = "00IN";
 		size_t	nLength = min( sizeof(szVersionNo), buflen );
 		::memcpy( buf, szVersionNo, nLength );
@@ -125,9 +125,9 @@ int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen )
 	else if ( infono == 1 )
 	{
 		//
-		// ƒvƒ‰ƒOƒCƒ“î•ñ
+		// ãƒ—ãƒ©ã‚°ã‚¤ãƒ³æƒ…å ±
 		static const char	szPlugInInf[] =
-			"Œb—‚¿‚á‚ñƒfƒR[ƒ_[ (C) Leshade Entis";
+			"æµç†ã¡ã‚ƒã‚“ãƒ‡ã‚³ãƒ¼ãƒ€ãƒ¼ (C) Leshade Entis";
 		size_t	nLength = min( sizeof(szPlugInInf), buflen );
 		::memcpy( buf, szPlugInInf, nLength );
 		return	nLength;
@@ -135,7 +135,7 @@ int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen )
 	else if ( infono == 2 )
 	{
 		//
-		// Šg’£q
+		// æ‹¡å¼µå­
 		static const char	szDefExt[] = "*.eri";
 		size_t	nLength = min( sizeof(szDefExt), buflen );
 		::memcpy( buf, szDefExt, nLength );
@@ -144,7 +144,7 @@ int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen )
 	else if ( infono == 3 )
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ÌŒ`®–¼
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã®å½¢å¼å
 		static const char	szFormatName[] = "ERI-chan file (*.eri)";
 		size_t	nLength = min( sizeof(szFormatName), buflen );
 		::memcpy( buf, szFormatName, nLength );
@@ -155,7 +155,7 @@ int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen )
 }
 
 //
-// “WŠJ‰Â”\‚Èƒtƒ@ƒCƒ‹‚©‚Ç‚¤‚©‚ğ’²‚×‚é
+// å±•é–‹å¯èƒ½ãªãƒ•ã‚¡ã‚¤ãƒ«ã‹ã©ã†ã‹ã‚’èª¿ã¹ã‚‹
 int PASCAL IsSupported( LPSTR filename, DWORD dw )
 {
 	int	fSupported = 0 ;
@@ -163,7 +163,7 @@ int PASCAL IsSupported( LPSTR filename, DWORD dw )
 	do
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		if ( !(dw & 0xFFFF0000) )
 		{
 			pfile = new EReadFile( (HANDLE)dw ) ;
@@ -185,7 +185,7 @@ int PASCAL IsSupported( LPSTR filename, DWORD dw )
 }
 
 //
-// ‰æ‘œî•ñ‚ğæ“¾‚·‚é
+// ç”»åƒæƒ…å ±ã‚’å–å¾—ã™ã‚‹
 int PASCAL GetPictureInfo
 	( LPSTR buf, long len, unsigned int flag, PictureInfo *lpInfo )
 {
@@ -194,7 +194,7 @@ int PASCAL GetPictureInfo
 	do
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		if ( (flag & 0x07) == 0 )
 		{
 			pfile = new EReadFile ;
@@ -210,7 +210,7 @@ int PASCAL GetPictureInfo
 		if ( !erifile.Open( pfile, ERIFile::otReadHeader ) )
 			break ;
 		//
-		// ‰æ‘œ‚Ìî•ñ‚ğİ’è‚·‚é
+		// ç”»åƒã®æƒ…å ±ã‚’è¨­å®šã™ã‚‹
 		lpInfo->left = 0 ;
 		lpInfo->top = 0 ;
 		lpInfo->width = erifile.m_InfoHeader.nImageWidth ;
@@ -274,7 +274,7 @@ int PASCAL GetPictureInfo
 }
 
 //
-// ‰æ‘œ‚ğ“WŠJ‚·‚é
+// ç”»åƒã‚’å±•é–‹ã™ã‚‹
 int PASCAL GetPicture
 (
 	LPSTR buf, long len, unsigned int flag,
@@ -287,7 +287,7 @@ int PASCAL GetPicture
 	do
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		if ( (flag & 0x07) == 0 )
 		{
 			pfile = new EReadFile ;
@@ -303,7 +303,7 @@ int PASCAL GetPicture
 		if ( !erifile.Open( pfile ) )
 			break ;
 		//
-		// ‰æ‘œ‚Ì“WŠJ‚Ì€”õ‚ğ‚·‚é
+		// ç”»åƒã®å±•é–‹ã®æº–å‚™ã‚’ã™ã‚‹
 		RASTER_IMAGE_INFO	rii ;
 		rii.fdwFormatType = erifile.m_InfoHeader.fdwFormatType ;
 		rii.nImageWidth = erifile.m_InfoHeader.nImageWidth ;
@@ -323,7 +323,7 @@ int PASCAL GetPicture
 			break ;
 		}
 		//
-		// “üo—ÍƒCƒ“ƒ^[ƒtƒF[ƒX‚ğƒZƒbƒgƒAƒbƒv‚·‚é
+		// å…¥å‡ºåŠ›ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ã™ã‚‹
 		ERIInputContext	eic( 0x10000 ) ;
 		eic.m_pFile = &erifile ;
 		MyERIDecoder	myed ;
@@ -333,11 +333,11 @@ int PASCAL GetPicture
 		myed.m_nInstance = lData ;
 		myed.m_nLastRatio = -1 ;
 		//
-		// ƒfƒR[ƒhŠJn
+		// ãƒ‡ã‚³ãƒ¼ãƒ‰é–‹å§‹
 		if ( myed.DecodeImage( rii, eic, false ) )
 			break ;
 		//
-		// “WŠJ‚µ‚½‰æ‘œ‚ğŒÄ‚Ño‚µŒ³‚É“n‚·
+		// å±•é–‹ã—ãŸç”»åƒã‚’å‘¼ã³å‡ºã—å…ƒã«æ¸¡ã™
 		//
 		*pHBm = (HANDLE) rii.ptrImageArray ;
 		//
@@ -393,7 +393,7 @@ int PASCAL GetPicture
 }
 
 //
-// ƒvƒŒƒrƒ…[•\¦‰æ‘œ“WŠJƒ‹[ƒ`ƒ“
+// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è¡¨ç¤ºç”»åƒå±•é–‹ãƒ«ãƒ¼ãƒãƒ³
 int PASCAL GetPreview
 (
 	LPSTR buf, long len, unsigned int flag,
@@ -407,7 +407,7 @@ int PASCAL GetPreview
 	do
 	{
 		//
-		// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		if ( (flag & 0x07) == 0 )
 		{
 			pfile = new EReadFile ;
@@ -434,7 +434,7 @@ int PASCAL GetPreview
 			if ( ui64RecID == *((PCUINT64)"Palette ") )
 			{
 				//
-				// ƒpƒŒƒbƒgƒe[ƒuƒ‹‚ğ“Ç‚İ‚Ş
+				// ãƒ‘ãƒ¬ãƒƒãƒˆãƒ†ãƒ¼ãƒ–ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 				::memset( erifile.m_PaletteTable,
 							0, sizeof(erifile.m_PaletteTable) ) ;
 				erifile.Read( erifile.m_PaletteTable,
@@ -444,7 +444,7 @@ int PASCAL GetPreview
 						&& (ui64RecID == *((PCUINT64)"Preview ")) )
 			{
 				//
-				// ƒvƒŒƒrƒ…[‰æ‘œ‚ğ“WŠJ‚Ö
+				// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ç”»åƒã‚’å±•é–‹ã¸
 				fOpenImageFrm = true ;
 				peih = &(erifile.m_PreviewInfo) ;
 				break ;
@@ -452,7 +452,7 @@ int PASCAL GetPreview
 			else if ( ui64RecID == *((PCUINT64)"ImageFrm") )
 			{
 				//
-				// ‰æ‘œ‚ğ“WŠJ‚Ö
+				// ç”»åƒã‚’å±•é–‹ã¸
 				fOpenImageFrm = true ;
 				peih = &(erifile.m_InfoHeader) ;
 				break ;
@@ -463,7 +463,7 @@ int PASCAL GetPreview
 		if ( !fOpenImageFrm )
 			break ;
 		//
-		// ‰æ‘œ‚Ì“WŠJ‚Ì€”õ‚ğ‚·‚é
+		// ç”»åƒã®å±•é–‹ã®æº–å‚™ã‚’ã™ã‚‹
 		RASTER_IMAGE_INFO	rii ;
 		rii.fdwFormatType = peih->fdwFormatType ;
 		rii.nImageWidth = peih->nImageWidth ;
@@ -483,7 +483,7 @@ int PASCAL GetPreview
 			break ;
 		}
 		//
-		// “üo—ÍƒCƒ“ƒ^[ƒtƒF[ƒX‚ğƒZƒbƒgƒAƒbƒv‚·‚é
+		// å…¥å‡ºåŠ›ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ã™ã‚‹
 		ERIInputContext	eic( 0x10000 ) ;
 		eic.m_pFile = &erifile ;
 		MyERIDecoder	myed ;
@@ -493,11 +493,11 @@ int PASCAL GetPreview
 		myed.m_nInstance = lData ;
 		myed.m_nLastRatio = -1 ;
 		//
-		// ƒfƒR[ƒhŠJn
+		// ãƒ‡ã‚³ãƒ¼ãƒ‰é–‹å§‹
 		if ( myed.DecodeImage( rii, eic, false ) )
 			break ;
 		//
-		// “WŠJ‚µ‚½‰æ‘œ‚ğŒÄ‚Ño‚µŒ³‚É“n‚·
+		// å±•é–‹ã—ãŸç”»åƒã‚’å‘¼ã³å‡ºã—å…ƒã«æ¸¡ã™
 		//
 		*pHBm = (HANDLE) rii.ptrImageArray ;
 		//

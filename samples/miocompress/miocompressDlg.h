@@ -1,4 +1,4 @@
-// miocompressDlg.h : ƒwƒbƒ_[ ƒtƒ@ƒCƒ‹
+// miocompressDlg.h : ãƒ˜ãƒƒãƒ€ãƒ¼ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #if !defined(AFX_MIOCOMPRESSDLG_H__2939458E_7510_4A54_A709_619C9F640FE1__INCLUDED_)
@@ -9,15 +9,15 @@
 #endif // _MSC_VER > 1000
 
 /////////////////////////////////////////////////////////////////////////////
-// CMiocompressDlg ƒ_ƒCƒAƒƒO
+// CMiocompressDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 class CMiocompressDlg : public CDialog
 {
-// \’z
+// æ§‹ç¯‰
 public:
-	CMiocompressDlg(CWnd* pParent = NULL);	// •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	CMiocompressDlg(CWnd* pParent = NULL);	// æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 
-// ƒ_ƒCƒAƒƒO ƒf[ƒ^
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒ‡ãƒ¼ã‚¿
 	//{{AFX_DATA(CMiocompressDlg)
 	enum { IDD = IDD_MIOCOMPRESS_DIALOG };
 	CEdit	m_editPEThreshold;
@@ -31,25 +31,25 @@ public:
 	CComboBox	m_comboOption;
 	//}}AFX_DATA
 
-	// ClassWizard ‚Í‰¼‘zŠÖ”‚ÌƒI[ƒo[ƒ‰ƒCƒh‚ğ¶¬‚µ‚Ü‚·B
+	// ClassWizard ã¯ä»®æƒ³é–¢æ•°ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
 	//{{AFX_VIRTUAL(CMiocompressDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV ‚ÌƒTƒ|[ƒg
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV ã®ã‚µãƒãƒ¼ãƒˆ
 	//}}AFX_VIRTUAL
 
 public:
-	// ƒvƒŠƒZƒbƒg’l‚ğİ’è
+	// ãƒ—ãƒªã‚»ãƒƒãƒˆå€¤ã‚’è¨­å®š
 	void SetPresetParameter( int nSimpleOption ) ;
-	// À”‚ğæ“¾‚·‚é
+	// å®Ÿæ•°ã‚’å–å¾—ã™ã‚‹
 	bool GetDlgItemDouble( int nID, double & value ) ;
-	// À”‚ğİ’è‚·‚é
+	// å®Ÿæ•°ã‚’è¨­å®šã™ã‚‹
 	void SetDlgItemDouble( int nID, double value ) ;
 
-// ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“
+// ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³
 protected:
 	HICON m_hIcon;
 
-	// ¶¬‚³‚ê‚½ƒƒbƒZ[ƒW ƒ}ƒbƒvŠÖ”
+	// ç”Ÿæˆã•ã‚ŒãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒƒãƒ—é–¢æ•°
 	//{{AFX_MSG(CMiocompressDlg)
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
@@ -66,6 +66,6 @@ protected:
 };
 
 //{{AFX_INSERT_LOCATION}}
-// Microsoft Visual C++ ‚Í‘Os‚Ì’¼‘O‚É’Ç‰Á‚ÌéŒ¾‚ğ‘}“ü‚µ‚Ü‚·B
+// Microsoft Visual C++ ã¯å‰è¡Œã®ç›´å‰ã«è¿½åŠ ã®å®£è¨€ã‚’æŒ¿å…¥ã—ã¾ã™ã€‚
 
 #endif // !defined(AFX_MIOCOMPRESSDLG_H__2939458E_7510_4A54_A709_619C9F640FE1__INCLUDED_)

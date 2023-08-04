@@ -1,13 +1,13 @@
 
 /*****************************************************************************
-                      •W€Œb—‚¿‚á‚ñ“WŠJ Susie ƒvƒ‰ƒOƒCƒ“
+                      æ¨™æº–æµç†ã¡ã‚ƒã‚“å±•é–‹ Susie ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
  ----------------------------------------------------------------------------
           Copyright (C) 2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
 
 
 //
-// ƒ‰ƒCƒuƒ‰ƒŠ˜AŒ‹—p
+// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªé€£çµç”¨
 //////////////////////////////////////////////////////////////////////////////
 
 #define	STRICT	1
@@ -19,18 +19,18 @@
 
 
 //
-// ƒGƒNƒXƒ|[ƒgŠÖ”
+// ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆé–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 
-// ƒvƒ‰ƒOƒCƒ“‚Ìî•ñ‚ğæ“¾
+// ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®æƒ…å ±ã‚’å–å¾—
 extern "C" __declspec( dllexport )
 	int PASCAL GetPluginInfo( int infono, LPSTR buf, int buflen ) ;
 
-// “WŠJ‰Â”\‚Èƒtƒ@ƒCƒ‹‚©‚Ç‚¤‚©‚ğ’²‚×‚é
+// å±•é–‹å¯èƒ½ãªãƒ•ã‚¡ã‚¤ãƒ«ã‹ã©ã†ã‹ã‚’èª¿ã¹ã‚‹
 extern "C" __declspec( dllexport )
 	int PASCAL IsSupported( LPSTR filename, DWORD dw ) ;
 
-// ‰æ‘œî•ñ‚ğæ“¾‚·‚é
+// ç”»åƒæƒ…å ±ã‚’å–å¾—ã™ã‚‹
 extern "C" __declspec( dllexport ) int PASCAL GetPictureInfo
 	( LPSTR buf, long len, unsigned int flag, struct PictureInfo *lpInfo ) ;
 
@@ -39,23 +39,23 @@ extern "C" __declspec( dllexport ) int PASCAL GetPictureInfo
 
 struct	PictureInfo
 {
-	long	left, top ;		// ‰æ‘œ‚ğ“WŠJ‚·‚éˆÊ’u
-	long	width ;			// ‰æ‘œ‚Ì•(pixel)
-	long	height ;		// ‰æ‘œ‚Ì‚‚³(pixel)
-	WORD	x_density ;		// ‰æ‘f‚Ì…•½•ûŒü–§“x
-	WORD	y_density ;		// ‰æ‘f‚Ì‚’¼•ûŒü–§“x
-	short	colorDepth ;	// ‚P‰æ‘f“–‚½‚è‚Ìbit”
-	HLOCAL	hInfo ;			// ‰æ‘œ“à‚ÌƒeƒLƒXƒgî•ñ
+	long	left, top ;		// ç”»åƒã‚’å±•é–‹ã™ã‚‹ä½ç½®
+	long	width ;			// ç”»åƒã®å¹…(pixel)
+	long	height ;		// ç”»åƒã®é«˜ã•(pixel)
+	WORD	x_density ;		// ç”»ç´ ã®æ°´å¹³æ–¹å‘å¯†åº¦
+	WORD	y_density ;		// ç”»ç´ ã®å‚ç›´æ–¹å‘å¯†åº¦
+	short	colorDepth ;	// ï¼‘ç”»ç´ å½“ãŸã‚Šã®bitæ•°
+	HLOCAL	hInfo ;			// ç”»åƒå†…ã®ãƒ†ã‚­ã‚¹ãƒˆæƒ…å ±
 } ;
 
 #pragma	pack( pop, ENTER_SUSIE_ALIGN )
 
 
-// ƒR[ƒ‹ƒoƒbƒNŠÖ”
+// ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 typedef	int (PASCAL *PFUNC_PROGRESSCALLBACK)
 					( int nNum, int nDenom, long lData ) ;
 
-// ‰æ‘œ‚ğ“WŠJ‚·‚é
+// ç”»åƒã‚’å±•é–‹ã™ã‚‹
 extern "C" __declspec( dllexport )
 	int PASCAL GetPicture
 		(
@@ -64,7 +64,7 @@ extern "C" __declspec( dllexport )
 			PFUNC_PROGRESSCALLBACK lpPrgressCallback, long lData
 		) ;
 
-// ƒvƒŒƒrƒ…[•\¦‰æ‘œ“WŠJƒ‹[ƒ`ƒ“
+// ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è¡¨ç¤ºç”»åƒå±•é–‹ãƒ«ãƒ¼ãƒãƒ³
 extern "C" __declspec( dllexport )
 	int PASCAL GetPreview
 		(
@@ -74,7 +74,7 @@ extern "C" __declspec( dllexport )
 		) ;
 
 //
-// ƒf[ƒ^“ü—ÍƒCƒ“ƒ^[ƒtƒF[ƒX
+// ãƒ‡ãƒ¼ã‚¿å…¥åŠ›ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 //////////////////////////////////////////////////////////////////////////////
 
 class	ERIInputContext : public	RLHDecodeContext
@@ -83,15 +83,15 @@ public:
 	ERIFile *	m_pFile ;
 
 public:
-	// \’zŠÖ”
+	// æ§‹ç¯‰é–¢æ•°
 	ERIInputContext( ULONG nBufferingSize ) ;
-	// Ÿ‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	// æ¬¡ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	virtual ULONG ReadNextData( PBYTE ptrBuffer, ULONG nBytes ) ;
 } ;
 
 
 //
-// “WŠJƒIƒuƒWƒFƒNƒg
+// å±•é–‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 //////////////////////////////////////////////////////////////////////////////
 
 class	MyERIDecoder : public	ERIDecoder
@@ -102,7 +102,7 @@ public:
 	int						m_nLastRatio ;
 
 public:
-	// “WŠJisó‹µ’Ê’mŠÖ”
+	// å±•é–‹é€²è¡ŒçŠ¶æ³é€šçŸ¥é–¢æ•°
 	virtual int OnDecodedBlock( LONG line, LONG column ) ;
 	virtual int OnDecodedLine( LONG line ) ;
 

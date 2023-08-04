@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2001/05/30
+                                                      æœ€çµ‚æ›´æ–° 2001/05/30
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -12,7 +12,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -20,7 +20,7 @@
 
 
 //////////////////////////////////////////////////////////////////////////////
-//                 Win32 ƒƒ‚ƒŠƒAƒƒP[ƒVƒ‡ƒ“ ƒTƒ“ƒvƒ‹
+//                 Win32 ãƒ¡ãƒ¢ãƒªã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ ã‚µãƒ³ãƒ—ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 PVOID eriAllocateMemory( DWORD dwBytes )
@@ -31,8 +31,8 @@ PVOID eriAllocateMemory( DWORD dwBytes )
 	if ( dwBytes < 0x10000 )
 	{
 		//
-		// 64kByte –¢–‚Ìƒƒ‚ƒŠ‚Íƒq[ƒv‚©‚çŠ„‚è“–‚Ä‚é
-		// i8ƒoƒCƒg‹«ŠE‚ÉƒAƒ‰ƒCƒ“‚·‚éj
+		// 64kByte æœªæº€ã®ãƒ¡ãƒ¢ãƒªã¯ãƒ’ãƒ¼ãƒ—ã‹ã‚‰å‰²ã‚Šå½“ã¦ã‚‹
+		// ï¼ˆ8ãƒã‚¤ãƒˆå¢ƒç•Œã«ã‚¢ãƒ©ã‚¤ãƒ³ã™ã‚‹ï¼‰
 		pdwMem = (DWORD*) ::GlobalAlloc( GMEM_FIXED, dwBytes + 0x08 ) ;
 		pdwMem[1] = *((DWORD*)"heap") ;
 		ptrMemBlock = (PVOID)(pdwMem + 2) ;
@@ -40,8 +40,8 @@ PVOID eriAllocateMemory( DWORD dwBytes )
 	else
 	{
 		//
-		// 64kByte ˆÈã‚Ìƒƒ‚ƒŠ‚Íƒy[ƒWƒAƒƒP[ƒVƒ‡ƒ“‚Å’¼ÚŠ„‚è“–‚Ä‚é
-		// i16ƒoƒCƒg‹«ŠE‚ÉƒAƒ‰ƒCƒ“‚·‚éj
+		// 64kByte ä»¥ä¸Šã®ãƒ¡ãƒ¢ãƒªã¯ãƒšãƒ¼ã‚¸ã‚¢ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã§ç›´æ¥å‰²ã‚Šå½“ã¦ã‚‹
+		// ï¼ˆ16ãƒã‚¤ãƒˆå¢ƒç•Œã«ã‚¢ãƒ©ã‚¤ãƒ³ã™ã‚‹ï¼‰
 		pdwMem = (DWORD*) ::VirtualAlloc
 			( NULL, dwBytes + 0x10, MEM_COMMIT, PAGE_READWRITE ) ;
 		pdwMem[3] = *((DWORD*)"page") ;
@@ -54,25 +54,25 @@ PVOID eriAllocateMemory( DWORD dwBytes )
 void eriFreeMemory( PVOID ptrMem )
 {
 	//
-	// ƒƒ‚ƒŠ‚ÌŠm•Û‚Ìí—Ş‚ğ”»•Ê‚·‚é
+	// ãƒ¡ãƒ¢ãƒªã®ç¢ºä¿ã®ç¨®é¡ã‚’åˆ¤åˆ¥ã™ã‚‹
 	DWORD *	pdwMem = (DWORD*) ptrMem ;
 	DWORD	dwMemType = pdwMem[-1] ;
 	//
 	if ( dwMemType == *((DWORD*)"heap") )
 	{
 		//
-		// ƒq[ƒvƒƒ‚ƒŠ‚ğ‰ğ•ú
+		// ãƒ’ãƒ¼ãƒ—ãƒ¡ãƒ¢ãƒªã‚’è§£æ”¾
 		::GlobalFree( (HGLOBAL) (pdwMem - 2) ) ;
 	}
 	else if ( dwMemType == *((DWORD*)"page") )
 	{
 		//
-		// ƒy[ƒWƒƒ‚ƒŠ‚ğ‰ğ•ú
+		// ãƒšãƒ¼ã‚¸ãƒ¡ãƒ¢ãƒªã‚’è§£æ”¾
 		::VirtualFree( (pdwMem - 4), 0, MEM_RELEASE ) ;
 	}
 	else
 	{
-		// ƒGƒ‰[
+		// ã‚¨ãƒ©ãƒ¼
 	}
 }
 

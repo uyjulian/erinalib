@@ -1,7 +1,7 @@
 
 /*****************************************************************************
                          E R I N A - L i b r a r y
-                                                      ÅIXV 2001/11/04
+                                                      æœ€çµ‚æ›´æ–° 2001/11/04
  ----------------------------------------------------------------------------
          Copyright (C) 2000-2001 Leshade Entis. All rights reserved.
  *****************************************************************************/
@@ -13,7 +13,7 @@
 
 
 //
-// ERINA ƒ‰ƒCƒuƒ‰ƒŠ’è‹`ƒtƒ@ƒCƒ‹
+// ERINA ãƒ©ã‚¤ãƒ–ãƒ©ãƒªå®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
 #include "eritypes.h"
@@ -22,17 +22,17 @@
 
 
 //
-// ’è”ƒe[ƒuƒ‹
+// å®šæ•°ãƒ†ãƒ¼ãƒ–ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 
-static double	ERI_PI = 3.141592653589 ;	// = ƒÎ
+static double	ERI_PI = 3.141592653589 ;	// = Ï€
 static REAL32	ERI_rHalf = 0.5F ;			// = 1/2
 static REAL32	ERI_r2 = 2.0F ;				// = 2.0
 static REAL32	ERI_rCosPI4 ;				// = cos(pi/4)
 static REAL32	ERI_r2CosPI4 ;				// = 2*cos(pi/4)
 
 //
-// s—ñŒW””z—ñ : k(n,i) = cos( (2*i+1) / (4*n) )
+// è¡Œåˆ—ä¿‚æ•°é…åˆ— : k(n,i) = cos( (2*i+1) / (4*n) )
 //
 static REAL32	ERI_DCTofK2[2] ;			// = cos( (2*i+1) / 8 )
 static REAL32	ERI_DCTofK4[4] ;			// = cos( (2*i+1) / 16 )
@@ -47,7 +47,7 @@ static REAL32	ERI_DCTofK1024[1024] ;		// = cos( (2*i+1) / 4096 )
 static REAL32	ERI_DCTofK2048[2048] ;		// = cos( (2*i+1) / 8192 )
 
 //
-// s—ñŒW””z—ñ‚Ö‚Ìƒe[ƒuƒ‹
+// è¡Œåˆ—ä¿‚æ•°é…åˆ—ã¸ã®ãƒ†ãƒ¼ãƒ–ãƒ«
 //
 static REAL32 *	ERI_pMatrixDCTofK[MAX_DCT_DEGREE] =
 {
@@ -67,17 +67,17 @@ static REAL32 *	ERI_pMatrixDCTofK[MAX_DCT_DEGREE] =
 
 
 //
-// s—ñƒe[ƒuƒ‹‚Ì‰Šú‰»
+// è¡Œåˆ—ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
 //////////////////////////////////////////////////////////////////////////////
 void eriInitializeMatrixDCT( void )
 {
 	//
-	// “ÁŽêðŒ‚Ì’è”‚ð€”õ
+	// ç‰¹æ®Šæ¡ä»¶ã®å®šæ•°ã‚’æº–å‚™
 	//
 	ERI_rCosPI4 = (REAL32) cos( ERI_PI * 0.25 ) ;
 	ERI_r2CosPI4 = 2.0F * ERI_rCosPI4 ;
 	//
-	// s—ñŒW””z—ñ‰Šú‰»
+	// è¡Œåˆ—ä¿‚æ•°é…åˆ—åˆæœŸåŒ–
 	//
 	for ( int i = 1; i < MAX_DCT_DEGREE; i ++ )
 	{
@@ -97,7 +97,7 @@ void eriInitializeMatrixDCT( void )
 
 
 //
-// ŽÀ”ŠÛ‚ßŠÖ”
+// å®Ÿæ•°ä¸¸ã‚é–¢æ•°
 //////////////////////////////////////////////////////////////////////////////
 int eriRoundR32ToInt( REAL32 r )
 {
@@ -167,7 +167,7 @@ void eriRoundR32ToWordArray
 
 
 //
-// ƒXƒJƒ‰æŽZ
+// ã‚¹ã‚«ãƒ©ä¹—ç®—
 //////////////////////////////////////////////////////////////////////////////
 void eriScalarMultiply
 	(
@@ -184,7 +184,7 @@ void eriScalarMultiply
 
 
 //
-// ‚‘¬ DCT •ÏŠ·
+// é«˜é€Ÿ DCT å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 bool eriFastDCT
 	(
@@ -196,7 +196,7 @@ bool eriFastDCT
 	)
 {
 	//
-	// DCT ŽŸ”ŒŸØ
+	// DCT æ¬¡æ•°æ¤œè¨¼
 	//
 	if ( (nDegreeDCT < MIN_DCT_DEGREE)
 			|| (nDegreeDCT > MAX_DCT_DEGREE) )
@@ -206,23 +206,23 @@ bool eriFastDCT
 	if ( nDegreeDCT == MIN_DCT_DEGREE )
 	{
 		//
-		// 4ŽŸ DCT ‚ÌŽž‚Í“ÁŽêðŒ
+		// 4æ¬¡ DCT ã®æ™‚ã¯ç‰¹æ®Šæ¡ä»¶
 		//////////////////////////////////////////////////////////////////////
 		REAL32	r32Buf[4] ;
 		//
-		// Œð·‰ÁŒ¸ŽZ
+		// äº¤å·®åŠ æ¸›ç®—
 		//
 		r32Buf[0] = ptrSrc[0] + ptrSrc[3] ;
 		r32Buf[2] = ptrSrc[0] - ptrSrc[3] ;
 		r32Buf[1] = ptrSrc[1] + ptrSrc[2] ;
 		r32Buf[3] = ptrSrc[1] - ptrSrc[2] ;
 		//
-		// ‘O”¼ : A2 * DCT2
+		// å‰åŠ : A2 * DCT2
 		//
 		ptrDst[0]                = ERI_rHalf * (r32Buf[0] + r32Buf[1]) ;
 		ptrDst[nDstInterval * 2] = ERI_rCosPI4 * (r32Buf[0] - r32Buf[1]) ;
 		//
-		// Œã”¼ : R2 * 2 * A2 * DCT2 * K2
+		// å¾ŒåŠ : R2 * 2 * A2 * DCT2 * K2
 		//
 		r32Buf[2] = ERI_DCTofK2[0] * r32Buf[2] ;
 		r32Buf[3] = ERI_DCTofK2[1] * r32Buf[3] ;
@@ -240,10 +240,10 @@ bool eriFastDCT
 	else
 	{
 		//
-		// ”Ä—p DCT •ÏŠ·
+		// æ±Žç”¨ DCT å¤‰æ›
 		//////////////////////////////////////////////////////////////////////
 		//              | I   J |
-		// Œð·‰ÁŒ¸ŽZ = |       |
+		// äº¤å·®åŠ æ¸›ç®— = |       |
 		//              | I  -J |
 		unsigned int	i ;
 		unsigned int	nDegreeNum = (1 << nDegreeDCT) ;
@@ -255,13 +255,13 @@ bool eriFastDCT
 							ptrSrc[i] - ptrSrc[nDegreeNum - i - 1] ;
 		}
 		//
-		// ‘O”¼ DCT : A * DCT
+		// å‰åŠ DCT : A * DCT
 		//
 		unsigned int	nDstStep = (nDstInterval << 1) ;
 		eriFastDCT( ptrDst, nDstStep,
 					ptrWorkBuf, ptrSrc, (nDegreeDCT - 1) ) ;
 		//
-		// Œã”¼ DCT-IV : R * 2 * A * DCT * K
+		// å¾ŒåŠ DCT-IV : R * 2 * A * DCT * K
 		//
 		REAL32 *	pDCTofK = ERI_pMatrixDCTofK[nDegreeDCT - 1] ;
 		ptrSrc = ptrWorkBuf + nHalfDegree ;
@@ -295,7 +295,7 @@ bool eriFastDCT
 
 
 //
-// ‚‘¬ IDCT •ÏŠ·
+// é«˜é€Ÿ IDCT å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 bool eriFastIDCT
 	(
@@ -307,7 +307,7 @@ bool eriFastIDCT
 	)
 {
 	//
-	// DCT ŽŸ”ŒŸØ
+	// DCT æ¬¡æ•°æ¤œè¨¼
 	//
 	if ( (nDegreeDCT < MIN_DCT_DEGREE)
 			|| (nDegreeDCT > MAX_DCT_DEGREE) )
@@ -317,12 +317,12 @@ bool eriFastIDCT
 	if ( nDegreeDCT == MIN_DCT_DEGREE )
 	{
 		//
-		// 4ŽŸ DCT ‚ÌŽž‚Í“ÁŽêðŒ
+		// 4æ¬¡ DCT ã®æ™‚ã¯ç‰¹æ®Šæ¡ä»¶
 		//////////////////////////////////////////////////////////////////////
 		REAL32	r32Buf1[2] ;
 		REAL32	r32Buf2[4] ;
 		//
-		// ‹ô”s : IDCT2
+		// å¶æ•°è¡Œ : IDCT2
 		//
 		r32Buf1[0] = ptrSrc[0] ;
 		r32Buf1[1] = ERI_rCosPI4 * ptrSrc[nSrcInterval * 2] ;
@@ -330,7 +330,7 @@ bool eriFastIDCT
 		r32Buf2[0] = r32Buf1[0] + r32Buf1[1] ;
 		r32Buf2[1] = r32Buf1[0] - r32Buf1[1] ;
 		//
-		// Šï”s : R * 2 * A * DCT * K
+		// å¥‡æ•°è¡Œ : R * 2 * A * DCT * K
 		//
 		r32Buf1[0] = ERI_DCTofK2[0] * ptrSrc[nSrcInterval] ;
 		r32Buf1[1] = ERI_DCTofK2[1] * ptrSrc[nSrcInterval * 3] ;
@@ -340,7 +340,7 @@ bool eriFastIDCT
 		//
 		r32Buf2[3] -= r32Buf2[2] ;
 		//
-		// Œð·‰ÁŒ¸ŽZ
+		// äº¤å·®åŠ æ¸›ç®—
 		//
 		ptrDst[0] = r32Buf2[0] + r32Buf2[2] ;
 		ptrDst[3] = r32Buf2[0] - r32Buf2[2] ;
@@ -352,10 +352,10 @@ bool eriFastIDCT
 	else
 	{
 		//
-		// ”Ä—p IDCT •ÏŠ·
+		// æ±Žç”¨ IDCT å¤‰æ›
 		//////////////////////////////////////////////////////////////////////
 		//
-		// ‹ô”s : IDCT
+		// å¶æ•°è¡Œ : IDCT
 		//
 		unsigned int	i ;
 		unsigned int	nDegreeNum = (1 << nDegreeDCT) ;
@@ -364,7 +364,7 @@ bool eriFastIDCT
 		eriFastIDCT( ptrDst, ptrSrc,
 					nSrcStep, ptrWorkBuf, (nDegreeDCT - 1) ) ;
 		//
-		// Šï”s : R * 2 * A * DCT * K
+		// å¥‡æ•°è¡Œ : R * 2 * A * DCT * K
 		//
 		REAL32 *	pDCTofK = ERI_pMatrixDCTofK[nDegreeDCT - 1] ;
 		REAL32 *	pOddSrc = ptrSrc + nSrcInterval ;
@@ -390,7 +390,7 @@ bool eriFastIDCT
 			pOddDst[i] -= pOddDst[i - 1] ;
 		}
 		//              | I   I |
-		// Œð·‰ÁŒ¸ŽZ = |       |
+		// äº¤å·®åŠ æ¸›ç®— = |       |
 		//              | J  -J |
 		REAL32			r32Buf[4] ;
 		unsigned int	nQuadDegree = (nHalfDegree >> 1) ;
@@ -415,7 +415,7 @@ bool eriFastIDCT
 
 
 //
-// ‚‘¬‚QŽŸŒ³ DCT •ÏŠ·
+// é«˜é€Ÿï¼’æ¬¡å…ƒ DCT å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 void eriSquareDCT
 	(
@@ -452,7 +452,7 @@ void eriSquareDCT
 
 
 //
-// ‚‘¬‚QŽŸŒ³ IDCT •ÏŠ·
+// é«˜é€Ÿï¼’æ¬¡å…ƒ IDCT å¤‰æ›
 //////////////////////////////////////////////////////////////////////////////
 void eriSquareIDCT
 	(

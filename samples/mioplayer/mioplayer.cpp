@@ -1,4 +1,4 @@
-// mioplayer.cpp : ƒAƒvƒŠƒP[ƒVƒ‡ƒ“—pƒNƒ‰ƒX‚Ì’è‹`‚ðs‚¢‚Ü‚·B
+// mioplayer.cpp : ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ã‚¯ãƒ©ã‚¹ã®å®šç¾©ã‚’è¡Œã„ã¾ã™ã€‚
 //
 
 #include "stdafx.h"
@@ -17,19 +17,19 @@ static char THIS_FILE[] = __FILE__;
 
 BEGIN_MESSAGE_MAP(CMioplayerApp, CWinApp)
 	//{{AFX_MSG_MAP(CMioplayerApp)
-		// ƒƒ‚ - ClassWizard ‚Í‚±‚ÌˆÊ’u‚Éƒ}ƒbƒsƒ“ƒO—p‚Ìƒ}ƒNƒ‚ð’Ç‰Á‚Ü‚½‚Ííœ‚µ‚Ü‚·B
-		//        ‚±‚ÌˆÊ’u‚É¶¬‚³‚ê‚éƒR[ƒh‚ð•ÒW‚µ‚È‚¢‚Å‚­‚¾‚³‚¢B
+		// ãƒ¡ãƒ¢ - ClassWizard ã¯ã“ã®ä½ç½®ã«ãƒžãƒƒãƒ”ãƒ³ã‚°ç”¨ã®ãƒžã‚¯ãƒ­ã‚’è¿½åŠ ã¾ãŸã¯å‰Šé™¤ã—ã¾ã™ã€‚
+		//        ã“ã®ä½ç½®ã«ç”Ÿæˆã•ã‚Œã‚‹ã‚³ãƒ¼ãƒ‰ã‚’ç·¨é›†ã—ãªã„ã§ãã ã•ã„ã€‚
 	//}}AFX_MSG
 	ON_COMMAND(ID_HELP, CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CMioplayerApp ƒNƒ‰ƒX‚Ì\’z
+// CMioplayerApp ã‚¯ãƒ©ã‚¹ã®æ§‹ç¯‰
 
 CMioplayerApp::CMioplayerApp( void )
 {
-	// TODO: ‚±‚ÌˆÊ’u‚É\’z—p‚ÌƒR[ƒh‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
-	// ‚±‚±‚É InitInstance ’†‚Ìd—v‚È‰Šú‰»ˆ—‚ð‚·‚×‚Ä‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
+	// TODO: ã“ã®ä½ç½®ã«æ§‹ç¯‰ç”¨ã®ã‚³ãƒ¼ãƒ‰ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚
+	// ã“ã“ã« InitInstance ä¸­ã®é‡è¦ãªåˆæœŸåŒ–å‡¦ç†ã‚’ã™ã¹ã¦è¨˜è¿°ã—ã¦ãã ã•ã„ã€‚
 	::eriInitializeLibrary( ) ;
 }
 
@@ -39,26 +39,26 @@ CMioplayerApp::~CMioplayerApp( void )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-// —Bˆê‚Ì CMioplayerApp ƒIƒuƒWƒFƒNƒg
+// å”¯ä¸€ã® CMioplayerApp ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 
 CMioplayerApp theApp;
 
 /////////////////////////////////////////////////////////////////////////////
-// CMioplayerApp ƒNƒ‰ƒX‚Ì‰Šú‰»
+// CMioplayerApp ã‚¯ãƒ©ã‚¹ã®åˆæœŸåŒ–
 
 BOOL CMioplayerApp::InitInstance()
 {
 	AfxEnableControlContainer();
 
-	// •W€“I‚È‰Šú‰»ˆ—
-	// ‚à‚µ‚±‚ê‚ç‚Ì‹@”\‚ðŽg—p‚¹‚¸AŽÀsƒtƒ@ƒCƒ‹‚ÌƒTƒCƒY‚ð¬‚³‚­‚µ‚½‚¯
-	//  ‚ê‚ÎˆÈ‰º‚Ì“Á’è‚Ì‰Šú‰»ƒ‹[ƒ`ƒ“‚Ì’†‚©‚ç•s•K—v‚È‚à‚Ì‚ðíœ‚µ‚Ä
-	//  ‚­‚¾‚³‚¢B
+	// æ¨™æº–çš„ãªåˆæœŸåŒ–å‡¦ç†
+	// ã‚‚ã—ã“ã‚Œã‚‰ã®æ©Ÿèƒ½ã‚’ä½¿ç”¨ã›ãšã€å®Ÿè¡Œãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚µã‚¤ã‚ºã‚’å°ã•ãã—ãŸã‘
+	//  ã‚Œã°ä»¥ä¸‹ã®ç‰¹å®šã®åˆæœŸåŒ–ãƒ«ãƒ¼ãƒãƒ³ã®ä¸­ã‹ã‚‰ä¸å¿…è¦ãªã‚‚ã®ã‚’å‰Šé™¤ã—ã¦
+	//  ãã ã•ã„ã€‚
 
 #ifdef _AFXDLL
-	Enable3dControls();			// ‹¤—L DLL “à‚Å MFC ‚ðŽg‚¤ê‡‚Í‚±‚±‚ðƒR[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+	Enable3dControls();			// å…±æœ‰ DLL å†…ã§ MFC ã‚’ä½¿ã†å ´åˆã¯ã“ã“ã‚’ã‚³ãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 #else
-	Enable3dControlsStatic();	// MFC ‚ÆÃ“I‚ÉƒŠƒ“ƒN‚·‚éê‡‚Í‚±‚±‚ðƒR[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B
+	Enable3dControlsStatic();	// MFC ã¨é™çš„ã«ãƒªãƒ³ã‚¯ã™ã‚‹å ´åˆã¯ã“ã“ã‚’ã‚³ãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 #endif
 
 	CMioplayerDlg dlg;
@@ -66,16 +66,16 @@ BOOL CMioplayerApp::InitInstance()
 	int nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
-		// TODO: ƒ_ƒCƒAƒƒO‚ª <OK> ‚ÅÁ‚³‚ê‚½Žž‚ÌƒR[ƒh‚ð
-		//       ‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
+		// TODO: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãŒ <OK> ã§æ¶ˆã•ã‚ŒãŸæ™‚ã®ã‚³ãƒ¼ãƒ‰ã‚’
+		//       è¨˜è¿°ã—ã¦ãã ã•ã„ã€‚
 	}
 	else if (nResponse == IDCANCEL)
 	{
-		// TODO: ƒ_ƒCƒAƒƒO‚ª <·¬Ý¾Ù> ‚ÅÁ‚³‚ê‚½Žž‚ÌƒR[ƒh‚ð
-		//       ‹Lq‚µ‚Ä‚­‚¾‚³‚¢B
+		// TODO: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãŒ <ï½·ï½¬ï¾ï½¾ï¾™> ã§æ¶ˆã•ã‚ŒãŸæ™‚ã®ã‚³ãƒ¼ãƒ‰ã‚’
+		//       è¨˜è¿°ã—ã¦ãã ã•ã„ã€‚
 	}
 
-	// ƒ_ƒCƒAƒƒO‚ª•Â‚¶‚ç‚ê‚Ä‚©‚çƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌƒƒbƒZ[ƒW ƒ|ƒ“ƒv‚ðŠJŽn‚·‚é‚æ‚è‚ÍA
-	// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ðI—¹‚·‚é‚½‚ß‚É FALSE ‚ð•Ô‚µ‚Ä‚­‚¾‚³‚¢B
+	// ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãŒé–‰ã˜ã‚‰ã‚Œã¦ã‹ã‚‰ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ—ã‚’é–‹å§‹ã™ã‚‹ã‚ˆã‚Šã¯ã€
+	// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’çµ‚äº†ã™ã‚‹ãŸã‚ã« FALSE ã‚’è¿”ã—ã¦ãã ã•ã„ã€‚
 	return FALSE;
 }

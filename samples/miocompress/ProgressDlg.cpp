@@ -1,4 +1,4 @@
-// ProgressDlg.cpp : ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“ ƒtƒ@ƒCƒ‹
+// ProgressDlg.cpp : ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -13,14 +13,14 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
-// CProgressDlg ƒ_ƒCƒAƒƒO
+// CProgressDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 
 CProgressDlg::CProgressDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CProgressDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CProgressDlg)
-		// ƒƒ‚ - ClassWizard ‚Í‚±‚ÌˆÊ’u‚Éƒ}ƒbƒsƒ“ƒO—p‚Ìƒ}ƒNƒ‚ğ’Ç‰Á‚Ü‚½‚Ííœ‚µ‚Ü‚·B
+		// ãƒ¡ãƒ¢ - ClassWizard ã¯ã“ã®ä½ç½®ã«ãƒãƒƒãƒ”ãƒ³ã‚°ç”¨ã®ãƒã‚¯ãƒ­ã‚’è¿½åŠ ã¾ãŸã¯å‰Šé™¤ã—ã¾ã™ã€‚
 	//}}AFX_DATA_INIT
 
 	m_pThread = NULL ;
@@ -51,7 +51,7 @@ END_MESSAGE_MAP()
 
 
 //
-// ˆ³kƒpƒ‰ƒ[ƒ^İ’è
+// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 //////////////////////////////////////////////////////////////////////////////
 void CProgressDlg::SetCompressionParameter
 	( bool fLossless, double rLowWeight,
@@ -70,16 +70,16 @@ void CProgressDlg::SetCompressionParameter
 }
 
 //
-// ˆ³k‚·‚éƒtƒ@ƒCƒ‹–¼’Ç‰Á
+// åœ§ç¸®ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«åè¿½åŠ 
 //////////////////////////////////////////////////////////////////////////////
 void CProgressDlg::AddFileEntry( const char * pszFilePath )
 {
 	//
-	// “ü—Íƒtƒ@ƒCƒ‹–¼‚ğ’Ç‰Á
+	// å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¿½åŠ 
 	CString		strSrcFile = pszFilePath ;
 	m_listSrcFiles.Add( strSrcFile ) ;
 	//
-	// o—Íƒtƒ@ƒCƒ‹–¼‚ğ¶¬
+	// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç”Ÿæˆ
 	int		i = 0, j = 0 ;
 	while ( pszFilePath[i] != '\0' )
 	{
@@ -96,33 +96,33 @@ void CProgressDlg::AddFileEntry( const char * pszFilePath )
 	CString		strDstFile( pszFilePath, j ) ;
 	strDstFile += ".mio" ;
 	//
-	// o—Íƒtƒ@ƒCƒ‹–¼‚ğ’Ç‰Á
+	// å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¿½åŠ 
 	m_listDstFiles.Add( strDstFile ) ;
 }
 
 
 /////////////////////////////////////////////////////////////////////////////
-// CProgressDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰
+// CProgressDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©
 
 //
-// ƒ_ƒCƒAƒƒO‰Šú‰»
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚°åˆæœŸåŒ–
 //////////////////////////////////////////////////////////////////////////////
 BOOL CProgressDlg::OnInitDialog() 
 {
 	CDialog::OnInitDialog();
 	
-	// TODO: ‚±‚ÌˆÊ’u‚É‰Šú‰»‚Ì•â‘«ˆ—‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢
+	// TODO: ã“ã®ä½ç½®ã«åˆæœŸåŒ–ã®è£œè¶³å‡¦ç†ã‚’è¿½åŠ ã—ã¦ãã ã•ã„
 	//
-	// ƒXƒŒƒbƒh‹N“®
+	// ã‚¹ãƒ¬ãƒƒãƒ‰èµ·å‹•
 	m_pThread = AfxBeginThread( &CProgressDlg::ThreadProc, this ) ;
 	m_pThread->m_bAutoDelete = FALSE ;
 
-	return TRUE;  // ƒRƒ“ƒgƒ[ƒ‹‚ÉƒtƒH[ƒJƒX‚ğİ’è‚µ‚È‚¢‚Æ‚«A–ß‚è’l‚Í TRUE ‚Æ‚È‚è‚Ü‚·
-	              // —áŠO: OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Ì–ß‚è’l‚Í FALSE ‚Æ‚È‚è‚Ü‚·
+	return TRUE;  // ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚’è¨­å®šã—ãªã„ã¨ãã€æˆ»ã‚Šå€¤ã¯ TRUE ã¨ãªã‚Šã¾ã™
+	              // ä¾‹å¤–: OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã®æˆ»ã‚Šå€¤ã¯ FALSE ã¨ãªã‚Šã¾ã™
 }
 
 //
-// ƒ_ƒ~[
+// ãƒ€ãƒŸãƒ¼
 //////////////////////////////////////////////////////////////////////////////
 void CProgressDlg::OnOK() 
 {
@@ -130,7 +130,7 @@ void CProgressDlg::OnOK()
 }
 
 //
-// ˆ³k‚ÌƒLƒƒƒ“ƒZƒ‹
+// åœ§ç¸®ã®ã‚­ãƒ£ãƒ³ã‚»ãƒ«
 //////////////////////////////////////////////////////////////////////////////
 void CProgressDlg::OnCancel() 
 {
@@ -145,7 +145,7 @@ void CProgressDlg::OnCancel()
 }
 
 //
-// ƒEƒBƒ“ƒhƒEƒvƒƒV[ƒWƒƒ
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£
 //////////////////////////////////////////////////////////////////////////////
 LRESULT CProgressDlg::WindowProc(UINT message, WPARAM wParam, LPARAM lParam) 
 {
@@ -176,7 +176,7 @@ LRESULT CProgressDlg::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 }
 
 //
-// ˆ³k‘€ìƒXƒŒƒbƒh
+// åœ§ç¸®æ“ä½œã‚¹ãƒ¬ãƒƒãƒ‰
 //////////////////////////////////////////////////////////////////////////////
 UINT CProgressDlg::ThreadProc( LPVOID parameter )
 {
@@ -191,15 +191,15 @@ UINT CProgressDlg::CompressThreadProc( void )
 {
 	MESSAGEBOX_STRUCT	mbs ;
 	//
-	// ƒƒbƒZ[ƒWƒ|ƒ“ƒvì¬
+	// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒãƒ³ãƒ—ä½œæˆ
 	MSG		msg ;
 	::PeekMessage( &msg, NULL, 0, 0, PM_NOREMOVE ) ;
 	//
-	// ‘ƒtƒ@ƒCƒ‹”æ“¾
+	// ç·ãƒ•ã‚¡ã‚¤ãƒ«æ•°å–å¾—
 	int		nFileCount = m_listSrcFiles.GetSize( ) ;
 	ASSERT( m_listDstFiles.GetSize( ) == nFileCount ) ;
 	//
-	// ƒvƒƒOƒŒƒXƒo[‰Šúİ’è
+	// ãƒ—ãƒ­ã‚°ãƒ¬ã‚¹ãƒãƒ¼åˆæœŸè¨­å®š
 	m_progress.SetRange( 0, 0xFFFFU ) ;
 	//
 	bool	fQuitFlag = false ;
@@ -208,40 +208,40 @@ UINT CProgressDlg::CompressThreadProc( void )
 	for ( int i = 0; i < nFileCount; i ++ )
 	{
 		//
-		// isó‹µ•\¦
+		// é€²è¡ŒçŠ¶æ³è¡¨ç¤º
 		m_progress.SetPos( 0 ) ;
 		//
 		CString		strTitle ;
-		strTitle.Format( "ˆ³k’†EEE@[%d/%d]", i + 1, nFileCount ) ;
+		strTitle.Format( "åœ§ç¸®ä¸­ãƒ»ãƒ»ãƒ»ã€€[%d/%d]", i + 1, nFileCount ) ;
 		SetWindowText( strTitle ) ;
 		//
 		CString		strMessage ;
 		CString		strSrcFile = m_listSrcFiles.GetAt( i ) ;
 		CString		strDstFile = m_listDstFiles.GetAt( i ) ;
 		strMessage.Format
-			( "“ü—Íƒtƒ@ƒCƒ‹F%s\no—Íƒtƒ@ƒCƒ‹F%s",
+			( "å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ï¼š%s\nå‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ï¼š%s",
 				(const char *) strSrcFile, (const char *) strDstFile ) ;
 		SetDlgItemText( IDC_STATIC_MSG, strMessage ) ;
 		//
-		// .wav ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// .wav ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		EWaveFileStream	wfs ;
 		if ( !wfs.Open( strSrcFile ) )
 		{
-			mbs.pszCaption = "ƒGƒ‰[" ;
-			mbs.pszMsg = "“ü—Íƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B" ;
+			mbs.pszCaption = "ã‚¨ãƒ©ãƒ¼" ;
+			mbs.pszMsg = "å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚" ;
 			mbs.nMBType = MB_OK | MB_ICONERROR ;
 			PostMessage( WM_MESSAGEBOX, 0, (LPARAM) &mbs ) ;
 			::WaitForSingleObject( mbs.hEvent, INFINITE ) ;
 			continue ;
 		}
 		//
-		// “ü—ÍƒEƒF[ƒuƒtƒH[ƒ}ƒbƒg‚ğæ“¾
+		// å…¥åŠ›ã‚¦ã‚§ãƒ¼ãƒ–ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’å–å¾—
 		WAVEFORMATEX *	pwfx = wfs.GetWaveFormat( ) ;
 		DWORD			dwDataBytes = wfs.GetDataLength( ) ;
 		if ( pwfx->wFormatTag != WAVE_FORMAT_PCM )
 		{
-			mbs.pszCaption = "ƒGƒ‰[" ;
-			mbs.pszMsg = "PCM ˆÈŠO‚Ìƒtƒ@ƒCƒ‹‚ğˆ³k‚·‚é‚±‚Æ‚Ío—ˆ‚Ü‚¹‚ñB" ;
+			mbs.pszCaption = "ã‚¨ãƒ©ãƒ¼" ;
+			mbs.pszMsg = "PCM ä»¥å¤–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’åœ§ç¸®ã™ã‚‹ã“ã¨ã¯å‡ºæ¥ã¾ã›ã‚“ã€‚" ;
 			mbs.nMBType = MB_OK | MB_ICONERROR ;
 			PostMessage( WM_MESSAGEBOX, 0, (LPARAM) &mbs ) ;
 			::WaitForSingleObject( mbs.hEvent, INFINITE ) ;
@@ -253,15 +253,15 @@ UINT CProgressDlg::CompressThreadProc( void )
 		if ( (dwSampleBytes == 0) ||
 			(!m_fLossless && (pwfx->wBitsPerSample != 16)) )
 		{
-			mbs.pszCaption = "ƒGƒ‰[" ;
-			mbs.pszMsg = "16ƒrƒbƒgˆÈŠO‚ÌPCMƒf[ƒ^‚ğ”ñ‰Â‹tˆ³k‚Å‚«‚Ü‚¹‚ñB" ;
+			mbs.pszCaption = "ã‚¨ãƒ©ãƒ¼" ;
+			mbs.pszMsg = "16ãƒ“ãƒƒãƒˆä»¥å¤–ã®PCMãƒ‡ãƒ¼ã‚¿ã‚’éå¯é€†åœ§ç¸®ã§ãã¾ã›ã‚“ã€‚" ;
 			mbs.nMBType = MB_OK | MB_ICONERROR ;
 			PostMessage( WM_MESSAGEBOX, 0, (LPARAM) &mbs ) ;
 			::WaitForSingleObject( mbs.hEvent, INFINITE ) ;
 			continue ;
 		}
 		//
-		// ƒuƒƒbƒN‚ÌƒTƒCƒY‚ğZo‚·‚é
+		// ãƒ–ãƒ­ãƒƒã‚¯ã®ã‚µã‚¤ã‚ºã‚’ç®—å‡ºã™ã‚‹
 		DWORD	dwKeyWave = 4 ;
 		DWORD	dwBlockSamples = 0x8000 ;
 		DWORD	dwBlockBytes = dwBlockSamples * dwSampleBytes ;
@@ -270,22 +270,22 @@ UINT CProgressDlg::CompressThreadProc( void )
 			dwKeyWave = 16 ;
 		}
 		//
-		// .mio ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+		// .mio ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 		EWriteFile			wf ;
 		ERIAnimationWriter	eriaw ;
 		//
 		if ( !wf.Open( strDstFile ) ||
 				!eriaw.Open( &wf, ERIWriteFile::fidSound ) )
 		{
-			mbs.pszCaption = "ƒGƒ‰[" ;
-			mbs.pszMsg = "o—Íƒtƒ@ƒCƒ‹‚ğŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½B" ;
+			mbs.pszCaption = "ã‚¨ãƒ©ãƒ¼" ;
+			mbs.pszMsg = "å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã‘ã¾ã›ã‚“ã§ã—ãŸã€‚" ;
 			mbs.nMBType = MB_OK | MB_ICONERROR ;
 			PostMessage( WM_MESSAGEBOX, 0, (LPARAM) &mbs ) ;
 			::WaitForSingleObject( mbs.hEvent, INFINITE ) ;
 			continue ;
 		}
 		//
-		// ƒwƒbƒ_[‚ğo—Í‚·‚é
+		// ãƒ˜ãƒƒãƒ€ãƒ¼ã‚’å‡ºåŠ›ã™ã‚‹
 		MIO_INFO_HEADER	mioih ;
 		::memset( &mioih, 0, sizeof(mioih) ) ;
 		mioih.dwVersion = 0x00020300 ;
@@ -313,7 +313,7 @@ UINT CProgressDlg::CompressThreadProc( void )
 		eriaw.WriteMioInfoHeader( mioih ) ;
 		eriaw.EndFileHeader( ) ;
 		//
-		// ˆ³kƒpƒ‰ƒ[ƒ^‚ğİ’è‚·‚é
+		// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã™ã‚‹
 		MIOEncoder::PARAMETER	parameter ;
 		parameter.rLowWeight = m_rLowWeight ;
 		parameter.rMiddleWeight = m_rMiddleWeight ;
@@ -322,7 +322,7 @@ UINT CProgressDlg::CompressThreadProc( void )
 		parameter.nPreEchoThreshold = m_nPEThreshold ;
 		eriaw.SetSoundCompressionParameter( parameter ) ;
 		//
-		// ƒXƒgƒŠ[ƒ€ŠJn
+		// ã‚¹ãƒˆãƒªãƒ¼ãƒ é–‹å§‹
 		void *	ptrWaveBuf = malloc( dwBlockBytes ) ;
 		DWORD	dwWrittenBytes = 0 ;
 		eriaw.BeginStream( ) ;
@@ -330,7 +330,7 @@ UINT CProgressDlg::CompressThreadProc( void )
 		while ( dwWrittenBytes < dwDataBytes )
 		{
 			//
-			// I—¹ƒƒbƒZ[ƒWóM
+			// çµ‚äº†ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡
 			if ( ::PeekMessage( &msg, NULL, 0, 0, PM_REMOVE ) )
 			{
 				if ( msg.message == WM_QUIT )
@@ -341,7 +341,7 @@ UINT CProgressDlg::CompressThreadProc( void )
 				}
 			}
 			//
-			// ‘‚«o‚·ƒTƒ“ƒvƒ‹”‚ğZo
+			// æ›¸ãå‡ºã™ã‚µãƒ³ãƒ—ãƒ«æ•°ã‚’ç®—å‡º
 			DWORD	dwWriteBytes = dwDataBytes - dwWrittenBytes ;
 			if ( dwWriteBytes > dwBlockBytes )
 			{
@@ -349,17 +349,17 @@ UINT CProgressDlg::CompressThreadProc( void )
 			}
 			DWORD	dwWriteSample = dwWriteBytes / dwSampleBytes ;
 			//
-			// “Ç‚İ‚ñ‚Åˆ³k‚µ‚Ä‘‚«o‚·
+			// èª­ã¿è¾¼ã‚“ã§åœ§ç¸®ã—ã¦æ›¸ãå‡ºã™
 			wfs.Read( ptrWaveBuf, dwWriteBytes ) ;
 			eriaw.WriteWaveData( ptrWaveBuf, dwWriteSample ) ;
 			dwWrittenBytes += dwWriteBytes ;
 			//
-			// ƒvƒƒOƒŒƒXƒo[‚Ì•\¦‚ğXV
+			// ãƒ—ãƒ­ã‚°ãƒ¬ã‚¹ãƒãƒ¼ã®è¡¨ç¤ºã‚’æ›´æ–°
 			m_progress.SetPos
 				( ::MulDiv( dwWrittenBytes, 0xFFFF, dwDataBytes ) ) ;
 		}
 		//
-		// ƒXƒgƒŠ[ƒ€I—¹
+		// ã‚¹ãƒˆãƒªãƒ¼ãƒ çµ‚äº†
 		eriaw.EndStream
 			( ::MulDiv( dwWrittenBytes / dwSampleBytes,
 							1000, mioih.dwSamplesPerSec ) ) ;

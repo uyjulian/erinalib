@@ -4,36 +4,36 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
-// ProgressDlg.h : ƒwƒbƒ_[ ƒtƒ@ƒCƒ‹
+// ProgressDlg.h : ãƒ˜ãƒƒãƒ€ãƒ¼ ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 /////////////////////////////////////////////////////////////////////////////
-// CProgressDlg ƒ_ƒCƒAƒƒO
+// CProgressDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 class CProgressDlg : public CDialog
 {
-// ƒRƒ“ƒXƒgƒ‰ƒNƒVƒ‡ƒ“
+// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚·ãƒ§ãƒ³
 public:
-	CProgressDlg(CWnd* pParent = NULL);   // •W€‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	CProgressDlg(CWnd* pParent = NULL);   // æ¨™æº–ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	~CProgressDlg( void ) ;
 
-// ƒ_ƒCƒAƒƒO ƒf[ƒ^
+// ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ãƒ‡ãƒ¼ã‚¿
 	//{{AFX_DATA(CProgressDlg)
 	enum { IDD = IDD_PROGRESS_DLG };
 	CProgressCtrl	m_progress;
 	//}}AFX_DATA
 
 
-// ƒI[ƒo[ƒ‰ƒCƒh
-	// ClassWizard ‚Í‰¼‘zŠÖ”‚ÌƒI[ƒo[ƒ‰ƒCƒh‚ğ¶¬‚µ‚Ü‚·B
+// ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰
+	// ClassWizard ã¯ä»®æƒ³é–¢æ•°ã®ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
 	//{{AFX_VIRTUAL(CProgressDlg)
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ƒTƒ|[ƒg
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ã‚µãƒãƒ¼ãƒˆ
 	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
 	//}}AFX_VIRTUAL
 
 protected:
-	// ˆ³kƒpƒ‰ƒ[ƒ^
+	// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
 	bool			m_fLossless ;
 	double			m_rLowWeight ;
 	double			m_rMiddleWeight ;
@@ -43,10 +43,10 @@ protected:
 	unsigned int	m_nMatrixDegree ;
 	unsigned int	m_nLappedDegree ;
 	bool			m_fUseMSS ;
-	// ˆ³kƒtƒ@ƒCƒ‹ƒŠƒXƒg
+	// åœ§ç¸®ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆ
 	CStringArray	m_listSrcFiles ;
 	CStringArray	m_listDstFiles ;
-	// ƒXƒŒƒbƒh
+	// ã‚¹ãƒ¬ãƒƒãƒ‰
 	CWinThread *	m_pThread ;
 
 protected:
@@ -74,23 +74,23 @@ protected:
 	} ;
 
 public:
-	// ˆ³kƒpƒ‰ƒ[ƒ^İ’è
+	// åœ§ç¸®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 	void SetCompressionParameter
 		( bool fLossless, double rLowWeight,
 			double rMiddleWeight, int nOddWeight, int nPEThreshold, double rPowerScale,
 			unsigned int nMatrixDegree, unsigned int nLappedDegree, bool fUseMSS ) ;
-	// ˆ³k‚·‚éƒtƒ@ƒCƒ‹–¼’Ç‰Á
+	// åœ§ç¸®ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«åè¿½åŠ 
 	void AddFileEntry( const char * pszFilePath ) ;
 
 protected:
-	// ˆ³k‘€ìƒXƒŒƒbƒh
+	// åœ§ç¸®æ“ä½œã‚¹ãƒ¬ãƒƒãƒ‰
 	static UINT ThreadProc( LPVOID parameter ) ;
 	UINT CompressThreadProc( void ) ;
 
-// ƒCƒ“ƒvƒŠƒƒ“ƒe[ƒVƒ‡ƒ“
+// ã‚¤ãƒ³ãƒ—ãƒªãƒ¡ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³
 protected:
 
-	// ¶¬‚³‚ê‚½ƒƒbƒZ[ƒW ƒ}ƒbƒvŠÖ”
+	// ç”Ÿæˆã•ã‚ŒãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒƒãƒ—é–¢æ•°
 	//{{AFX_MSG(CProgressDlg)
 	virtual BOOL OnInitDialog();
 	virtual void OnCancel();
@@ -100,6 +100,6 @@ protected:
 };
 
 //{{AFX_INSERT_LOCATION}}
-// Microsoft Visual C++ ‚Í‘Os‚Ì’¼‘O‚É’Ç‰Á‚ÌéŒ¾‚ğ‘}“ü‚µ‚Ü‚·B
+// Microsoft Visual C++ ã¯å‰è¡Œã®ç›´å‰ã«è¿½åŠ ã®å®£è¨€ã‚’æŒ¿å…¥ã—ã¾ã™ã€‚
 
 #endif // !defined(AFX_PROGRESSDLG_H__276DBFC3_E245_4AA8_8807_F456F0C86154__INCLUDED_)
